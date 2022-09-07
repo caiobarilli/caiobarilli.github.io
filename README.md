@@ -1,4 +1,4 @@
-# CV CAIO BARILLI - Github Pages
+# CV - Github Pages
 desenvolvido com [Create React App](https://create-react-app.dev/)
 
 | app    | host | port |
@@ -16,8 +16,8 @@ desenvolvido com [Create React App](https://create-react-app.dev/)
 [Husky](https://github.com/typicode/husky) |
 [Styled Components](https://styled-components.com/) |
 [Storybook](https://storybook.js.org/)
-<br/>
 
+<br/>
 
 ### Pré-requisitos
 #
