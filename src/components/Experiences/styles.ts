@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import media from 'styled-media-query'
 
 export const Wrapper = styled.div`
   display: grid;
@@ -9,25 +10,30 @@ export const Wrapper = styled.div`
 
 export const ImageWrapper = styled.div`
   ${({ theme }) => css`
-    grid-area: left;
     margin-right: ${theme.spacings.xxsmall};
     display: flex;
     align-items: flex-start;
+
+    grid-area: left;
   `}
 `
 
 export const ContentWrapper = styled.div`
-  grid-area: right;
   display: flex;
   flex-direction: column;
+  ${media.greaterThan('medium')`
+    grid-area: right;
+  `}
 `
 
 export const InfoRow = styled.div`
   ${({ theme }) => css`
-    display: flex;
+    ${media.greaterThan('medium')`
+      display: flex;
 
-    p {
-      margin-right: ${theme.spacings.xsmall};
-    }
+      p {
+        margin-right: ${theme.spacings.xsmall};
+      }
+    `}
   `}
 `
