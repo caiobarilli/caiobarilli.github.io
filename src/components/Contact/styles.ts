@@ -10,10 +10,14 @@ export const Wrapper = styled.div`
 
 export const ButtonsWrapper = styled.div`
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
 
   ${({ theme }) => css`
     a {
-      margin-right: ${theme.spacings.xxsmall};
+      margin: 0 ${theme.spacings.xxsmall} ${theme.spacings.xxsmall} 0;
     }
   `}
 `

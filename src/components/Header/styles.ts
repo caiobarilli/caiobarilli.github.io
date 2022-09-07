@@ -1,10 +1,13 @@
 import styled, { css } from 'styled-components'
+import media from 'styled-media-query'
 
 export const Wrapper = styled.div`
-  display: grid;
-  grid-template-columns: 0fr 1fr;
-  grid-template-rows: 2fr;
-  grid-template-areas: 'left right';
+  ${media.greaterThan('medium')`
+    display: grid;
+    grid-template-columns: 0fr 1fr;
+    grid-template-rows: 2fr;
+    grid-template-areas: 'left right';
+  `}
 `
 
 export const ImageWrapper = styled.div`
@@ -17,17 +20,20 @@ export const ImageWrapper = styled.div`
 `
 
 export const ContentWrapper = styled.div`
-  grid-area: right;
   display: flex;
   flex-direction: column;
+  ${media.greaterThan('medium')`
+    grid-area: right;
+  `}
 `
 
 export const InfoRow = styled.div`
   ${({ theme }) => css`
-    display: flex;
-
-    p {
-      margin-right: ${theme.spacings.xsmall};
-    }
+    ${media.greaterThan('medium')`
+      display: flex;
+      p {
+        margin-right: ${theme.spacings.xsmall};
+      }
+    `}
   `}
 `
