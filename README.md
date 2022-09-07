@@ -1,5 +1,5 @@
 # CV CAIO BARILLI - Github Pages
-desenvolvimento com [Reactjs](https://pt-br.reactjs.org/)
+desenvolvido com [Create React App](https://create-react-app.dev/)
 
 | app    | host | port |
 | -------------- | ---- | ---- |
@@ -11,7 +11,6 @@ desenvolvimento com [Reactjs](https://pt-br.reactjs.org/)
 ### Dependências
 #
 
-[Create React App](https://create-react-app.dev/) |
 [Eslint](https://eslint.org/) |
 [Prettier](https://prettier.io/) |
 [Husky](https://github.com/typicode/husky) |
