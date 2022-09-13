@@ -15,9 +15,7 @@ const About = () => (
       <Text>
         Sou um profissional com experiência na área, formado em Sistemas para
         Internet pelo Centro Universitário SENAC, capaz de desenvolver projetos
-        em equipe e com facilidade de adequação a mudanças, busco novas
-        possibilidades no mercado de trabalho e perspectiva de crescimento
-        profissional.
+        em equipe e com facilidade de adequação a mudanças.
       </Text>
       <Hr />
     </S.Wrapper>

@@ -36,8 +36,8 @@ const Experiences = () => (
         </>
 
         <S.InfoRow>
-          <Text icon={<Briefcase />} color="gray">
-            Desenvolvedor de frontend
+          <Text icon={<Location />} color="gray">
+            Home Office
           </Text>
 
           <Text icon={<Stack />} color="gray">
@@ -46,8 +46,8 @@ const Experiences = () => (
         </S.InfoRow>
 
         <S.InfoRow>
-          <Text icon={<Location />} color="gray">
-            Home Office
+          <Text icon={<Briefcase />} color="gray">
+            Desenvolvedor de frontend
           </Text>
         </S.InfoRow>
       </S.ContentWrapper>
@@ -69,8 +69,8 @@ const Experiences = () => (
         </>
 
         <S.InfoRow>
-          <Text icon={<Briefcase />} color="gray">
-            Desenvolvedor de Fullstack
+          <Text icon={<Location />} color="gray">
+            Home Office / São Paulo - Brasil
           </Text>
 
           <Text icon={<Stack />} color="gray">
@@ -79,8 +79,8 @@ const Experiences = () => (
         </S.InfoRow>
 
         <S.InfoRow>
-          <Text icon={<Location />} color="gray">
-            Home Office / São Paulo - Brasil
+          <Text icon={<Briefcase />} color="gray">
+            Desenvolvedor de Fullstack
           </Text>
         </S.InfoRow>
       </S.ContentWrapper>
@@ -102,8 +102,8 @@ const Experiences = () => (
         </>
 
         <S.InfoRow>
-          <Text icon={<Briefcase />} color="gray">
-            Desenvolvedor Fullstack
+          <Text icon={<Location />} color="gray">
+            Home Office
           </Text>
 
           <Text icon={<Stack />} color="gray">
@@ -113,8 +113,8 @@ const Experiences = () => (
         </S.InfoRow>
 
         <S.InfoRow>
-          <Text icon={<Location />} color="gray">
-            Home Office
+          <Text icon={<Briefcase />} color="gray">
+            Desenvolvedor Fullstack
           </Text>
         </S.InfoRow>
       </S.ContentWrapper>
@@ -138,8 +138,8 @@ const Experiences = () => (
         </>
 
         <S.InfoRow>
-          <Text icon={<Briefcase />} color="gray">
-            Desenvolvedor de front-end
+          <Text icon={<Location />} color="gray">
+            São Paulo, Brasil
           </Text>
 
           <Text icon={<Stack />} color="gray">
@@ -148,8 +148,8 @@ const Experiences = () => (
         </S.InfoRow>
 
         <S.InfoRow>
-          <Text icon={<Location />} color="gray">
-            São Paulo, Brasil
+          <Text icon={<Briefcase />} color="gray">
+            Desenvolvedor de front-end
           </Text>
         </S.InfoRow>
       </S.ContentWrapper>
