@@ -30,9 +30,7 @@ const Experiences = () => (
       <S.ContentWrapper>
         <>
           <Heading size="small">QuikDev</Heading>
-          <Text color="lightGray">
-            mar de 2019 - abr de 2020 · 1 ano 2 meses
-          </Text>
+          <Text color="lightGray">mar de 2022 - abr de 2022 ·2 meses</Text>
         </>
 
         <S.InfoRow>
