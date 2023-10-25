@@ -1,8 +1,8 @@
-// import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 import Heading from '@/components/Heading'
 import Image from '@/components/Image'
 import Text from '@/components/Text'
-// import Link from '@/components/Link'
+import Link from '@/components/Link'
 
 import { Location } from '@styled-icons/evil/Location'
 import { Briefcase } from '@styled-icons/ionicons-outline/Briefcase'
@@ -11,15 +11,15 @@ import { Stack } from '@styled-icons/bootstrap/Stack'
 import * as S from './styles'
 
 const Experiences = () => {
-  // const { t } = useTranslation()
+  const { t } = useTranslation()
 
   return (
     <S.Wrapper>
       <Heading color="secondText" size="medium">
         Experiências
-        {/* <Link url="/jobs" size="small">
+        <Link url="/#jobs" size="small">
           {t('home.about.read_more')}
-        </Link> */}
+        </Link>
       </Heading>
 
       <S.WrapperExperience>
