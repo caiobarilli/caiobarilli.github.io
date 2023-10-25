@@ -6,6 +6,7 @@ import App from './app'
 
 import Home from '@/templates/Home'
 import About from '@/templates/About'
+import Jobs from '@/templates/Jobs'
 
 const routes = [
   {
@@ -19,6 +20,10 @@ const routes = [
       {
         path: '/about',
         element: <About />,
+      },
+      {
+        path: '/jobs',
+        element: <Jobs />,
       },
     ],
   },

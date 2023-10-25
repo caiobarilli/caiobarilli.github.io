@@ -2,9 +2,10 @@ import { useState, useContext } from 'react'
 import { Context } from '@/utils/context'
 import { useTranslation } from 'react-i18next'
 import { svgFlag } from '@/utils'
+import Link from '@/components/Link'
 import * as S from './styles'
 
-// import { Menu as MenuIcon } from '@styled-icons/boxicons-regular/Menu'
+import { Menu as MenuIcon } from '@styled-icons/boxicons-regular/Menu'
 import { Printer } from '@styled-icons/feather/Printer'
 import { LightbulbFill } from '@styled-icons/bootstrap/LightbulbFill'
 import { LightbulbOff } from '@styled-icons/bootstrap/LightbulbOff'
@@ -50,9 +51,9 @@ const Menu = () => {
   return (
     <S.Wrapper>
       <S.wrapperButtons>
-        {/* <S.sideMenuButton onClick={toggleMenu}>
+        <S.sideMenuButton onClick={toggleMenu}>
           <MenuIcon />
-        </S.sideMenuButton> */}
+        </S.sideMenuButton>
         <S.sideMenuButton
           onClick={() => {
             changeLanguage()
@@ -70,16 +71,19 @@ const Menu = () => {
 
       <S.MenuWrapper $menuIsOpen={menuIsOpen}>
         <S.MenuItem>
-          <a onClick={toggleMenu}>{t('menu.Home')}</a>
+          <Link onClick={toggleMenu} url="/">
+            {t('menu.Home')}
+          </Link>
         </S.MenuItem>
         <S.MenuItem>
-          <a onClick={toggleMenu}>{t('menu.Infos')}</a>
+          <Link onClick={toggleMenu} url="/#about">
+            {t('menu.Infos')}
+          </Link>
         </S.MenuItem>
         <S.MenuItem>
-          <a onClick={toggleMenu}>{t('menu.Certificates')}</a>
-        </S.MenuItem>
-        <S.MenuItem>
-          <a onClick={toggleMenu}>{t('menu.Jobs')}</a>
+          <Link onClick={toggleMenu} url="/#jobs">
+            {t('menu.Jobs')}
+          </Link>
         </S.MenuItem>
       </S.MenuWrapper>
     </S.Wrapper>
