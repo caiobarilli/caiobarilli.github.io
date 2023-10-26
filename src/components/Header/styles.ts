@@ -18,12 +18,6 @@ export const ImageWrapper = styled.div`
     align-items: flex-start;
     justify-content: center;
 
-    ${media.greaterThan('medium')`
-      img {
-        margin-top: 1.45rem;
-      }
-    `}
-
     ${media.lessThan('medium')`
       justify-content: start;
     `}
