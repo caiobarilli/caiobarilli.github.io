@@ -3,12 +3,14 @@ import Image from '@/components/Image'
 import Heading from '@/components/Heading'
 import Text from '@/components/Text'
 import Hr from '@/components/Hr'
+import Link from '@/components/Link'
 
 import { Location } from '@styled-icons/evil/Location'
 import { Terminal } from '@styled-icons/ionicons-outline/Terminal'
 import { Briefcase } from '@styled-icons/ionicons-outline/Briefcase'
 import { Phone } from '@styled-icons/boxicons-regular/Phone'
 import { EmailOutline } from '@styled-icons/evaicons-outline/EmailOutline'
+import { Github } from '@styled-icons/boxicons-logos/Github'
 
 import * as S from './styles'
 
@@ -29,13 +31,28 @@ const Header = () => {
           </S.Title>
 
           <S.InfoRow>
-            <Text icon={<Phone />} color="secondText">
-              {t('home.header.Phone')}
-            </Text>
+            <Link
+              size="medium"
+              url="https://api.whatsapp.com/send?phone=5511986243016&text=Ol%C3%A1%2C%20Caio!"
+            >
+              <Text icon={<Phone />} color="secondText">
+                {t('home.header.Phone')}
+              </Text>
+            </Link>
 
-            <Text icon={<EmailOutline />} color="secondText">
-              {t('home.header.Email')}
-            </Text>
+            <Link size="medium" url="mailto:caiobarilli@gmail.com">
+              <Text icon={<EmailOutline />} color="secondText">
+                {t('home.header.Email')}
+              </Text>
+            </Link>
+          </S.InfoRow>
+
+          <S.InfoRow>
+            <Link size="medium" url="https://github.com/caiobarilli">
+              <Text icon={<Github />} color="secondText">
+                https://github.com/caiobarilli
+              </Text>
+            </Link>
           </S.InfoRow>
 
           <S.InfoRow>

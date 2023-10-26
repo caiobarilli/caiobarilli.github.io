@@ -7,7 +7,7 @@ export const WrapperModifier = {
     font-size: ${(props) => props.theme.font.sizes.xxsmall};
   `,
   medium: () => css`
-    font-size: ${(props) => props.theme.font.sizes.xxsmall};
+    font-size: ${(props) => props.theme.font.sizes.xsmall};
   `,
 }
 

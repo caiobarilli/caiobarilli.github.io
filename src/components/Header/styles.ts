@@ -39,6 +39,16 @@ export const InfoRow = styled.div`
       line-height: 1rem;
     }
 
+    a {
+      margin: 0;
+      line-height: 1rem;
+      text-transform: none;
+
+      @media print {
+        display: block;
+      }
+    }
+
     ${media.greaterThan('medium')`
       display: flex;
 
