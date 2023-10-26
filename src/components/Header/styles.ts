@@ -17,6 +17,10 @@ export const ImageWrapper = styled.div`
     display: flex;
     align-items: flex-start;
     justify-content: center;
+
+    ${media.lessThan('medium')`
+      justify-content: start;
+    `}
   `}
 `
 

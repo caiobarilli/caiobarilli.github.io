@@ -45,30 +45,33 @@ export const ContentWrapper = styled.div`
 
 export const InfoRow = styled.div`
   ${({ theme }) => css`
-    ${media.greaterThan('medium')`
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-items: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
 
-      p {
-        line-height: 1rem;
-        margin: .65rem 0;
+    p {
+      line-height: 1rem;
+      margin: 0.65rem 0;
 
-        @media print {
-          margin: 0 0 0.35rem;
-        }
+      ${media.lessThan('medium')`
+        line-height: 1.85rem;
+        flex-wrap: nowrap;
+        align-items: start;
+      `}
 
-        &:first-child {
-          margin-right: ${theme.spacings.xsmall};
-        }
-
-        svg
-        {
-          width: 1.5rem;
-          height: 1.5rem;
-        }
+      @media print {
+        margin: 0 0 0.35rem;
       }
-    `}
+
+      &:first-child {
+        margin-right: ${theme.spacings.xsmall};
+      }
+
+      svg {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
   `}
 `

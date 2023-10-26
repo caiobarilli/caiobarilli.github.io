@@ -7,8 +7,6 @@ export type HeadingProps = {
 }
 
 function Heading({ children, size = 'large', color = 'text' }: HeadingProps) {
-  console.log(import.meta.env.DEV)
-
   return (
     <S.Title size={size} color={color}>
       {children}
