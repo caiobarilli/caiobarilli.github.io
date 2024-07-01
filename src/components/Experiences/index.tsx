@@ -11,6 +11,8 @@ import * as S from './styles'
 const Experiences = () => {
   return (
     <S.Wrapper>
+      <Heading color="secondText">Experiência:</Heading>
+
       <S.WrapperItem>
         <S.WrapperItemTitle>
           <S.ImageWrapper>
