@@ -433,23 +433,23 @@
         {
           "file": "phporto-dashboard.webp",
           "caption": {
-            "en": "Panel overview",
-            "pt": "Visão geral do painel"
+            "en": "Windows actions: a PowerShell terminal without elevation, audit, memory and processes",
+            "pt": "Ações do Windows: terminal PowerShell sem elevação, auditoria, memória e processos"
           },
           "alt": {
-            "en": "PHPorto panel in the browser",
-            "pt": "Painel do PHPorto no navegador"
+            "en": "PHPorto Windows page with the PowerShell terminal and action cards",
+            "pt": "Página Windows do PHPorto com o terminal PowerShell e os cartões de ações"
           }
         },
         {
-          "file": "phporto-wsl.webp",
+          "file": "phporto-ollama.webp",
           "caption": {
-            "en": "Running a command in WSL",
-            "pt": "Rodando um comando no WSL"
+            "en": "Ollama: pinned version with SHA-256, model allowlist and VRAM check",
+            "pt": "Ollama: versão fixada com SHA-256, lista de modelos permitidos e checagem de VRAM"
           },
           "alt": {
-            "en": "Command output from WSL shown in the panel",
-            "pt": "Saída de um comando do WSL exibida no painel"
+            "en": "PHPorto Ollama page with status, install buttons and the model table",
+            "pt": "Página Ollama do PHPorto com o estado, os botões de instalação e a tabela de modelos"
           }
         }
       ]
