@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PageShell } from "@/components/PageIntro";
@@ -11,13 +12,14 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   return (
     <PageShell>
       <div className="flex flex-wrap items-center gap-x-14 gap-y-8">
-        <div
-          role="img"
-          aria-label={s("photoAlt")}
-          className="placeholder-stripes flex aspect-square w-[clamp(160px,22vw,240px)] flex-none items-center justify-center rounded-full border border-dashed border-line-strong bg-surface font-mono text-xs text-faint"
-        >
-          {s("placeholder")} · {s("photo")}
-        </div>
+        <Image
+          src="/images/caio-480.webp"
+          alt={s("photoAlt")}
+          width={240}
+          height={240}
+          priority
+          className="aspect-square w-[clamp(160px,22vw,240px)] flex-none rounded-full border border-line-strong object-cover"
+        />
         <div className="min-w-[min(100%,360px)] flex-1">
           <h1 className="mb-7 text-[clamp(44px,7vw,88px)] leading-[0.95] font-bold tracking-[-0.04em]">{s("aboutTitle")}</h1>
           <p className="max-w-[720px] text-[clamp(18px,1.9vw,22px)] leading-[1.55] text-pretty">{s("aboutP1")}</p>

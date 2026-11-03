@@ -44,7 +44,7 @@ export function Header({ locale, nav, labels }: Props) {
     <header className="sticky top-0 z-20 border-b border-line bg-bg-blur backdrop-blur-md">
       <div className="mx-auto flex max-w-[1200px] items-center justify-between gap-4 px-[clamp(20px,4vw,48px)] py-2.5">
         <Link href={`/${locale}/`} className="flex min-h-11 items-center font-mono text-[15px] font-medium">
-          <span className="text-accent-text">~/</span>caio
+          <span className="text-accent-text">~/</span>caio.barilli
         </Link>
 
         <nav aria-label="Main" className="hidden gap-0.5 rounded-full border border-line bg-surface p-1 min-[860px]:flex">

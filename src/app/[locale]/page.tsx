@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Placeholder } from "@/components/Placeholder";
 import { getContent, isLocale, localize, mainProjects, otherProjects, str } from "@/content";
@@ -24,10 +25,13 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <div className="mx-auto max-w-[1200px] px-[clamp(20px,4vw,48px)]">
         <section className="pt-[clamp(64px,11vw,120px)] pb-[clamp(56px,8vw,96px)]">
           <div className="mb-7 flex items-center gap-3.5 font-mono text-[clamp(13px,1.4vw,15px)] text-muted">
-            <span
-              role="img"
-              aria-label={s("photoAlt")}
-              className="placeholder-stripes size-11 flex-none rounded-full border border-dashed border-line-strong bg-surface"
+            <Image
+              src="/images/caio-96.webp"
+              alt={s("photoAlt")}
+              width={44}
+              height={44}
+              priority
+              className="size-11 flex-none rounded-full border border-line-strong object-cover"
             />
             <span>
               <span className="text-accent-text">caio@wsl</span>:~$ whoami
