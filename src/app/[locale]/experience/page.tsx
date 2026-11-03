@@ -22,7 +22,13 @@ export default async function ExperiencePage({ params }: { params: Promise<{ loc
             <div className="pt-0.5 font-mono text-sm font-medium text-accent-text">{localize(e.period, locale)}</div>
             <div className="col-span-2 flex min-w-0 flex-col gap-2.5 max-[560px]:col-span-1">
               <h2 className="text-[clamp(22px,2.6vw,28px)] leading-[1.2] font-semibold tracking-[-0.02em]">{localize(e.role, locale)}</h2>
-              <span className="font-mono text-[13px] text-muted">{localize(e.kind, locale)}</span>
+              <span className="font-mono text-[13px] text-muted">
+                <a href={e.company.url} className="font-medium text-ink underline decoration-line-strong underline-offset-4 hover:text-accent-text">
+                  {e.company.name} ↗
+                </a>
+                {" · "}
+                {localize(e.kind, locale)}
+              </span>
               <p className="mt-1 max-w-[640px] text-base leading-[1.6] text-pretty text-ink-2">{localize(e.summary, locale)}</p>
               <ul className="mt-1.5 flex flex-wrap gap-1.5">
                 {e.keys.map((k) => (

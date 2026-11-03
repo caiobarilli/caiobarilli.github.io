@@ -38,6 +38,7 @@ export type Article = { date: Localized; title: Localized; summary: Localized };
 export type Experience = {
   period: Localized;
   role: Localized;
+  company: { name: string; url: string };
   kind: Localized;
   summary: Localized;
   keys: string[];

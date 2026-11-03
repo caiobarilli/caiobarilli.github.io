@@ -57,7 +57,7 @@
       "placeholder": "Placeholder",
       "screenshot": "screenshot",
       "expTitle": "Experience",
-      "expSub": "Roles over the years, described by the work rather than by company names.",
+      "expSub": "Where I have worked and what I built there.",
       "aboutTitle": "About",
       "aboutP1": "Fullstack developer with 10+ years in web, focused today on PHP and Laravel, plus the infrastructure underneath (Docker, Terraform, AWS). Currently doing an MBA in DevOps, Automation & Cloud Strategy.",
       "howTitle": "How I work",
@@ -156,7 +156,7 @@
       "placeholder": "Placeholder",
       "screenshot": "captura",
       "expTitle": "Experiência",
-      "expSub": "Funções ao longo dos anos, descritas pelo trabalho e não pelo nome das empresas.",
+      "expSub": "Onde trabalhei e o que construí em cada lugar.",
       "aboutTitle": "Sobre",
       "aboutP1": "Desenvolvedor fullstack com mais de 10 anos em web, hoje focado em PHP e Laravel e na infraestrutura por baixo (Docker, Terraform, AWS). Atualmente cursando um MBA em DevOps, Automation & Cloud Strategy.",
       "howTitle": "Como eu trabalho",
@@ -919,8 +919,8 @@
         "pt": "Desenvolvedor Fullstack (PHP / Laravel)"
       },
       "kind": {
-        "en": "Cloud services company · Hybrid/Remote",
-        "pt": "Empresa de serviços em nuvem · Híbrido/Remoto"
+        "en": "Hybrid/Remote",
+        "pt": "Híbrido/Remoto"
       },
       "summary": {
         "en": "Web applications with PHP (Laravel), JavaScript and MySQL; Docker environments for dev and testing; payment gateway and external API integrations; UIs with TailwindCSS, Livewire and Bootstrap; code quality with PHPStan, PHP-CS-Fixer and Pest; reusable Composer packages; Linux/Debian servers; Scrum.",
@@ -935,7 +935,11 @@
         "Livewire",
         "Pest",
         "Linux"
-      ]
+      ],
+      "company": {
+        "name": "KeepCloud",
+        "url": "https://www.linkedin.com/company/keepcloud/"
+      }
     },
     {
       "period": {
@@ -947,8 +951,8 @@
         "pt": "Fullstack & DevOps (freelance, projetos recorrentes)"
       },
       "kind": {
-        "en": "Freelance client · Remote",
-        "pt": "Cliente freelance · Remoto"
+        "en": "Remote",
+        "pt": "Remoto"
       },
       "summary": {
         "en": "Institutional site and news portal on WordPress (child theme and custom plugins); AWS environments with Terraform (production and staging); DNS and SSL via Cloudflare; WordOps provisioning; Docker; technical SEO and performance; worked directly with the client and coordinated the design team.",
@@ -962,7 +966,11 @@
         "Cloudflare",
         "Docker",
         "WordOps"
-      ]
+      ],
+      "company": {
+        "name": "AgroNegociar",
+        "url": "https://www.linkedin.com/company/agronegociar/"
+      }
     },
     {
       "period": {
@@ -974,8 +982,8 @@
         "pt": "Desenvolvedor Fullstack (freelance, projetos recorrentes)"
       },
       "kind": {
-        "en": "Digital agency · Remote",
-        "pt": "Agência digital · Remoto"
+        "en": "Remote",
+        "pt": "Remoto"
       },
       "summary": {
         "en": "Client sites in WordPress and PHP; theme refactoring for performance and SEO; SCSS and Webpack; jQuery; MySQL query optimization; requirements meetings with clients; Figma with designers.",
@@ -988,7 +996,11 @@
         "SCSS",
         "Webpack",
         "MySQL"
-      ]
+      ],
+      "company": {
+        "name": "Layer Up",
+        "url": "https://www.linkedin.com/company/layer-up/"
+      }
     }
   ],
   "contacts": [
