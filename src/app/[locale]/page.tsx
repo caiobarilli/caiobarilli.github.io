@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Placeholder } from "@/components/Placeholder";
+import { Shot } from "@/components/Shot";
+import { shotSrc } from "@/content/images";
 import { getContent, isLocale, localize, mainProjects, otherProjects, str } from "@/content";
 import type { Locale, Project } from "@/content/types";
 import { notFound } from "next/navigation";
@@ -63,7 +64,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           </div>
 
           <article className="mb-5 grid grid-cols-[repeat(auto-fit,minmax(min(100%,440px),1fr))] overflow-hidden rounded-2xl border border-line bg-surface">
-            <Placeholder label={s("placeholder")} file={`${s("screenshot")} · ${hero.shot}`} className="min-h-[clamp(220px,32vw,420px)] p-4 text-xs" />
+            <Shot src={shotSrc(hero.shot)} alt={hero.shots[0] ? localize(hero.shots[0].alt, locale) : hero.name} label={s("placeholder")} file={`${s("screenshot")} · ${hero.shot}`} priority className="min-h-[clamp(220px,32vw,420px)] p-4 text-xs" />
             <div className="flex flex-col justify-center gap-4 p-[clamp(24px,4vw,40px)]">
               <span className="self-start rounded-full border border-accent-line px-2.5 py-1 font-mono text-xs font-medium text-accent-text">
                 {localize(hero.tag, locale)}
@@ -80,7 +81,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,300px),1fr))] gap-5">
             {rest.map((p) => (
               <article key={p.slug} className="flex flex-col overflow-hidden rounded-2xl border border-line bg-surface">
-                <Placeholder label={s("placeholder")} file={`${s("screenshot")} · ${p.shot}`} className="aspect-[16/10]" />
+                <Shot src={shotSrc(p.shot)} alt={p.shots[0] ? localize(p.shots[0].alt, locale) : p.name} label={s("placeholder")} file={`${s("screenshot")} · ${p.shot}`} className="aspect-[16/10]" />
                 <div className="flex flex-1 flex-col gap-2.5 p-6">
                   <span className="font-mono text-xs font-medium text-accent-text">{localize(p.tag, locale)}</span>
                   <h3 className="text-2xl leading-[1.15] font-semibold tracking-[-0.02em]">{p.name}</h3>

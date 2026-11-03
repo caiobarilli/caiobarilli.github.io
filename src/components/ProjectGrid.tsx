@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import type { CategoryId } from "@/content/types";
-import { Placeholder } from "./Placeholder";
+import { Shot } from "./Shot";
 
 export type ProjectCard = {
   slug: string;
@@ -15,6 +15,8 @@ export type ProjectCard = {
   desc: string;
   stackLine: string;
   shot: string;
+  img: string | null;
+  alt: string;
   href: string;
 };
 
@@ -56,7 +58,7 @@ export function ProjectGrid({ projects, filters, labels }: Props) {
       <div className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,320px),1fr))] gap-5">
         {main.map((p) => (
           <article key={p.slug} className="flex flex-col overflow-hidden rounded-2xl border border-line bg-surface">
-            <Placeholder label={labels.placeholder} file={`${labels.screenshot} · ${p.shot}`} className="aspect-[16/10]" />
+            <Shot src={p.img} alt={p.alt} label={labels.placeholder} file={`${labels.screenshot} · ${p.shot}`} className="aspect-[16/10]" />
             <div className="flex flex-1 flex-col gap-2.5 p-6">
               <div className="flex justify-between gap-3 font-mono text-xs font-medium">
                 <span className="text-accent-text">{p.tag}</span>

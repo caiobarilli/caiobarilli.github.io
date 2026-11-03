@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { PageIntro, PageShell } from "@/components/PageIntro";
 import { ProjectGrid, type ProjectCard } from "@/components/ProjectGrid";
 import { contentKey, getContent, isLocale, localize, str } from "@/content";
+import { shotSrc } from "@/content/images";
 
 export default async function Projects({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -19,6 +20,8 @@ export default async function Projects({ params }: { params: Promise<{ locale: s
     desc: localize(p.desc, locale),
     stackLine: p.stack.join(" · "),
     shot: p.shot,
+    img: p.shot ? shotSrc(p.shot) : null,
+    alt: p.shots[0] ? localize(p.shots[0].alt, locale) : p.name,
     href: `/${locale}/projects/${p.slug}/`,
   }));
 

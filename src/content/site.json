@@ -330,23 +330,23 @@
         {
           "file": "phparrot-session.webp",
           "caption": {
-            "en": "Practice session",
-            "pt": "Sessão de treino"
+            "en": "Speak: record, transcribe and compare word by word",
+            "pt": "Fala: gravar, transcrever e comparar palavra por palavra"
           },
           "alt": {
-            "en": "PHParrot practice screen",
-            "pt": "Tela de treino do PHParrot"
+            "en": "PHParrot speaking screen with record and transcribe buttons",
+            "pt": "Tela de fala do PHParrot com os botões de gravar e transcrever"
           }
         },
         {
           "file": "phparrot-2.webp",
           "caption": {
-            "en": "Caption pending",
-            "pt": "Legenda pendente"
+            "en": "Read: a text by level and theme, read aloud",
+            "pt": "Leitura: texto por nível e tema, lido em voz alta"
           },
           "alt": {
-            "en": "PHParrot screenshot",
-            "pt": "Captura do PHParrot"
+            "en": "PHParrot reading screen with an English text at level 1",
+            "pt": "Tela de leitura do PHParrot com um texto em inglês no nível 1"
           }
         }
       ]

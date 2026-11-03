@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
-import { Placeholder } from "@/components/Placeholder";
+import { Shot } from "@/components/Shot";
+import { shotSrc } from "@/content/images";
 import { getContent, isLocale, localize, repoUrl, str } from "@/content";
 
 export const dynamicParams = false;
@@ -76,7 +77,10 @@ export default async function ProjectPage({ params }: { params: Params }) {
         </header>
 
         {hasShots && (
-          <Placeholder
+          <Shot
+            src={shotSrc(p.shot)}
+            alt={p.shots[0] ? localize(p.shots[0].alt, locale) : p.name}
+            priority
             label={s("placeholder")}
             file={`${s("screenshot")} · ${p.shot}`}
             className="mb-[clamp(48px,7vw,80px)] aspect-[16/8] rounded-2xl border border-line p-[18px] text-xs"
@@ -125,9 +129,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
             <div className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,300px),1fr))] gap-5">
               {p.shots.map((shot) => (
                 <figure key={shot.file} className="flex flex-col gap-3">
-                  <div role="img" aria-label={localize(shot.alt, locale)}>
-                    <Placeholder label={s("placeholder")} file={shot.file} className="aspect-[16/10] rounded-xl border border-line p-3" />
-                  </div>
+                  <Shot src={shotSrc(shot.file)} alt={localize(shot.alt, locale)} label={s("placeholder")} file={shot.file} className="aspect-[16/10] rounded-xl border border-line p-3" />
                   <figcaption className="text-sm leading-normal text-ink-2">{localize(shot.caption, locale)}</figcaption>
                 </figure>
               ))}
