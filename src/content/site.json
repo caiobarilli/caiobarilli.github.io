@@ -97,7 +97,8 @@
       "tkSub": "The values behind both themes. Names map to CSS variables and Tailwind theme keys.",
       "eduTitle": "Education",
       "photoAlt": "Photo of Caio Barilli",
-      "photo": "photo"
+      "photo": "photo",
+      "siteLink": "Product site ↗"
     },
     "pt": {
       "nav": {
@@ -196,7 +197,8 @@
       "tkSub": "Os valores por trás dos dois temas. Os nomes correspondem às variáveis CSS e às chaves do tema Tailwind.",
       "eduTitle": "Formação",
       "photoAlt": "Foto do Caio Barilli",
-      "photo": "foto"
+      "photo": "foto",
+      "siteLink": "Site do produto ↗"
     }
   },
   "cats": [
@@ -467,64 +469,79 @@
       },
       "year": "2025",
       "type": {
-        "en": "Client work, anonymised",
-        "pt": "Projeto de cliente, anonimizado"
+        "en": "Client project · AgroNegociar",
+        "pt": "Projeto de cliente · AgroNegociar"
       },
       "status": {
-        "en": "In production",
-        "pt": "Em produção"
+        "en": "Delivered",
+        "pt": "Entregue"
       },
       "stack": [
         "Terraform",
-        "AWS (EC2, EBS, S3, DynamoDB)",
+        "AWS EC2",
+        "EBS",
+        "S3",
+        "DynamoDB",
+        "Cloudflare",
         "Bash",
         "WordPress"
       ],
       "shot": "aws-architecture.webp",
       "desc": {
-        "en": "Production and staging infrastructure on AWS for a client WordPress site, provisioned with Terraform: EC2 with dynamic AMI lookup, persistent EBS volume with idempotent automated mounting, and remote state in S3 with DynamoDB locking.",
-        "pt": "Infraestrutura de produção e staging na AWS para o site WordPress de um cliente, provisionada com Terraform: EC2 com busca dinâmica de AMI, volume EBS persistente com montagem automatizada e idempotente, e state remoto no S3 com lock no DynamoDB."
+        "en": "AWS infrastructure for AgroNegociar's news portal, in production and staging, built from scratch with Terraform.",
+        "pt": "Infraestrutura AWS do portal de notícias da AgroNegociar, em produção e homologação, criada do zero com Terraform."
       },
       "problem": {
-        "en": "A client WordPress site needed production and staging environments that could be provisioned the same way each time, without losing site data when an instance is replaced.",
-        "pt": "O site WordPress de um cliente precisava de ambientes de produção e staging provisionados sempre do mesmo jeito, sem perder dados quando uma instância é substituída."
+        "en": "The WordPress news portal needed servers that could be rebuilt without losing content and without manual setup.",
+        "pt": "O portal de notícias em WordPress precisava de servidores que pudessem ser recriados sem perder conteúdo e sem configuração manual."
       },
       "solution": {
-        "en": "Both environments are described in Terraform. EC2 instances look up their AMI dynamically, site data lives on a persistent EBS volume that is mounted automatically and idempotently, and Terraform state is stored remotely in S3 with DynamoDB locking.",
-        "pt": "Os dois ambientes estão descritos em Terraform. As instâncias EC2 buscam a AMI dinamicamente, os dados do site ficam num volume EBS persistente montado de forma automatizada e idempotente, e o state do Terraform fica remoto no S3 com lock no DynamoDB."
+        "en": "One EC2 instance per environment that configures itself on boot. The site lives on a separate EBS disk that survives replacing the server. Terraform state is kept in S3 with a DynamoDB lock, and DNS and SSL run on Cloudflare.",
+        "pt": "Uma máquina EC2 por ambiente, que se configura sozinha ao subir. O site fica num disco EBS separado, que sobrevive à troca do servidor. O estado do Terraform fica no S3 com trava no DynamoDB, e o DNS e o SSL ficam no Cloudflare."
       },
       "adrs": [
         {
           "id": "—",
           "title": {
-            "en": "Remote state in S3 with DynamoDB locking",
-            "pt": "State remoto no S3 com lock no DynamoDB"
+            "en": "Data disk separate from the server",
+            "pt": "Disco separado da máquina"
           },
           "body": {
-            "en": "State is stored outside any one machine and protected against concurrent runs.",
-            "pt": "O state fica fora de qualquer máquina e protegido contra execuções simultâneas."
+            "en": "Replacing or rebuilding the instance never deletes the site.",
+            "pt": "Trocar ou recriar o servidor não apaga o site."
           }
         },
         {
           "id": "—",
           "title": {
-            "en": "Site data on a persistent EBS volume",
-            "pt": "Dados do site num volume EBS persistente"
+            "en": "Remote state with a lock",
+            "pt": "Estado remoto com trava"
           },
           "body": {
-            "en": "The instance can be replaced without losing content.",
-            "pt": "A instância pode ser substituída sem perder conteúdo."
+            "en": "State lives in S3 and DynamoDB blocks two people from applying at the same time.",
+            "pt": "O estado fica no S3 e o DynamoDB impede duas pessoas de aplicar ao mesmo tempo."
           }
         },
         {
           "id": "—",
           "title": {
-            "en": "Dynamic AMI lookup",
-            "pt": "Busca dinâmica de AMI"
+            "en": "Always the current Ubuntu image",
+            "pt": "Imagem do Ubuntu sempre atual"
           },
           "body": {
-            "en": "No hard-coded image IDs in the configuration.",
-            "pt": "Nenhum ID de imagem fixo na configuração."
+            "en": "The AMI is looked up from Canonical at plan time, with no hard-coded ID.",
+            "pt": "A AMI é buscada na Canonical na hora, sem ID fixo no código."
+          }
+        },
+        {
+          "id": "—",
+          "title": {
+            "en": "If I built it today",
+            "pt": "Se eu fizesse hoje"
+          },
+          "body": {
+            "en": "One module for both environments, SSM instead of open SSH, and the off-site backup finished.",
+            "pt": "Um módulo para os dois ambientes, acesso pelo SSM em vez de SSH aberto, e o backup completo fora da máquina."
           }
         }
       ],
@@ -546,90 +563,123 @@
       "slug": "keeptask",
       "name": "Keeptask",
       "cats": [
+        "php",
         "ai"
       ],
       "main": true,
       "repo": false,
       "demo": false,
       "tag": {
-        "en": "AI / Agents",
-        "pt": "IA / Agentes"
+        "en": "PHP · Laravel · Product",
+        "pt": "PHP · Laravel · Produto"
       },
       "year": "2026",
       "type": {
-        "en": "Personal project",
-        "pt": "Projeto pessoal"
+        "en": "Product at KeepCloud",
+        "pt": "Produto da KeepCloud"
       },
       "status": {
         "en": "Active",
         "pt": "Ativo"
       },
       "stack": [
-        "Claude Code",
-        "ADRs",
-        "multi-agent workflow"
+        "PHP 8.5",
+        "Laravel 13",
+        "Livewire 4",
+        "Reverb",
+        "Redis / Horizon",
+        "Meilisearch",
+        "MySQL",
+        "Pest",
+        "Larastan max",
+        "NativePHP Mobile",
+        "Docker",
+        "Terraform"
       ],
-      "shot": "keeptask-board.webp",
+      "shot": "keeptask-kanban.webp",
       "desc": {
-        "en": "Orchestrates AI coding agents. An orchestrator plans, an executor implements, and every decision is recorded as an ADR.",
-        "pt": "Orquestra agentes de IA para programação. Um orquestrador planeja, um executor implementa e cada decisão vira um ADR."
+        "en": "B2B task and project management platform by KeepCloud: a Laravel web app, a native iOS and Android app, and a public site with documentation.",
+        "pt": "Plataforma B2B de gestão de tarefas e projetos da KeepCloud: web em Laravel, app nativo para iOS e Android, e site com documentação."
       },
       "problem": {
-        "en": "Coding agents drift on long tasks: they lose the plan, skip tests and make decisions nobody wrote down.",
-        "pt": "Agentes de programação se perdem em tarefas longas: esquecem o plano, pulam testes e tomam decisões que ninguém registrou."
+        "en": "Teams track work in spreadsheets and closed tools, with no single place for deadlines, time spent and cost.",
+        "pt": "Equipes controlam demandas em planilhas e ferramentas fechadas, sem prazo, tempo e custo no mesmo lugar."
       },
       "solution": {
-        "en": "An orchestrator plans the work in rounds and reviews every report, an executor implements each round with tests, grilling sessions settle critical decisions one question at a time, and every decision is written as an ADR that the next round reads first.",
-        "pt": "Um orquestrador planeja o trabalho em rodadas e revisa cada relatório, um executor implementa cada rodada com testes, sessões de grilling decidem os pontos críticos uma pergunta por vez, e cada decisão vira um ADR que a próxima rodada lê primeiro."
+        "en": "Kanban, list and timeline views; SLA and a timer per stage; no-code automations; forms and public portals; dashboards and a budget vs. actual cost report; a REST API, signed webhooks and Google Calendar. The mobile app is built with NativePHP and renders truly native screens (SwiftUI and Jetpack Compose) on top of the same API.",
+        "pt": "Kanban, lista e linha do tempo; SLA e cronômetro por etapa; automações sem código; formulários e portais públicos; dashboards e relatório de custo orçado × realizado; API REST, webhooks assinados e Google Calendar. O app móvel é feito em NativePHP e tem telas nativas de verdade (SwiftUI e Jetpack Compose) em cima da mesma API."
       },
       "adrs": [
         {
           "id": "—",
           "title": {
-            "en": "Separate planning from execution",
-            "pt": "Separar planejamento de execução"
+            "en": "A thin mobile client",
+            "pt": "App móvel como casca fina"
           },
           "body": {
-            "en": "The agent that writes code never decides scope.",
-            "pt": "O agente que escreve código nunca decide o escopo."
+            "en": "Business rules live only in the API; the app reads, writes and notifies.",
+            "pt": "A regra de negócio fica só na API; o app lê, escreve e avisa."
           }
         },
         {
           "id": "—",
           "title": {
-            "en": "ADRs as agent memory",
-            "pt": "ADRs como memória dos agentes"
+            "en": "Planning Poker inside the web app",
+            "pt": "Planning Poker dentro da web"
           },
           "body": {
-            "en": "Plain Markdown files in the repo, readable by people and agents.",
-            "pt": "Arquivos Markdown no repositório, legíveis por pessoas e agentes."
+            "en": "A separate mobile app was dropped: the responsive web already covers phones.",
+            "pt": "O app separado foi descartado: a web responsiva já atende o celular."
+          }
+        },
+        {
+          "id": "—",
+          "title": {
+            "en": "Built with orchestrated AI agents",
+            "pt": "Desenvolvido com agentes de IA orquestrados"
+          },
+          "body": {
+            "en": "An orchestrator plans each round, an executor implements it with tests, and decisions are recorded as ADRs.",
+            "pt": "Um orquestrador planeja cada rodada, um executor implementa com testes, e as decisões viram ADRs."
           }
         }
       ],
       "shots": [
         {
-          "file": "keeptask-board.webp",
+          "file": "keeptask-kanban.webp",
           "caption": {
-            "en": "Task board split by the orchestrator",
-            "pt": "Quadro de tarefas dividido pelo orquestrador"
+            "en": "Kanban board",
+            "pt": "Quadro Kanban"
           },
           "alt": {
-            "en": "Board with columns for planned, in progress and reviewed tasks",
-            "pt": "Quadro com colunas para tarefas planejadas, em andamento e revisadas"
+            "en": "Keeptask Kanban board with tasks in stages",
+            "pt": "Quadro Kanban do Keeptask com tarefas nas etapas"
           }
         },
         {
-          "file": "keeptask-adr.webp",
+          "file": "keeptask-dashboard.webp",
           "caption": {
-            "en": "An ADR generated during a run",
-            "pt": "Um ADR gerado durante uma execução"
+            "en": "Configurable dashboard",
+            "pt": "Dashboard configurável"
           },
           "alt": {
-            "en": "Markdown document with context, decision and consequences",
-            "pt": "Documento Markdown com contexto, decisão e consequências"
+            "en": "Keeptask dashboard with charts",
+            "pt": "Dashboard do Keeptask com gráficos"
+          }
+        },
+        {
+          "file": "keeptask-mobile.webp",
+          "caption": {
+            "en": "Native mobile app",
+            "pt": "App móvel nativo"
+          },
+          "alt": {
+            "en": "Task list in the Keeptask mobile app",
+            "pt": "Lista de tarefas no app móvel do Keeptask"
           }
         }
-      ]
+      ],
+      "site": "https://keeptask.io"
     },
     {
       "slug": "mern",
@@ -955,8 +1005,8 @@
         "pt": "Remoto"
       },
       "summary": {
-        "en": "Institutional site and news portal on WordPress (child theme and custom plugins); AWS environments with Terraform (production and staging); DNS and SSL via Cloudflare; WordOps provisioning; Docker; technical SEO and performance; worked directly with the client and coordinated the design team.",
-        "pt": "Site institucional e portal de notícias em WordPress (child theme e plugins próprios); ambientes AWS com Terraform (produção e staging); DNS e SSL via Cloudflare; provisionamento com WordOps; Docker; SEO técnico e performance; contato direto com o cliente e coordenação do time de design."
+        "en": "Institutional site and news portal on WordPress (child theme over GhostPool's Network theme, plus custom plugins); AWS environments with Terraform (production and staging); DNS and SSL via Cloudflare; WordOps provisioning; Docker; technical SEO and performance; worked directly with the client and coordinated the design team.",
+        "pt": "Site institucional e portal de notícias em WordPress (child theme sobre o tema Network, da GhostPool, e plugins próprios); ambientes AWS com Terraform (produção e staging); DNS e SSL via Cloudflare; provisionamento com WordOps; Docker; SEO técnico e performance; contato direto com o cliente e coordenação do time de design."
       },
       "keys": [
         "WordPress",

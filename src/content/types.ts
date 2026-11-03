@@ -20,6 +20,8 @@ export type Project = {
   main: boolean;
   repo: boolean;
   demo: boolean;
+  /** Public product site, when the code itself is private. */
+  site?: string;
   tag: Localized;
   year: string;
   type: Localized;

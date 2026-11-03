@@ -146,9 +146,15 @@ export default async function ProjectPage({ params }: { params: Params }) {
                 {s("privateCode")}
               </span>
             )}
-            <span className="flex min-h-12 items-center rounded-full border border-dashed border-line-strong px-[22px] text-[15px] text-muted">
-              {s("noDemo")}
-            </span>
+            {p.site ? (
+              <a href={p.site} className="flex min-h-12 items-center rounded-full border border-line-strong px-[22px] text-[15px] font-medium hover:border-ink">
+                {s("siteLink")}
+              </a>
+            ) : (
+              <span className="flex min-h-12 items-center rounded-full border border-dashed border-line-strong px-[22px] text-[15px] text-muted">
+                {s("noDemo")}
+              </span>
+            )}
           </div>
         </Block>
 
