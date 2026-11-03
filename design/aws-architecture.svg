@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <!-- Sanitised architecture of the client WordPress infrastructure. No account IDs, domains or IPs. -->
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9aa198"/>
+    </marker>
+    <style>
+      .t { font-family: 'Segoe UI', Arial, sans-serif; fill: #e8ebe6; }
+      .m { font-family: Consolas, 'Courier New', monospace; fill: #9aa198; }
+      .a { font-family: Consolas, 'Courier New', monospace; fill: #c5ec55; }
+      .box { fill: #1b1f1c; stroke: #2c312d; stroke-width: 2; }
+      .hl { fill: #1b1f1c; stroke: #c5ec55; stroke-width: 2; }
+      .line { stroke: #9aa198; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1000" fill="#0d0f0e"/>
+
+  <!-- Cloudflare -->
+  <rect class="box" x="600" y="36" width="400" height="88" rx="14"/>
+  <text class="t" x="800" y="74" font-size="26" font-weight="600" text-anchor="middle">Cloudflare</text>
+  <text class="m" x="800" y="104" font-size="18" text-anchor="middle">DNS · SSL</text>
+
+  <!-- Terraform operator -->
+  <rect class="hl" x="40" y="400" width="290" height="150" rx="14"/>
+  <text class="t" x="185" y="452" font-size="28" font-weight="700" text-anchor="middle">Terraform</text>
+  <text class="a" x="185" y="486" font-size="18" text-anchor="middle">plan · apply</text>
+  <text class="m" x="185" y="518" font-size="16" text-anchor="middle">operator machine</text>
+
+  <!-- AWS region -->
+  <rect x="380" y="166" width="1180" height="800" rx="20" fill="none" stroke="#2c312d" stroke-width="2" stroke-dasharray="10 8"/>
+  <text class="a" x="410" y="204" font-size="20">AWS · us-east-1</text>
+
+  <!-- Two environments -->
+  <g id="envs">
+    <!-- Production -->
+    <rect class="box" x="420" y="226" width="540" height="480" rx="16" fill-opacity="0.4"/>
+    <text class="t" x="446" y="266" font-size="24" font-weight="600">Production</text>
+    <rect x="446" y="290" width="488" height="190" rx="12" fill="none" stroke="#3a403b" stroke-width="2" stroke-dasharray="6 6"/>
+    <text class="m" x="462" y="316" font-size="15">Security group · HTTP · HTTPS · SSH</text>
+    <rect class="hl" x="470" y="332" width="440" height="128" rx="12"/>
+    <text class="t" x="494" y="370" font-size="24" font-weight="600">EC2 · Ubuntu 24.04</text>
+    <text class="m" x="494" y="400" font-size="16">AMI looked up at plan time</text>
+    <text class="m" x="494" y="426" font-size="16">user_data: mount disk, set up /var/www</text>
+    <rect x="806" y="346" width="90" height="30" rx="15" fill="#232724"/>
+    <text class="a" x="851" y="367" font-size="15" text-anchor="middle">Elastic IP</text>
+    <path class="line" d="M690 460 L690 548"/>
+    <text class="m" x="704" y="512" font-size="15">attach</text>
+    <rect class="box" x="470" y="556" width="440" height="116" rx="12"/>
+    <text class="t" x="494" y="596" font-size="24" font-weight="600">EBS gp3 · site data</text>
+    <text class="m" x="494" y="626" font-size="16">mounted as /var/www by UUID</text>
+    <text class="a" x="494" y="652" font-size="16">prevent_destroy</text>
+
+    <!-- Staging -->
+    <rect class="box" x="980" y="226" width="540" height="480" rx="16" fill-opacity="0.4"/>
+    <text class="t" x="1006" y="266" font-size="24" font-weight="600">Staging</text>
+    <rect x="1006" y="290" width="488" height="190" rx="12" fill="none" stroke="#3a403b" stroke-width="2" stroke-dasharray="6 6"/>
+    <text class="m" x="1022" y="316" font-size="15">Security group · HTTP · HTTPS · SSH</text>
+    <rect class="hl" x="1030" y="332" width="440" height="128" rx="12"/>
+    <text class="t" x="1054" y="370" font-size="24" font-weight="600">EC2 · Ubuntu 24.04</text>
+    <text class="m" x="1054" y="400" font-size="16">same code, smaller disk</text>
+    <text class="m" x="1054" y="426" font-size="16">user_data: mount disk, set up /var/www</text>
+    <rect x="1366" y="346" width="90" height="30" rx="15" fill="#232724"/>
+    <text class="a" x="1411" y="367" font-size="15" text-anchor="middle">Elastic IP</text>
+    <path class="line" d="M1250 460 L1250 548"/>
+    <text class="m" x="1264" y="512" font-size="15">attach</text>
+    <rect class="box" x="1030" y="556" width="440" height="116" rx="12"/>
+    <text class="t" x="1054" y="596" font-size="24" font-weight="600">EBS gp3 · site data</text>
+    <text class="m" x="1054" y="626" font-size="16">mounted as /var/www by UUID</text>
+    <text class="a" x="1054" y="652" font-size="16">prevent_destroy</text>
+  </g>
+
+  <!-- Remote state -->
+  <text class="m" x="420" y="762" font-size="16">Remote state</text>
+  <rect class="box" x="420" y="778" width="540" height="150" rx="14"/>
+  <text class="t" x="446" y="826" font-size="24" font-weight="600">S3 · terraform.tfstate</text>
+  <text class="m" x="446" y="858" font-size="16">encrypted, outside any one machine</text>
+  <rect class="box" x="980" y="778" width="540" height="150" rx="14"/>
+  <text class="t" x="1006" y="826" font-size="24" font-weight="600">DynamoDB · LockID</text>
+  <text class="m" x="1006" y="858" font-size="16">blocks two applies at the same time</text>
+  <path class="line" d="M960 853 L978 853"/>
+
+  <!-- Flows -->
+  <path class="line" d="M740 124 L690 222"/>
+  <path class="line" d="M860 124 L1250 222"/>
+  <path class="line" d="M330 450 L416 450"/>
+  <text class="m" x="338" y="438" font-size="14">apply</text>
+  <path class="line" d="M185 550 L185 853 L416 853"/>
+  <text class="m" x="196" y="700" font-size="14">state + lock</text>
+</svg>
