@@ -1,5 +1,5 @@
 import data from "./site.json";
-import { locales, type Locale, type Localized, type Project, type SiteContent } from "./types";
+import { locales, type Locale, type Localized, type Project, type SiteContent, type Step } from "./types";
 
 const site = data as SiteContent;
 
@@ -41,6 +41,26 @@ export function navLabel(locale: Locale, key: string): string {
     throw new Error(`Missing nav label "${key}" for ${locale}`);
   }
   return nav[key];
+}
+
+/** GitHub repository names, which differ in case from the slugs. */
+const REPOS: Record<string, string> = {
+  phparrot: "PHParrot",
+  phporto: "PHPorto",
+  mern: "MERN",
+  mean: "MEAN",
+  nestauth: "NestAuth",
+  "crud-ts": "crud-ts",
+};
+
+export function repoUrl(project: Project): string | null {
+  const name = REPOS[project.slug];
+  return project.repo && name ? `https://github.com/caiobarilli/${name}` : null;
+}
+
+export function steps(locale: Locale): Step[] {
+  const value = ui(locale).steps;
+  return Array.isArray(value) ? value : [];
 }
 
 export function mainProjects(): Project[] {

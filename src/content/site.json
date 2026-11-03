@@ -43,7 +43,7 @@
       "gallery": "Screenshots",
       "links": "Links",
       "viewCode": "Source on GitHub ↗",
-      "privateCode": "Source is private (client work)",
+      "privateCode": "Source is private",
       "demo": "Live demo ↗",
       "noDemo": "No public demo",
       "nextProject": "Next project",
@@ -142,7 +142,7 @@
       "gallery": "Capturas de tela",
       "links": "Links",
       "viewCode": "Código no GitHub ↗",
-      "privateCode": "Código privado (projeto de cliente)",
+      "privateCode": "Código privado",
       "demo": "Demo ao vivo ↗",
       "noDemo": "Sem demo pública",
       "nextProject": "Próximo projeto",
@@ -549,7 +549,7 @@
         "ai"
       ],
       "main": true,
-      "repo": true,
+      "repo": false,
       "demo": false,
       "tag": {
         "en": "AI / Agents",
@@ -641,8 +641,8 @@
       "repo": true,
       "demo": false,
       "tag": {
-        "en": "TypeScript",
-        "pt": "TypeScript"
+        "en": "JavaScript",
+        "pt": "JavaScript"
       },
       "year": "2023",
       "type": {
