@@ -1,0 +1,1032 @@
+{
+  "ui": {
+    "en": {
+      "nav": {
+        "home": "Home",
+        "projects": "Projects",
+        "experience": "Experience",
+        "about": "About",
+        "contact": "Contact"
+      },
+      "skip": "Skip to content",
+      "theme": "Switch theme",
+      "menu": "Menu",
+      "lang": "Language",
+      "role": "PHP & Laravel Engineer · DevOps · Agentic workflows",
+      "heroLine": "I build with PHP and Laravel, ship it with infrastructure as code, and develop it with AI agents. Every project here is real, documented and tested.",
+      "seeWork": "See the work",
+      "featured": "Featured work",
+      "allProjects": "All projects →",
+      "caseStudy": "Read the case study →",
+      "alsoTs": "Also built with JavaScript & TypeScript",
+      "alsoTsSub": "Earlier projects in Node.js, Angular, NestJS and Next.js.",
+      "stack": "Stack",
+      "latest": "Latest on Medium",
+      "allArticles": "All articles ↗",
+      "rssNote": "Placeholder · titles come from the Medium RSS feed at build time",
+      "readMedium": "Read on Medium ↗",
+      "ctaTitle": "Let's build something solid.",
+      "ctaSub": "Open to PHP & Laravel, DevOps and agentic engineering roles.",
+      "emailPending": "email · pending",
+      "footer": "Built with Next.js + TypeScript · static export on GitHub Pages",
+      "tokens": "Design tokens",
+      "nf404": "404 page",
+      "projectsTitle": "Projects",
+      "projectsSub": "Laravel products, platform work and agent tooling, plus earlier JavaScript and TypeScript projects.",
+      "filterLabel": "Filter by category",
+      "projectsWord": "projects",
+      "back": "← All projects",
+      "problem": "Problem",
+      "solution": "Solution",
+      "decisions": "Architecture decisions",
+      "decisionsSub": "The decisions that shaped the project.",
+      "gallery": "Screenshots",
+      "links": "Links",
+      "viewCode": "Source on GitHub ↗",
+      "privateCode": "Source is private (client work)",
+      "demo": "Live demo ↗",
+      "noDemo": "No public demo",
+      "nextProject": "Next project",
+      "year": "Year",
+      "type": "Type",
+      "status": "Status",
+      "close": "Close",
+      "prev": "Previous",
+      "next": "Next",
+      "altLabel": "Alt text",
+      "placeholder": "Placeholder",
+      "screenshot": "screenshot",
+      "expTitle": "Experience",
+      "expSub": "Roles over the years, described by the work rather than by company names.",
+      "aboutTitle": "About",
+      "aboutP1": "Fullstack developer with 10+ years in web, focused today on PHP and Laravel, plus the infrastructure underneath (Docker, Terraform, AWS). Currently doing an MBA in DevOps, Automation & Cloud Strategy.",
+      "howTitle": "How I work",
+      "howSub": "A multi-agent workflow with clear roles. Every change is reviewed before it ships.",
+      "steps": [
+        {
+          "n": "01",
+          "title": "Orchestrator",
+          "body": "Plans the work in rounds and reviews every report."
+        },
+        {
+          "n": "02",
+          "title": "Executor",
+          "body": "Implements one round at a time, with tests, and commits locally."
+        },
+        {
+          "n": "03",
+          "title": "Grilling",
+          "body": "Dedicated sessions that settle critical decisions one question at a time and write them as ADRs."
+        },
+        {
+          "n": "04",
+          "title": "Maintainer (me)",
+          "body": "I decide, review and merge with fast-forward only. Nothing ships without passing the quality gate."
+        }
+      ],
+      "wsTitle": "Workstation",
+      "wsBody": "Windows 11 with WSL2 and Hyper-V. Linux tooling where it belongs, PowerShell for the host, and one machine for PHP, Docker and Terraform work. It is a deliberate choice and it works well.",
+      "aboutCta": "Get in touch →",
+      "contactTitle": "Contact",
+      "contactSub": "Email or LinkedIn is the fastest way to reach me. There is no form because this site is fully static.",
+      "nfTitle": "Page not found",
+      "nfBody": "The page you were looking for doesn't exist or has moved.",
+      "nfHome": "Back to home",
+      "nfProjects": "Browse projects",
+      "tkTitle": "Design tokens",
+      "tkSub": "The values behind both themes. Names map to CSS variables and Tailwind theme keys.",
+      "eduTitle": "Education",
+      "photoAlt": "Photo of Caio Barilli",
+      "photo": "photo"
+    },
+    "pt": {
+      "nav": {
+        "home": "Início",
+        "projects": "Projetos",
+        "experience": "Experiência",
+        "about": "Sobre",
+        "contact": "Contato"
+      },
+      "skip": "Pular para o conteúdo",
+      "theme": "Trocar tema",
+      "menu": "Menu",
+      "lang": "Idioma",
+      "role": "Engenheiro PHP & Laravel · DevOps · Fluxos com agentes",
+      "heroLine": "Construo com PHP e Laravel, publico com infraestrutura como código e desenvolvo com agentes de IA. Todo projeto aqui é real, documentado e testado.",
+      "seeWork": "Ver os projetos",
+      "featured": "Projetos em destaque",
+      "allProjects": "Todos os projetos →",
+      "caseStudy": "Ler o estudo de caso →",
+      "alsoTs": "Também feitos com JavaScript e TypeScript",
+      "alsoTsSub": "Projetos anteriores em Node.js, Angular, NestJS e Next.js.",
+      "stack": "Stack",
+      "latest": "Últimos artigos no Medium",
+      "allArticles": "Todos os artigos ↗",
+      "rssNote": "Placeholder · os títulos vêm do RSS do Medium no build",
+      "readMedium": "Ler no Medium ↗",
+      "ctaTitle": "Vamos construir algo sólido.",
+      "ctaSub": "Aberto a vagas de PHP & Laravel, DevOps e engenharia com agentes.",
+      "emailPending": "e-mail · pendente",
+      "footer": "Feito com Next.js + TypeScript · exportação estática no GitHub Pages",
+      "tokens": "Tokens de design",
+      "nf404": "Página 404",
+      "projectsTitle": "Projetos",
+      "projectsSub": "Produtos em Laravel, trabalho de plataforma e ferramentas com agentes, além de projetos anteriores em JavaScript e TypeScript.",
+      "filterLabel": "Filtrar por categoria",
+      "projectsWord": "projetos",
+      "back": "← Todos os projetos",
+      "problem": "Problema",
+      "solution": "Solução",
+      "decisions": "Decisões de arquitetura",
+      "decisionsSub": "As decisões que moldaram o projeto.",
+      "gallery": "Capturas de tela",
+      "links": "Links",
+      "viewCode": "Código no GitHub ↗",
+      "privateCode": "Código privado (projeto de cliente)",
+      "demo": "Demo ao vivo ↗",
+      "noDemo": "Sem demo pública",
+      "nextProject": "Próximo projeto",
+      "year": "Ano",
+      "type": "Tipo",
+      "status": "Status",
+      "close": "Fechar",
+      "prev": "Anterior",
+      "next": "Próxima",
+      "altLabel": "Texto alternativo",
+      "placeholder": "Placeholder",
+      "screenshot": "captura",
+      "expTitle": "Experiência",
+      "expSub": "Funções ao longo dos anos, descritas pelo trabalho e não pelo nome das empresas.",
+      "aboutTitle": "Sobre",
+      "aboutP1": "Desenvolvedor fullstack com mais de 10 anos em web, hoje focado em PHP e Laravel e na infraestrutura por baixo (Docker, Terraform, AWS). Atualmente cursando um MBA em DevOps, Automation & Cloud Strategy.",
+      "howTitle": "Como eu trabalho",
+      "howSub": "Um fluxo multiagente com papéis claros. Toda mudança é revisada antes de ser publicada.",
+      "steps": [
+        {
+          "n": "01",
+          "title": "Orquestrador",
+          "body": "Planeja o trabalho em rodadas e revisa cada relatório."
+        },
+        {
+          "n": "02",
+          "title": "Executor",
+          "body": "Implementa uma rodada por vez, com testes, e faz commit local."
+        },
+        {
+          "n": "03",
+          "title": "Grilling",
+          "body": "Sessões dedicadas que resolvem decisões críticas uma pergunta por vez e as registram como ADRs."
+        },
+        {
+          "n": "04",
+          "title": "Mantenedor (eu)",
+          "body": "Eu decido, reviso e faço merge apenas com fast-forward. Nada é publicado sem passar pelo quality gate."
+        }
+      ],
+      "wsTitle": "Estação de trabalho",
+      "wsBody": "Windows 11 com WSL2 e Hyper-V. Ferramentas Linux onde fazem sentido, PowerShell para o host e uma única máquina para PHP, Docker e Terraform. É uma escolha deliberada e funciona bem.",
+      "aboutCta": "Entrar em contato →",
+      "contactTitle": "Contato",
+      "contactSub": "E-mail ou LinkedIn são os jeitos mais rápidos de falar comigo. Não há formulário porque o site é totalmente estático.",
+      "nfTitle": "Página não encontrada",
+      "nfBody": "A página que você procurava não existe ou mudou de endereço.",
+      "nfHome": "Voltar ao início",
+      "nfProjects": "Ver projetos",
+      "tkTitle": "Tokens de design",
+      "tkSub": "Os valores por trás dos dois temas. Os nomes correspondem às variáveis CSS e às chaves do tema Tailwind.",
+      "eduTitle": "Formação",
+      "photoAlt": "Foto do Caio Barilli",
+      "photo": "foto"
+    }
+  },
+  "cats": [
+    {
+      "id": "all",
+      "en": "All",
+      "pt": "Todos"
+    },
+    {
+      "id": "php",
+      "en": "PHP",
+      "pt": "PHP"
+    },
+    {
+      "id": "devops",
+      "en": "DevOps / IaC",
+      "pt": "DevOps / IaC"
+    },
+    {
+      "id": "ai",
+      "en": "AI / Agents",
+      "pt": "IA / Agentes"
+    },
+    {
+      "id": "ts",
+      "en": "TypeScript",
+      "pt": "TypeScript"
+    }
+  ],
+  "stack": [
+    "PHP",
+    "Laravel",
+    "Livewire",
+    "Pest / Larastan",
+    "Docker",
+    "Terraform",
+    "AWS",
+    "GitHub Actions",
+    "PowerShell / WSL / Hyper-V",
+    "Claude Code / agents",
+    "TypeScript",
+    "Node.js",
+    "React",
+    "NestJS",
+    "Angular"
+  ],
+  "projects": [
+    {
+      "slug": "phparrot",
+      "name": "PHParrot",
+      "cats": [
+        "php",
+        "devops"
+      ],
+      "main": true,
+      "repo": true,
+      "demo": false,
+      "tag": {
+        "en": "PHP · Laravel",
+        "pt": "PHP · Laravel"
+      },
+      "year": "2026",
+      "type": {
+        "en": "Personal project",
+        "pt": "Projeto pessoal"
+      },
+      "status": {
+        "en": "Active",
+        "pt": "Ativo"
+      },
+      "stack": [
+        "Laravel 13",
+        "PHP 8.5",
+        "Livewire",
+        "Whisper (local)",
+        "Docker",
+        "Terraform",
+        "Pest"
+      ],
+      "shot": "phparrot-session.webp",
+      "desc": {
+        "en": "Language practice by speaking. Speech is transcribed locally with Whisper, so audio never leaves the machine.",
+        "pt": "Treino de idiomas pela fala. A voz é transcrita localmente com Whisper, e o áudio nunca sai da máquina."
+      },
+      "problem": {
+        "en": "Language apps train reading and tapping, not speaking. Cloud speech APIs solve that, but they send every recording to a third party and bill per minute.",
+        "pt": "Apps de idiomas treinam leitura e toque, não fala. APIs de voz na nuvem resolvem isso, mas enviam cada gravação a terceiros e cobram por minuto."
+      },
+      "solution": {
+        "en": "A Laravel and Livewire app for speaking practice. Whisper runs locally in Docker to transcribe what you say, and the infrastructure is provisioned with Terraform.",
+        "pt": "Um app em Laravel e Livewire para treinar a fala. O Whisper roda localmente em Docker para transcrever o que você diz, e a infraestrutura é provisionada com Terraform."
+      },
+      "adrs": [
+        {
+          "id": "ADR 0001",
+          "title": {
+            "en": "Stack",
+            "pt": "Stack"
+          },
+          "body": {
+            "en": "Laravel 13, PHP 8.5, Livewire, SQLite.",
+            "pt": "Laravel 13, PHP 8.5, Livewire, SQLite."
+          }
+        },
+        {
+          "id": "ADR 0004",
+          "title": {
+            "en": "Voice and transcription",
+            "pt": "Voz e transcrição"
+          },
+          "body": {
+            "en": "Whisper runs locally; audio never leaves the server.",
+            "pt": "O Whisper roda localmente; o áudio nunca sai do servidor."
+          }
+        },
+        {
+          "id": "ADR 0009",
+          "title": {
+            "en": "CI for containers",
+            "pt": "CI para containers"
+          },
+          "body": {
+            "en": "Hadolint, Trivy, SARIF and SBOM.",
+            "pt": "Hadolint, Trivy, SARIF e SBOM."
+          }
+        }
+      ],
+      "shots": [
+        {
+          "file": "phparrot-session.webp",
+          "caption": {
+            "en": "Practice session",
+            "pt": "Sessão de treino"
+          },
+          "alt": {
+            "en": "PHParrot practice screen",
+            "pt": "Tela de treino do PHParrot"
+          }
+        },
+        {
+          "file": "phparrot-2.webp",
+          "caption": {
+            "en": "Caption pending",
+            "pt": "Legenda pendente"
+          },
+          "alt": {
+            "en": "PHParrot screenshot",
+            "pt": "Captura do PHParrot"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "phporto",
+      "name": "PHPorto",
+      "cats": [
+        "php"
+      ],
+      "main": true,
+      "repo": true,
+      "demo": false,
+      "tag": {
+        "en": "PHP · PowerShell",
+        "pt": "PHP · PowerShell"
+      },
+      "year": "2026",
+      "type": {
+        "en": "Personal project",
+        "pt": "Projeto pessoal"
+      },
+      "status": {
+        "en": "Active",
+        "pt": "Ativo"
+      },
+      "stack": [
+        "PHP 8.5",
+        "PowerShell",
+        "WSL2",
+        "Hyper-V",
+        "Ollama",
+        "Pest / Pester"
+      ],
+      "shot": "phporto-dashboard.webp",
+      "desc": {
+        "en": "A browser panel for Windows power users: run commands in WSL, run allowlisted Windows admin actions, manage Hyper-V VMs and a local LLM (Ollama), all bound to localhost and token-protected.",
+        "pt": "Um painel no navegador para quem usa o Windows a fundo: rode comandos no WSL, execute ações administrativas do Windows de uma allowlist, gerencie VMs Hyper-V e um LLM local (Ollama), tudo em localhost e protegido por token."
+      },
+      "problem": {
+        "en": "WSL, Windows admin tasks, Hyper-V VMs and a local LLM are each managed from a different console.",
+        "pt": "WSL, tarefas administrativas do Windows, VMs Hyper-V e um LLM local são gerenciados cada um em um console diferente."
+      },
+      "solution": {
+        "en": "One PHP panel in the browser, bound to localhost and protected by a token. It runs commands in WSL, runs Windows admin actions from an allowlist, manages Hyper-V VMs and controls a local Ollama instance.",
+        "pt": "Um painel PHP no navegador, em localhost e protegido por token. Ele roda comandos no WSL, executa ações administrativas do Windows a partir de uma allowlist, gerencia VMs Hyper-V e controla uma instância local do Ollama."
+      },
+      "adrs": [
+        {
+          "id": "ADR 0001",
+          "title": {
+            "en": "Allowlist and protected folder",
+            "pt": "Allowlist e pasta protegida"
+          },
+          "body": {
+            "en": "Only actions listed in a manifest, from a protected folder, can run elevated on the host.",
+            "pt": "Só ações listadas num manifesto, de uma pasta protegida, rodam elevadas no host."
+          }
+        },
+        {
+          "id": "ADR 0002",
+          "title": {
+            "en": "Single use and UAC per sensitive action",
+            "pt": "Uso único e UAC por ação sensível"
+          },
+          "body": {
+            "en": "Each sensitive action needs its own approval; nothing reuses an elevated session.",
+            "pt": "Cada ação sensível pede a própria aprovação; nada reaproveita uma sessão elevada."
+          }
+        },
+        {
+          "id": "ADR 0008",
+          "title": {
+            "en": "Ollama per user, without elevation",
+            "pt": "Ollama por usuário, sem elevação"
+          },
+          "body": {
+            "en": "Pinned version with SHA-256 check, loopback only, and a channel that runs as the regular user.",
+            "pt": "Versão fixada com SHA-256 conferido, só loopback e um canal que roda como o usuário comum."
+          }
+        }
+      ],
+      "shots": [
+        {
+          "file": "phporto-dashboard.webp",
+          "caption": {
+            "en": "Panel overview",
+            "pt": "Visão geral do painel"
+          },
+          "alt": {
+            "en": "PHPorto panel in the browser",
+            "pt": "Painel do PHPorto no navegador"
+          }
+        },
+        {
+          "file": "phporto-wsl.webp",
+          "caption": {
+            "en": "Running a command in WSL",
+            "pt": "Rodando um comando no WSL"
+          },
+          "alt": {
+            "en": "Command output from WSL shown in the panel",
+            "pt": "Saída de um comando do WSL exibida no painel"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "aws-terraform",
+      "name": "AWS platform with Terraform",
+      "cats": [
+        "devops"
+      ],
+      "main": true,
+      "repo": false,
+      "demo": false,
+      "tag": {
+        "en": "DevOps / IaC",
+        "pt": "DevOps / IaC"
+      },
+      "year": "2025",
+      "type": {
+        "en": "Client work, anonymised",
+        "pt": "Projeto de cliente, anonimizado"
+      },
+      "status": {
+        "en": "In production",
+        "pt": "Em produção"
+      },
+      "stack": [
+        "Terraform",
+        "AWS (EC2, EBS, S3, DynamoDB)",
+        "Bash",
+        "WordPress"
+      ],
+      "shot": "aws-architecture.webp",
+      "desc": {
+        "en": "Production and staging infrastructure on AWS for a client WordPress site, provisioned with Terraform: EC2 with dynamic AMI lookup, persistent EBS volume with idempotent automated mounting, and remote state in S3 with DynamoDB locking.",
+        "pt": "Infraestrutura de produção e staging na AWS para o site WordPress de um cliente, provisionada com Terraform: EC2 com busca dinâmica de AMI, volume EBS persistente com montagem automatizada e idempotente, e state remoto no S3 com lock no DynamoDB."
+      },
+      "problem": {
+        "en": "A client WordPress site needed production and staging environments that could be provisioned the same way each time, without losing site data when an instance is replaced.",
+        "pt": "O site WordPress de um cliente precisava de ambientes de produção e staging provisionados sempre do mesmo jeito, sem perder dados quando uma instância é substituída."
+      },
+      "solution": {
+        "en": "Both environments are described in Terraform. EC2 instances look up their AMI dynamically, site data lives on a persistent EBS volume that is mounted automatically and idempotently, and Terraform state is stored remotely in S3 with DynamoDB locking.",
+        "pt": "Os dois ambientes estão descritos em Terraform. As instâncias EC2 buscam a AMI dinamicamente, os dados do site ficam num volume EBS persistente montado de forma automatizada e idempotente, e o state do Terraform fica remoto no S3 com lock no DynamoDB."
+      },
+      "adrs": [
+        {
+          "id": "—",
+          "title": {
+            "en": "Remote state in S3 with DynamoDB locking",
+            "pt": "State remoto no S3 com lock no DynamoDB"
+          },
+          "body": {
+            "en": "State is stored outside any one machine and protected against concurrent runs.",
+            "pt": "O state fica fora de qualquer máquina e protegido contra execuções simultâneas."
+          }
+        },
+        {
+          "id": "—",
+          "title": {
+            "en": "Site data on a persistent EBS volume",
+            "pt": "Dados do site num volume EBS persistente"
+          },
+          "body": {
+            "en": "The instance can be replaced without losing content.",
+            "pt": "A instância pode ser substituída sem perder conteúdo."
+          }
+        },
+        {
+          "id": "—",
+          "title": {
+            "en": "Dynamic AMI lookup",
+            "pt": "Busca dinâmica de AMI"
+          },
+          "body": {
+            "en": "No hard-coded image IDs in the configuration.",
+            "pt": "Nenhum ID de imagem fixo na configuração."
+          }
+        }
+      ],
+      "shots": [
+        {
+          "file": "aws-architecture.webp",
+          "caption": {
+            "en": "Sanitised architecture diagram",
+            "pt": "Diagrama de arquitetura sem dados sensíveis"
+          },
+          "alt": {
+            "en": "Diagram of the production and staging environments on AWS",
+            "pt": "Diagrama dos ambientes de produção e staging na AWS"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "keeptask",
+      "name": "Keeptask",
+      "cats": [
+        "ai"
+      ],
+      "main": true,
+      "repo": true,
+      "demo": false,
+      "tag": {
+        "en": "AI / Agents",
+        "pt": "IA / Agentes"
+      },
+      "year": "2026",
+      "type": {
+        "en": "Personal project",
+        "pt": "Projeto pessoal"
+      },
+      "status": {
+        "en": "Active",
+        "pt": "Ativo"
+      },
+      "stack": [
+        "Claude Code",
+        "ADRs",
+        "multi-agent workflow"
+      ],
+      "shot": "keeptask-board.webp",
+      "desc": {
+        "en": "Orchestrates AI coding agents. An orchestrator plans, an executor implements, and every decision is recorded as an ADR.",
+        "pt": "Orquestra agentes de IA para programação. Um orquestrador planeja, um executor implementa e cada decisão vira um ADR."
+      },
+      "problem": {
+        "en": "Coding agents drift on long tasks: they lose the plan, skip tests and make decisions nobody wrote down.",
+        "pt": "Agentes de programação se perdem em tarefas longas: esquecem o plano, pulam testes e tomam decisões que ninguém registrou."
+      },
+      "solution": {
+        "en": "An orchestrator plans the work in rounds and reviews every report, an executor implements each round with tests, grilling sessions settle critical decisions one question at a time, and every decision is written as an ADR that the next round reads first.",
+        "pt": "Um orquestrador planeja o trabalho em rodadas e revisa cada relatório, um executor implementa cada rodada com testes, sessões de grilling decidem os pontos críticos uma pergunta por vez, e cada decisão vira um ADR que a próxima rodada lê primeiro."
+      },
+      "adrs": [
+        {
+          "id": "—",
+          "title": {
+            "en": "Separate planning from execution",
+            "pt": "Separar planejamento de execução"
+          },
+          "body": {
+            "en": "The agent that writes code never decides scope.",
+            "pt": "O agente que escreve código nunca decide o escopo."
+          }
+        },
+        {
+          "id": "—",
+          "title": {
+            "en": "ADRs as agent memory",
+            "pt": "ADRs como memória dos agentes"
+          },
+          "body": {
+            "en": "Plain Markdown files in the repo, readable by people and agents.",
+            "pt": "Arquivos Markdown no repositório, legíveis por pessoas e agentes."
+          }
+        }
+      ],
+      "shots": [
+        {
+          "file": "keeptask-board.webp",
+          "caption": {
+            "en": "Task board split by the orchestrator",
+            "pt": "Quadro de tarefas dividido pelo orquestrador"
+          },
+          "alt": {
+            "en": "Board with columns for planned, in progress and reviewed tasks",
+            "pt": "Quadro com colunas para tarefas planejadas, em andamento e revisadas"
+          }
+        },
+        {
+          "file": "keeptask-adr.webp",
+          "caption": {
+            "en": "An ADR generated during a run",
+            "pt": "Um ADR gerado durante uma execução"
+          },
+          "alt": {
+            "en": "Markdown document with context, decision and consequences",
+            "pt": "Documento Markdown com contexto, decisão e consequências"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "mern",
+      "name": "MERN",
+      "cats": [
+        "ts"
+      ],
+      "main": false,
+      "repo": true,
+      "demo": false,
+      "tag": {
+        "en": "TypeScript",
+        "pt": "TypeScript"
+      },
+      "year": "2023",
+      "type": {
+        "en": "Study project",
+        "pt": "Projeto de estudo"
+      },
+      "status": {
+        "en": "Complete",
+        "pt": "Concluído"
+      },
+      "stack": [
+        "Node.js",
+        "Express",
+        "MongoDB / Mongoose",
+        "JWT",
+        "Docker",
+        "ESLint / Prettier"
+      ],
+      "shot": null,
+      "desc": {
+        "en": "REST API in Express and MongoDB with JWT authentication and request validation, running in Docker. Built during a MERN course.",
+        "pt": "API REST em Express e MongoDB com autenticação JWT e validação de requisições, rodando em Docker. Feita durante um curso de MERN."
+      },
+      "problem": {
+        "en": "Course project to practise a Node.js back end with authentication.",
+        "pt": "Projeto de curso para praticar um back end em Node.js com autenticação."
+      },
+      "solution": {
+        "en": "An Express API with Mongoose models, JWT login, express-validator rules and a Docker setup with helper scripts.",
+        "pt": "Uma API em Express com modelos Mongoose, login com JWT, regras com express-validator e ambiente Docker com scripts de apoio."
+      },
+      "adrs": [
+        {
+          "id": "—",
+          "title": {
+            "en": "Summary pending",
+            "pt": "Resumo pendente"
+          },
+          "body": {
+            "en": "Decisions will be summarised once the details are confirmed.",
+            "pt": "As decisões serão resumidas quando os detalhes forem confirmados."
+          }
+        }
+      ],
+      "shots": []
+    },
+    {
+      "slug": "mean",
+      "name": "MEAN",
+      "cats": [
+        "ts"
+      ],
+      "main": false,
+      "repo": true,
+      "demo": false,
+      "tag": {
+        "en": "TypeScript",
+        "pt": "TypeScript"
+      },
+      "year": "2023",
+      "type": {
+        "en": "Study project",
+        "pt": "Projeto de estudo"
+      },
+      "status": {
+        "en": "Complete",
+        "pt": "Concluído"
+      },
+      "stack": [
+        "TypeScript",
+        "Express",
+        "Angular",
+        "Angular Material",
+        "MongoDB / Mongoose",
+        "Passport JWT",
+        "Docker"
+      ],
+      "shot": null,
+      "desc": {
+        "en": "Full-stack app with an Express API in TypeScript and an Angular Material front end, with MongoDB and Docker Compose.",
+        "pt": "Aplicação full-stack com API em Express e TypeScript e front em Angular Material, com MongoDB e Docker Compose."
+      },
+      "problem": {
+        "en": "Practise a typed full-stack app end to end, from authentication to e-mail.",
+        "pt": "Praticar uma aplicação full-stack tipada de ponta a ponta, da autenticação ao e-mail."
+      },
+      "solution": {
+        "en": "A TypeScript Express API with Passport JWT, Joi validation, Winston logging, file uploads with Multer and templated e-mails with Nodemailer, plus an Angular Material client. Mongo, API and front end run together in Docker Compose.",
+        "pt": "Uma API Express em TypeScript com Passport JWT, validação com Joi, logs com Winston, upload com Multer e e-mails com template no Nodemailer, mais um cliente em Angular Material. Mongo, API e front rodam juntos no Docker Compose."
+      },
+      "adrs": [
+        {
+          "id": "—",
+          "title": {
+            "en": "Summary pending",
+            "pt": "Resumo pendente"
+          },
+          "body": {
+            "en": "Decisions will be summarised once the details are confirmed.",
+            "pt": "As decisões serão resumidas quando os detalhes forem confirmados."
+          }
+        }
+      ],
+      "shots": []
+    },
+    {
+      "slug": "nestauth",
+      "name": "NestAuth",
+      "cats": [
+        "ts"
+      ],
+      "main": false,
+      "repo": true,
+      "demo": false,
+      "tag": {
+        "en": "TypeScript",
+        "pt": "TypeScript"
+      },
+      "year": "2024",
+      "type": {
+        "en": "Study project",
+        "pt": "Projeto de estudo"
+      },
+      "status": {
+        "en": "Complete",
+        "pt": "Concluído"
+      },
+      "stack": [
+        "TypeScript",
+        "NestJS",
+        "Passport JWT",
+        "TypeORM",
+        "PostgreSQL",
+        "Docker"
+      ],
+      "shot": null,
+      "desc": {
+        "en": "Authentication API in NestJS with JWT, PostgreSQL through TypeORM and transactional e-mail, running in Docker.",
+        "pt": "API de autenticação em NestJS com JWT, PostgreSQL via TypeORM e e-mail transacional, rodando em Docker."
+      },
+      "problem": {
+        "en": "Build authentication the way NestJS intends: modules, guards and DTOs.",
+        "pt": "Construir autenticação do jeito que o NestJS propõe: módulos, guards e DTOs."
+      },
+      "solution": {
+        "en": "A NestJS app with Passport JWT, class-validator DTOs, TypeORM on PostgreSQL, Winston logging and Handlebars e-mail templates. Postgres and Adminer run in Docker.",
+        "pt": "Uma aplicação NestJS com Passport JWT, DTOs com class-validator, TypeORM no PostgreSQL, logs com Winston e templates de e-mail em Handlebars. Postgres e Adminer rodam em Docker."
+      },
+      "adrs": [
+        {
+          "id": "—",
+          "title": {
+            "en": "Summary pending",
+            "pt": "Resumo pendente"
+          },
+          "body": {
+            "en": "Decisions will be summarised once the details are confirmed.",
+            "pt": "As decisões serão resumidas quando os detalhes forem confirmados."
+          }
+        }
+      ],
+      "shots": []
+    },
+    {
+      "slug": "crud-ts",
+      "name": "crud-ts",
+      "cats": [
+        "ts"
+      ],
+      "main": false,
+      "repo": true,
+      "demo": false,
+      "tag": {
+        "en": "TypeScript",
+        "pt": "TypeScript"
+      },
+      "year": "2023",
+      "type": {
+        "en": "Study project",
+        "pt": "Projeto de estudo"
+      },
+      "status": {
+        "en": "Complete",
+        "pt": "Concluído"
+      },
+      "stack": [
+        "TypeScript",
+        "Next.js",
+        "React",
+        "Zod",
+        "ESLint / Prettier"
+      ],
+      "shot": null,
+      "desc": {
+        "en": "CRUD in Next.js and TypeScript with schema validation in Zod. Built during the course \"CRUDs com Qualidade\".",
+        "pt": "CRUD em Next.js e TypeScript com validação de schema no Zod. Feito durante o curso \"CRUDs com Qualidade\"."
+      },
+      "problem": {
+        "en": "Course project focused on code organisation and quality in a typed CRUD.",
+        "pt": "Projeto de curso focado em organização e qualidade de código num CRUD tipado."
+      },
+      "solution": {
+        "en": "A Next.js app in TypeScript with Zod validation and strict linting rules.",
+        "pt": "Uma aplicação Next.js em TypeScript com validação no Zod e regras de lint rígidas."
+      },
+      "adrs": [
+        {
+          "id": "—",
+          "title": {
+            "en": "Summary pending",
+            "pt": "Resumo pendente"
+          },
+          "body": {
+            "en": "Decisions will be summarised once the details are confirmed.",
+            "pt": "As decisões serão resumidas quando os detalhes forem confirmados."
+          }
+        }
+      ],
+      "shots": []
+    }
+  ],
+  "articles": [
+    {
+      "date": {
+        "en": "Date from RSS",
+        "pt": "Data do RSS"
+      },
+      "title": {
+        "en": "Placeholder: Medium article 1",
+        "pt": "Placeholder: artigo do Medium 1"
+      },
+      "summary": {
+        "en": "Title, date and summary are read from the Medium RSS feed at build time.",
+        "pt": "Título, data e resumo vêm do RSS do Medium no build."
+      }
+    },
+    {
+      "date": {
+        "en": "Date from RSS",
+        "pt": "Data do RSS"
+      },
+      "title": {
+        "en": "Placeholder: Medium article 2",
+        "pt": "Placeholder: artigo do Medium 2"
+      },
+      "summary": {
+        "en": "Title, date and summary are read from the Medium RSS feed at build time.",
+        "pt": "Título, data e resumo vêm do RSS do Medium no build."
+      }
+    },
+    {
+      "date": {
+        "en": "Date from RSS",
+        "pt": "Data do RSS"
+      },
+      "title": {
+        "en": "Placeholder: Medium article 3",
+        "pt": "Placeholder: artigo do Medium 3"
+      },
+      "summary": {
+        "en": "Title, date and summary are read from the Medium RSS feed at build time.",
+        "pt": "Título, data e resumo vêm do RSS do Medium no build."
+      }
+    }
+  ],
+  "experience": [
+    {
+      "period": {
+        "en": "2024 — present",
+        "pt": "2024 — atual"
+      },
+      "role": {
+        "en": "Fullstack Developer (PHP / Laravel)",
+        "pt": "Desenvolvedor Fullstack (PHP / Laravel)"
+      },
+      "kind": {
+        "en": "Cloud services company · Hybrid/Remote",
+        "pt": "Empresa de serviços em nuvem · Híbrido/Remoto"
+      },
+      "summary": {
+        "en": "Web applications with PHP (Laravel), JavaScript and MySQL; Docker environments for dev and testing; payment gateway and external API integrations; UIs with TailwindCSS, Livewire and Bootstrap; code quality with PHPStan, PHP-CS-Fixer and Pest; reusable Composer packages; Linux/Debian servers; Scrum.",
+        "pt": "Aplicações web com PHP (Laravel), JavaScript e MySQL; ambientes Docker para desenvolvimento e testes; integrações com gateways de pagamento e APIs externas; interfaces com TailwindCSS, Livewire e Bootstrap; qualidade de código com PHPStan, PHP-CS-Fixer e Pest; pacotes Composer reutilizáveis; servidores Linux/Debian; Scrum."
+      },
+      "keys": [
+        "Laravel",
+        "PHP",
+        "MySQL",
+        "Redis",
+        "Docker",
+        "Livewire",
+        "Pest",
+        "Linux"
+      ]
+    },
+    {
+      "period": {
+        "en": "2022 — 2025",
+        "pt": "2022 — 2025"
+      },
+      "role": {
+        "en": "Fullstack & DevOps (freelance, recurring projects)",
+        "pt": "Fullstack & DevOps (freelance, projetos recorrentes)"
+      },
+      "kind": {
+        "en": "Freelance client · Remote",
+        "pt": "Cliente freelance · Remoto"
+      },
+      "summary": {
+        "en": "Institutional site and news portal on WordPress (child theme and custom plugins); AWS environments with Terraform (production and staging); DNS and SSL via Cloudflare; WordOps provisioning; Docker; technical SEO and performance; worked directly with the client and coordinated the design team.",
+        "pt": "Site institucional e portal de notícias em WordPress (child theme e plugins próprios); ambientes AWS com Terraform (produção e staging); DNS e SSL via Cloudflare; provisionamento com WordOps; Docker; SEO técnico e performance; contato direto com o cliente e coordenação do time de design."
+      },
+      "keys": [
+        "WordPress",
+        "PHP",
+        "Terraform",
+        "AWS",
+        "Cloudflare",
+        "Docker",
+        "WordOps"
+      ]
+    },
+    {
+      "period": {
+        "en": "2020 — 2022",
+        "pt": "2020 — 2022"
+      },
+      "role": {
+        "en": "Fullstack Developer (freelance, recurring projects)",
+        "pt": "Desenvolvedor Fullstack (freelance, projetos recorrentes)"
+      },
+      "kind": {
+        "en": "Digital agency · Remote",
+        "pt": "Agência digital · Remoto"
+      },
+      "summary": {
+        "en": "Client sites in WordPress and PHP; theme refactoring for performance and SEO; SCSS and Webpack; jQuery; MySQL query optimization; requirements meetings with clients; Figma with designers.",
+        "pt": "Sites de clientes em WordPress e PHP; refatoração de temas para performance e SEO; SCSS e Webpack; jQuery; otimização de queries MySQL; reuniões de requisitos com clientes; Figma com designers."
+      },
+      "keys": [
+        "PHP",
+        "WordPress",
+        "JavaScript",
+        "SCSS",
+        "Webpack",
+        "MySQL"
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "label": "GitHub",
+      "handle": "github.com/caiobarilli",
+      "url": "https://github.com/caiobarilli",
+      "pending": false
+    },
+    {
+      "label": "LinkedIn",
+      "handle": "linkedin.com/in/caio-barilli",
+      "url": "https://www.linkedin.com/in/caio-barilli",
+      "pending": false
+    },
+    {
+      "label": "Medium",
+      "handle": "medium.com/@ · pending",
+      "url": "#",
+      "pending": true
+    }
+  ],
+  "education": [
+    {
+      "period": "2025 — 2026",
+      "title": {
+        "en": "MBA, DevOps, Automation & Cloud Strategy",
+        "pt": "MBA em DevOps, Automation & Cloud Strategy"
+      },
+      "school": "FIAP"
+    },
+    {
+      "period": "2012 — 2015",
+      "title": {
+        "en": "Internet Systems Technology degree",
+        "pt": "Tecnologia em Sistemas para Internet"
+      },
+      "school": "Senac"
+    }
+  ]
+}

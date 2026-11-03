@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+/* Design tokens from design/tokens.json (direction 1b "Console"). Dark is the default. */
+:root,
+[data-theme="dark"] {
+  --bg: #0d0f0e;
+  --surface: #141715;
+  --chip: #232724;
+  --line: #232724;
+  --line-strong: #2c312d;
+  --ink: #e8ebe6;
+  --ink-2: #c9cec6;
+  --muted: #9aa198;
+  --faint: #858c83;
+  --stripe: #1b1f1c;
+  --accent: oklch(0.88 0.19 128);
+  --accent-text: oklch(0.88 0.19 128);
+  --accent-line: oklch(0.88 0.19 128 / 0.35);
+  --on-accent: #0d0f0e;
+  --btn-bg: oklch(0.88 0.19 128);
+  --btn-ink: #0d0f0e;
+  --focus: oklch(0.88 0.19 128);
+  --bg-blur: rgba(13, 15, 14, 0.85);
+  --scrim: rgba(5, 6, 6, 0.92);
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  --bg: #f3f4f0;
+  --surface: #ffffff;
+  --chip: #e4e7e0;
+  --line: #dfe2da;
+  --line-strong: #c4c8c0;
+  --ink: #121412;
+  --ink-2: #2f342e;
+  --muted: #545a52;
+  --faint: #626860;
+  --stripe: #e3e6df;
+  --accent: oklch(0.88 0.19 128);
+  --accent-text: oklch(0.45 0.13 140);
+  --accent-line: oklch(0.45 0.13 140 / 0.4);
+  --on-accent: #0d0f0e;
+  --btn-bg: #121412;
+  --btn-ink: #f3f4f0;
+  --focus: oklch(0.45 0.13 140);
+  --bg-blur: rgba(243, 244, 240, 0.85);
+  --scrim: rgba(5, 6, 6, 0.92);
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-chip: var(--chip);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-stripe: var(--stripe);
+  --color-accent: var(--accent);
+  --color-accent-text: var(--accent-text);
+  --color-accent-line: var(--accent-line);
+  --color-on-accent: var(--on-accent);
+  --color-btn: var(--btn-bg);
+  --color-btn-ink: var(--btn-ink);
+  --color-bg-blur: var(--bg-blur);
+  --font-sans: var(--font-geist), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+::selection {
+  background: var(--accent);
+  color: #0d0f0e;
+}
+
+.placeholder-stripes {
+  background: repeating-linear-gradient(135deg, var(--stripe) 0 1px, transparent 1px 10px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}
