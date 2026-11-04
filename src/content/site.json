@@ -636,6 +636,28 @@
             "en": "PHPorto WSL page in dark mode with the terminal, the attachments area and the run log",
             "pt": "Página WSL do PHPorto no tema escuro com o terminal, a área de anexos e os registros"
           }
+        },
+        {
+          "file": "phporto-php.webp",
+          "caption": {
+            "en": "PHP: the interpreter in use and a guarded php.ini editor with an automatic backup",
+            "pt": "PHP: o interpretador em uso e um editor do php.ini com chaves controladas e backup automático"
+          },
+          "alt": {
+            "en": "PHPorto PHP page showing version 8.5, the php.ini path and the editable keys",
+            "pt": "Página PHP do PHPorto com a versão 8.5, o caminho do php.ini e as chaves editáveis"
+          }
+        },
+        {
+          "file": "phporto-c.webp",
+          "caption": {
+            "en": "C in the browser: code compiled in memory with Tiny C Compiler through PHP's FFI",
+            "pt": "C no navegador: código compilado na memória com o Tiny C Compiler, pelo FFI do PHP"
+          },
+          "alt": {
+            "en": "PHPorto C section with the Tiny C Compiler status and a C editor",
+            "pt": "Seção C do PHPorto com o estado do Tiny C Compiler e um editor de código C"
+          }
         }
       ]
     },
