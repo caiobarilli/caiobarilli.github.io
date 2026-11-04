@@ -18,6 +18,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   const s = (key: string) => str(locale, key);
   const { stack, articles, contacts } = getContent();
   const email = contacts.find((c) => c.url.startsWith("mailto:"));
+  const medium = contacts.find((c) => c.label === "Medium" && !c.pending);
   const [hero, ...rest] = mainProjects();
   const others = otherProjects();
   if (!hero) notFound();
@@ -134,18 +135,25 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
       <div className="mx-auto max-w-[1200px] px-[clamp(20px,4vw,48px)]">
         <section aria-labelledby="h-medium" className="py-[clamp(64px,9vw,104px)]">
-          <div className="mb-2.5 flex flex-wrap items-baseline justify-between gap-3">
+          <div className="mb-6 flex flex-wrap items-baseline justify-between gap-3">
             <h2 id="h-medium" className="text-[28px] font-semibold tracking-[-0.02em]">{s("latest")}</h2>
-          </div>
-          <div className="mb-6 inline-flex rounded-full border border-dashed border-line-strong px-2.5 py-1 font-mono text-xs text-faint">
-            {s("rssNote")}
+            {medium && (
+              <a href={medium.url} className="flex min-h-11 items-center font-mono text-sm font-medium text-muted hover:text-ink">
+                {s("allArticles")}
+              </a>
+            )}
           </div>
           <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,300px),1fr))] gap-5">
-            {articles.map((a, i) => (
-              <article key={i} className="flex flex-col gap-3 rounded-2xl border border-line p-7">
+            {articles.map((a) => (
+              <article key={a.url} className="flex flex-col gap-3 rounded-2xl border border-line p-7 hover:border-line-strong">
                 <span className="font-mono text-[13px] text-muted">{localize(a.date, locale)}</span>
-                <h3 className="text-[21px] leading-[1.3] font-semibold tracking-[-0.01em] text-pretty">{localize(a.title, locale)}</h3>
+                <h3 className="text-[21px] leading-[1.3] font-semibold tracking-[-0.01em] text-pretty">
+                  <a href={a.url} className="hover:text-accent-text">{localize(a.title, locale)}</a>
+                </h3>
                 <p className="flex-1 text-[15px] leading-[1.55] text-ink-2">{localize(a.summary, locale)}</p>
+                <a href={a.url} className="flex min-h-11 items-center self-start text-sm font-semibold text-accent-text">
+                  {s("readMedium")}
+                </a>
               </article>
             ))}
           </div>

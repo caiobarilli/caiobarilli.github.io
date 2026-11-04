@@ -45,7 +45,7 @@ export type Highlight = { value: string; label: Localized };
 
 export type FeatureGroup = { title: Localized; items: Localized[] };
 
-export type Article ={ date: Localized; title: Localized; summary: Localized };
+export type Article = { date: Localized; title: Localized; summary: Localized; url: string };
 
 export type Experience = {
   period: Localized;

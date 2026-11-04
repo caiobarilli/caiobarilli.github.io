@@ -21,10 +21,10 @@
       "alsoTs": "Also built with JavaScript & TypeScript",
       "alsoTsSub": "Earlier projects in Node.js, Angular, NestJS and Next.js.",
       "stack": "Stack",
-      "latest": "Latest on Medium",
-      "allArticles": "All articles ↗",
+      "latest": "Selected articles",
+      "allArticles": "All articles on Medium ↗",
       "rssNote": "Placeholder · titles come from the Medium RSS feed at build time",
-      "readMedium": "Read on Medium ↗",
+      "readMedium": "Read on Medium (in Portuguese) ↗",
       "ctaTitle": "Let's build something solid.",
       "ctaSub": "Open to PHP & Laravel, DevOps and agentic engineering roles.",
       "emailPending": "email · pending",
@@ -125,8 +125,8 @@
       "alsoTs": "Também feitos com JavaScript e TypeScript",
       "alsoTsSub": "Projetos anteriores em Node.js, Angular, NestJS e Next.js.",
       "stack": "Stack",
-      "latest": "Últimos artigos no Medium",
-      "allArticles": "Todos os artigos ↗",
+      "latest": "Artigos selecionados",
+      "allArticles": "Todos os artigos no Medium ↗",
       "rssNote": "Placeholder · os títulos vêm do RSS do Medium no build",
       "readMedium": "Ler no Medium ↗",
       "ctaTitle": "Vamos construir algo sólido.",
@@ -1145,12 +1145,34 @@
         {
           "id": "—",
           "title": {
-            "en": "Summary pending",
-            "pt": "Resumo pendente"
+            "en": "JWT in a header, not a session",
+            "pt": "JWT no cabeçalho, sem sessão"
           },
           "body": {
-            "en": "Decisions will be summarised once the details are confirmed.",
-            "pt": "As decisões serão resumidas quando os detalhes forem confirmados."
+            "en": "A stateless API: the token is signed with a secret from .env and checked by an auth middleware on protected routes.",
+            "pt": "API sem estado: o token é assinado com um segredo do .env e conferido por um middleware nas rotas protegidas."
+          }
+        },
+        {
+          "id": "—",
+          "title": {
+            "en": "Validation at the edge",
+            "pt": "Validação na entrada"
+          },
+          "body": {
+            "en": "express-validator rules reject bad input before it reaches Mongoose.",
+            "pt": "Regras do express-validator barram a entrada inválida antes de chegar ao Mongoose."
+          }
+        },
+        {
+          "id": "—",
+          "title": {
+            "en": "Docker with helper scripts",
+            "pt": "Docker com scripts de apoio"
+          },
+          "body": {
+            "en": "A small shell script wraps Docker Compose to bring the API up and open a shell in the container.",
+            "pt": "Um script em shell embrulha o Docker Compose para subir a API e abrir um terminal no container."
           }
         }
       ],
@@ -1220,12 +1242,34 @@
         {
           "id": "—",
           "title": {
-            "en": "Summary pending",
-            "pt": "Resumo pendente"
+            "en": "TypeScript on both sides",
+            "pt": "TypeScript nos dois lados"
           },
           "body": {
-            "en": "Decisions will be summarised once the details are confirmed.",
-            "pt": "As decisões serão resumidas quando os detalhes forem confirmados."
+            "en": "The Express API is written in TypeScript like the Angular client, so models and contracts are typed end to end.",
+            "pt": "A API Express é escrita em TypeScript como o cliente Angular, então modelos e contratos são tipados de ponta a ponta."
+          }
+        },
+        {
+          "id": "—",
+          "title": {
+            "en": "Passport JWT and Joi",
+            "pt": "Passport JWT e Joi"
+          },
+          "body": {
+            "en": "Authentication through Passport's JWT strategy and request validation with Joi schemas.",
+            "pt": "Autenticação pela estratégia JWT do Passport e validação das requisições com schemas Joi."
+          }
+        },
+        {
+          "id": "—",
+          "title": {
+            "en": "Logs and e-mail as first-class parts",
+            "pt": "Logs e e-mail como parte do projeto"
+          },
+          "body": {
+            "en": "Winston for structured logs, Multer for uploads and Nodemailer with Handlebars templates for e-mail.",
+            "pt": "Winston para logs estruturados, Multer para uploads e Nodemailer com templates Handlebars para e-mail."
           }
         }
       ],
@@ -1294,12 +1338,34 @@
         {
           "id": "—",
           "title": {
-            "en": "Summary pending",
-            "pt": "Resumo pendente"
+            "en": "Nest modules, guards and DTOs",
+            "pt": "Módulos, guards e DTOs do Nest"
           },
           "body": {
-            "en": "Decisions will be summarised once the details are confirmed.",
-            "pt": "As decisões serão resumidas quando os detalhes forem confirmados."
+            "en": "Authentication follows the framework's structure: Passport JWT guards and DTOs validated with class-validator.",
+            "pt": "A autenticação segue a estrutura do framework: guards com Passport JWT e DTOs validados com class-validator."
+          }
+        },
+        {
+          "id": "—",
+          "title": {
+            "en": "PostgreSQL through TypeORM",
+            "pt": "PostgreSQL via TypeORM"
+          },
+          "body": {
+            "en": "Entities and repositories in TypeORM, with Postgres and Adminer running in Docker.",
+            "pt": "Entidades e repositórios no TypeORM, com Postgres e Adminer rodando em Docker."
+          }
+        },
+        {
+          "id": "—",
+          "title": {
+            "en": "Transactional e-mail and logs",
+            "pt": "E-mail transacional e logs"
+          },
+          "body": {
+            "en": "The Nest mailer module with Handlebars templates, and Winston for logging.",
+            "pt": "O módulo de e-mail do Nest com templates Handlebars, e Winston para os logs."
           }
         }
       ],
@@ -1363,12 +1429,34 @@
         {
           "id": "—",
           "title": {
-            "en": "Summary pending",
-            "pt": "Resumo pendente"
+            "en": "Schemas with Zod",
+            "pt": "Schemas com Zod"
           },
           "body": {
-            "en": "Decisions will be summarised once the details are confirmed.",
-            "pt": "As decisões serão resumidas quando os detalhes forem confirmados."
+            "en": "Zod validates the data at the boundaries, so the types and the runtime checks come from the same place.",
+            "pt": "O Zod valida os dados nas bordas, então os tipos e a checagem em tempo de execução saem do mesmo lugar."
+          }
+        },
+        {
+          "id": "—",
+          "title": {
+            "en": "Strict linting",
+            "pt": "Lint rígido"
+          },
+          "body": {
+            "en": "ESLint with the import, promise, React and Prettier plugins keeps the structure consistent.",
+            "pt": "ESLint com os plugins de import, promise, React e Prettier mantém a estrutura consistente."
+          }
+        },
+        {
+          "id": "—",
+          "title": {
+            "en": "Controller and repository layers",
+            "pt": "Camadas de controller e repository"
+          },
+          "body": {
+            "en": "Next.js API routes (todos, toggle-done) and the UI each have their own controller and repository, on top of a small core CRUD module.",
+            "pt": "As API routes do Next.js (todos, toggle-done) e a interface têm cada uma o seu controller e repository, sobre um pequeno módulo de CRUD no núcleo."
           }
         }
       ],
@@ -1390,45 +1478,48 @@
   "articles": [
     {
       "date": {
-        "en": "Date from RSS",
-        "pt": "Data do RSS"
+        "en": "Sep 4, 2026",
+        "pt": "4 set 2026"
       },
       "title": {
-        "en": "Placeholder: Medium article 1",
-        "pt": "Placeholder: artigo do Medium 1"
+        "en": "NativePHP on Windows: a Laravel app on the phone, without Herd, without reboots and with PowerShell in charge",
+        "pt": "NativePHP no Windows: um app Laravel no celular sem Herd, sem reboot e com o PowerShell no comando"
       },
       "summary": {
-        "en": "Title, date and summary are read from the Medium RSS feed at build time.",
-        "pt": "Título, data e resumo vêm do RSS do Medium no build."
-      }
+        "en": "How I took the Laravel stack I already master into a native mobile app with NativePHP, on Windows 11 with WSL2 and without the tooling the docs assume.",
+        "pt": "Como levei a stack Laravel que eu já domino para um app nativo com NativePHP, no Windows 11 com WSL2 e sem as ferramentas que a documentação pressupõe."
+      },
+      "url": "https://medium.com/@caiobarilli/nativephp-no-windows-um-app-laravel-no-celular-sem-herd-sem-reboot-e-com-o-powershell-no-comando-f3d7816bdbbb"
     },
     {
       "date": {
-        "en": "Date from RSS",
-        "pt": "Data do RSS"
+        "en": "Aug 26, 2026",
+        "pt": "26 ago 2026"
       },
       "title": {
-        "en": "Placeholder: Medium article 2",
-        "pt": "Placeholder: artigo do Medium 2"
+        "en": "Two machines, one workflow",
+        "pt": "Duas máquinas, um fluxo"
       },
       "summary": {
-        "en": "Title, date and summary are read from the Medium RSS feed at build time.",
-        "pt": "Título, data e resumo vêm do RSS do Medium no build."
-      }
+        "en": "How I orchestrated a whole Laravel project with WSL2, Terraform, Docker and two AI agents in separate roles, with the rules written down in files instead of kept in my head.",
+        "pt": "Como orquestrei um projeto Laravel inteiro com WSL2, Terraform, Docker e dois agentes de IA em papéis separados, com as regras escritas em arquivo, e não na minha cabeça."
+      },
+      "url": "https://medium.com/@caiobarilli/duas-m%C3%A1quinas-um-fluxo-e458c136b44c"
     },
     {
       "date": {
-        "en": "Date from RSS",
-        "pt": "Data do RSS"
+        "en": "Aug 18, 2026",
+        "pt": "18 ago 2026"
       },
       "title": {
-        "en": "Placeholder: Medium article 3",
-        "pt": "Placeholder: artigo do Medium 3"
+        "en": "A second development machine from scratch: Debian on Hyper-V, the Laravel project in Docker + Terraform",
+        "pt": "Uma segunda máquina de desenvolvimento do zero: Debian no Hyper-V, o projeto Laravel em Docker + Terraform"
       },
       "summary": {
-        "en": "Title, date and summary are read from the Medium RSS feed at build time.",
-        "pt": "Título, data e resumo vêm do RSS do Medium no build."
-      }
+        "en": "A one-day build of a Debian VM just for development: the whole SaaS in containers, a terminal set up like an IDE, and the real commands and stumbles along the way.",
+        "pt": "Um dia montando uma VM Debian só para desenvolvimento: o SaaS inteiro em containers, um terminal com cara de IDE e os comandos reais, com os tropeços incluídos."
+      },
+      "url": "https://medium.com/@caiobarilli/uma-segunda-m%C3%A1quina-de-desenvolvimento-do-zero-debian-no-hyper-v-o-projeto-laravel-em-docker-6d4cea1fd388"
     }
   ],
   "experience": [
@@ -1547,9 +1638,9 @@
     },
     {
       "label": "Medium",
-      "handle": "medium.com/@ · pending",
-      "url": "#",
-      "pending": true
+      "handle": "medium.com/@caiobarilli",
+      "url": "https://medium.com/@caiobarilli",
+      "pending": false
     }
   ],
   "education": [
