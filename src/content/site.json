@@ -649,6 +649,8 @@
         "WordOps",
         "Bash",
         "WordPress",
+        "BuddyPress",
+        "bbPress",
         "Elementor",
         "PHP"
       ],
@@ -662,8 +664,8 @@
         "pt": "A AgroNegociar tinha um app para o agronegócio e precisava de uma porta de entrada para novos clientes. A estratégia foi criar uma comunidade: um portal de notícias e uma rede social onde produtores, empresas e leitores do setor se encontram, consomem conteúdo e chegam até o app. Para isso funcionar, o site precisava ser completo, rápido em qualquer tela e fácil para a equipe do cliente administrar, e a infraestrutura precisava ser confiável, sem risco de perder conteúdo."
       },
       "solution": {
-        "en": "The portal and the social network were built on Network, a complete community WordPress theme, with a child theme carrying the project's identity and a fully responsive layout. Pages were built in Elementor, and we developed several custom plugins: tools for the administrators and layout components the theme did not offer. On the infrastructure side, everything is versioned as code with Terraform: an Ubuntu server on AWS with the site on a separate disk, remote state with a lock, and identical production and staging environments. Every week an automatic backup of the database and the theme goes to a bucket. Since everything else is rebuilt from code, the whole environment can be recreated without losses. DNS and SSL run on Cloudflare, and the server is managed with WordOps.",
-        "pt": "O portal e a rede social foram construídos sobre o Network, um tema WordPress completo de comunidade, com um child theme com a identidade do projeto e layout totalmente responsivo. As páginas foram montadas no Elementor, e desenvolvemos vários plugins próprios: ferramentas para os administradores e componentes de layout que o tema não oferecia. Na infraestrutura, tudo é versionado como código com Terraform: servidor Ubuntu na AWS com o site num disco separado, estado remoto com trava, e produção e homologação idênticas. Toda semana, um backup automático do banco de dados e do tema vai para um bucket. Como todo o resto é recriado a partir do código, o ambiente inteiro pode ser reconstruído sem perdas. O DNS e o SSL ficam no Cloudflare, e o servidor é gerenciado com WordOps."
+        "en": "The portal and the social network were built on Network, a complete community WordPress theme, with a child theme carrying the project's identity and a fully responsive layout. Pages were built in Elementor. The social network runs on the big community plugins integrated with the theme, BuddyPress and bbPress, and on top of them we developed several custom plugins: tools for the administrators and layout components the theme did not offer. On the infrastructure side, everything is versioned as code with Terraform: an Ubuntu server on AWS with the site on a separate disk, remote state with a lock, and identical production and staging environments. Every week an automatic backup of the database and the theme goes to a bucket. Since everything else is rebuilt from code, the whole environment can be recreated without losses. DNS and SSL run on Cloudflare, and the server is managed with WordOps.",
+        "pt": "O portal e a rede social foram construídos sobre o Network, um tema WordPress completo de comunidade, com um child theme com a identidade do projeto e layout totalmente responsivo. As páginas foram montadas no Elementor. A rede social usa os grandes plugins de comunidade integrados ao tema, o BuddyPress e o bbPress, e por cima deles desenvolvemos vários plugins próprios: ferramentas para os administradores e componentes de layout que o tema não oferecia. Na infraestrutura, tudo é versionado como código com Terraform: servidor Ubuntu na AWS com o site num disco separado, estado remoto com trava, e produção e homologação idênticas. Toda semana, um backup automático do banco de dados e do tema vai para um bucket. Como todo o resto é recriado a partir do código, o ambiente inteiro pode ser reconstruído sem perdas. O DNS e o SSL ficam no Cloudflare, e o servidor é gerenciado com WordOps."
       },
       "adrs": [
         {
@@ -757,6 +759,26 @@
             {
               "en": "News, profiles and interaction between users, as a gateway to the app",
               "pt": "Notícias, perfis e interação entre usuários, como porta de entrada para o app"
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Community plugins",
+            "pt": "Plugins de comunidade"
+          },
+          "items": [
+            {
+              "en": "BuddyPress for the social network: profiles, groups, activity feed, messages, friendships and verified accounts",
+              "pt": "BuddyPress para a rede social: perfis, grupos, feed de atividade, mensagens, amizades e contas verificadas"
+            },
+            {
+              "en": "bbPress for the forum",
+              "pt": "bbPress para o fórum"
+            },
+            {
+              "en": "Both integrated with the theme and with Elementor",
+              "pt": "Os dois integrados ao tema e ao Elementor"
             }
           ]
         },
