@@ -58,7 +58,15 @@ export type Experience = {
   keys: string[];
 };
 
-export type Education = { period: string; title: Localized; school: string };
+export type Education = {
+  period: string;
+  title: Localized;
+  school: string;
+  /** Short description, e.g. the capstone project. */
+  note?: Localized;
+  /** Link shown after the note, e.g. the capstone repository. */
+  url?: string;
+};
 
 export type Course = {
   name: string;
