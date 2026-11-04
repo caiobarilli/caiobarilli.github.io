@@ -13,7 +13,7 @@
       "menu": "Menu",
       "lang": "Language",
       "role": "Full Stack Engineer · DevOps · Agentic workflows",
-      "heroLine": "I've been building for the web for over 10 years. Today I build with PHP and Laravel, ship it with infrastructure as code, and develop it with AI agents. Every project here is real, documented and tested.",
+      "heroLine": "I've been building for the web for over 10 years. Today I build with PHP and Laravel, ship with infrastructure as code, and develop with AI agents. Every project here is real, documented and tested.",
       "cvSummary": "Full stack developer focused on PHP and Laravel. I work from product to infrastructure: interfaces with Livewire and Tailwind, APIs, testing with Pest, and environments with Docker and Terraform on AWS. Day to day, I develop with AI agents in planned rounds, with tests and documented decisions.",
       "seeWork": "See the work",
       "featured": "Featured work",
@@ -2179,7 +2179,7 @@
     {
       "period": "2025 — 2026",
       "title": {
-        "en": "MBA, DevOps, Automation & Cloud Strategy · 364 hours",
+        "en": "MBA in DevOps, Automation & Cloud Strategy · 364 hours",
         "pt": "MBA em DevOps, Automation & Cloud Strategy · 364 h"
       },
       "school": {
