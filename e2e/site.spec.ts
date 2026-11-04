@@ -34,6 +34,14 @@ test.describe("routing", () => {
     expect(response?.status()).toBe(404);
     await expect(page.getByRole("heading", { name: "Page not found" })).toBeVisible();
   });
+
+  test("an unknown page under /pt-br/ shows the 404 in Portuguese", async ({ page }) => {
+    const response = await page.goto("/pt-br/projects/this-page-does-not-exist/");
+    expect(response?.status()).toBe(404);
+    await expect(page.getByRole("heading", { name: "Página não encontrada" })).toBeVisible();
+    await expect(page.locator("html")).toHaveAttribute("lang", "pt-BR");
+    await expect(page.getByRole("link", { name: "Voltar ao início" })).toHaveAttribute("href", "/pt-br/");
+  });
 });
 
 test.describe("home", () => {
