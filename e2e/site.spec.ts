@@ -42,6 +42,13 @@ test.describe("routing", () => {
     await expect(page.locator("html")).toHaveAttribute("lang", "pt-BR");
     await expect(page.getByRole("link", { name: "Voltar ao início" })).toHaveAttribute("href", "/pt-br/");
   });
+
+  test("the 404 has the site header, and its language switch keeps the address", async ({ page }) => {
+    await page.goto("/pt-br/projects/this-page-does-not-exist/");
+    const header = page.locator("header");
+    await expect(header.getByRole("link", { name: /caio\.barilli/ })).toHaveAttribute("href", "/pt-br/");
+    await expect(header.getByRole("link", { name: "EN", exact: true })).toHaveAttribute("href", "/en/projects/this-page-does-not-exist/");
+  });
 });
 
 test.describe("home", () => {
@@ -62,6 +69,17 @@ test.describe("home", () => {
     const hero = page.locator("main section").first();
     await expect(hero.getByRole("link", { name: "E-mail" })).toHaveAttribute("href", /^mailto:/);
     await expect(hero.getByRole("link", { name: "LinkedIn ↗" })).toHaveAttribute("href", "https://www.linkedin.com/in/caio-barilli");
+  });
+
+  test("every section page has its own title", async ({ page }) => {
+    const titles = new Set<string>();
+    for (const path of ["/pt-br/", "/pt-br/projects/", "/pt-br/experience/", "/pt-br/about/", "/pt-br/contact/"]) {
+      await page.goto(path);
+      titles.add(await page.title());
+    }
+    expect(titles.size).toBe(5);
+    await page.goto("/pt-br/projects/");
+    await expect(page).toHaveTitle("Projetos · Caio Barilli");
   });
 });
 

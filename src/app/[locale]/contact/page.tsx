@@ -2,6 +2,9 @@ import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
 import { PageIntro, PageShell } from "@/components/PageIntro";
 import { getContent, isLocale, str } from "@/content";
+import { sectionMetadata } from "../../page-meta";
+
+export const generateMetadata = sectionMetadata("contactTitle", "contactSub");
 
 function Row({ label, children }: { label: string; children: ReactNode }) {
   return (

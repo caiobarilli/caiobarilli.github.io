@@ -3,6 +3,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PageShell } from "@/components/PageIntro";
 import { isLocale, str } from "@/content";
+import { sectionMetadata } from "../../page-meta";
+
+export const generateMetadata = sectionMetadata("aboutTitle", "aboutP1");
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
