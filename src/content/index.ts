@@ -3,10 +3,7 @@ import { locales, type Locale, type Localized, type Project, type SiteContent } 
 
 const site = data as SiteContent;
 
-/**
- * Single entry point for content. Today it reads the bundled JSON; later the
- * build can read MongoDB here without touching the pages.
- */
+/** Single entry point for content: pages read through here, never from the JSON directly. */
 export function getContent(): SiteContent {
   return site;
 }
