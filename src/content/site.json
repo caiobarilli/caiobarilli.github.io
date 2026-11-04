@@ -637,12 +637,12 @@
         {
           "id": "—",
           "title": {
-            "en": "Built with orchestrated AI agents",
-            "pt": "Desenvolvido com agentes de IA orquestrados"
+            "en": "Agentic development with Claude Code",
+            "pt": "Desenvolvimento agêntico com Claude Code"
           },
           "body": {
-            "en": "An orchestrator plans each round, an executor implements it with tests, and decisions are recorded as ADRs.",
-            "pt": "Um orquestrador planeja cada rodada, um executor implementa com testes, e as decisões viram ADRs."
+            "en": "An orchestrator agent plans each round, an executor agent implements it with tests, and every decision is recorded as an ADR. Laravel Boost exposes the app to the agents over MCP, and project skills (Livewire, Pest, Flux, plus custom grilling and handoff skills) keep them on the team's conventions.",
+            "pt": "Um agente orquestrador planeja cada rodada, um agente executor implementa com testes, e cada decisão vira um ADR. O Laravel Boost expõe o app aos agentes via MCP, e skills do projeto (Livewire, Pest, Flux, além de skills próprias de grilling e handoff) mantêm os agentes nas convenções do time."
           }
         }
       ],
