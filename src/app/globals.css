@@ -3,6 +3,12 @@
 /* Touch screens (phones, tablets): there the e-mail button is a mailto: link; elsewhere it copies the address. */
 @custom-variant touch (@media (hover: none) and (pointer: coarse));
 
+/* Palette primitives: the accent green is written once, here. */
+:root {
+  --lime: oklch(0.88 0.19 128);
+  --lime-deep: oklch(0.45 0.13 140);
+}
+
 /* Design tokens from design/tokens.json (direction 1b "Console"). Dark is the default. */
 :root,
 [data-theme="dark"] {
@@ -16,13 +22,13 @@
   --muted: #9aa198;
   --faint: #858c83;
   --stripe: #1b1f1c;
-  --accent: oklch(0.88 0.19 128);
-  --accent-text: oklch(0.88 0.19 128);
-  --accent-line: oklch(0.88 0.19 128 / 0.35);
+  --accent: var(--lime);
+  --accent-text: var(--lime);
+  --accent-line: color-mix(in oklch, var(--lime) 35%, transparent);
   --on-accent: #0d0f0e;
-  --btn-bg: oklch(0.88 0.19 128);
+  --btn-bg: var(--lime);
   --btn-ink: #0d0f0e;
-  --focus: oklch(0.88 0.19 128);
+  --focus: var(--lime);
   --bg-blur: rgba(13, 15, 14, 0.85);
   --scrim: rgba(5, 6, 6, 0.92);
   /* The lightbox is dark in both themes, so these four are the same in [data-theme="light"]. */
@@ -44,13 +50,13 @@
   --muted: #545a52;
   --faint: #626860;
   --stripe: #e3e6df;
-  --accent: oklch(0.88 0.19 128);
-  --accent-text: oklch(0.45 0.13 140);
-  --accent-line: oklch(0.45 0.13 140 / 0.4);
+  --accent: var(--lime);
+  --accent-text: var(--lime-deep);
+  --accent-line: color-mix(in oklch, var(--lime-deep) 40%, transparent);
   --on-accent: #0d0f0e;
   --btn-bg: #121412;
   --btn-ink: #f3f4f0;
-  --focus: oklch(0.45 0.13 140);
+  --focus: var(--lime-deep);
   --bg-blur: rgba(243, 244, 240, 0.85);
   --scrim: rgba(5, 6, 6, 0.92);
   --lightbox-ink: #e8ebe6;
