@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { caseStudyLabel, contentKey, getContent, isLocale, localize, mainProjects, otherProjects, str } from "./index";
 
@@ -56,5 +57,14 @@ describe("locales", () => {
     expect(localize({ en: "Hi", pt: "Oi" }, "pt-br")).toBe("Oi");
     expect(str("en", "featured")).toBe("Featured work");
     expect(() => str("en", "does-not-exist")).toThrow();
+  });
+});
+
+describe("root redirect page", () => {
+  it("carries the current home wording, not the old one", () => {
+    const html = readFileSync("public/index.html", "utf8");
+    expect(html).not.toContain("develop it with AI agents");
+    expect(html).toContain("ship with infrastructure as code, and develop with AI agents");
+    expect(content.ui.en.heroLine).toContain("ship with infrastructure as code, and develop with AI agents");
   });
 });
