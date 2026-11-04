@@ -57,6 +57,8 @@ The repository ships an [`.mcp.json`](.mcp.json) with Vercel's [next-devtools-mc
 | `grilling` | Settling decisions one round of questions at a time |
 | `handoff` | Passing the work to a fresh agent session |
 
+A sixth skill, `nextjs-performance`, is rewritten for this site from [giuseppe-trisciuoglio/developer-kit](https://github.com/giuseppe-trisciuoglio/developer-kit) (MIT, commit `fe73fb3`): Core Web Vitals, images, fonts and client components for a static export, measured with Lighthouse before and after. The server-only parts of the original (data cache, ISR, route handlers) were left out, and it follows Next.js 16, where `priority` on images is deprecated.
+
 ## Scripts
 
 | Command | What it does |
