@@ -99,6 +99,21 @@ test.describe("home", () => {
     });
   }
 
+  test("the contact page links each language to its own résumé PDF", async ({ page, request }) => {
+    const links: [string, string, string][] = [
+      ["/en/contact/", "Download résumé (PDF)", "/cv/caio-barilli-cv-en.pdf"],
+      ["/pt-br/contact/", "Baixar currículo (PDF)", "/cv/caio-barilli-cv-pt-br.pdf"],
+    ];
+    for (const [path, name, file] of links) {
+      await page.goto(path);
+      await expect(page.getByRole("link", { name })).toHaveAttribute("href", file);
+      const response = await request.get(file);
+      expect(response.status()).toBe(200);
+    }
+    await page.goto("/en/");
+    await expect(page.locator('a[href^="/cv/"]')).toHaveCount(0);
+  });
+
   test("the contact page writes the address out, visible without clicking", async ({ page }) => {
     await page.goto("/pt-br/contact/");
     await expect(page.getByText("caiobarilli@gmail.com", { exact: true })).toBeVisible();

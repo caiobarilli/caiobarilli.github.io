@@ -58,6 +58,12 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
           </li>
         ))}
       </ul>
+      <a
+        href={`/cv/caio-barilli-cv-${locale}.pdf`}
+        className="mt-8 flex min-h-11 items-center self-start rounded-full border border-line-strong px-[18px] text-sm font-medium hover:border-ink w-fit"
+      >
+        {s("cvLink")}
+      </a>
     </PageShell>
   );
 }
