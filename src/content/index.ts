@@ -51,7 +51,7 @@ const REPOS: Record<string, string> = {
   nestauth: "NestAuth",
   "nextjs-tailwind-store": "nextjs-tailwind-store",
   // Group capstone: the repository belongs to a teammate, so the full URL goes here.
-  info4all: "https://github.com/Kahmaria/POC-Datalake-Open-Source/tree/feature/agente-especificacao",
+  info4all: "https://github.com/Kahmaria/POC-Datalake-Open-Source",
 };
 
 export function repoUrl(project: Project): string | null {
