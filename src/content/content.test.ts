@@ -25,8 +25,8 @@ describe("content", () => {
     expect(empty).toEqual([]);
   });
 
-  it("keeps PHParrot as the featured project", () => {
-    expect(mainProjects()[0]?.slug).toBe("phparrot");
+  it("keeps the featured projects in the chosen order", () => {
+    expect(mainProjects().map((p) => p.slug)).toEqual(["keeptask", "phporto", "phparrot", "uvalab", "aws-terraform"]);
     expect(otherProjects().every((p) => !p.main)).toBe(true);
   });
 

@@ -209,707 +209,6 @@
   ],
   "projects": [
     {
-      "slug": "phparrot",
-      "name": "PHParrot",
-      "cats": [
-        "php",
-        "devops"
-      ],
-      "main": true,
-      "repo": true,
-      "demo": false,
-      "tag": {
-        "en": "PHP · Laravel",
-        "pt": "PHP · Laravel"
-      },
-      "year": "2026",
-      "type": {
-        "en": "Personal project",
-        "pt": "Projeto pessoal"
-      },
-      "status": {
-        "en": "Active",
-        "pt": "Ativo"
-      },
-      "stack": [
-        "Laravel 13",
-        "PHP 8.5",
-        "Livewire",
-        "Whisper (local)",
-        "Docker",
-        "Terraform",
-        "Pest"
-      ],
-      "shot": "phparrot-session.webp",
-      "desc": {
-        "en": "Language practice by speaking. Speech is transcribed locally with Whisper, so audio never leaves the machine.",
-        "pt": "Treino de idiomas pela fala. A voz é transcrita localmente com Whisper, e o áudio nunca sai da máquina."
-      },
-      "problem": {
-        "en": "Language apps train reading and tapping, not speaking. Cloud speech APIs solve that, but they send every recording to a third party and bill per minute.",
-        "pt": "Apps de idiomas treinam leitura e toque, não fala. APIs de voz na nuvem resolvem isso, mas enviam cada gravação a terceiros e cobram por minuto."
-      },
-      "solution": {
-        "en": "A Laravel and Livewire app for speaking practice. Whisper runs locally in Docker to transcribe what you say, and the infrastructure is provisioned with Terraform.",
-        "pt": "Um app em Laravel e Livewire para treinar a fala. O Whisper roda localmente em Docker para transcrever o que você diz, e a infraestrutura é provisionada com Terraform."
-      },
-      "adrs": [
-        {
-          "id": "ADR 0001",
-          "title": {
-            "en": "Stack",
-            "pt": "Stack"
-          },
-          "body": {
-            "en": "Laravel 13, PHP 8.5, Livewire, SQLite.",
-            "pt": "Laravel 13, PHP 8.5, Livewire, SQLite."
-          }
-        },
-        {
-          "id": "ADR 0004",
-          "title": {
-            "en": "Voice and transcription",
-            "pt": "Voz e transcrição"
-          },
-          "body": {
-            "en": "Whisper runs locally; audio never leaves the server.",
-            "pt": "O Whisper roda localmente; o áudio nunca sai do servidor."
-          }
-        },
-        {
-          "id": "ADR 0009",
-          "title": {
-            "en": "CI for containers",
-            "pt": "CI para containers"
-          },
-          "body": {
-            "en": "Hadolint, Trivy, SARIF and SBOM.",
-            "pt": "Hadolint, Trivy, SARIF e SBOM."
-          }
-        }
-      ],
-      "shots": [
-        {
-          "file": "phparrot-session.webp",
-          "caption": {
-            "en": "Speak: record, transcribe and compare word by word",
-            "pt": "Fala: gravar, transcrever e comparar palavra por palavra"
-          },
-          "alt": {
-            "en": "PHParrot speaking screen with record and transcribe buttons",
-            "pt": "Tela de fala do PHParrot com os botões de gravar e transcrever"
-          }
-        },
-        {
-          "file": "phparrot-2.webp",
-          "caption": {
-            "en": "Read: a text by level and theme, read aloud",
-            "pt": "Leitura: texto por nível e tema, lido em voz alta"
-          },
-          "alt": {
-            "en": "PHParrot reading screen with an English text at level 1",
-            "pt": "Tela de leitura do PHParrot com um texto em inglês no nível 1"
-          }
-        }
-      ]
-    },
-    {
-      "slug": "uvalab",
-      "name": "Uvalab",
-      "cats": [
-        "php",
-        "devops"
-      ],
-      "main": true,
-      "repo": true,
-      "demo": false,
-      "tag": {
-        "en": "PHP · Laravel · WooCommerce",
-        "pt": "PHP · Laravel · WooCommerce"
-      },
-      "year": "2026",
-      "type": {
-        "en": "WooCommerce theme",
-        "pt": "Tema WooCommerce"
-      },
-      "status": {
-        "en": "Completed",
-        "pt": "Concluído"
-      },
-      "stack": [
-        "PHP",
-        "WordPress / WooCommerce",
-        "Sage 11",
-        "Acorn 5 (Laravel)",
-        "Livewire 4",
-        "Flux UI",
-        "Tailwind CSS 4",
-        "Vite",
-        "Pest",
-        "PHPStan",
-        "Terraform",
-        "Docker"
-      ],
-      "shot": "uvalab-home.webp",
-      "links": [
-        {
-          "label": {
-            "en": "Dev environment (terraform-bedrock) ↗",
-            "pt": "Ambiente de desenvolvimento (terraform-bedrock) ↗"
-          },
-          "url": "https://github.com/caiobarilli/terraform-bedrock"
-        },
-        {
-          "label": {
-            "en": "Design on Figma ↗",
-            "pt": "Design no Figma ↗"
-          },
-          "url": "https://www.figma.com/design/dbXy3NH2VlwRvZaiewkWrF/Uvalab-V1?node-id=0-1"
-        }
-      ],
-      "desc": {
-        "en": "WooCommerce store built as a Laravel app inside WordPress: a Sage 11 and Acorn theme, screens in Livewire 4 and Flux UI, and a development environment provisioned with Terraform and Docker.",
-        "pt": "E-commerce WooCommerce construído como um app Laravel dentro do WordPress: tema em Sage 11 e Acorn, telas em Livewire 4 e Flux UI, e ambiente de desenvolvimento provisionado com Terraform e Docker."
-      },
-      "highlights": [
-        {
-          "value": "132",
-          "label": {
-            "en": "commits",
-            "pt": "commits"
-          }
-        },
-        {
-          "value": "17",
-          "label": {
-            "en": "Livewire components",
-            "pt": "componentes Livewire"
-          }
-        },
-        {
-          "value": "16",
-          "label": {
-            "en": "Pest test files",
-            "pt": "arquivos de teste em Pest"
-          }
-        }
-      ],
-      "problem": {
-        "en": "WooCommerce themes often mix logic, templates and loose hooks, which makes the store hard to test, evolve and maintain. The goal was to keep WordPress's freedom for content, with the structure and tooling of a Laravel application.",
-        "pt": "Temas WooCommerce costumam misturar lógica, templates e hooks soltos, o que dificulta testar, evoluir e manter a loja. A ideia era ter a liberdade do WordPress para o conteúdo, com a organização e as ferramentas de uma aplicação Laravel."
-      },
-      "solution": {
-        "en": "The theme runs on Acorn, which brings Laravel into WordPress: service providers, controllers, middleware, migrations and seeders. The store, sign-in and customer area screens are Livewire components with Flux UI, and the admin panel is custom too. The layout follows a design made in Figma, with Full Site Editing and Tailwind 4. For development, terraform-bedrock uses Terraform to bring up a Docker environment with Nginx, PHP-FPM, MySQL and Node for Bedrock.",
-        "pt": "O tema roda sobre o Acorn, que traz o Laravel para dentro do WordPress: service providers, controllers, middleware, migrations e seeders. As telas da loja, do login e da área do cliente são componentes Livewire com Flux UI, e o painel administrativo também é próprio. O layout segue um design feito no Figma, com Full Site Editing e Tailwind 4. Para desenvolver, o terraform-bedrock sobe com Terraform um ambiente Docker com Nginx, PHP-FPM, MySQL e Node para o Bedrock."
-      },
-      "features": [
-        {
-          "title": {
-            "en": "Store",
-            "pt": "Loja"
-          },
-          "items": [
-            {
-              "en": "Product filters, a Livewire product list, the shop menu, a slider and quote requests",
-              "pt": "Filtros de produtos, lista com Livewire, menu da loja, slider e pedido de orçamento"
-            }
-          ]
-        },
-        {
-          "title": {
-            "en": "Customer account",
-            "pt": "Conta do cliente"
-          },
-          "items": [
-            {
-              "en": "Sign-in and sign-up, dashboard, orders, order details, downloads, address and account details, behind a customer middleware",
-              "pt": "Login e cadastro, painel, pedidos, detalhe do pedido, downloads, endereço e dados da conta, protegidos por um middleware de cliente"
-            }
-          ]
-        },
-        {
-          "title": {
-            "en": "Admin panel",
-            "pt": "Painel administrativo"
-          },
-          "items": [
-            {
-              "en": "Theme options, home sliders, Acorn cache, seeder and system status",
-              "pt": "Opções do tema, sliders da home, cache do Acorn, seeder e status do sistema"
-            }
-          ]
-        },
-        {
-          "title": {
-            "en": "WordPress organised like Laravel",
-            "pt": "WordPress organizado como Laravel"
-          },
-          "items": [
-            {
-              "en": "Post types, shortcodes and admin cleanup in service providers, and Livewire components also available as shortcodes",
-              "pt": "Post types, shortcodes e limpeza do admin em service providers, e componentes Livewire também disponíveis como shortcode"
-            }
-          ]
-        },
-        {
-          "title": {
-            "en": "Quality",
-            "pt": "Qualidade"
-          },
-          "items": [
-            {
-              "en": "PHPStan, Pest and Husky hooks with lint-staged on commit and tests on push",
-              "pt": "PHPStan, Pest e hooks do Husky com lint-staged no commit e testes no push"
-            }
-          ]
-        },
-        {
-          "title": {
-            "en": "Environment and publishing",
-            "pt": "Ambiente e publicação"
-          },
-          "items": [
-            {
-              "en": "Bedrock in Docker through Terraform for development, and WordOps with Cloudflare Tunnel to publish",
-              "pt": "Bedrock em Docker via Terraform no desenvolvimento, e WordOps com Cloudflare Tunnel para publicar"
-            }
-          ]
-        }
-      ],
-      "adrs": [
-        {
-          "id": "—",
-          "title": {
-            "en": "Laravel inside WordPress",
-            "pt": "Laravel dentro do WordPress"
-          },
-          "body": {
-            "en": "Acorn makes providers, Eloquent, migrations and tests available without giving up the WooCommerce ecosystem.",
-            "pt": "O Acorn permite usar providers, Eloquent, migrations e testes sem abrir mão do ecossistema WooCommerce."
-          }
-        },
-        {
-          "id": "—",
-          "title": {
-            "en": "Livewire instead of scattered JavaScript",
-            "pt": "Livewire no lugar de JavaScript avulso"
-          },
-          "body": {
-            "en": "The store and customer area interactions live in PHP, as testable components.",
-            "pt": "A interação da loja e da área do cliente fica no PHP, com componentes testáveis."
-          }
-        },
-        {
-          "id": "—",
-          "title": {
-            "en": "Environment as code",
-            "pt": "Ambiente como código"
-          },
-          "body": {
-            "en": "terraform-bedrock rebuilds the whole environment from scratch, the same way on any machine.",
-            "pt": "O terraform-bedrock recria o ambiente inteiro do zero, do mesmo jeito em qualquer máquina."
-          }
-        }
-      ],
-      "shots": [
-        {
-          "file": "uvalab-home.webp",
-          "caption": {
-            "en": "Store home with the collection slider",
-            "pt": "Home da loja com o slider de coleção"
-          },
-          "alt": {
-            "en": "Uvalab store home page with a wine bottle and the collection headline",
-            "pt": "Home da loja Uvalab com uma garrafa de vinho e o título da coleção"
-          }
-        }
-      ]
-    },
-    {
-      "slug": "phporto",
-      "name": "PHPorto",
-      "cats": [
-        "php"
-      ],
-      "main": true,
-      "repo": true,
-      "demo": false,
-      "tag": {
-        "en": "PHP · PowerShell",
-        "pt": "PHP · PowerShell"
-      },
-      "year": "2026",
-      "type": {
-        "en": "Personal project",
-        "pt": "Projeto pessoal"
-      },
-      "status": {
-        "en": "Active",
-        "pt": "Ativo"
-      },
-      "stack": [
-        "PHP 8.5",
-        "PowerShell",
-        "WSL2",
-        "Hyper-V",
-        "Ollama",
-        "Pest / Pester"
-      ],
-      "shot": "phporto-home.webp",
-      "desc": {
-        "en": "A browser panel for Windows power users: run commands in WSL, run allowlisted Windows admin actions, manage Hyper-V VMs and a local LLM (Ollama), all bound to localhost and token-protected.",
-        "pt": "Um painel no navegador para quem usa o Windows a fundo: rode comandos no WSL, execute ações administrativas do Windows de uma allowlist, gerencie VMs Hyper-V e um LLM local (Ollama), tudo em localhost e protegido por token."
-      },
-      "problem": {
-        "en": "WSL, Windows admin tasks, Hyper-V VMs and a local LLM are each managed from a different console.",
-        "pt": "WSL, tarefas administrativas do Windows, VMs Hyper-V e um LLM local são gerenciados cada um em um console diferente."
-      },
-      "solution": {
-        "en": "One PHP panel in the browser, bound to localhost and protected by a token. It runs commands in WSL, runs Windows admin actions from an allowlist, manages Hyper-V VMs and controls a local Ollama instance.",
-        "pt": "Um painel PHP no navegador, em localhost e protegido por token. Ele roda comandos no WSL, executa ações administrativas do Windows a partir de uma allowlist, gerencia VMs Hyper-V e controla uma instância local do Ollama."
-      },
-      "adrs": [
-        {
-          "id": "ADR 0001",
-          "title": {
-            "en": "Allowlist and protected folder",
-            "pt": "Allowlist e pasta protegida"
-          },
-          "body": {
-            "en": "Only actions listed in a manifest, from a protected folder, can run elevated on the host.",
-            "pt": "Só ações listadas num manifesto, de uma pasta protegida, rodam elevadas no host."
-          }
-        },
-        {
-          "id": "ADR 0002",
-          "title": {
-            "en": "Single use and UAC per sensitive action",
-            "pt": "Uso único e UAC por ação sensível"
-          },
-          "body": {
-            "en": "Each sensitive action needs its own approval; nothing reuses an elevated session.",
-            "pt": "Cada ação sensível pede a própria aprovação; nada reaproveita uma sessão elevada."
-          }
-        },
-        {
-          "id": "ADR 0008",
-          "title": {
-            "en": "Ollama per user, without elevation",
-            "pt": "Ollama por usuário, sem elevação"
-          },
-          "body": {
-            "en": "Pinned version with SHA-256 check, loopback only, and a channel that runs as the regular user.",
-            "pt": "Versão fixada com SHA-256 conferido, só loopback e um canal que roda como o usuário comum."
-          }
-        }
-      ],
-      "shots": [
-        {
-          "file": "phporto-home.webp",
-          "caption": {
-            "en": "Home: WSL, Windows, Hyper-V and Ollama one click away",
-            "pt": "Início: WSL, Windows, Hyper-V e Ollama a um clique"
-          },
-          "alt": {
-            "en": "PHPorto home with the WSL, WIN, Hyper-V, Ollama and settings buttons",
-            "pt": "Início do PHPorto com os botões WSL, WIN, Hyper-V, Ollama e configuração"
-          }
-        },
-        {
-          "file": "phporto-config.webp",
-          "caption": {
-            "en": "Settings: active database, HTTP API switch, elevated PowerShell and Hyper-V panel",
-            "pt": "Configuração: banco ativo, chave da API HTTP, PowerShell elevado e painel do Hyper-V"
-          },
-          "alt": {
-            "en": "PHPorto settings page in light mode with toggles for the API, elevated PowerShell and Hyper-V",
-            "pt": "Página de configuração do PHPorto no tema claro, com chaves para a API, o PowerShell elevado e o Hyper-V"
-          }
-        },
-        {
-          "file": "phporto-wsl.webp",
-          "caption": {
-            "en": "WSL in dark mode: shell commands in the distro, file upload and run history",
-            "pt": "WSL no tema escuro: comandos na distro, envio de arquivos e histórico de execuções"
-          },
-          "alt": {
-            "en": "PHPorto WSL page in dark mode with the terminal, the attachments area and the run log",
-            "pt": "Página WSL do PHPorto no tema escuro com o terminal, a área de anexos e os registros"
-          }
-        },
-        {
-          "file": "phporto-php.webp",
-          "caption": {
-            "en": "PHP: the interpreter in use and a guarded php.ini editor with an automatic backup",
-            "pt": "PHP: o interpretador em uso e um editor do php.ini com chaves controladas e backup automático"
-          },
-          "alt": {
-            "en": "PHPorto PHP page showing version 8.5, the php.ini path and the editable keys",
-            "pt": "Página PHP do PHPorto com a versão 8.5, o caminho do php.ini e as chaves editáveis"
-          }
-        },
-        {
-          "file": "phporto-c.webp",
-          "caption": {
-            "en": "C in the browser: code compiled in memory with Tiny C Compiler through PHP's FFI",
-            "pt": "C no navegador: código compilado na memória com o Tiny C Compiler, pelo FFI do PHP"
-          },
-          "alt": {
-            "en": "PHPorto C section with the Tiny C Compiler status and a C editor",
-            "pt": "Seção C do PHPorto com o estado do Tiny C Compiler e um editor de código C"
-          }
-        }
-      ]
-    },
-    {
-      "slug": "aws-terraform",
-      "name": "AWS platform with Terraform",
-      "cats": [
-        "devops"
-      ],
-      "main": true,
-      "repo": false,
-      "demo": false,
-      "tag": {
-        "en": "DevOps / IaC",
-        "pt": "DevOps / IaC"
-      },
-      "year": "2022–2025",
-      "type": {
-        "en": "Client project · AgroNegociar",
-        "pt": "Projeto de cliente · AgroNegociar"
-      },
-      "status": {
-        "en": "Delivered",
-        "pt": "Entregue"
-      },
-      "stack": [
-        "Terraform",
-        "AWS EC2",
-        "EBS",
-        "S3",
-        "DynamoDB",
-        "Cloudflare",
-        "WordOps",
-        "Bash",
-        "WordPress",
-        "BuddyPress",
-        "bbPress",
-        "Elementor",
-        "PHP"
-      ],
-      "shot": "aws-architecture.webp",
-      "desc": {
-        "en": "AWS infrastructure for AgroNegociar's news portal, in production and staging, built from scratch with Terraform.",
-        "pt": "Infraestrutura AWS do portal de notícias da AgroNegociar, em produção e homologação, criada do zero com Terraform."
-      },
-      "problem": {
-        "en": "AgroNegociar had an app for agribusiness and needed a gateway for new customers. The strategy was to build a community: a news portal and a social network where producers, companies and readers from the sector meet, read content and find their way to the app. For that to work, the site had to be complete, fast on any screen and easy for the client's team to manage, and the infrastructure had to be reliable, with no risk of losing content.",
-        "pt": "A AgroNegociar tinha um app para o agronegócio e precisava de uma porta de entrada para novos clientes. A estratégia foi criar uma comunidade: um portal de notícias e uma rede social onde produtores, empresas e leitores do setor se encontram, consomem conteúdo e chegam até o app. Para isso funcionar, o site precisava ser completo, rápido em qualquer tela e fácil para a equipe do cliente administrar, e a infraestrutura precisava ser confiável, sem risco de perder conteúdo."
-      },
-      "solution": {
-        "en": "The portal and the social network were built on Network, a complete community WordPress theme, with a child theme carrying the project's identity and a fully responsive layout. Pages were built in Elementor. The social network runs on the big community plugins integrated with the theme, BuddyPress and bbPress, and on top of them we developed several custom plugins: tools for the administrators and layout components the theme did not offer. On the infrastructure side, everything is versioned as code with Terraform: an Ubuntu server on AWS with the site on a separate disk, remote state with a lock, and identical production and staging environments. Every week an automatic backup of the database and the theme goes to a bucket. Since everything else is rebuilt from code, the whole environment can be recreated without losses. DNS and SSL run on Cloudflare, and the server is managed with WordOps.",
-        "pt": "O portal e a rede social foram construídos sobre o Network, um tema WordPress completo de comunidade, com um child theme com a identidade do projeto e layout totalmente responsivo. As páginas foram montadas no Elementor. A rede social usa os grandes plugins de comunidade integrados ao tema, o BuddyPress e o bbPress, e por cima deles desenvolvemos vários plugins próprios: ferramentas para os administradores e componentes de layout que o tema não oferecia. Na infraestrutura, tudo é versionado como código com Terraform: servidor Ubuntu na AWS com o site num disco separado, estado remoto com trava, e produção e homologação idênticas. Toda semana, um backup automático do banco de dados e do tema vai para um bucket. Como todo o resto é recriado a partir do código, o ambiente inteiro pode ser reconstruído sem perdas. O DNS e o SSL ficam no Cloudflare, e o servidor é gerenciado com WordOps."
-      },
-      "adrs": [
-        {
-          "id": "—",
-          "title": {
-            "en": "Start from a complete theme",
-            "pt": "Partir de um tema completo"
-          },
-          "body": {
-            "en": "Network already brought the community base, so the effort went into what was unique to the business.",
-            "pt": "O Network já trazia a base de comunidade, e o esforço foi para o que era único do negócio."
-          }
-        },
-        {
-          "id": "—",
-          "title": {
-            "en": "Logic in plugins",
-            "pt": "Lógica em plugins"
-          },
-          "body": {
-            "en": "Rules and components live in custom plugins, separate from the look, which makes them easier to evolve and update.",
-            "pt": "As regras e componentes ficaram em plugins próprios, separados do visual, o que facilita evoluir e atualizar."
-          }
-        },
-        {
-          "id": "—",
-          "title": {
-            "en": "Everything rebuildable",
-            "pt": "Tudo reconstruível"
-          },
-          "body": {
-            "en": "Only the database and the theme need a backup, because everything else comes from code.",
-            "pt": "Só o banco e o tema precisam de backup, porque o resto nasce do código."
-          }
-        },
-        {
-          "id": "—",
-          "title": {
-            "en": "Remote state with a lock",
-            "pt": "Estado remoto com trava"
-          },
-          "body": {
-            "en": "Terraform keeps its state in S3 and DynamoDB prevents two applies at the same time.",
-            "pt": "O Terraform guarda o estado no S3 e o DynamoDB impede duas aplicações ao mesmo tempo."
-          }
-        }
-      ],
-      "shots": [
-        {
-          "file": "aws-architecture.webp",
-          "caption": {
-            "en": "Sanitised architecture diagram",
-            "pt": "Diagrama de arquitetura sem dados sensíveis"
-          },
-          "alt": {
-            "en": "Diagram of the production and staging environments on AWS",
-            "pt": "Diagrama dos ambientes de produção e staging na AWS"
-          }
-        }
-      ],
-      "highlights": [
-        {
-          "value": "3",
-          "label": {
-            "en": "years of project",
-            "pt": "anos de projeto"
-          }
-        },
-        {
-          "value": "2",
-          "label": {
-            "en": "environments: production and staging",
-            "pt": "ambientes: produção e homologação"
-          }
-        },
-        {
-          "value": "1×",
-          "label": {
-            "en": "automatic backup every week",
-            "pt": "backup automático por semana"
-          }
-        }
-      ],
-      "features": [
-        {
-          "title": {
-            "en": "Portal and social network",
-            "pt": "Portal e rede social"
-          },
-          "items": [
-            {
-              "en": "News, profiles and interaction between users, as a gateway to the app",
-              "pt": "Notícias, perfis e interação entre usuários, como porta de entrada para o app"
-            }
-          ]
-        },
-        {
-          "title": {
-            "en": "Community plugins",
-            "pt": "Plugins de comunidade"
-          },
-          "items": [
-            {
-              "en": "BuddyPress for the social network: profiles, groups, activity feed, messages, friendships and verified accounts",
-              "pt": "BuddyPress para a rede social: perfis, grupos, feed de atividade, mensagens, amizades e contas verificadas"
-            },
-            {
-              "en": "bbPress for the forum",
-              "pt": "bbPress para o fórum"
-            },
-            {
-              "en": "Both integrated with the theme and with Elementor",
-              "pt": "Os dois integrados ao tema e ao Elementor"
-            }
-          ]
-        },
-        {
-          "title": {
-            "en": "Custom WordPress",
-            "pt": "WordPress sob medida"
-          },
-          "items": [
-            {
-              "en": "Child theme over Network, pages in Elementor and a responsive layout on any screen",
-              "pt": "Child theme sobre o Network, páginas no Elementor e layout responsivo em qualquer tela"
-            }
-          ]
-        },
-        {
-          "title": {
-            "en": "Custom plugins",
-            "pt": "Plugins próprios"
-          },
-          "items": [
-            {
-              "en": "Administration tools and layout components built for the project",
-              "pt": "Ferramentas de administração e componentes de layout feitos para o projeto"
-            }
-          ]
-        },
-        {
-          "title": {
-            "en": "Infrastructure as code",
-            "pt": "Infraestrutura como código"
-          },
-          "items": [
-            {
-              "en": "EC2 Ubuntu 24.04 with an always-current AMI, Elastic IP, security group and a persistent EBS disk mounted automatically",
-              "pt": "EC2 Ubuntu 24.04 com AMI sempre atual, Elastic IP, security group e disco EBS persistente com montagem automática"
-            }
-          ]
-        },
-        {
-          "title": {
-            "en": "Backup and recovery",
-            "pt": "Backup e recuperação"
-          },
-          "items": [
-            {
-              "en": "Database and theme saved to a bucket every week, and everything else rebuilt from code without losses",
-              "pt": "Banco de dados e tema salvos toda semana num bucket, e todo o resto reconstruído a partir do código, sem perdas"
-            }
-          ]
-        },
-        {
-          "title": {
-            "en": "Reliable environments",
-            "pt": "Ambientes confiáveis"
-          },
-          "items": [
-            {
-              "en": "Production and staging from the same code, with remote state in S3 and a DynamoDB lock",
-              "pt": "Produção e homologação a partir do mesmo código, com estado remoto no S3 e trava no DynamoDB"
-            }
-          ]
-        },
-        {
-          "title": {
-            "en": "Publishing",
-            "pt": "Publicação"
-          },
-          "items": [
-            {
-              "en": "Cloudflare for DNS and SSL, and WordOps on the server",
-              "pt": "Cloudflare para DNS e SSL, e WordOps no servidor"
-            }
-          ]
-        }
-      ],
-      "links": [
-        {
-          "label": {
-            "en": "Terraform template on GitHub ↗",
-            "pt": "Template Terraform no GitHub ↗"
-          },
-          "url": "https://github.com/caiobarilli/aws-terraform-example"
-        }
-      ]
-    },
-    {
       "slug": "keeptask",
       "name": "Keeptask",
       "cats": [
@@ -1332,6 +631,707 @@
               "pt": "Anexo pela câmera, cronômetro, mover etapa respeitando a trava de requisitos e anotação rápida"
             }
           ]
+        }
+      ]
+    },
+    {
+      "slug": "phporto",
+      "name": "PHPorto",
+      "cats": [
+        "php"
+      ],
+      "main": true,
+      "repo": true,
+      "demo": false,
+      "tag": {
+        "en": "PHP · PowerShell",
+        "pt": "PHP · PowerShell"
+      },
+      "year": "2026",
+      "type": {
+        "en": "Personal project",
+        "pt": "Projeto pessoal"
+      },
+      "status": {
+        "en": "Active",
+        "pt": "Ativo"
+      },
+      "stack": [
+        "PHP 8.5",
+        "PowerShell",
+        "WSL2",
+        "Hyper-V",
+        "Ollama",
+        "Pest / Pester"
+      ],
+      "shot": "phporto-home.webp",
+      "desc": {
+        "en": "A browser panel for Windows power users: run commands in WSL, run allowlisted Windows admin actions, manage Hyper-V VMs and a local LLM (Ollama), all bound to localhost and token-protected.",
+        "pt": "Um painel no navegador para quem usa o Windows a fundo: rode comandos no WSL, execute ações administrativas do Windows de uma allowlist, gerencie VMs Hyper-V e um LLM local (Ollama), tudo em localhost e protegido por token."
+      },
+      "problem": {
+        "en": "WSL, Windows admin tasks, Hyper-V VMs and a local LLM are each managed from a different console.",
+        "pt": "WSL, tarefas administrativas do Windows, VMs Hyper-V e um LLM local são gerenciados cada um em um console diferente."
+      },
+      "solution": {
+        "en": "One PHP panel in the browser, bound to localhost and protected by a token. It runs commands in WSL, runs Windows admin actions from an allowlist, manages Hyper-V VMs and controls a local Ollama instance.",
+        "pt": "Um painel PHP no navegador, em localhost e protegido por token. Ele roda comandos no WSL, executa ações administrativas do Windows a partir de uma allowlist, gerencia VMs Hyper-V e controla uma instância local do Ollama."
+      },
+      "adrs": [
+        {
+          "id": "ADR 0001",
+          "title": {
+            "en": "Allowlist and protected folder",
+            "pt": "Allowlist e pasta protegida"
+          },
+          "body": {
+            "en": "Only actions listed in a manifest, from a protected folder, can run elevated on the host.",
+            "pt": "Só ações listadas num manifesto, de uma pasta protegida, rodam elevadas no host."
+          }
+        },
+        {
+          "id": "ADR 0002",
+          "title": {
+            "en": "Single use and UAC per sensitive action",
+            "pt": "Uso único e UAC por ação sensível"
+          },
+          "body": {
+            "en": "Each sensitive action needs its own approval; nothing reuses an elevated session.",
+            "pt": "Cada ação sensível pede a própria aprovação; nada reaproveita uma sessão elevada."
+          }
+        },
+        {
+          "id": "ADR 0008",
+          "title": {
+            "en": "Ollama per user, without elevation",
+            "pt": "Ollama por usuário, sem elevação"
+          },
+          "body": {
+            "en": "Pinned version with SHA-256 check, loopback only, and a channel that runs as the regular user.",
+            "pt": "Versão fixada com SHA-256 conferido, só loopback e um canal que roda como o usuário comum."
+          }
+        }
+      ],
+      "shots": [
+        {
+          "file": "phporto-home.webp",
+          "caption": {
+            "en": "Home: WSL, Windows, Hyper-V and Ollama one click away",
+            "pt": "Início: WSL, Windows, Hyper-V e Ollama a um clique"
+          },
+          "alt": {
+            "en": "PHPorto home with the WSL, WIN, Hyper-V, Ollama and settings buttons",
+            "pt": "Início do PHPorto com os botões WSL, WIN, Hyper-V, Ollama e configuração"
+          }
+        },
+        {
+          "file": "phporto-config.webp",
+          "caption": {
+            "en": "Settings: active database, HTTP API switch, elevated PowerShell and Hyper-V panel",
+            "pt": "Configuração: banco ativo, chave da API HTTP, PowerShell elevado e painel do Hyper-V"
+          },
+          "alt": {
+            "en": "PHPorto settings page in light mode with toggles for the API, elevated PowerShell and Hyper-V",
+            "pt": "Página de configuração do PHPorto no tema claro, com chaves para a API, o PowerShell elevado e o Hyper-V"
+          }
+        },
+        {
+          "file": "phporto-wsl.webp",
+          "caption": {
+            "en": "WSL in dark mode: shell commands in the distro, file upload and run history",
+            "pt": "WSL no tema escuro: comandos na distro, envio de arquivos e histórico de execuções"
+          },
+          "alt": {
+            "en": "PHPorto WSL page in dark mode with the terminal, the attachments area and the run log",
+            "pt": "Página WSL do PHPorto no tema escuro com o terminal, a área de anexos e os registros"
+          }
+        },
+        {
+          "file": "phporto-php.webp",
+          "caption": {
+            "en": "PHP: the interpreter in use and a guarded php.ini editor with an automatic backup",
+            "pt": "PHP: o interpretador em uso e um editor do php.ini com chaves controladas e backup automático"
+          },
+          "alt": {
+            "en": "PHPorto PHP page showing version 8.5, the php.ini path and the editable keys",
+            "pt": "Página PHP do PHPorto com a versão 8.5, o caminho do php.ini e as chaves editáveis"
+          }
+        },
+        {
+          "file": "phporto-c.webp",
+          "caption": {
+            "en": "C in the browser: code compiled in memory with Tiny C Compiler through PHP's FFI",
+            "pt": "C no navegador: código compilado na memória com o Tiny C Compiler, pelo FFI do PHP"
+          },
+          "alt": {
+            "en": "PHPorto C section with the Tiny C Compiler status and a C editor",
+            "pt": "Seção C do PHPorto com o estado do Tiny C Compiler e um editor de código C"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "phparrot",
+      "name": "PHParrot",
+      "cats": [
+        "php",
+        "devops"
+      ],
+      "main": true,
+      "repo": true,
+      "demo": false,
+      "tag": {
+        "en": "PHP · Laravel",
+        "pt": "PHP · Laravel"
+      },
+      "year": "2026",
+      "type": {
+        "en": "Personal project",
+        "pt": "Projeto pessoal"
+      },
+      "status": {
+        "en": "Active",
+        "pt": "Ativo"
+      },
+      "stack": [
+        "Laravel 13",
+        "PHP 8.5",
+        "Livewire",
+        "Whisper (local)",
+        "Docker",
+        "Terraform",
+        "Pest"
+      ],
+      "shot": "phparrot-session.webp",
+      "desc": {
+        "en": "Language practice by speaking. Speech is transcribed locally with Whisper, so audio never leaves the machine.",
+        "pt": "Treino de idiomas pela fala. A voz é transcrita localmente com Whisper, e o áudio nunca sai da máquina."
+      },
+      "problem": {
+        "en": "Language apps train reading and tapping, not speaking. Cloud speech APIs solve that, but they send every recording to a third party and bill per minute.",
+        "pt": "Apps de idiomas treinam leitura e toque, não fala. APIs de voz na nuvem resolvem isso, mas enviam cada gravação a terceiros e cobram por minuto."
+      },
+      "solution": {
+        "en": "A Laravel and Livewire app for speaking practice. Whisper runs locally in Docker to transcribe what you say, and the infrastructure is provisioned with Terraform.",
+        "pt": "Um app em Laravel e Livewire para treinar a fala. O Whisper roda localmente em Docker para transcrever o que você diz, e a infraestrutura é provisionada com Terraform."
+      },
+      "adrs": [
+        {
+          "id": "ADR 0001",
+          "title": {
+            "en": "Stack",
+            "pt": "Stack"
+          },
+          "body": {
+            "en": "Laravel 13, PHP 8.5, Livewire, SQLite.",
+            "pt": "Laravel 13, PHP 8.5, Livewire, SQLite."
+          }
+        },
+        {
+          "id": "ADR 0004",
+          "title": {
+            "en": "Voice and transcription",
+            "pt": "Voz e transcrição"
+          },
+          "body": {
+            "en": "Whisper runs locally; audio never leaves the server.",
+            "pt": "O Whisper roda localmente; o áudio nunca sai do servidor."
+          }
+        },
+        {
+          "id": "ADR 0009",
+          "title": {
+            "en": "CI for containers",
+            "pt": "CI para containers"
+          },
+          "body": {
+            "en": "Hadolint, Trivy, SARIF and SBOM.",
+            "pt": "Hadolint, Trivy, SARIF e SBOM."
+          }
+        }
+      ],
+      "shots": [
+        {
+          "file": "phparrot-session.webp",
+          "caption": {
+            "en": "Speak: record, transcribe and compare word by word",
+            "pt": "Fala: gravar, transcrever e comparar palavra por palavra"
+          },
+          "alt": {
+            "en": "PHParrot speaking screen with record and transcribe buttons",
+            "pt": "Tela de fala do PHParrot com os botões de gravar e transcrever"
+          }
+        },
+        {
+          "file": "phparrot-2.webp",
+          "caption": {
+            "en": "Read: a text by level and theme, read aloud",
+            "pt": "Leitura: texto por nível e tema, lido em voz alta"
+          },
+          "alt": {
+            "en": "PHParrot reading screen with an English text at level 1",
+            "pt": "Tela de leitura do PHParrot com um texto em inglês no nível 1"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "uvalab",
+      "name": "Uvalab",
+      "cats": [
+        "php",
+        "devops"
+      ],
+      "main": true,
+      "repo": true,
+      "demo": false,
+      "tag": {
+        "en": "PHP · Laravel · WooCommerce",
+        "pt": "PHP · Laravel · WooCommerce"
+      },
+      "year": "2026",
+      "type": {
+        "en": "WooCommerce theme",
+        "pt": "Tema WooCommerce"
+      },
+      "status": {
+        "en": "Completed",
+        "pt": "Concluído"
+      },
+      "stack": [
+        "PHP",
+        "WordPress / WooCommerce",
+        "Sage 11",
+        "Acorn 5 (Laravel)",
+        "Livewire 4",
+        "Flux UI",
+        "Tailwind CSS 4",
+        "Vite",
+        "Pest",
+        "PHPStan",
+        "Terraform",
+        "Docker"
+      ],
+      "shot": "uvalab-home.webp",
+      "links": [
+        {
+          "label": {
+            "en": "Dev environment (terraform-bedrock) ↗",
+            "pt": "Ambiente de desenvolvimento (terraform-bedrock) ↗"
+          },
+          "url": "https://github.com/caiobarilli/terraform-bedrock"
+        },
+        {
+          "label": {
+            "en": "Design on Figma ↗",
+            "pt": "Design no Figma ↗"
+          },
+          "url": "https://www.figma.com/design/dbXy3NH2VlwRvZaiewkWrF/Uvalab-V1?node-id=0-1"
+        }
+      ],
+      "desc": {
+        "en": "WooCommerce store built as a Laravel app inside WordPress: a Sage 11 and Acorn theme, screens in Livewire 4 and Flux UI, and a development environment provisioned with Terraform and Docker.",
+        "pt": "E-commerce WooCommerce construído como um app Laravel dentro do WordPress: tema em Sage 11 e Acorn, telas em Livewire 4 e Flux UI, e ambiente de desenvolvimento provisionado com Terraform e Docker."
+      },
+      "highlights": [
+        {
+          "value": "132",
+          "label": {
+            "en": "commits",
+            "pt": "commits"
+          }
+        },
+        {
+          "value": "17",
+          "label": {
+            "en": "Livewire components",
+            "pt": "componentes Livewire"
+          }
+        },
+        {
+          "value": "16",
+          "label": {
+            "en": "Pest test files",
+            "pt": "arquivos de teste em Pest"
+          }
+        }
+      ],
+      "problem": {
+        "en": "WooCommerce themes often mix logic, templates and loose hooks, which makes the store hard to test, evolve and maintain. The goal was to keep WordPress's freedom for content, with the structure and tooling of a Laravel application.",
+        "pt": "Temas WooCommerce costumam misturar lógica, templates e hooks soltos, o que dificulta testar, evoluir e manter a loja. A ideia era ter a liberdade do WordPress para o conteúdo, com a organização e as ferramentas de uma aplicação Laravel."
+      },
+      "solution": {
+        "en": "The theme runs on Acorn, which brings Laravel into WordPress: service providers, controllers, middleware, migrations and seeders. The store, sign-in and customer area screens are Livewire components with Flux UI, and the admin panel is custom too. The layout follows a design made in Figma, with Full Site Editing and Tailwind 4. For development, terraform-bedrock uses Terraform to bring up a Docker environment with Nginx, PHP-FPM, MySQL and Node for Bedrock.",
+        "pt": "O tema roda sobre o Acorn, que traz o Laravel para dentro do WordPress: service providers, controllers, middleware, migrations e seeders. As telas da loja, do login e da área do cliente são componentes Livewire com Flux UI, e o painel administrativo também é próprio. O layout segue um design feito no Figma, com Full Site Editing e Tailwind 4. Para desenvolver, o terraform-bedrock sobe com Terraform um ambiente Docker com Nginx, PHP-FPM, MySQL e Node para o Bedrock."
+      },
+      "features": [
+        {
+          "title": {
+            "en": "Store",
+            "pt": "Loja"
+          },
+          "items": [
+            {
+              "en": "Product filters, a Livewire product list, the shop menu, a slider and quote requests",
+              "pt": "Filtros de produtos, lista com Livewire, menu da loja, slider e pedido de orçamento"
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Customer account",
+            "pt": "Conta do cliente"
+          },
+          "items": [
+            {
+              "en": "Sign-in and sign-up, dashboard, orders, order details, downloads, address and account details, behind a customer middleware",
+              "pt": "Login e cadastro, painel, pedidos, detalhe do pedido, downloads, endereço e dados da conta, protegidos por um middleware de cliente"
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Admin panel",
+            "pt": "Painel administrativo"
+          },
+          "items": [
+            {
+              "en": "Theme options, home sliders, Acorn cache, seeder and system status",
+              "pt": "Opções do tema, sliders da home, cache do Acorn, seeder e status do sistema"
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "WordPress organised like Laravel",
+            "pt": "WordPress organizado como Laravel"
+          },
+          "items": [
+            {
+              "en": "Post types, shortcodes and admin cleanup in service providers, and Livewire components also available as shortcodes",
+              "pt": "Post types, shortcodes e limpeza do admin em service providers, e componentes Livewire também disponíveis como shortcode"
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Quality",
+            "pt": "Qualidade"
+          },
+          "items": [
+            {
+              "en": "PHPStan, Pest and Husky hooks with lint-staged on commit and tests on push",
+              "pt": "PHPStan, Pest e hooks do Husky com lint-staged no commit e testes no push"
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Environment and publishing",
+            "pt": "Ambiente e publicação"
+          },
+          "items": [
+            {
+              "en": "Bedrock in Docker through Terraform for development, and WordOps with Cloudflare Tunnel to publish",
+              "pt": "Bedrock em Docker via Terraform no desenvolvimento, e WordOps com Cloudflare Tunnel para publicar"
+            }
+          ]
+        }
+      ],
+      "adrs": [
+        {
+          "id": "—",
+          "title": {
+            "en": "Laravel inside WordPress",
+            "pt": "Laravel dentro do WordPress"
+          },
+          "body": {
+            "en": "Acorn makes providers, Eloquent, migrations and tests available without giving up the WooCommerce ecosystem.",
+            "pt": "O Acorn permite usar providers, Eloquent, migrations e testes sem abrir mão do ecossistema WooCommerce."
+          }
+        },
+        {
+          "id": "—",
+          "title": {
+            "en": "Livewire instead of scattered JavaScript",
+            "pt": "Livewire no lugar de JavaScript avulso"
+          },
+          "body": {
+            "en": "The store and customer area interactions live in PHP, as testable components.",
+            "pt": "A interação da loja e da área do cliente fica no PHP, com componentes testáveis."
+          }
+        },
+        {
+          "id": "—",
+          "title": {
+            "en": "Environment as code",
+            "pt": "Ambiente como código"
+          },
+          "body": {
+            "en": "terraform-bedrock rebuilds the whole environment from scratch, the same way on any machine.",
+            "pt": "O terraform-bedrock recria o ambiente inteiro do zero, do mesmo jeito em qualquer máquina."
+          }
+        }
+      ],
+      "shots": [
+        {
+          "file": "uvalab-home.webp",
+          "caption": {
+            "en": "Store home with the collection slider",
+            "pt": "Home da loja com o slider de coleção"
+          },
+          "alt": {
+            "en": "Uvalab store home page with a wine bottle and the collection headline",
+            "pt": "Home da loja Uvalab com uma garrafa de vinho e o título da coleção"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "aws-terraform",
+      "name": "AWS platform with Terraform",
+      "cats": [
+        "devops"
+      ],
+      "main": true,
+      "repo": false,
+      "demo": false,
+      "tag": {
+        "en": "DevOps / IaC",
+        "pt": "DevOps / IaC"
+      },
+      "year": "2022–2025",
+      "type": {
+        "en": "Client project · AgroNegociar",
+        "pt": "Projeto de cliente · AgroNegociar"
+      },
+      "status": {
+        "en": "Delivered",
+        "pt": "Entregue"
+      },
+      "stack": [
+        "Terraform",
+        "AWS EC2",
+        "EBS",
+        "S3",
+        "DynamoDB",
+        "Cloudflare",
+        "WordOps",
+        "Bash",
+        "WordPress",
+        "BuddyPress",
+        "bbPress",
+        "Elementor",
+        "PHP"
+      ],
+      "shot": "aws-architecture.webp",
+      "desc": {
+        "en": "AWS infrastructure for AgroNegociar's news portal, in production and staging, built from scratch with Terraform.",
+        "pt": "Infraestrutura AWS do portal de notícias da AgroNegociar, em produção e homologação, criada do zero com Terraform."
+      },
+      "problem": {
+        "en": "AgroNegociar had an app for agribusiness and needed a gateway for new customers. The strategy was to build a community: a news portal and a social network where producers, companies and readers from the sector meet, read content and find their way to the app. For that to work, the site had to be complete, fast on any screen and easy for the client's team to manage, and the infrastructure had to be reliable, with no risk of losing content.",
+        "pt": "A AgroNegociar tinha um app para o agronegócio e precisava de uma porta de entrada para novos clientes. A estratégia foi criar uma comunidade: um portal de notícias e uma rede social onde produtores, empresas e leitores do setor se encontram, consomem conteúdo e chegam até o app. Para isso funcionar, o site precisava ser completo, rápido em qualquer tela e fácil para a equipe do cliente administrar, e a infraestrutura precisava ser confiável, sem risco de perder conteúdo."
+      },
+      "solution": {
+        "en": "The portal and the social network were built on Network, a complete community WordPress theme, with a child theme carrying the project's identity and a fully responsive layout. Pages were built in Elementor. The social network runs on the big community plugins integrated with the theme, BuddyPress and bbPress, and on top of them we developed several custom plugins: tools for the administrators and layout components the theme did not offer. On the infrastructure side, everything is versioned as code with Terraform: an Ubuntu server on AWS with the site on a separate disk, remote state with a lock, and identical production and staging environments. Every week an automatic backup of the database and the theme goes to a bucket. Since everything else is rebuilt from code, the whole environment can be recreated without losses. DNS and SSL run on Cloudflare, and the server is managed with WordOps.",
+        "pt": "O portal e a rede social foram construídos sobre o Network, um tema WordPress completo de comunidade, com um child theme com a identidade do projeto e layout totalmente responsivo. As páginas foram montadas no Elementor. A rede social usa os grandes plugins de comunidade integrados ao tema, o BuddyPress e o bbPress, e por cima deles desenvolvemos vários plugins próprios: ferramentas para os administradores e componentes de layout que o tema não oferecia. Na infraestrutura, tudo é versionado como código com Terraform: servidor Ubuntu na AWS com o site num disco separado, estado remoto com trava, e produção e homologação idênticas. Toda semana, um backup automático do banco de dados e do tema vai para um bucket. Como todo o resto é recriado a partir do código, o ambiente inteiro pode ser reconstruído sem perdas. O DNS e o SSL ficam no Cloudflare, e o servidor é gerenciado com WordOps."
+      },
+      "adrs": [
+        {
+          "id": "—",
+          "title": {
+            "en": "Start from a complete theme",
+            "pt": "Partir de um tema completo"
+          },
+          "body": {
+            "en": "Network already brought the community base, so the effort went into what was unique to the business.",
+            "pt": "O Network já trazia a base de comunidade, e o esforço foi para o que era único do negócio."
+          }
+        },
+        {
+          "id": "—",
+          "title": {
+            "en": "Logic in plugins",
+            "pt": "Lógica em plugins"
+          },
+          "body": {
+            "en": "Rules and components live in custom plugins, separate from the look, which makes them easier to evolve and update.",
+            "pt": "As regras e componentes ficaram em plugins próprios, separados do visual, o que facilita evoluir e atualizar."
+          }
+        },
+        {
+          "id": "—",
+          "title": {
+            "en": "Everything rebuildable",
+            "pt": "Tudo reconstruível"
+          },
+          "body": {
+            "en": "Only the database and the theme need a backup, because everything else comes from code.",
+            "pt": "Só o banco e o tema precisam de backup, porque o resto nasce do código."
+          }
+        },
+        {
+          "id": "—",
+          "title": {
+            "en": "Remote state with a lock",
+            "pt": "Estado remoto com trava"
+          },
+          "body": {
+            "en": "Terraform keeps its state in S3 and DynamoDB prevents two applies at the same time.",
+            "pt": "O Terraform guarda o estado no S3 e o DynamoDB impede duas aplicações ao mesmo tempo."
+          }
+        }
+      ],
+      "shots": [
+        {
+          "file": "aws-architecture.webp",
+          "caption": {
+            "en": "Sanitised architecture diagram",
+            "pt": "Diagrama de arquitetura sem dados sensíveis"
+          },
+          "alt": {
+            "en": "Diagram of the production and staging environments on AWS",
+            "pt": "Diagrama dos ambientes de produção e staging na AWS"
+          }
+        }
+      ],
+      "highlights": [
+        {
+          "value": "3",
+          "label": {
+            "en": "years of project",
+            "pt": "anos de projeto"
+          }
+        },
+        {
+          "value": "2",
+          "label": {
+            "en": "environments: production and staging",
+            "pt": "ambientes: produção e homologação"
+          }
+        },
+        {
+          "value": "1×",
+          "label": {
+            "en": "automatic backup every week",
+            "pt": "backup automático por semana"
+          }
+        }
+      ],
+      "features": [
+        {
+          "title": {
+            "en": "Portal and social network",
+            "pt": "Portal e rede social"
+          },
+          "items": [
+            {
+              "en": "News, profiles and interaction between users, as a gateway to the app",
+              "pt": "Notícias, perfis e interação entre usuários, como porta de entrada para o app"
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Community plugins",
+            "pt": "Plugins de comunidade"
+          },
+          "items": [
+            {
+              "en": "BuddyPress for the social network: profiles, groups, activity feed, messages, friendships and verified accounts",
+              "pt": "BuddyPress para a rede social: perfis, grupos, feed de atividade, mensagens, amizades e contas verificadas"
+            },
+            {
+              "en": "bbPress for the forum",
+              "pt": "bbPress para o fórum"
+            },
+            {
+              "en": "Both integrated with the theme and with Elementor",
+              "pt": "Os dois integrados ao tema e ao Elementor"
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Custom WordPress",
+            "pt": "WordPress sob medida"
+          },
+          "items": [
+            {
+              "en": "Child theme over Network, pages in Elementor and a responsive layout on any screen",
+              "pt": "Child theme sobre o Network, páginas no Elementor e layout responsivo em qualquer tela"
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Custom plugins",
+            "pt": "Plugins próprios"
+          },
+          "items": [
+            {
+              "en": "Administration tools and layout components built for the project",
+              "pt": "Ferramentas de administração e componentes de layout feitos para o projeto"
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Infrastructure as code",
+            "pt": "Infraestrutura como código"
+          },
+          "items": [
+            {
+              "en": "EC2 Ubuntu 24.04 with an always-current AMI, Elastic IP, security group and a persistent EBS disk mounted automatically",
+              "pt": "EC2 Ubuntu 24.04 com AMI sempre atual, Elastic IP, security group e disco EBS persistente com montagem automática"
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Backup and recovery",
+            "pt": "Backup e recuperação"
+          },
+          "items": [
+            {
+              "en": "Database and theme saved to a bucket every week, and everything else rebuilt from code without losses",
+              "pt": "Banco de dados e tema salvos toda semana num bucket, e todo o resto reconstruído a partir do código, sem perdas"
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Reliable environments",
+            "pt": "Ambientes confiáveis"
+          },
+          "items": [
+            {
+              "en": "Production and staging from the same code, with remote state in S3 and a DynamoDB lock",
+              "pt": "Produção e homologação a partir do mesmo código, com estado remoto no S3 e trava no DynamoDB"
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Publishing",
+            "pt": "Publicação"
+          },
+          "items": [
+            {
+              "en": "Cloudflare for DNS and SSL, and WordOps on the server",
+              "pt": "Cloudflare para DNS e SSL, e WordOps no servidor"
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": {
+            "en": "Terraform template on GitHub ↗",
+            "pt": "Template Terraform no GitHub ↗"
+          },
+          "url": "https://github.com/caiobarilli/aws-terraform-example"
         }
       ]
     },
