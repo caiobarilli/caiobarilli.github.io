@@ -34,6 +34,13 @@ describe.each(["pt-br", "en"])("CV in %s", (locale) => {
   });
 });
 
+it("the /cv/ page uses the site's own download labels", () => {
+  const html = readFileSync("public/cv/index.html", "utf8");
+  const ui = getContent().ui;
+  expect(html).toContain(`${(ui.en as Record<string, string>).cvLink} (EN)`);
+  expect(html).toContain(`${(ui.pt as Record<string, string>).cvLink} (PT)`);
+});
+
 describe.each(LANGS.map((l) => [l.locale, l] as const))("CV reading order in %s", (_locale, lang) => {
   const site = getContent();
   const earlier = site.earlierExperience.map((e) => ({

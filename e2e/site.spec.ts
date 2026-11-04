@@ -544,3 +544,31 @@ test.describe("about", () => {
     });
   }
 });
+
+test.describe("short résumé address", () => {
+  for (const [locale, pdf] of [["pt-BR", "caio-barilli-cv-pt-br.pdf"], ["en-US", "caio-barilli-cv-en.pdf"]]) {
+    test(`/cv/ sends a ${locale} browser to ${pdf}`, async ({ browser }) => {
+      const context = await browser.newContext({ locale });
+      const page = await context.newPage();
+      // Stand in for the PDF so the browser does not start a download.
+      await page.route("**/*.pdf", (route) => route.fulfill({ contentType: "text/plain", body: "pdf" }));
+      await page.goto("/cv/");
+      await expect(page).toHaveURL(new RegExp(`/cv/${pdf}$`));
+      await context.close();
+    });
+  }
+
+  test("/cv/ without JavaScript shows both links and is noindex", async ({ browser }) => {
+    const context = await browser.newContext({ javaScriptEnabled: false });
+    const page = await context.newPage();
+    await page.goto("/cv/");
+    await expect(page.getByRole("link", { name: "Download résumé (EN)" })).toHaveAttribute("href", "/cv/caio-barilli-cv-en.pdf");
+    await expect(page.getByRole("link", { name: "Baixar currículo (PT)" })).toHaveAttribute("href", "/cv/caio-barilli-cv-pt-br.pdf");
+    await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", "noindex");
+    await context.close();
+  });
+
+  test("the sitemap does not list /cv/", async ({ request }) => {
+    expect(await (await request.get("/sitemap.xml")).text()).not.toContain("/cv/");
+  });
+});
