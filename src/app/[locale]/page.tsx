@@ -64,12 +64,12 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           </div>
 
           <article className="mb-5 grid grid-cols-[repeat(auto-fit,minmax(min(100%,440px),1fr))] overflow-hidden rounded-2xl border border-line bg-surface">
-            <Shot src={shotSrc(hero.shot)} alt={hero.shots[0] ? localize(hero.shots[0].alt, locale) : hero.name} label={s("placeholder")} file={`${s("screenshot")} · ${hero.shot}`} priority className="min-h-[clamp(220px,32vw,420px)] p-4 text-xs" />
+            <Link href={projectHref(locale, hero)} tabIndex={-1} aria-hidden="true" className="block"><Shot src={shotSrc(hero.shot)} alt="" label={s("placeholder")} file={`${s("screenshot")} · ${hero.shot}`} priority className="min-h-[clamp(220px,32vw,420px)] p-4 text-xs" /></Link>
             <div className="flex flex-col justify-center gap-4 p-[clamp(24px,4vw,40px)]">
               <span className="self-start rounded-full border border-accent-line px-2.5 py-1 font-mono text-xs font-medium text-accent-text">
                 {localize(hero.tag, locale)}
               </span>
-              <h3 className="text-[clamp(34px,4vw,48px)] font-bold tracking-[-0.03em]">{hero.name}</h3>
+              <h3 className="text-[clamp(34px,4vw,48px)] font-bold tracking-[-0.03em]"><Link href={projectHref(locale, hero)} className="hover:text-accent-text">{hero.name}</Link></h3>
               <p className="text-lg leading-[1.55] text-pretty text-ink-2">{localize(hero.desc, locale)}</p>
               <div className="font-mono text-[13px] leading-[1.6] text-muted">{stackLine(hero)}</div>
               <Link href={projectHref(locale, hero)} className="mt-1.5 flex min-h-11 items-center self-start text-[15px] font-semibold hover:text-accent-text">
@@ -81,10 +81,10 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,300px),1fr))] gap-5">
             {rest.map((p) => (
               <article key={p.slug} className="flex flex-col overflow-hidden rounded-2xl border border-line bg-surface">
-                <Shot src={shotSrc(p.shot)} alt={p.shots[0] ? localize(p.shots[0].alt, locale) : p.name} label={s("placeholder")} file={`${s("screenshot")} · ${p.shot}`} className="aspect-[16/10]" />
+                <Link href={projectHref(locale, p)} tabIndex={-1} aria-hidden="true" className="block"><Shot src={shotSrc(p.shot)} alt="" label={s("placeholder")} file={`${s("screenshot")} · ${p.shot}`} className="aspect-[16/10]" /></Link>
                 <div className="flex flex-1 flex-col gap-2.5 p-6">
                   <span className="font-mono text-xs font-medium text-accent-text">{localize(p.tag, locale)}</span>
-                  <h3 className="text-2xl leading-[1.15] font-semibold tracking-[-0.02em]">{p.name}</h3>
+                  <h3 className="text-2xl leading-[1.15] font-semibold tracking-[-0.02em]"><Link href={projectHref(locale, p)} className="hover:text-accent-text">{p.name}</Link></h3>
                   <p className="flex-1 text-[15px] leading-[1.55] text-pretty text-ink-2">{localize(p.desc, locale)}</p>
                   <div className="font-mono text-xs leading-[1.6] text-muted">{stackLine(p)}</div>
                   <Link href={projectHref(locale, p)} className="flex min-h-11 items-center self-start text-sm font-semibold hover:text-accent-text">

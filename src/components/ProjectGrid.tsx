@@ -58,13 +58,13 @@ export function ProjectGrid({ projects, filters, labels }: Props) {
       <div className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,320px),1fr))] gap-5">
         {main.map((p) => (
           <article key={p.slug} className="flex flex-col overflow-hidden rounded-2xl border border-line bg-surface">
-            <Shot src={p.img} alt={p.alt} label={labels.placeholder} file={`${labels.screenshot} · ${p.shot}`} className="aspect-[16/10]" />
+            <Link href={p.href} tabIndex={-1} aria-hidden="true" className="block"><Shot src={p.img} alt="" label={labels.placeholder} file={`${labels.screenshot} · ${p.shot}`} className="aspect-[16/10]" /></Link>
             <div className="flex flex-1 flex-col gap-2.5 p-6">
               <div className="flex justify-between gap-3 font-mono text-xs font-medium">
                 <span className="text-accent-text">{p.tag}</span>
                 <span className="text-muted">{p.year}</span>
               </div>
-              <h2 className="text-2xl leading-[1.15] font-semibold tracking-[-0.02em]">{p.name}</h2>
+              <h2 className="text-2xl leading-[1.15] font-semibold tracking-[-0.02em]"><Link href={p.href} className="hover:text-accent-text">{p.name}</Link></h2>
               <p className="flex-1 text-[15px] leading-[1.55] text-pretty text-ink-2">{p.desc}</p>
               <div className="font-mono text-xs leading-[1.6] text-muted">{p.stackLine}</div>
               <Link href={p.href} className="flex min-h-11 items-center self-start text-sm font-semibold hover:text-accent-text">
