@@ -1,7 +1,7 @@
 <h1 align="center">caiobarilli.github.io</h1>
 
 <p align="center">
-  Personal portfolio of Caio Barilli — PHP &amp; Laravel engineer, DevOps and agentic workflows.
+  Personal portfolio of Caio Barilli — Full Stack engineer, DevOps and agentic workflows.
   <br />
   <a href="https://caiobarilli.github.io"><strong>caiobarilli.github.io</strong></a>
 </p>

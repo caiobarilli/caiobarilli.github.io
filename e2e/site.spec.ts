@@ -90,7 +90,7 @@ test.describe("home", () => {
 
   test("the home title carries the role, numbers follow the language and articles say they are in Portuguese", async ({ page }) => {
     await page.goto("/en/");
-    await expect(page).toHaveTitle("Caio Barilli · PHP & Laravel Engineer");
+    await expect(page).toHaveTitle("Caio Barilli · Full Stack Engineer");
     await expect(page.getByText("Sep 4, 2026 · In Portuguese")).toBeVisible();
     await page.goto("/pt-br/");
     await expect(page.getByText("4 set 2026", { exact: true })).toBeVisible();
