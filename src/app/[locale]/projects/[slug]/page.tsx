@@ -164,6 +164,11 @@ export default async function ProjectPage({ params }: { params: Params }) {
                 {s("privateCode")}
               </span>
             )}
+            {p.course && (
+              <a href={p.course.url} title={p.course.name} className="flex min-h-12 items-center rounded-full border border-line-strong px-[22px] text-[15px] font-medium hover:border-ink">
+                {s("courseLink")}
+              </a>
+            )}
             {p.site ? (
               <a href={p.site} className="flex min-h-12 items-center rounded-full border border-line-strong px-[22px] text-[15px] font-medium hover:border-ink">
                 {s("siteLink")}

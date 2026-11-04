@@ -51,6 +51,7 @@ const REPOS: Record<string, string> = {
   mean: "MEAN",
   nestauth: "NestAuth",
   "crud-ts": "crud-ts",
+  "nextjs-tailwind-store": "nextjs-tailwind-store",
 };
 
 export function repoUrl(project: Project): string | null {

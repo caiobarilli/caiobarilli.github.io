@@ -6,7 +6,7 @@ export default async function ExperiencePage({ params }: { params: Promise<{ loc
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
   const s = (key: string) => str(locale, key);
-  const { experience, education } = getContent();
+  const { experience, education, courses } = getContent();
 
   return (
     <PageShell>
@@ -55,6 +55,20 @@ export default async function ExperiencePage({ params }: { params: Promise<{ loc
                 <span className="text-lg font-semibold">{localize(ed.title, locale)}</span>
                 <span className="font-mono text-sm text-muted">{ed.school}</span>
               </div>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="mt-12">
+        <h2 className="mb-5 text-[28px] font-semibold tracking-[-0.02em]">{s("coursesTitle")}</h2>
+        <ul>
+          {courses.map((c) => (
+            <li key={c.url} className="border-b border-line">
+              <a href={c.url} className="flex flex-wrap items-center justify-between gap-x-6 gap-y-1 py-[18px] hover:text-accent-text">
+                <span className="text-lg font-semibold">{c.name}</span>
+                <span className="font-mono text-sm text-muted">Udemy ↗</span>
+              </a>
             </li>
           ))}
         </ul>

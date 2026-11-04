@@ -22,6 +22,8 @@ export type Project = {
   demo: boolean;
   /** Public product site, when the code itself is private. */
   site?: string;
+  /** Course the project was built in. */
+  course?: Course;
   tag: Localized;
   year: string;
   type: Localized;
@@ -48,6 +50,8 @@ export type Experience = {
 
 export type Education = { period: string; title: Localized; school: string };
 
+export type Course = { name: string; url: string };
+
 export type Contact = { label: string; handle: string; url: string; pending: boolean };
 
 export type Step = { n: string; title: string; body: string };
@@ -64,4 +68,5 @@ export type SiteContent = {
   experience: Experience[];
   contacts: Contact[];
   education: Education[];
+  courses: Course[];
 };
