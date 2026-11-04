@@ -4,7 +4,7 @@ import { PageIntro, PageShell } from "@/components/PageIntro";
 import { getContent, isLocale, str } from "@/content";
 import { sectionMetadata } from "../../page-meta";
 
-export const generateMetadata = sectionMetadata("contactTitle", "contactSub");
+export const generateMetadata = sectionMetadata("contactTitle", "contactSub", "contact/");
 
 function Row({ label, children }: { label: string; children: ReactNode }) {
   return (

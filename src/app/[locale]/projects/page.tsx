@@ -5,7 +5,7 @@ import { contentKey, getContent, isLocale, localize, str } from "@/content";
 import { shotSrc } from "@/content/images";
 import { sectionMetadata } from "../../page-meta";
 
-export const generateMetadata = sectionMetadata("projectsTitle", "projectsSub");
+export const generateMetadata = sectionMetadata("projectsTitle", "projectsSub", "projects/");
 
 export default async function Projects({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

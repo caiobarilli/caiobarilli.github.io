@@ -80,7 +80,7 @@ node scripts/photo.mjs "<path to original photo>"
 node scripts/shots.mjs "<keeptask prints dir>" "<phparrot captures dir>"
 ```
 
-`photo.mjs` crops the profile photo and writes `public/images/caio-96.webp` and `caio-480.webp`. `shots.mjs` turns project screenshots into 16:10 WebP files in `public/images/projects/`, including the side-by-side phone panels. A project screenshot that does not exist yet renders as a striped placeholder instead of breaking the page.
+`og.mjs` draws the link-preview card (1200×630, one per language, text read from `site.json`) and the app icons; run it again whenever the role line changes. `photo.mjs` crops the profile photo and writes `public/images/caio-96.webp` and `caio-480.webp`. `shots.mjs` turns project screenshots into 16:10 WebP files in `public/images/projects/`, including the side-by-side phone panels. A project screenshot that does not exist yet renders as a striped placeholder instead of breaking the page.
 
 ## Structure
 

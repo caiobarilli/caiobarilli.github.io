@@ -3,7 +3,7 @@ import { PageIntro, PageShell } from "@/components/PageIntro";
 import { getContent, isLocale, localize, str } from "@/content";
 import { sectionMetadata } from "../../page-meta";
 
-export const generateMetadata = sectionMetadata("expTitle", "expSub");
+export const generateMetadata = sectionMetadata("expTitle", "expSub", "experience/");
 
 export default async function ExperiencePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

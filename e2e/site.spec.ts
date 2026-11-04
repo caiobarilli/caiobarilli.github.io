@@ -71,6 +71,23 @@ test.describe("home", () => {
     await expect(hero.getByRole("link", { name: "LinkedIn ↗" })).toHaveAttribute("href", "https://www.linkedin.com/in/caio-barilli");
   });
 
+  test("pages carry a link preview, and the sitemap and robots exist", async ({ page, request }) => {
+    const pages: [string, string][] = [["/pt-br/projects/keeptask/", "og-pt-br.png"], ["/en/", "og-en.png"]];
+    for (const [path, image] of pages) {
+      await page.goto(path);
+      await expect(page.locator('meta[property="og:image"]')).toHaveAttribute("content", `https://caiobarilli.github.io/${image}`);
+      await expect(page.locator('meta[name="twitter:card"]')).toHaveAttribute("content", "summary_large_image");
+      await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", `https://caiobarilli.github.io${path}`);
+    }
+    const root = await (await request.get("/index.html")).text();
+    expect(root).toContain('property="og:image" content="https://caiobarilli.github.io/og-en.png"');
+    for (const file of ["/og-en.png", "/og-pt-br.png", "/icon.svg", "/apple-icon.png", "/robots.txt"]) {
+      expect((await request.get(file)).status(), file).toBe(200);
+    }
+    const sitemap = await (await request.get("/sitemap.xml")).text();
+    expect(sitemap).toContain("https://caiobarilli.github.io/en/projects/info4all/");
+  });
+
   test("every section page has its own title", async ({ page }) => {
     const titles = new Set<string>();
     for (const path of ["/pt-br/", "/pt-br/projects/", "/pt-br/experience/", "/pt-br/about/", "/pt-br/contact/"]) {

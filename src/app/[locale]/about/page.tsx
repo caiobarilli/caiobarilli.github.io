@@ -5,7 +5,7 @@ import { PageShell } from "@/components/PageIntro";
 import { isLocale, str } from "@/content";
 import { sectionMetadata } from "../../page-meta";
 
-export const generateMetadata = sectionMetadata("aboutTitle", "aboutP1");
+export const generateMetadata = sectionMetadata("aboutTitle", "aboutP1", "about/");
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

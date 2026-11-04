@@ -8,6 +8,7 @@ import { ThemeSync } from "@/components/ThemeSync";
 import { isLocale, navLabel, str } from "@/content";
 import { locales } from "@/content/types";
 import { geist, geistMono } from "../fonts";
+import { pageMetadata, SITE_URL } from "../page-meta";
 import "../globals.css";
 
 export const dynamicParams = false;
@@ -20,9 +21,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   if (!isLocale(locale)) return {};
   return {
-    title: "Caio Barilli",
-    description: str(locale, "heroLine"),
-    alternates: { languages: { en: "/en/", "pt-BR": "/pt-br/" } },
+    metadataBase: new URL(SITE_URL),
+    ...pageMetadata(locale, "Caio Barilli", str(locale, "heroLine"), ""),
   };
 }
 

@@ -6,6 +6,7 @@ import { LightboxButton, LightboxProvider, type LightboxItem } from "@/component
 import { Shot } from "@/components/Shot";
 import { shotSrc } from "@/content/images";
 import { getContent, isLocale, localize, repoUrl, str } from "@/content";
+import { pageMetadata } from "../../../page-meta";
 
 export const dynamicParams = false;
 
@@ -27,7 +28,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   const { locale, slug } = await params;
   const found = findProject(slug);
   if (!isLocale(locale) || !found) return {};
-  return { title: `${found.project.name} · Caio Barilli`, description: localize(found.project.desc, locale) };
+  return pageMetadata(locale, `${found.project.name} · Caio Barilli`, localize(found.project.desc, locale), `projects/${slug}/`);
 }
 
 function Block({ title, children, className = "" }: { title: string; children: ReactNode; className?: string }) {
