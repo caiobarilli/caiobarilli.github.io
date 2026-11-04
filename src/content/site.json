@@ -483,17 +483,6 @@
             "en": "The AMI is looked up from Canonical at plan time, with no hard-coded ID.",
             "pt": "A AMI é buscada na Canonical na hora, sem ID fixo no código."
           }
-        },
-        {
-          "id": "—",
-          "title": {
-            "en": "If I built it today",
-            "pt": "Se eu fizesse hoje"
-          },
-          "body": {
-            "en": "One module for both environments, SSM instead of open SSH, and the off-site backup finished.",
-            "pt": "Um módulo para os dois ambientes, acesso pelo SSM em vez de SSH aberto, e o backup completo fora da máquina."
-          }
         }
       ],
       "shots": [
