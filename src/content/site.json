@@ -1989,16 +1989,34 @@
         "pt": "2024 — atual"
       },
       "role": {
-        "en": "Fullstack Developer (PHP / Laravel)",
-        "pt": "Desenvolvedor Fullstack (PHP / Laravel)"
+        "pt": "Desenvolvedor Full Stack (PHP / Laravel)",
+        "en": "Full Stack Developer (PHP / Laravel)"
       },
       "kind": {
         "en": "Remote",
         "pt": "Remoto"
       },
       "summary": {
-        "en": "Built Keeptask, a B2B task and project management platform, with a Laravel web app and a native iOS and Android app. Web applications with PHP (Laravel), JavaScript and MySQL; Docker environments for dev and testing; payment gateway and external API integrations; UIs with TailwindCSS, Livewire and Bootstrap; code quality with PHPStan, PHP-CS-Fixer and Pest; reusable Composer packages; Linux/Debian servers; Scrum.",
-        "pt": "Construí o Keeptask, plataforma B2B de gestão de tarefas e projetos, com web em Laravel e app nativo para iOS e Android. Aplicações web com PHP (Laravel), JavaScript e MySQL; ambientes Docker para desenvolvimento e testes; integrações com gateways de pagamento e APIs externas; interfaces com TailwindCSS, Livewire e Bootstrap; qualidade de código com PHPStan, PHP-CS-Fixer e Pest; pacotes Composer reutilizáveis; servidores Linux/Debian; Scrum."
+        "en": "Built Keeptask, a B2B task and project management platform, with a Laravel web app and a native iOS and Android app.",
+        "pt": "Construí o Keeptask, plataforma B2B de gestão de tarefas e projetos, com web em Laravel e app nativo para iOS e Android."
+      },
+      "highlights": [
+        {
+          "pt": "Arquitetura e desenvolvimento da web em Laravel 13 com Livewire, Reverb e Horizon, e da API versionada que o app consome.",
+          "en": "Architecture and development of the web app in Laravel 13 with Livewire, Reverb and Horizon, and of the versioned API the app consumes."
+        },
+        {
+          "pt": "App nativo para iOS e Android em NativePHP, com modo offline e notificações push.",
+          "en": "Native iOS and Android app in NativePHP, with offline mode and push notifications."
+        },
+        {
+          "pt": "Cerca de 2.000 testes automatizados em Pest; integrações com Google Workspace, Zapier e webhooks assinados.",
+          "en": "About 2,000 automated tests in Pest; integrations with Google Workspace, Zapier and signed webhooks."
+        }
+      ],
+      "details": {
+        "pt": "Aplicações web com PHP (Laravel), JavaScript e MySQL; ambientes Docker para desenvolvimento e testes; integrações com gateways de pagamento e APIs externas; interfaces com TailwindCSS, Livewire e Bootstrap; qualidade de código com PHPStan, PHP-CS-Fixer e Pest; pacotes Composer reutilizáveis; servidores Linux/Debian; Scrum.",
+        "en": "Web applications with PHP (Laravel), JavaScript and MySQL; Docker environments for dev and testing; payment gateway and external API integrations; UIs with TailwindCSS, Livewire and Bootstrap; code quality with PHPStan, PHP-CS-Fixer and Pest; reusable Composer packages; Linux/Debian servers; Scrum."
       },
       "keys": [
         "Laravel",
@@ -2021,8 +2039,8 @@
         "pt": "2022 — 2025"
       },
       "role": {
-        "en": "Fullstack & DevOps (freelance, recurring projects)",
-        "pt": "Fullstack & DevOps (freelance, projetos recorrentes)"
+        "pt": "Full Stack & DevOps (freelance, projetos recorrentes)",
+        "en": "Full Stack & DevOps (freelance, recurring projects)"
       },
       "kind": {
         "en": "Remote",
@@ -2050,10 +2068,20 @@
   "earlierExperience": [
     {
       "role": {
-        "pt": "Desenvolvedor full stack",
-        "en": "Full stack developer"
+        "pt": "Contratos curtos e freelances (Layer Up, Zebra Deluxe, Meeta Solutions, QuikDev)",
+        "en": "Short contracts and freelance work (Layer Up, Zebra Deluxe, Meeta Solutions, QuikDev)"
       },
-      "company": "CTC (antiga Interaktiv)",
+      "period": "2021–2022"
+    },
+    {
+      "role": {
+        "pt": "Desenvolvedor Full Stack",
+        "en": "Full Stack Developer"
+      },
+      "company": {
+        "pt": "CTC (antiga Interaktiv)",
+        "en": "CTC (formerly Interaktiv)"
+      },
       "period": "2020",
       "note": {
         "pt": "Laravel, CakePHP, WordPress, Vue.js e Docker; conduzia a daily e a planning do Scrum.",
@@ -2070,8 +2098,16 @@
     },
     {
       "role": {
-        "pt": "Desenvolvedor full stack",
-        "en": "Full stack developer"
+        "pt": "Desenvolvedor Full Stack WordPress",
+        "en": "Full Stack WordPress Developer"
+      },
+      "company": "3xceler",
+      "period": "2019"
+    },
+    {
+      "role": {
+        "pt": "Desenvolvedor Full Stack",
+        "en": "Full Stack Developer"
       },
       "company": "Shape Web",
       "period": "2018"
@@ -2084,9 +2120,17 @@
       "company": "123Carros",
       "period": "2018",
       "note": {
-        "pt": "front-end do marketplace.",
-        "en": "marketplace front end."
+        "pt": "Front-end do marketplace.",
+        "en": "Marketplace front end."
       }
+    },
+    {
+      "role": {
+        "pt": "Desenvolvedor front-end (freelance)",
+        "en": "Front-end developer (freelance)"
+      },
+      "company": "WebSide",
+      "period": "2017–2018"
     },
     {
       "role": {
@@ -2095,13 +2139,6 @@
       },
       "company": "Capital Mídia",
       "period": "2016–2017"
-    },
-    {
-      "role": {
-        "pt": "Projetos freelance e contratos curtos para agências e consultorias (WebSide, 3xceler, Layer Up, Zebra Deluxe, Meeta Solutions, QuikDev)",
-        "en": "Freelance projects and short contracts for agencies and consultancies (WebSide, 3xceler, Layer Up, Zebra Deluxe, Meeta Solutions, QuikDev)"
-      },
-      "period": "2017–2022"
     },
     {
       "role": {

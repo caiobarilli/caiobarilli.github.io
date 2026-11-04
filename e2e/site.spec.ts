@@ -450,16 +450,47 @@ test.describe("projects", () => {
 });
 
 test.describe("experience", () => {
-  const pages: [string, string, string][] = [
-    ["/en/experience/", "Earlier experience", "Internship · VAD Estúdio Multimídia"],
-    ["/pt-br/experience/", "Experiência anterior", "Estágio · VAD Estúdio Multimídia"],
+  const pages: [string, string, string, string[]][] = [
+    [
+      "/en/experience/",
+      "Earlier experience",
+      "Internship · VAD Estúdio Multimídia",
+      [
+        "Short contracts and freelance work (Layer Up, Zebra Deluxe, Meeta Solutions, QuikDev)",
+        "Full Stack Developer · CTC (formerly Interaktiv)",
+        "Front-end developer and front-end tech lead · Zebra Deluxe Comunicação",
+        "Full Stack WordPress Developer · 3xceler",
+        "Full Stack Developer · Shape Web",
+        "Front-end developer and front-end tech lead · 123Carros",
+        "Front-end developer (freelance) · WebSide",
+        "Developer and tech lead · Capital Mídia",
+        "Internship · VAD Estúdio Multimídia",
+      ],
+    ],
+    [
+      "/pt-br/experience/",
+      "Experiência anterior",
+      "Estágio · VAD Estúdio Multimídia",
+      [
+        "Contratos curtos e freelances (Layer Up, Zebra Deluxe, Meeta Solutions, QuikDev)",
+        "Desenvolvedor Full Stack · CTC (antiga Interaktiv)",
+        "Desenvolvedor front-end e líder técnico do front · Zebra Deluxe Comunicação",
+        "Desenvolvedor Full Stack WordPress · 3xceler",
+        "Desenvolvedor Full Stack · Shape Web",
+        "Desenvolvedor front-end e líder técnico do front · 123Carros",
+        "Desenvolvedor front-end (freelance) · WebSide",
+        "Programador e líder técnico · Capital Mídia",
+        "Estágio · VAD Estúdio Multimídia",
+      ],
+    ],
   ];
-  for (const [path, title, last] of pages) {
-    test(`${path} lists the 7 earlier jobs after the main ones, and Layer Up is not a main job`, async ({ page }) => {
+  for (const [path, title, last, titles] of pages) {
+    test(`${path} lists the 9 earlier jobs after the main ones, and Layer Up is not a main job`, async ({ page }) => {
       await page.goto(path);
       const items = page.getByTestId("earlier-experience").locator("> li");
-      await expect(items).toHaveCount(7);
+      await expect(items).toHaveCount(9);
       await expect(items.last()).toContainText(last);
+      expect(await items.locator("span.font-semibold").allTextContents()).toEqual(titles);
       await expect(page.getByRole("heading", { name: title })).toBeVisible();
       // The main timeline is the <ol>: only KeepCloud and AgroNegociar.
       const main = page.locator("main ol > li");
@@ -494,7 +525,8 @@ test.describe("experience, KeepCloud", () => {
       await page.goto(path);
       const job = page.locator("main ol > li").first();
       await expect(job).toContainText(`KeepCloud ↗ · ${mode}`);
-      await expect(job.locator("p")).toHaveText(new RegExp(`^${lead}`));
+      await expect(job.locator("p").first()).toHaveText(new RegExp(`^${lead}`));
+      await expect(job.getByTestId("experience-highlights").locator("li")).toHaveCount(3);
     });
   }
 });

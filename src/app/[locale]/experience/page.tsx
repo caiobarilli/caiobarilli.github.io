@@ -33,6 +33,14 @@ export default async function ExperiencePage({ params }: { params: Promise<{ loc
                 {localize(e.kind, locale)}
               </span>
               <p className="mt-1 max-w-[640px] text-base leading-[1.6] text-pretty text-ink-2">{localize(e.summary, locale)}</p>
+              {e.highlights && (
+                <ul data-testid="experience-highlights" className="max-w-[640px] list-disc space-y-1.5 pl-5 text-base leading-[1.6] text-pretty text-ink-2 marker:text-accent-text">
+                  {e.highlights.map((h) => (
+                    <li key={h.en}>{localize(h, locale)}</li>
+                  ))}
+                </ul>
+              )}
+              {e.details && <p className="max-w-[640px] text-base leading-[1.6] text-pretty text-ink-2">{localize(e.details, locale)}</p>}
               <ul className="mt-1.5 flex flex-wrap gap-1.5">
                 {e.keys.map((k) => (
                   <li key={k} className="rounded-full border border-line-strong px-[11px] py-[5px] font-mono text-xs font-medium">
@@ -49,11 +57,11 @@ export default async function ExperiencePage({ params }: { params: Promise<{ loc
         <h2 className="mb-5 text-[28px] font-semibold tracking-[-0.02em]">{s("earlierTitle")}</h2>
         <ul data-testid="earlier-experience">
           {earlierExperience.map((e) => (
-            <li key={`${e.company ?? ""}${e.period}${localize(e.role, locale)}`} className="border-b border-line py-3.5">
+            <li key={`${e.company ? localize(e.company, locale) : ""}${e.period}${localize(e.role, locale)}`} className="border-b border-line py-3.5">
               <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
                 <span className="min-w-0 text-base font-semibold">
                   {localize(e.role, locale)}
-                  {e.company && <span className="font-normal text-ink-2"> · {e.company}</span>}
+                  {e.company && <span className="font-normal text-ink-2"> · {localize(e.company, locale)}</span>}
                 </span>
                 <span className="font-mono text-sm font-medium text-accent-text">{e.period}</span>
               </div>

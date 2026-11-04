@@ -58,12 +58,15 @@ export type Experience = {
   role: Localized;
   company: { name: string; url: string };
   kind: Localized;
+  /** Opening line. `highlights` (bullets) and `details` (the rest) come after it. */
   summary: Localized;
+  highlights?: Localized[];
+  details?: Localized;
   keys: string[];
 };
 
 /** Older job, shown as one compact line. The company is empty for a group of short contracts. */
-export type EarlierExperience = { role: Localized; company?: string; period: string; note?: Localized };
+export type EarlierExperience = { role: Localized; company?: string | Localized; period: string; note?: Localized };
 
 export type Education = { period: string; title: Localized; school: string };
 
