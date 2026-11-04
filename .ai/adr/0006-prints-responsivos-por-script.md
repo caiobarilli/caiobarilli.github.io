@@ -6,7 +6,7 @@ O Lighthouse no celular apontou cerca de 178 KB a mais: prints de 1600px mostrad
 
 ## Decisão
 
-`scripts/sizes.mjs` grava cópias de 480, 960 e 1280px em `public/images/projects/w/`. O `Shot` usa `<img>` com `srcset` e `sizes`, e o navegador escolhe a menor que serve.
+`scripts/sizes.mjs` grava cópias de 480, 720, 960 e 1280px em `public/images/projects/w/`. O `Shot` usa `<img>` com `srcset` e `sizes`, e o navegador escolhe a menor que serve.
 
 ## Consequência
 

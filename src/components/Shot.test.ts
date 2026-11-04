@@ -8,7 +8,7 @@ const dir = path.join(process.cwd(), "public", "images", "projects");
 describe("Shot", () => {
   it("lists the smaller copies and the original in the srcset", () => {
     expect(shotSrcSet("/images/projects/keeptask-kanban.webp")).toBe(
-      "/images/projects/w/keeptask-kanban-480.webp 480w, /images/projects/w/keeptask-kanban-960.webp 960w, /images/projects/w/keeptask-kanban-1280.webp 1280w, /images/projects/keeptask-kanban.webp 1600w",
+      "/images/projects/w/keeptask-kanban-480.webp 480w, /images/projects/w/keeptask-kanban-720.webp 720w, /images/projects/w/keeptask-kanban-960.webp 960w, /images/projects/w/keeptask-kanban-1280.webp 1280w, /images/projects/keeptask-kanban.webp 1600w",
     );
   });
 

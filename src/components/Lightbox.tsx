@@ -65,6 +65,7 @@ export function LightboxProvider({ items, labels, children }: { items: LightboxI
               {/* eslint-disable-next-line @next/next/no-img-element -- full-size static asset, already optimized; tap-to-zoom is a touch enhancement */}
               <img
                 src={item.src}
+                loading="lazy"
                 alt={item.alt}
                 onClick={() => setZoomed((z) => !z)}
                 className={

@@ -12,11 +12,13 @@ Evidência: `ca450eb`.
 
 Usar `loading="eager"` com `fetchPriority="high"` na imagem principal da página.
 
+O React cria um `<link rel=preload>` para todo `<img>` eager, e o prefetch do `<Link>` aplica essa dica nas páginas vizinhas, onde o print não aparece (aviso "preloaded but not used"). Por isso o `Shot` com `priority` fica dentro de `<picture>`, onde o React não cria o preload.
+
 Evidência: `ddc980d`.
 
 ## Export estático não gera `srcset`
 
-Com `images.unoptimized` não há servidor para redimensionar: o celular baixava o print de 1600px. As cópias menores saem de `scripts/sizes.mjs` e o `Shot` monta o `srcset`. Celular de tela densa (ex.: 412px a 2,6x) pede a cópia de 1280.
+Com `images.unoptimized` não há servidor para redimensionar: o celular baixava o print de 1600px. As cópias menores saem de `scripts/sizes.mjs` e o `Shot` monta o `srcset`. Celular de tela densa (ex.: 412px a 2,6x) pede a cópia de 1280. Os `sizes` vêm da largura medida no navegador (cards: 100vw - 40px até 670px, depois 450px).
 
 Evidência: `7a81f48`.
 

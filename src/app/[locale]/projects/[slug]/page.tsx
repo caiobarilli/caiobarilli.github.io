@@ -121,7 +121,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
                 src={shotSrc(p.shot)}
                 alt={heroAlt}
                 priority
-                sizes="(max-width: 1200px) 100vw, 1104px"
+                sizes="(max-width: 500px) calc(100vw - 40px), (max-width: 1200px) 92vw, 1104px"
                 label={s("placeholder")}
                 file={`${s("screenshot")} · ${p.shot}`}
                 className="aspect-[16/8] rounded-2xl border border-line p-[18px] text-xs"

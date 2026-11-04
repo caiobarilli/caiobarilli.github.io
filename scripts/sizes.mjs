@@ -6,7 +6,7 @@ import { mkdirSync, readdirSync } from "node:fs";
 import sharp from "sharp";
 
 // Keep in sync with SHOT_WIDTHS in src/components/Shot.tsx.
-const WIDTHS = [480, 960, 1280];
+const WIDTHS = [480, 720, 960, 1280];
 const DIR = "public/images/projects";
 const OUT = `${DIR}/w`;
 

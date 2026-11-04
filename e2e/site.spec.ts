@@ -107,7 +107,7 @@ test.describe("home", () => {
     await page.goto("/en/");
     const card = page.locator("section[aria-labelledby=h-featured] article img").nth(1);
     await card.scrollIntoViewIfNeeded();
-    await expect.poll(() => card.evaluate((img: HTMLImageElement) => img.currentSrc)).toMatch(/\/images\/projects\/w\/.+-960\.webp$/);
+    await expect.poll(() => card.evaluate((img: HTMLImageElement) => img.currentSrc)).toMatch(/\/images\/projects\/w\/.+-720\.webp$/);
     await context.close();
   });
 
