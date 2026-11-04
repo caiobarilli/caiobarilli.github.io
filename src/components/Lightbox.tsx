@@ -57,11 +57,11 @@ export function LightboxProvider({ items, labels, children }: { items: LightboxI
         ref={dialog}
         aria-label={item?.caption}
         onClick={(e) => e.target === e.currentTarget && dialog.current?.close()}
-        className="m-auto max-h-none max-w-none bg-transparent p-[clamp(16px,4vw,48px)] text-[#e8ebe6] backdrop:bg-[rgba(5,6,6,0.92)]"
+        className="m-auto max-h-none max-w-none bg-transparent p-[clamp(16px,4vw,48px)] text-lightbox-ink backdrop:bg-scrim"
       >
         {item && (
           <figure className="flex w-[min(1100px,92vw)] flex-col gap-4">
-            <div data-zoomed={zoomed} className="max-h-[78vh] overflow-auto rounded-xl border border-[#2c312d]">
+            <div data-zoomed={zoomed} className="max-h-[78vh] overflow-auto rounded-xl border border-lightbox-line">
               {/* eslint-disable-next-line @next/next/no-img-element -- full-size static asset, already optimized; tap-to-zoom is a touch enhancement */}
               <img
                 src={item.src}
@@ -80,18 +80,18 @@ export function LightboxProvider({ items, labels, children }: { items: LightboxI
               <div className="flex items-center gap-2 font-mono text-[13px] font-medium">
                 {many && (
                   <>
-                    <span className="mr-1.5 text-[#9aa198]">
+                    <span className="mr-1.5 text-lightbox-muted">
                       {index + 1} / {items.length}
                     </span>
-                    <button type="button" onClick={() => step(-1)} aria-label={labels.prev} className="size-11 rounded-full border border-[#2c312d]">
+                    <button type="button" onClick={() => step(-1)} aria-label={labels.prev} className="size-11 rounded-full border border-lightbox-line">
                       ←
                     </button>
-                    <button type="button" onClick={() => step(1)} aria-label={labels.next} className="size-11 rounded-full border border-[#2c312d]">
+                    <button type="button" onClick={() => step(1)} aria-label={labels.next} className="size-11 rounded-full border border-lightbox-line">
                       →
                     </button>
                   </>
                 )}
-                <button type="button" autoFocus onClick={() => dialog.current?.close()} className="h-11 rounded-full bg-[#e8ebe6] px-4 text-[#0d0f0e]">
+                <button type="button" autoFocus onClick={() => dialog.current?.close()} className="h-11 rounded-full bg-lightbox-ink px-4 text-lightbox-bg">
                   {labels.close} · Esc
                 </button>
               </div>

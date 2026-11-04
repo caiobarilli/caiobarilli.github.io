@@ -21,6 +21,7 @@
 
 - Todo texto do site mora em `src/content/site.json`, nos dois idiomas. Componente não tem texto fixo.
 - Alvo de toque de no mínimo 44px (`min-h-11`).
+- Cor só por token de globals.css; nada de hex em componente.
 - Print novo em `public/images/projects/`: rodar `node scripts/sizes.mjs` (o teste `Shot.test.ts` cobra).
 - Mudou o `site.json`: rodar `node scripts/cv.mjs` e commitar os PDFs de `public/cv/`.
 - Next 16 tem mudanças de API: ler `node_modules/next/dist/docs/` antes de usar algo novo.
