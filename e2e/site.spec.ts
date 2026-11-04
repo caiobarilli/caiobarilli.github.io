@@ -88,6 +88,23 @@ test.describe("home", () => {
     expect(sitemap).toContain("https://caiobarilli.github.io/en/projects/info4all/");
   });
 
+  test("the home title carries the role, numbers follow the language and articles say they are in Portuguese", async ({ page }) => {
+    await page.goto("/en/");
+    await expect(page).toHaveTitle("Caio Barilli · PHP & Laravel Engineer");
+    await expect(page.getByText("Sep 4, 2026 · In Portuguese")).toBeVisible();
+    await page.goto("/pt-br/");
+    await expect(page.getByText("4 set 2026", { exact: true })).toBeVisible();
+    await page.goto("/pt-br/projects/keeptask/");
+    await expect(page.getByText("~2.000", { exact: true })).toBeVisible();
+    await page.goto("/en/projects/keeptask/");
+    await expect(page.getByText("~2,000", { exact: true })).toBeVisible();
+  });
+
+  test("the static 404 never links to the internal _not-found route", async ({ request }) => {
+    const html = await (await request.get("/404.html")).text();
+    expect(html).not.toContain('href="/_not-found');
+  });
+
   test("every section page has its own title", async ({ page }) => {
     const titles = new Set<string>();
     for (const path of ["/pt-br/", "/pt-br/projects/", "/pt-br/experience/", "/pt-br/about/", "/pt-br/contact/"]) {

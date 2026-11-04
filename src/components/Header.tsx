@@ -34,7 +34,9 @@ export function Header({ locale, nav, labels }: Props) {
   const isActive = (href: string) =>
     href === `/${locale}/` ? pathname === href : pathname.startsWith(href);
 
-  const switchHref = (target: Locale) => pathname.replace(`/${locale}/`, `/${target}/`);
+  // Same page in the other language. Outside a locale (the static 404 before hydration), the other language's home.
+  const switchHref = (target: Locale) =>
+    pathname.startsWith(`/${locale}/`) ? pathname.replace(`/${locale}/`, `/${target}/`) : `/${target}/`;
   const langs: { code: Locale; label: string; htmlLang: string }[] = [
     { code: "en", label: "EN", htmlLang: "en" },
     { code: "pt-br", label: "PT", htmlLang: "pt-BR" },
@@ -68,14 +70,14 @@ export function Header({ locale, nav, labels }: Props) {
         </nav>
 
         <div className="flex items-center gap-2">
-          <div role="group" aria-label={labels.lang} className="flex rounded-full border border-line-strong p-[3px] font-mono text-xs font-medium">
+          <div role="group" aria-label={labels.lang} className="flex rounded-full border border-line-strong font-mono text-xs font-medium">
             {langs.map((l) =>
               l.code === locale ? (
-                <span key={l.code} lang={l.htmlLang} aria-current="true" className="flex min-h-9 min-w-11 items-center justify-center rounded-full bg-ink px-3 text-bg">
+                <span key={l.code} lang={l.htmlLang} aria-current="true" className="flex min-h-11 min-w-11 items-center justify-center rounded-full bg-ink px-3 text-bg">
                   {l.label}
                 </span>
               ) : (
-                <Link key={l.code} lang={l.htmlLang} hrefLang={l.htmlLang} href={switchHref(otherLocale(locale))} className="flex min-h-9 min-w-11 items-center justify-center rounded-full px-3 text-muted hover:text-ink">
+                <Link key={l.code} lang={l.htmlLang} hrefLang={l.htmlLang} href={switchHref(otherLocale(locale))} className="flex min-h-11 min-w-11 items-center justify-center rounded-full px-3 text-muted hover:text-ink">
                   {l.label}
                 </Link>
               ),

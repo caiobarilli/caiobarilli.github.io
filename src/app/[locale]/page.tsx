@@ -79,7 +79,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               <span className="self-start rounded-full border border-accent-line px-2.5 py-1 font-mono text-xs font-medium text-accent-text">
                 {localize(hero.tag, locale)}
               </span>
-              <h3 className="text-[clamp(34px,4vw,48px)] font-bold tracking-[-0.03em]"><Link href={projectHref(locale, hero)} className="hover:text-accent-text">{hero.name}</Link></h3>
+              <h3 className="text-[clamp(34px,4vw,48px)] font-bold tracking-[-0.03em]"><Link href={projectHref(locale, hero)} className="inline-flex min-h-11 items-center hover:text-accent-text">{hero.name}</Link></h3>
               <p className="text-lg leading-[1.55] text-pretty text-ink-2">{localize(hero.desc, locale)}</p>
               <div className="font-mono text-[13px] leading-[1.6] text-muted">{stackLine(hero)}</div>
               <Link href={projectHref(locale, hero)} className="mt-1.5 flex min-h-11 items-center self-start text-[15px] font-semibold hover:text-accent-text">
@@ -94,7 +94,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                 <Link href={projectHref(locale, p)} tabIndex={-1} aria-hidden="true" className="block"><Shot src={shotSrc(p.shot)} alt="" label={s("placeholder")} file={`${s("screenshot")} · ${p.shot}`} className="aspect-[16/10]" /></Link>
                 <div className="flex flex-1 flex-col gap-2.5 p-6">
                   <span className="font-mono text-xs font-medium text-accent-text">{localize(p.tag, locale)}</span>
-                  <h3 className="text-2xl leading-[1.15] font-semibold tracking-[-0.02em]"><Link href={projectHref(locale, p)} className="hover:text-accent-text">{p.name}</Link></h3>
+                  <h3 className="text-2xl leading-[1.15] font-semibold tracking-[-0.02em]"><Link href={projectHref(locale, p)} className="inline-flex min-h-11 items-center hover:text-accent-text">{p.name}</Link></h3>
                   <p className="flex-1 text-[15px] leading-[1.55] text-pretty text-ink-2">{localize(p.desc, locale)}</p>
                   <div className="font-mono text-xs leading-[1.6] text-muted">{stackLine(p)}</div>
                   <Link href={projectHref(locale, p)} className="flex min-h-11 items-center self-start text-sm font-semibold hover:text-accent-text">
@@ -154,9 +154,12 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,300px),1fr))] gap-5">
             {articles.map((a) => (
               <article key={a.url} className="flex flex-col gap-3 rounded-2xl border border-line p-7 hover:border-line-strong">
-                <span className="font-mono text-[13px] text-muted">{localize(a.date, locale)}</span>
+                <span className="font-mono text-[13px] text-muted">
+                  {localize(a.date, locale)}
+                  {s("articleLang") && ` · ${s("articleLang")}`}
+                </span>
                 <h3 className="text-[21px] leading-[1.3] font-semibold tracking-[-0.01em] text-pretty">
-                  <a href={a.url} className="hover:text-accent-text">{localize(a.title, locale)}</a>
+                  <a href={a.url} className="inline-flex min-h-11 items-center hover:text-accent-text">{localize(a.title, locale)}</a>
                 </h3>
                 <p className="flex-1 text-[15px] leading-[1.55] text-ink-2">{localize(a.summary, locale)}</p>
                 <a href={a.url} className="flex min-h-11 items-center self-start text-sm font-semibold text-accent-text">
@@ -174,7 +177,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           </div>
           <div className="flex flex-col items-start gap-3 font-mono text-[15px] font-medium">
             {email && (
-              <a href={email.url} className="rounded-full border-[1.5px] border-on-accent px-3.5 py-2 hover:bg-on-accent hover:text-accent">
+              <a href={email.url} className="flex min-h-11 items-center rounded-full border-[1.5px] border-on-accent px-3.5 hover:bg-on-accent hover:text-accent">
                 {email.handle}
               </a>
             )}

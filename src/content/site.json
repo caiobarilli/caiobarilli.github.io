@@ -12,7 +12,7 @@
       "theme": "Switch theme",
       "menu": "Menu",
       "lang": "Language",
-      "role": "PHP & Laravel Engineer · DevOps · Agentic workflows",
+      "role": "PHP & Laravel Engineer · 10+ years · DevOps · Agentic workflows",
       "heroLine": "I build with PHP and Laravel, ship it with infrastructure as code, and develop it with AI agents. Every project here is real, documented and tested.",
       "seeWork": "See the work",
       "featured": "Featured work",
@@ -25,6 +25,7 @@
       "allArticles": "All articles on Medium ↗",
       "rssNote": "Placeholder · titles come from the Medium RSS feed at build time",
       "readMedium": "Read on Medium (in Portuguese) ↗",
+      "articleLang": "In Portuguese",
       "ctaTitle": "Let's build something solid.",
       "ctaSub": "Open to PHP & Laravel, DevOps and agentic engineering roles.",
       "emailPending": "email · pending",
@@ -93,7 +94,7 @@
       "theme": "Trocar tema",
       "menu": "Menu",
       "lang": "Idioma",
-      "role": "Engenheiro PHP & Laravel · DevOps · Fluxos com agentes",
+      "role": "Engenheiro PHP & Laravel · 10+ anos · DevOps · Fluxos com agentes",
       "heroLine": "Construo com PHP e Laravel, publico com infraestrutura como código e desenvolvo com agentes de IA. Todo projeto aqui é real, documentado e testado.",
       "seeWork": "Ver os projetos",
       "featured": "Projetos em destaque",
@@ -106,6 +107,7 @@
       "allArticles": "Todos os artigos no Medium ↗",
       "rssNote": "Placeholder · os títulos vêm do RSS do Medium no build",
       "readMedium": "Ler no Medium ↗",
+      "articleLang": "",
       "ctaTitle": "Vamos construir algo sólido.",
       "ctaSub": "Aberto a vagas de PHP & Laravel, DevOps e engenharia com agentes.",
       "emailPending": "e-mail · pendente",
@@ -364,7 +366,10 @@
       "site": "https://keeptask.io",
       "highlights": [
         {
-          "value": "~2,000",
+          "value": {
+            "en": "~2,000",
+            "pt": "~2.000"
+          },
           "label": {
             "en": "automated Pest tests",
             "pt": "testes automatizados em Pest"

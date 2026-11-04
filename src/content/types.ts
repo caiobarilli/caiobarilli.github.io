@@ -43,7 +43,8 @@ export type Project = {
   shots: Shot[];
 };
 
-export type Highlight = { value: string; label: Localized };
+/** A big number; per language when the format differs (e.g. "~2,000" in English, "~2.000" in Portuguese). */
+export type Highlight = { value: string | Localized; label: Localized };
 
 export type FeatureGroup = { title: Localized; items: Localized[] };
 

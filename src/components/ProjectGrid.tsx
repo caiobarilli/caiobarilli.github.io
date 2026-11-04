@@ -64,7 +64,7 @@ export function ProjectGrid({ projects, filters, labels }: Props) {
                 <span className="text-accent-text">{p.tag}</span>
                 <span className="text-muted">{p.year}</span>
               </div>
-              <h2 className="text-2xl leading-[1.15] font-semibold tracking-[-0.02em]"><Link href={p.href} className="hover:text-accent-text">{p.name}</Link></h2>
+              <h2 className="text-2xl leading-[1.15] font-semibold tracking-[-0.02em]"><Link href={p.href} className="inline-flex min-h-11 items-center hover:text-accent-text">{p.name}</Link></h2>
               <p className="flex-1 text-[15px] leading-[1.55] text-pretty text-ink-2">{p.desc}</p>
               <div className="font-mono text-xs leading-[1.6] text-muted">{p.stackLine}</div>
               <Link href={p.href} className="flex min-h-11 items-center self-start text-sm font-semibold hover:text-accent-text">

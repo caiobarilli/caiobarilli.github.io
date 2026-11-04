@@ -22,7 +22,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   if (!isLocale(locale)) return {};
   return {
     metadataBase: new URL(SITE_URL),
-    ...pageMetadata(locale, "Caio Barilli", str(locale, "heroLine"), ""),
+    // Home title: name plus the first part of the role line, e.g. "Caio Barilli · PHP & Laravel Engineer".
+    ...pageMetadata(locale, `Caio Barilli · ${str(locale, "role").split(" · ")[0]}`, str(locale, "heroLine"), ""),
   };
 }
 

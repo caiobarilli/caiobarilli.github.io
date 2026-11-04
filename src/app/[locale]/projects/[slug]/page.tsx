@@ -104,9 +104,11 @@ export default async function ProjectPage({ params }: { params: Params }) {
         {p.highlights && (
           <dl className="mb-12 grid grid-cols-[repeat(auto-fit,minmax(min(100%,160px),1fr))] gap-px overflow-hidden rounded-2xl border border-line bg-line">
             {p.highlights.map((h) => (
-              <div key={h.value + h.label.en} className="flex flex-col gap-1 bg-surface p-5">
+              <div key={h.label.en} className="flex flex-col gap-1 bg-surface p-5">
                 <dt className="order-2 text-sm leading-snug text-muted">{localize(h.label, locale)}</dt>
-                <dd className="order-1 text-[clamp(28px,3.4vw,40px)] leading-none font-bold tracking-[-0.03em] text-accent-text">{h.value}</dd>
+                <dd className="order-1 text-[clamp(28px,3.4vw,40px)] leading-none font-bold tracking-[-0.03em] text-accent-text">
+                  {typeof h.value === "string" ? h.value : localize(h.value, locale)}
+                </dd>
               </div>
             ))}
           </dl>
