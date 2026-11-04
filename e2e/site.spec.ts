@@ -100,6 +100,17 @@ test.describe("home", () => {
     await expect(page.getByText("~2,000", { exact: true })).toBeVisible();
   });
 
+  test("a phone downloads the smaller copies of the screenshots", async ({ browser }) => {
+    // Same screen as the Lighthouse mobile run (Moto G Power: 412px wide, 1.75x).
+    const context = await browser.newContext({ viewport: { width: 412, height: 823 }, deviceScaleFactor: 1.75, isMobile: true });
+    const page = await context.newPage();
+    await page.goto("/en/");
+    const card = page.locator("section[aria-labelledby=h-featured] article img").nth(1);
+    await card.scrollIntoViewIfNeeded();
+    await expect.poll(() => card.evaluate((img: HTMLImageElement) => img.currentSrc)).toMatch(/\/images\/projects\/w\/.+-960\.webp$/);
+    await context.close();
+  });
+
   test("the static 404 never links to the internal _not-found route", async ({ request }) => {
     const html = await (await request.get("/404.html")).text();
     expect(html).not.toContain('href="/_not-found');

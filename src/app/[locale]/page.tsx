@@ -74,7 +74,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           </div>
 
           <article className="mb-5 grid grid-cols-[repeat(auto-fit,minmax(min(100%,440px),1fr))] overflow-hidden rounded-2xl border border-line bg-surface">
-            <Link href={projectHref(locale, hero)} tabIndex={-1} aria-hidden="true" className="block h-full"><Shot src={shotSrc(hero.shot)} alt="" label={s("placeholder")} file={`${s("screenshot")} · ${hero.shot}`} priority className="min-h-[clamp(220px,32vw,420px)] p-4 text-xs !h-full !object-left-top" /></Link>
+            <Link href={projectHref(locale, hero)} tabIndex={-1} aria-hidden="true" className="block h-full"><Shot src={shotSrc(hero.shot)} alt="" label={s("placeholder")} file={`${s("screenshot")} · ${hero.shot}`} priority sizes="(max-width: 1000px) 100vw, 560px" className="min-h-[clamp(220px,32vw,420px)] p-4 text-xs !h-full !object-left-top" /></Link>
             <div className="flex flex-col justify-center gap-4 p-[clamp(24px,4vw,40px)]">
               <span className="self-start rounded-full border border-accent-line px-2.5 py-1 font-mono text-xs font-medium text-accent-text">
                 {localize(hero.tag, locale)}
