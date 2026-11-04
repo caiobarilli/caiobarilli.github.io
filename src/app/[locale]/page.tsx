@@ -3,7 +3,7 @@ import Link from "next/link";
 import { CopyEmail } from "@/components/CopyEmail";
 import { Shot } from "@/components/Shot";
 import { shotSrc } from "@/content/images";
-import { getContent, isLocale, localize, mainProjects, otherProjects, str } from "@/content";
+import { caseStudyLabel, getContent, isLocale, localize, mainProjects, otherProjects, str } from "@/content";
 import type { Locale, Project } from "@/content/types";
 import { notFound } from "next/navigation";
 
@@ -86,7 +86,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               <h3 className="text-[clamp(34px,4vw,48px)] font-bold tracking-[-0.03em]"><Link href={projectHref(locale, hero)} className="inline-flex min-h-11 items-center hover:text-accent-text">{localize(hero.name, locale)}</Link></h3>
               <p className="text-lg leading-[1.55] text-pretty text-ink-2">{localize(hero.desc, locale)}</p>
               <div className="font-mono text-[13px] leading-[1.6] text-muted">{stackLine(hero)}</div>
-              <Link href={projectHref(locale, hero)} className="mt-1.5 flex min-h-11 items-center self-start text-[15px] font-semibold hover:text-accent-text">
+              <Link href={projectHref(locale, hero)} aria-label={caseStudyLabel(locale, hero)} className="mt-1.5 flex min-h-11 items-center self-start text-[15px] font-semibold hover:text-accent-text">
                 {s("caseStudy")}
               </Link>
             </div>
@@ -101,7 +101,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                   <h3 className="text-2xl leading-[1.15] font-semibold tracking-[-0.02em]"><Link href={projectHref(locale, p)} className="inline-flex min-h-11 items-center hover:text-accent-text">{localize(p.name, locale)}</Link></h3>
                   <p className="flex-1 text-[15px] leading-[1.55] text-pretty text-ink-2">{localize(p.desc, locale)}</p>
                   <div className="font-mono text-xs leading-[1.6] text-muted">{stackLine(p)}</div>
-                  <Link href={projectHref(locale, p)} className="flex min-h-11 items-center self-start text-sm font-semibold hover:text-accent-text">
+                  <Link href={projectHref(locale, p)} aria-label={caseStudyLabel(locale, p)} className="flex min-h-11 items-center self-start text-sm font-semibold hover:text-accent-text">
                     {s("caseStudy")}
                   </Link>
                 </div>

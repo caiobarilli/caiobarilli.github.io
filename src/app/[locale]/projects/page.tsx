@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { PageIntro, PageShell } from "@/components/PageIntro";
 import { ProjectGrid, type ProjectCard } from "@/components/ProjectGrid";
-import { contentKey, getContent, isLocale, localize, str } from "@/content";
+import { caseStudyLabel, contentKey, getContent, isLocale, localize, str } from "@/content";
 import { shotSrc } from "@/content/images";
 import { sectionMetadata } from "../../page-meta";
 
@@ -26,6 +26,7 @@ export default async function Projects({ params }: { params: Promise<{ locale: s
     img: p.shot ? shotSrc(p.shot) : null,
     alt: p.shots[0] ? localize(p.shots[0].alt, locale) : localize(p.name, locale),
     href: `/${locale}/projects/${p.slug}/`,
+    caseLabel: caseStudyLabel(locale, p),
   }));
 
   return (

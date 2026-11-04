@@ -219,6 +219,13 @@ test.describe("projects", () => {
     await expect(page).toHaveURL(/\/en\/projects\/phporto\/$/);
   });
 
+  test("each case study link names its project", async ({ page }) => {
+    await page.goto("/pt-br/projects/");
+    await expect(page.getByRole("link", { name: "Ler o estudo de caso: Keeptask" })).toHaveAttribute("href", "/pt-br/projects/keeptask/");
+    await page.goto("/en/");
+    await expect(page.getByRole("link", { name: "Read the case study: Keeptask" })).toBeVisible();
+  });
+
   test("the product and source links sit in the page header, above the case study", async ({ page }) => {
     await page.goto("/en/projects/keeptask/");
     const header = page.locator("article > header");

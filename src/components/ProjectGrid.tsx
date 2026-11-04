@@ -18,6 +18,7 @@ export type ProjectCard = {
   img: string | null;
   alt: string;
   href: string;
+  caseLabel: string;
 };
 
 type Props = {
@@ -67,7 +68,7 @@ export function ProjectGrid({ projects, filters, labels }: Props) {
               <h2 className="text-2xl leading-[1.15] font-semibold tracking-[-0.02em]"><Link href={p.href} className="inline-flex min-h-11 items-center hover:text-accent-text">{p.name}</Link></h2>
               <p className="flex-1 text-[15px] leading-[1.55] text-pretty text-ink-2">{p.desc}</p>
               <div className="font-mono text-xs leading-[1.6] text-muted">{p.stackLine}</div>
-              <Link href={p.href} className="flex min-h-11 items-center self-start text-sm font-semibold hover:text-accent-text">
+              <Link href={p.href} aria-label={p.caseLabel} className="flex min-h-11 items-center self-start text-sm font-semibold hover:text-accent-text">
                 {labels.caseStudy}
               </Link>
             </div>

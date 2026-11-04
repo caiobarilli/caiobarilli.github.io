@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { contentKey, getContent, isLocale, localize, mainProjects, otherProjects, str } from "./index";
+import { caseStudyLabel, contentKey, getContent, isLocale, localize, mainProjects, otherProjects, str } from "./index";
 
 const content = getContent();
 
@@ -33,6 +33,14 @@ describe("content", () => {
   it("uses unique project slugs", () => {
     const slugs = content.projects.map((p) => p.slug);
     expect(new Set(slugs).size).toBe(slugs.length);
+  });
+});
+
+describe("case study label", () => {
+  it("joins the link text and the project name in both languages", () => {
+    const keeptask = content.projects.find((p) => p.slug === "keeptask")!;
+    expect(caseStudyLabel("pt-br", keeptask)).toBe("Ler o estudo de caso: Keeptask");
+    expect(caseStudyLabel("en", keeptask)).toBe("Read the case study: Keeptask");
   });
 });
 

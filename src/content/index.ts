@@ -67,3 +67,9 @@ export function mainProjects(): Project[] {
 export function otherProjects(): Project[] {
   return getContent().projects.filter((p) => !p.main);
 }
+
+/** Accessible name for a "read the case study" link: the link text (without its arrow) plus the project name. */
+export function caseStudyLabel(locale: Locale, project: Project): string {
+  const text = str(locale, "caseStudy").replace(/\s*→\s*$/, "");
+  return `${text}: ${localize(project.name, locale)}`;
+}
