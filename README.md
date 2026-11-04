@@ -42,6 +42,10 @@ npm run dev
 
 Then open <http://localhost:3000/en/>.
 
+### Working with coding agents
+
+The repository ships an [`.mcp.json`](.mcp.json) with Vercel's [next-devtools-mcp](https://github.com/vercel/next-devtools-mcp), pinned to an exact version. With `npm run dev` running, an MCP-capable agent (such as Claude Code) can read the app's live errors, routes and logs through Next.js 16's `/_next/mcp` endpoint, and the documentation that matches the installed Next.js version.
+
 ## Scripts
 
 | Command | What it does |
