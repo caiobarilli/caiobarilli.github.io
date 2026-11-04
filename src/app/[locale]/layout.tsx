@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import { Footer } from "@/components/Footer";
 import { Header, type NavItem } from "@/components/Header";
 import { ThemeScript } from "@/components/ThemeScript";
+import { ThemeSync } from "@/components/ThemeSync";
 import { isLocale, navLabel, str } from "@/content";
 import { locales } from "@/content/types";
 import { geist, geistMono } from "../fonts";
@@ -55,6 +56,7 @@ export default async function LocaleLayout({
         <ThemeScript />
       </head>
       <body className="min-h-screen">
+        <ThemeSync />
         <a
           href="#main"
           className="absolute top-2 -left-[9999px] z-50 rounded-lg bg-btn px-4 py-3 font-semibold text-btn-ink focus:left-4"

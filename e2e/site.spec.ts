@@ -69,6 +69,17 @@ test.describe("header", () => {
     await expect(html).toHaveAttribute("data-theme", after);
   });
 
+  test("the chosen theme survives a language switch", async ({ page }) => {
+    await page.goto("/pt-br/projects/");
+    const html = page.locator("html");
+    await page.evaluate(() => localStorage.setItem("cb-theme", "light"));
+    await page.reload();
+    await expect(html).toHaveAttribute("data-theme", "light");
+    await page.getByRole("link", { name: "EN", exact: true }).click();
+    await expect(page).toHaveURL(/\/en\/projects\/$/);
+    await expect(html).toHaveAttribute("data-theme", "light");
+  });
+
   test("the mobile menu opens and navigates", async ({ page, isMobile }) => {
     test.skip(!isMobile, "the menu button only exists on small screens");
     await page.goto("/en/");
