@@ -16,6 +16,8 @@ const OUT = "public/images/projects";
 const jobs = [
   // Keeptask (demo data from the public docs)
   { out: "keeptask-kanban", src: `${keeptask}/03-a-quadro-kanban.png`, crop: { left: 0, top: 0, width: 1280, height: 800 } },
+  { out: "keeptask-task", src: `${keeptask}/05-d-detalhe-subtarefas.png`, crop: { left: 0, top: 0, width: 1280, height: 800 } },
+  { out: "keeptask-poker", src: `${keeptask}/19-p-consenso-gravado.png`, crop: { left: 0, top: 0, width: 1280, height: 800 } },
   { out: "keeptask-settings", src: `${keeptask}/13-a-integracoes.png`, crop: { left: 0, top: 0, width: 1280, height: 800 } },
   { out: "keeptask-mobile", src: `${keeptask}/mobile-06-minhas-tarefas-gestao-claro.png`, phone: true },
   // PHParrot (local dev, captured with headless Edge at 1280x800)

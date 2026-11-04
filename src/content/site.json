@@ -663,6 +663,28 @@
           }
         },
         {
+          "file": "keeptask-task.webp",
+          "caption": {
+            "en": "Open task: subtasks, stage, priority, dates and time tracked",
+            "pt": "Tarefa aberta: subtarefas, etapa, prioridade, prazos e tempo registrado"
+          },
+          "alt": {
+            "en": "Keeptask task modal on the subtasks tab with fields for board, project, stage and priority",
+            "pt": "Modal de tarefa do Keeptask na aba de subtarefas com os campos de quadro, projeto, etapa e prioridade"
+          }
+        },
+        {
+          "file": "keeptask-poker.webp",
+          "caption": {
+            "en": "Planning Poker: revealed cards, consensus saved to the task and the queue",
+            "pt": "Planning Poker: cartas reveladas, consenso gravado na tarefa e a fila"
+          },
+          "alt": {
+            "en": "Planning Poker room with three cards showing 5, the consensus message and the task queue",
+            "pt": "Sala de Planning Poker com três cartas 5, a mensagem de consenso e a fila de tarefas"
+          }
+        },
+        {
           "file": "keeptask-settings.webp",
           "caption": {
             "en": "Settings: integrations, HMAC-signed webhooks and scoped API tokens",
