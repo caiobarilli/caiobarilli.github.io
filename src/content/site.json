@@ -630,7 +630,7 @@
         "en": "DevOps / IaC",
         "pt": "DevOps / IaC"
       },
-      "year": "2025",
+      "year": "2022–2025",
       "type": {
         "en": "Client project · AgroNegociar",
         "pt": "Projeto de cliente · AgroNegociar"
@@ -646,8 +646,11 @@
         "S3",
         "DynamoDB",
         "Cloudflare",
+        "WordOps",
         "Bash",
-        "WordPress"
+        "WordPress",
+        "Elementor",
+        "PHP"
       ],
       "shot": "aws-architecture.webp",
       "desc": {
@@ -655,23 +658,45 @@
         "pt": "Infraestrutura AWS do portal de notícias da AgroNegociar, em produção e homologação, criada do zero com Terraform."
       },
       "problem": {
-        "en": "The WordPress news portal needed servers that could be rebuilt without losing content and without manual setup.",
-        "pt": "O portal de notícias em WordPress precisava de servidores que pudessem ser recriados sem perder conteúdo e sem configuração manual."
+        "en": "AgroNegociar had an app for agribusiness and needed a gateway for new customers. The strategy was to build a community: a news portal and a social network where producers, companies and readers from the sector meet, read content and find their way to the app. For that to work, the site had to be complete, fast on any screen and easy for the client's team to manage, and the infrastructure had to be reliable, with no risk of losing content.",
+        "pt": "A AgroNegociar tinha um app para o agronegócio e precisava de uma porta de entrada para novos clientes. A estratégia foi criar uma comunidade: um portal de notícias e uma rede social onde produtores, empresas e leitores do setor se encontram, consomem conteúdo e chegam até o app. Para isso funcionar, o site precisava ser completo, rápido em qualquer tela e fácil para a equipe do cliente administrar, e a infraestrutura precisava ser confiável, sem risco de perder conteúdo."
       },
       "solution": {
-        "en": "One EC2 instance per environment that configures itself on boot. The site lives on a separate EBS disk that survives replacing the server. Terraform state is kept in S3 with a DynamoDB lock, and DNS and SSL run on Cloudflare.",
-        "pt": "Uma máquina EC2 por ambiente, que se configura sozinha ao subir. O site fica num disco EBS separado, que sobrevive à troca do servidor. O estado do Terraform fica no S3 com trava no DynamoDB, e o DNS e o SSL ficam no Cloudflare."
+        "en": "The portal and the social network were built on Network, a complete community WordPress theme, with a child theme carrying the project's identity and a fully responsive layout. Pages were built in Elementor, and we developed several custom plugins: tools for the administrators and layout components the theme did not offer. On the infrastructure side, everything is versioned as code with Terraform: an Ubuntu server on AWS with the site on a separate disk, remote state with a lock, and identical production and staging environments. Every week an automatic backup of the database and the theme goes to a bucket. Since everything else is rebuilt from code, the whole environment can be recreated without losses. DNS and SSL run on Cloudflare, and the server is managed with WordOps.",
+        "pt": "O portal e a rede social foram construídos sobre o Network, um tema WordPress completo de comunidade, com um child theme com a identidade do projeto e layout totalmente responsivo. As páginas foram montadas no Elementor, e desenvolvemos vários plugins próprios: ferramentas para os administradores e componentes de layout que o tema não oferecia. Na infraestrutura, tudo é versionado como código com Terraform: servidor Ubuntu na AWS com o site num disco separado, estado remoto com trava, e produção e homologação idênticas. Toda semana, um backup automático do banco de dados e do tema vai para um bucket. Como todo o resto é recriado a partir do código, o ambiente inteiro pode ser reconstruído sem perdas. O DNS e o SSL ficam no Cloudflare, e o servidor é gerenciado com WordOps."
       },
       "adrs": [
         {
           "id": "—",
           "title": {
-            "en": "Data disk separate from the server",
-            "pt": "Disco separado da máquina"
+            "en": "Start from a complete theme",
+            "pt": "Partir de um tema completo"
           },
           "body": {
-            "en": "Replacing or rebuilding the instance never deletes the site.",
-            "pt": "Trocar ou recriar o servidor não apaga o site."
+            "en": "Network already brought the community base, so the effort went into what was unique to the business.",
+            "pt": "O Network já trazia a base de comunidade, e o esforço foi para o que era único do negócio."
+          }
+        },
+        {
+          "id": "—",
+          "title": {
+            "en": "Logic in plugins",
+            "pt": "Lógica em plugins"
+          },
+          "body": {
+            "en": "Rules and components live in custom plugins, separate from the look, which makes them easier to evolve and update.",
+            "pt": "As regras e componentes ficaram em plugins próprios, separados do visual, o que facilita evoluir e atualizar."
+          }
+        },
+        {
+          "id": "—",
+          "title": {
+            "en": "Everything rebuildable",
+            "pt": "Tudo reconstruível"
+          },
+          "body": {
+            "en": "Only the database and the theme need a backup, because everything else comes from code.",
+            "pt": "Só o banco e o tema precisam de backup, porque o resto nasce do código."
           }
         },
         {
@@ -681,19 +706,8 @@
             "pt": "Estado remoto com trava"
           },
           "body": {
-            "en": "State lives in S3 and DynamoDB blocks two people from applying at the same time.",
-            "pt": "O estado fica no S3 e o DynamoDB impede duas pessoas de aplicar ao mesmo tempo."
-          }
-        },
-        {
-          "id": "—",
-          "title": {
-            "en": "Always the current Ubuntu image",
-            "pt": "Imagem do Ubuntu sempre atual"
-          },
-          "body": {
-            "en": "The AMI is looked up from Canonical at plan time, with no hard-coded ID.",
-            "pt": "A AMI é buscada na Canonical na hora, sem ID fixo no código."
+            "en": "Terraform keeps its state in S3 and DynamoDB prevents two applies at the same time.",
+            "pt": "O Terraform guarda o estado no S3 e o DynamoDB impede duas aplicações ao mesmo tempo."
           }
         }
       ],
@@ -708,6 +722,124 @@
             "en": "Diagram of the production and staging environments on AWS",
             "pt": "Diagrama dos ambientes de produção e staging na AWS"
           }
+        }
+      ],
+      "highlights": [
+        {
+          "value": "3",
+          "label": {
+            "en": "years of project",
+            "pt": "anos de projeto"
+          }
+        },
+        {
+          "value": "2",
+          "label": {
+            "en": "environments: production and staging",
+            "pt": "ambientes: produção e homologação"
+          }
+        },
+        {
+          "value": "1×",
+          "label": {
+            "en": "automatic backup every week",
+            "pt": "backup automático por semana"
+          }
+        }
+      ],
+      "features": [
+        {
+          "title": {
+            "en": "Portal and social network",
+            "pt": "Portal e rede social"
+          },
+          "items": [
+            {
+              "en": "News, profiles and interaction between users, as a gateway to the app",
+              "pt": "Notícias, perfis e interação entre usuários, como porta de entrada para o app"
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Custom WordPress",
+            "pt": "WordPress sob medida"
+          },
+          "items": [
+            {
+              "en": "Child theme over Network, pages in Elementor and a responsive layout on any screen",
+              "pt": "Child theme sobre o Network, páginas no Elementor e layout responsivo em qualquer tela"
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Custom plugins",
+            "pt": "Plugins próprios"
+          },
+          "items": [
+            {
+              "en": "Administration tools and layout components built for the project",
+              "pt": "Ferramentas de administração e componentes de layout feitos para o projeto"
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Infrastructure as code",
+            "pt": "Infraestrutura como código"
+          },
+          "items": [
+            {
+              "en": "EC2 Ubuntu 24.04 with an always-current AMI, Elastic IP, security group and a persistent EBS disk mounted automatically",
+              "pt": "EC2 Ubuntu 24.04 com AMI sempre atual, Elastic IP, security group e disco EBS persistente com montagem automática"
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Backup and recovery",
+            "pt": "Backup e recuperação"
+          },
+          "items": [
+            {
+              "en": "Database and theme saved to a bucket every week, and everything else rebuilt from code without losses",
+              "pt": "Banco de dados e tema salvos toda semana num bucket, e todo o resto reconstruído a partir do código, sem perdas"
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Reliable environments",
+            "pt": "Ambientes confiáveis"
+          },
+          "items": [
+            {
+              "en": "Production and staging from the same code, with remote state in S3 and a DynamoDB lock",
+              "pt": "Produção e homologação a partir do mesmo código, com estado remoto no S3 e trava no DynamoDB"
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Publishing",
+            "pt": "Publicação"
+          },
+          "items": [
+            {
+              "en": "Cloudflare for DNS and SSL, and WordOps on the server",
+              "pt": "Cloudflare para DNS e SSL, e WordOps no servidor"
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": {
+            "en": "Terraform template on GitHub ↗",
+            "pt": "Template Terraform no GitHub ↗"
+          },
+          "url": "https://github.com/caiobarilli/aws-terraform-example"
         }
       ]
     },
