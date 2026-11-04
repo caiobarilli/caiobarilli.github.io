@@ -472,3 +472,18 @@ test.describe("experience", () => {
     });
   }
 });
+
+test.describe("experience, KeepCloud", () => {
+  const cases: [string, string, string][] = [
+    ["/en/experience/", "Remote", "Built Keeptask, a B2B task and project management platform"],
+    ["/pt-br/experience/", "Remoto", "Construí o Keeptask, plataforma B2B de gestão de tarefas e projetos"],
+  ];
+  for (const [path, mode, lead] of cases) {
+    test(`${path} says remote and opens with the Keeptask line`, async ({ page }) => {
+      await page.goto(path);
+      const job = page.locator("main ol > li").first();
+      await expect(job).toContainText(`KeepCloud ↗ · ${mode}`);
+      await expect(job.locator("p")).toHaveText(new RegExp(`^${lead}`));
+    });
+  }
+});

@@ -1983,12 +1983,12 @@
         "pt": "Desenvolvedor Fullstack (PHP / Laravel)"
       },
       "kind": {
-        "en": "Hybrid/Remote",
-        "pt": "Híbrido/Remoto"
+        "en": "Remote",
+        "pt": "Remoto"
       },
       "summary": {
-        "en": "Web applications with PHP (Laravel), JavaScript and MySQL; Docker environments for dev and testing; payment gateway and external API integrations; UIs with TailwindCSS, Livewire and Bootstrap; code quality with PHPStan, PHP-CS-Fixer and Pest; reusable Composer packages; Linux/Debian servers; Scrum.",
-        "pt": "Aplicações web com PHP (Laravel), JavaScript e MySQL; ambientes Docker para desenvolvimento e testes; integrações com gateways de pagamento e APIs externas; interfaces com TailwindCSS, Livewire e Bootstrap; qualidade de código com PHPStan, PHP-CS-Fixer e Pest; pacotes Composer reutilizáveis; servidores Linux/Debian; Scrum."
+        "en": "Built Keeptask, a B2B task and project management platform, with a Laravel web app and a native iOS and Android app. Web applications with PHP (Laravel), JavaScript and MySQL; Docker environments for dev and testing; payment gateway and external API integrations; UIs with TailwindCSS, Livewire and Bootstrap; code quality with PHPStan, PHP-CS-Fixer and Pest; reusable Composer packages; Linux/Debian servers; Scrum.",
+        "pt": "Construí o Keeptask, plataforma B2B de gestão de tarefas e projetos, com web em Laravel e app nativo para iOS e Android. Aplicações web com PHP (Laravel), JavaScript e MySQL; ambientes Docker para desenvolvimento e testes; integrações com gateways de pagamento e APIs externas; interfaces com TailwindCSS, Livewire e Bootstrap; qualidade de código com PHPStan, PHP-CS-Fixer e Pest; pacotes Composer reutilizáveis; servidores Linux/Debian; Scrum."
       },
       "keys": [
         "Laravel",
