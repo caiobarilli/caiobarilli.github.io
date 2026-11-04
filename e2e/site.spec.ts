@@ -337,33 +337,50 @@ test.describe("narrow header", () => {
     expect(scroll).toBeLessThanOrEqual(width);
   });
 
-  test("at 320px the theme button lives in the open menu and switches the theme", async ({ page, isMobile }) => {
-    test.skip(!isMobile, "phone layout");
-    await page.setViewportSize({ width: 320, height: 700 });
-    await page.goto("/en/");
-    await expect(page.locator("header > div").getByRole("button", { name: "Switch theme" })).toHaveCount(0);
-    await page.getByRole("button", { name: "Menu" }).click();
-    const button = page.locator("#mobile-nav").getByRole("button", { name: "Switch theme" });
-    await expect(button).toBeVisible();
-    expect((await button.boundingBox())!.height).toBeGreaterThanOrEqual(44);
-    const html = page.locator("html");
-    const before = await html.getAttribute("data-theme");
-    const after = before === "light" ? "dark" : "light";
-    await expect(async () => {
-      await button.click();
-      await expect(html).toHaveAttribute("data-theme", after, { timeout: 500 });
-    }).toPass();
-    expect(await page.evaluate(() => localStorage.getItem("cb-theme"))).toBe(after);
-  });
-
-  for (const width of [360, 375]) {
-    test(`at ${width}px the theme button stays in the header`, async ({ page, isMobile }) => {
+  for (const width of [320, 360]) {
+    test(`at ${width}px the theme button lives in the open menu and switches the theme`, async ({ page, isMobile }) => {
       test.skip(!isMobile, "phone layout");
       await page.setViewportSize({ width, height: 700 });
       await page.goto("/en/");
-      await expect(page.locator("header > div").getByRole("button", { name: "Switch theme" })).toBeVisible();
+      await expect(page.locator("header > div").getByRole("button", { name: "Switch theme" })).toHaveCount(0);
       await page.getByRole("button", { name: "Menu" }).click();
-      await expect(page.locator("#mobile-nav").getByRole("button", { name: "Switch theme" })).toHaveCount(0);
+      const button = page.locator("#mobile-nav").getByRole("button", { name: "Switch theme" });
+      await expect(button).toBeVisible();
+      expect((await button.boundingBox())!.height).toBeGreaterThanOrEqual(44);
+      const html = page.locator("html");
+      const before = await html.getAttribute("data-theme");
+      const after = before === "light" ? "dark" : "light";
+      await expect(async () => {
+        await button.click();
+        await expect(html).toHaveAttribute("data-theme", after, { timeout: 500 });
+      }).toPass();
+      expect(await page.evaluate(() => localStorage.getItem("cb-theme"))).toBe(after);
+    });
+  }
+
+  test("at 375px the theme button stays in the header", async ({ page, isMobile }) => {
+    test.skip(!isMobile, "phone layout");
+    await page.setViewportSize({ width: 375, height: 700 });
+    await page.goto("/en/");
+    await expect(page.locator("header > div").getByRole("button", { name: "Switch theme" })).toBeVisible();
+    await page.getByRole("button", { name: "Menu" }).click();
+    await expect(page.locator("#mobile-nav").getByRole("button", { name: "Switch theme" })).toHaveCount(0);
+  });
+
+  // The right gap should equal the left padding. Measured today: 320px leaves 16px (needs 20) and 375px leaves 19px;
+  // those two are marked fixme until the header spacing is revisited (see the round report).
+  for (const width of [320, 360, 375, 414]) {
+    test(`at ${width}px the header's right gap is at least its left padding`, async ({ page, isMobile }) => {
+      test.skip(!isMobile, "phone layout");
+      test.fixme(width === 320 || width === 375, "header spacing short by 4px at 320px and 1px at 375px");
+      await page.setViewportSize({ width, height: 700 });
+      await page.goto("/pt-br/");
+      const { pad, gap } = await page.evaluate(() => {
+        const header = document.querySelector("header > div") as HTMLElement;
+        const right = Math.max(...[...header.querySelectorAll("a, button, span[aria-current]")].filter((e) => (e as HTMLElement).offsetParent).map((e) => e.getBoundingClientRect().right));
+        return { pad: parseFloat(getComputedStyle(header).paddingLeft), gap: window.innerWidth - right };
+      });
+      expect(gap).toBeGreaterThanOrEqual(pad - 0.5);
     });
   }
 });

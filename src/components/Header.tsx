@@ -27,7 +27,7 @@ function toggleTheme() {
   }
 }
 
-/** The one theme control. Rendered twice (header, and inside the mobile menu under 360px); CSS shows one. */
+/** The one theme control. Rendered twice (header, and inside the mobile menu under 375px); CSS shows one. */
 function ThemeButton({ label, className = "" }: { label: string; className?: string }) {
   return (
     <button
@@ -100,7 +100,7 @@ export function Header({ locale, nav, labels }: Props) {
           </div>
 
           {/* Under 360px there is no room for it here: it moves into the mobile menu. */}
-          <ThemeButton label={labels.theme} className="max-[359px]:hidden" />
+          <ThemeButton label={labels.theme} className="max-[374px]:hidden" />
 
           <button
             type="button"
@@ -133,7 +133,7 @@ export function Header({ locale, nav, labels }: Props) {
               </Link>
             );
           })}
-          <div className="pt-4 min-[360px]:hidden">
+          <div className="pt-4 min-[375px]:hidden">
             <ThemeButton label={labels.theme} />
           </div>
         </nav>
