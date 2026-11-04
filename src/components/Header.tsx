@@ -71,11 +71,11 @@ export function Header({ locale, nav, labels }: Props) {
           <div role="group" aria-label={labels.lang} className="flex rounded-full border border-line-strong p-[3px] font-mono text-xs font-medium">
             {langs.map((l) =>
               l.code === locale ? (
-                <span key={l.code} lang={l.htmlLang} aria-current="true" className="flex min-h-9 items-center rounded-full bg-ink px-3 text-bg">
+                <span key={l.code} lang={l.htmlLang} aria-current="true" className="flex min-h-9 min-w-11 items-center justify-center rounded-full bg-ink px-3 text-bg">
                   {l.label}
                 </span>
               ) : (
-                <Link key={l.code} lang={l.htmlLang} hrefLang={l.htmlLang} href={switchHref(otherLocale(locale))} className="flex min-h-9 items-center rounded-full px-3 text-muted hover:text-ink">
+                <Link key={l.code} lang={l.htmlLang} hrefLang={l.htmlLang} href={switchHref(otherLocale(locale))} className="flex min-h-9 min-w-11 items-center justify-center rounded-full px-3 text-muted hover:text-ink">
                   {l.label}
                 </Link>
               ),
