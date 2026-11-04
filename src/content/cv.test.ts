@@ -90,6 +90,13 @@ describe.each(LANGS.map((l) => [l.locale, l] as const))("CV page in %s", (_local
     expect(html).toMatch(/<h1>Caio Barilli<\/h1>/);
   });
 
+  it("gives every earlier job a one-line note", () => {
+    for (const e of site.earlierExperience) {
+      expect(e.note).toBeTruthy();
+      expect(html).toContain(e.note![lang.key as "en" | "pt"]);
+    }
+  });
+
   it("orders the sections: summary, skills, experience, earlier, projects, education, courses", () => {
     expect(h2).toEqual([ui.cvSummaryTitle, ui.cvSkillsTitle, ui.expTitle, ui.earlierTitle, ui.projectsTitle, ui.eduTitle, ui.coursesTitle]);
     expect(html).toContain(ui.cvSkills);

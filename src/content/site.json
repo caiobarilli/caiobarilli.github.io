@@ -2079,7 +2079,11 @@
         "pt": "Contratos curtos e freelances (Layer Up, Zebra Deluxe, Meeta Solutions, QuikDev)",
         "en": "Short contracts and freelance work (Layer Up, Zebra Deluxe, Meeta Solutions, QuikDev)"
       },
-      "period": "2021–2022"
+      "period": "2021–2022",
+      "note": {
+        "pt": "Sites WordPress e PHP para agências, Laravel num projeto da FIS Global e páginas em React/Next.js com TypeScript.",
+        "en": "WordPress and PHP sites for agencies, Laravel on a FIS Global project, and React/Next.js pages with TypeScript."
+      }
     },
     {
       "role": {
@@ -2092,8 +2096,8 @@
       },
       "period": "2020",
       "note": {
-        "pt": "Laravel, CakePHP, WordPress, Vue.js e Docker; conduzia a daily e a planning do Scrum.",
-        "en": "Laravel, CakePHP, WordPress, Vue.js and Docker; ran the Scrum daily and planning."
+        "pt": "Laravel, CakePHP, WordPress, Vue.js, React e Docker; conduzia a daily e a planning do Scrum e atendia tickets de clientes.",
+        "en": "Laravel, CakePHP, WordPress, Vue.js, React and Docker; ran the Scrum daily and planning and handled client tickets."
       }
     },
     {
@@ -2102,7 +2106,11 @@
         "en": "Front-end developer and front-end tech lead"
       },
       "company": "Zebra Deluxe Comunicação",
-      "period": "2019–2020"
+      "period": "2019–2020",
+      "note": {
+        "pt": "Liderança do time de front-end, daily, estimativas de prazo e contratações; Laravel, WordPress e SASS.",
+        "en": "Led the front-end team, ran the daily, estimated timelines and took part in hiring; Laravel, WordPress and SASS."
+      }
     },
     {
       "role": {
@@ -2110,7 +2118,11 @@
         "en": "Full Stack WordPress Developer"
       },
       "company": "3xceler",
-      "period": "2019"
+      "period": "2019",
+      "note": {
+        "pt": "Desenvolvimento full stack de dois sites completos em WordPress e PHP.",
+        "en": "Full stack development of two complete WordPress and PHP sites."
+      }
     },
     {
       "role": {
@@ -2118,7 +2130,11 @@
         "en": "Full Stack Developer"
       },
       "company": "Shape Web",
-      "period": "2018"
+      "period": "2018",
+      "note": {
+        "pt": "Sites, landing pages e uma plataforma de e-commerce em PHP, MySQL e SASS.",
+        "en": "Sites, landing pages and an e-commerce platform in PHP, MySQL and SASS."
+      }
     },
     {
       "role": {
@@ -2128,8 +2144,8 @@
       "company": "123Carros",
       "period": "2018",
       "note": {
-        "pt": "Front-end do marketplace.",
-        "en": "Front end for the marketplace."
+        "pt": "Front-end do marketplace e do blog em WordPress, com liderança do time de front; Laravel e SASS.",
+        "en": "Marketplace front end and WordPress blog, leading the front-end team; Laravel and SASS."
       }
     },
     {
@@ -2138,7 +2154,11 @@
         "en": "Front-end developer (freelance)"
       },
       "company": "WebSide",
-      "period": "2017–2018"
+      "period": "2017–2018",
+      "note": {
+        "pt": "Front-end de sites, landing pages e e-mail marketing para a agência.",
+        "en": "Front end for the agency’s sites, landing pages and email marketing."
+      }
     },
     {
       "role": {
@@ -2146,7 +2166,11 @@
         "en": "Developer and tech lead"
       },
       "company": "Capital Mídia",
-      "period": "2016–2017"
+      "period": "2016–2017",
+      "note": {
+        "pt": "Efetivado e promovido; liderança do time de desenvolvimento, demandas para devs externos e contratações.",
+        "en": "Hired on permanently and promoted; led the development team, assigned work to external developers and took part in hiring."
+      }
     },
     {
       "role": {
@@ -2154,7 +2178,11 @@
         "en": "Internship"
       },
       "company": "VAD Estúdio Multimídia",
-      "period": "2013"
+      "period": "2013",
+      "note": {
+        "pt": "Sites, manutenção e e-mail marketing com HTML, CSS, JavaScript e jQuery.",
+        "en": "Sites, maintenance and email marketing with HTML, CSS, JavaScript and jQuery."
+      }
     }
   ],
   "contacts": [
