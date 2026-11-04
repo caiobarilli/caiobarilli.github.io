@@ -26,7 +26,7 @@ describe("content", () => {
   });
 
   it("keeps the featured projects in the chosen order", () => {
-    expect(mainProjects().map((p) => p.slug)).toEqual(["keeptask", "phporto", "phparrot", "uvalab", "aws-terraform", "info4all"]);
+    expect(mainProjects().map((p) => p.slug)).toEqual(["keeptask", "info4all", "phporto", "phparrot", "uvalab", "aws-terraform"]);
     expect(otherProjects().every((p) => !p.main)).toBe(true);
   });
 
