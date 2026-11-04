@@ -43,3 +43,9 @@ Colchete é curinga no PowerShell. Usar `-LiteralPath` para ler ou mexer em `src
 CSS sem camada vence todas as camadas, inclusive as utilities. O `:focus-visible` com `border-radius: 6px` fora de camada tirava o formato de pílula dos botões `rounded-full` quando recebiam foco por teclado (48px de altura, raio de 6px). Regras próprias ficam em `@layer base`, utilitários próprios em `@utility`. Só o bloco de `prefers-reduced-motion` fica fora de camada, de propósito. Efeito esperado: o `<main id="main">` (`outline-none`) não mostra mais anel ao receber o foco do link de pular.
 
 Evidência: `5b1c4cf`.
+
+## `max-[N]` do Tailwind 4 é menor que N
+
+No Tailwind 4, `max-[N]` vale para larguras menores que N (`width < N`), não menores ou iguais. `max-[375px]` não pegava a tela de 375px. Para incluir 375px, usar `max-[376px]`. O E2E de largura pegou o erro.
+
+Evidência: `111e4b2`.
