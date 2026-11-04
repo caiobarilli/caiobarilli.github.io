@@ -32,7 +32,7 @@ export default async function ExperiencePage({ params }: { params: Promise<{ loc
                 {" · "}
                 {localize(e.kind, locale)}
               </span>
-              <p className="mt-1 max-w-[640px] text-base leading-[1.6] text-pretty text-ink-2">{localize(e.summary, locale)}</p>
+              {e.summary && <p className="mt-1 max-w-[640px] text-base leading-[1.6] text-pretty text-ink-2">{localize(e.summary, locale)}</p>}
               {e.highlights && (
                 <ul data-testid="experience-highlights" className="max-w-[640px] list-disc space-y-1.5 pl-5 text-base leading-[1.6] text-pretty text-ink-2 marker:text-accent-text">
                   {e.highlights.map((h) => (
@@ -40,7 +40,6 @@ export default async function ExperiencePage({ params }: { params: Promise<{ loc
                   ))}
                 </ul>
               )}
-              {e.details && <p className="max-w-[640px] text-base leading-[1.6] text-pretty text-ink-2">{localize(e.details, locale)}</p>}
               <ul className="mt-1.5 flex flex-wrap gap-1.5">
                 {e.keys.map((k) => (
                   <li key={k} className="rounded-full border border-line-strong px-[11px] py-[5px] font-mono text-xs font-medium">

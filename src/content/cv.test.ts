@@ -117,11 +117,11 @@ describe.each(LANGS.map((l) => [l.locale, l] as const))("CV page in %s", (_local
     for (const t of ["Computação", "Criação de Temas", "Como criar", "antiga", "364 h<"]) expect(html).not.toContain(t);
   });
 
-  it("leaves out the KeepCloud details text, which repeats the highlights", () => {
-    const kc = site.experience[0];
-    expect(kc?.details).toBeTruthy();
-    expect(html).not.toContain(kc!.details![lang.key as "en" | "pt"]);
-    for (const h of kc!.highlights!) expect(html).toContain(h[lang.key as "en" | "pt"]);
+  it("lists the whole KeepCloud job, with Keeptask as one of the items", () => {
+    const kc = site.experience[0]!;
+    expect(kc.highlights).toHaveLength(7);
+    for (const h of kc.highlights!) expect(html).toContain(h[lang.key as "en" | "pt"]);
+    expect(kc.highlights!.at(-1)![lang.key as "en" | "pt"]).toMatch(/^Keeptask:/);
   });
 
   it("shows the location line only when the language has one", () => {

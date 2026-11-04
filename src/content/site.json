@@ -1996,28 +1996,36 @@
         "en": "Remote",
         "pt": "Remoto"
       },
-      "summary": {
-        "en": "Built Keeptask, a B2B task and project management platform, with a Laravel web app and a native iOS and Android app.",
-        "pt": "Construí o Keeptask, plataforma B2B de gestão de tarefas e projetos, com web em Laravel e app nativo para iOS e Android."
-      },
       "highlights": [
         {
-          "pt": "Arquitetura e desenvolvimento da web em Laravel 13 com Livewire, Reverb e Horizon, e da API versionada que o app consome.",
-          "en": "Architecture and development of the web app in Laravel 13 with Livewire, Reverb and Horizon, and of the versioned API the app consumes."
+          "pt": "Aplicações web com PHP (Laravel), JavaScript e MySQL.",
+          "en": "Web applications with PHP (Laravel), JavaScript and MySQL."
         },
         {
-          "pt": "App nativo para iOS e Android em NativePHP, com modo offline e notificações push.",
-          "en": "Native iOS and Android app in NativePHP, with offline mode and push notifications."
+          "pt": "Ambientes Docker para desenvolvimento e testes.",
+          "en": "Docker environments for development and testing."
         },
         {
-          "pt": "Cerca de 2.000 testes automatizados em Pest; integrações com Google Workspace, Zapier e webhooks assinados.",
-          "en": "About 2,000 automated tests in Pest; integrations with Google Workspace, Zapier and signed webhooks."
+          "pt": "Integrações com gateways de pagamento e APIs externas.",
+          "en": "Integrations with payment gateways and external APIs."
+        },
+        {
+          "pt": "Interfaces com TailwindCSS, Livewire e Bootstrap.",
+          "en": "Interfaces with TailwindCSS, Livewire and Bootstrap."
+        },
+        {
+          "pt": "Qualidade de código com PHPStan, PHP-CS-Fixer e Pest; pacotes Composer reutilizáveis.",
+          "en": "Code quality with PHPStan, PHP-CS-Fixer and Pest; reusable Composer packages."
+        },
+        {
+          "pt": "Servidores Linux/Debian; Scrum.",
+          "en": "Linux/Debian servers; Scrum."
+        },
+        {
+          "pt": "Keeptask: plataforma B2B de gestão de tarefas, projetos e fluxos de trabalho, com web em Laravel, app nativo para iOS e Android e site público de documentação, construída de ponta a ponta com um fluxo agêntico.",
+          "en": "Keeptask: a B2B platform for task, project and workflow management, with a Laravel web app, a native iOS and Android app and a public documentation site, built end to end with an agentic workflow."
         }
       ],
-      "details": {
-        "pt": "Aplicações web com PHP (Laravel), JavaScript e MySQL; ambientes Docker para desenvolvimento e testes; integrações com gateways de pagamento e APIs externas; interfaces com TailwindCSS, Livewire e Bootstrap; qualidade de código com PHPStan, PHP-CS-Fixer e Pest; pacotes Composer reutilizáveis; servidores Linux/Debian; Scrum.",
-        "en": "Web applications with PHP (Laravel), JavaScript and MySQL; Docker environments for dev and testing; payment gateway and external API integrations; UIs with TailwindCSS, Livewire and Bootstrap; code quality with PHPStan, PHP-CS-Fixer and Pest; reusable Composer packages; Linux/Debian servers; Scrum."
-      },
       "keys": [
         "Laravel",
         "PHP",

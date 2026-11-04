@@ -58,10 +58,9 @@ export type Experience = {
   role: Localized;
   company: { name: string; url: string };
   kind: Localized;
-  /** Opening line. `highlights` (bullets) and `details` (the rest) come after it. */
-  summary: Localized;
+  /** Optional opening line, then the bullets. */
+  summary?: Localized;
   highlights?: Localized[];
-  details?: Localized;
   keys: string[];
 };
 

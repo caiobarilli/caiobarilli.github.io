@@ -1,5 +1,4 @@
 // Résumé HTML (pt-br and en) built from src/content/site.json, so they never drift from the site.
-// `details` of an experience (the site shows it) is left out: it repeats the highlights.
 // No new text lives here: only the layout, the project order and which sections go in. Printed to PDF by scripts/cv.mjs.
 import { readFileSync } from "node:fs";
 
@@ -42,7 +41,7 @@ export function build({ key, html }) {
     .map(
       (e) => `<div class="item">
     <div class="row"><h3>${esc(loc(e.role, key))} · ${esc(e.company.name)}</h3><span class="meta">${esc(loc(e.period, key))} · ${esc(loc(e.kind, key))}</span></div>
-    <p>${esc(loc(e.summary, key))}</p>
+    ${e.summary ? `<p>${esc(loc(e.summary, key))}</p>` : ""}
     ${e.highlights ? `<ul class="points">${e.highlights.map((h) => `<li>${esc(loc(h, key))}</li>`).join("")}</ul>` : ""}
     <p class="stack">${esc(e.keys.join(" · "))}</p>
   </div>`,
