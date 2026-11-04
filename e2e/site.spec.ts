@@ -518,8 +518,8 @@ test.describe("experience", () => {
 
 test.describe("experience, KeepCloud", () => {
   const cases: [string, string, string][] = [
-    ["/en/experience/", "Remote", "I develop web applications with PHP (Laravel)"],
-    ["/pt-br/experience/", "Remoto", "Desenvolvo aplicações web com PHP (Laravel)"],
+    ["/en/experience/", "Remote", "I built Keeptask on my own"],
+    ["/pt-br/experience/", "Remoto", "Construí sozinho o Keeptask"],
   ];
   for (const [path, mode, lead] of cases) {
     test(`${path} says remote and describes the job in one paragraph`, async ({ page }) => {

@@ -81,7 +81,7 @@ export default async function ExperiencePage({ params }: { params: Promise<{ loc
               <span className="font-mono text-sm font-medium text-accent-text">{ed.period}</span>
               <div className="col-span-2 flex min-w-0 flex-wrap justify-between gap-x-6 gap-y-1 max-[560px]:col-span-1">
                 <span className="text-lg font-semibold">{localize(ed.title, locale)}</span>
-                <span className="font-mono text-sm text-muted">{localize(ed.school, locale)}</span>
+                <span className="font-mono text-sm text-muted">{localize(ed.school, locale)}{ed.status && ` · ${localize(ed.status, locale)}`}</span>
               </div>
             </li>
           ))}

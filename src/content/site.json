@@ -89,8 +89,8 @@
       "cvTitle": "Full Stack Developer (PHP/Laravel) · DevOps",
       "cvSummaryTitle": "Summary",
       "cvSkillsTitle": "Skills",
-      "cvSkills": "PHP · Laravel · Livewire · MySQL · Redis/Horizon (queues) · REST APIs · Pest · PHPStan · Git · Docker · Terraform · AWS · CI/CD with GitHub Actions · Linux · WordPress",
-      "cvLocation": "Based in São Paulo, Brazil (UTC−3) · Remote · English: intermediate · Full-time or contractor · Available immediately",
+      "cvSkills": "PHP · Laravel · Livewire · Inertia · MySQL · Redis/Horizon (queues) · REST APIs · Pest · PHPUnit · PHPStan · Git · Docker · Terraform · AWS · CI/CD with GitHub Actions · Linux · WordPress · Next.js · TypeScript",
+      "cvLocation": "Based in São Paulo, Brazil (UTC−3) · Remote · Full-time or contractor (own Brazilian company) · English: intermediate, used daily in docs, commits and PRs",
       "cvPhone": "+55 11 93759-9166"
     },
     "pt": {
@@ -182,8 +182,8 @@
       "cvTitle": "Desenvolvedor Full Stack PHP/Laravel · DevOps",
       "cvSummaryTitle": "Resumo",
       "cvSkillsTitle": "Competências",
-      "cvSkills": "PHP · Laravel · Livewire · MySQL · Redis/Horizon (filas) · APIs REST · Pest · PHPStan · Git · Docker · Terraform · AWS · CI/CD com GitHub Actions · Linux · WordPress",
-      "cvLocation": "São Paulo, Brasil (UTC−3) · Remoto · CLT ou PJ · Inglês intermediário · Disponibilidade imediata",
+      "cvSkills": "PHP · Laravel · Livewire · Inertia · MySQL · Redis/Horizon (filas) · APIs REST · Pest · PHPUnit · PHPStan · Git · Docker · Terraform · AWS · CI/CD com GitHub Actions · Linux · WordPress · Next.js · TypeScript",
+      "cvLocation": "São Paulo, Brasil (UTC−3) · Remoto · CLT ou PJ · Inglês intermediário",
       "cvPhone": "+55 11 93759-9166"
     }
   },
@@ -1987,8 +1987,8 @@
   "experience": [
     {
       "period": {
-        "en": "2024 — present",
-        "pt": "2024 — atual"
+        "en": "2024–present",
+        "pt": "2024–atual"
       },
       "role": {
         "pt": "Desenvolvedor Full Stack (PHP / Laravel)",
@@ -1999,8 +1999,8 @@
         "pt": "Remoto"
       },
       "summary": {
-        "en": "I develop web applications with PHP (Laravel), JavaScript and MySQL, with Docker environments for development and testing; integrations with payment gateways and external APIs; interfaces with TailwindCSS, Livewire and Bootstrap; code quality with PHPStan, PHP-CS-Fixer and Pest and reusable Composer packages; Linux/Debian servers; Scrum. I built Keeptask, a B2B platform for task, project and workflow management, with a Laravel web app, a native iOS and Android app and a public documentation site, end to end with an agentic workflow.",
-        "pt": "Desenvolvo aplicações web com PHP (Laravel), JavaScript e MySQL, com ambientes Docker para desenvolvimento e testes; integrações com gateways de pagamento e APIs externas; interfaces com TailwindCSS, Livewire e Bootstrap; qualidade de código com PHPStan, PHP-CS-Fixer e Pest e pacotes Composer reutilizáveis; servidores Linux/Debian; Scrum. Construí o Keeptask, plataforma B2B de gestão de tarefas, projetos e fluxos de trabalho, com web em Laravel, app nativo para iOS e Android e site público de documentação, de ponta a ponta com um fluxo agêntico."
+        "en": "I built Keeptask on my own, a B2B task, project and workflow platform, with an agentic workflow: a Laravel and Livewire web app, a REST API consumed by the native iOS and Android app, and a public documentation site; deployment stayed with the team. Queues on Redis and Horizon handle notifications, push, webhooks, automations and reports. I also build web applications with PHP (Laravel), JavaScript and MySQL, payment gateway integrations (a public Composer package for Pagar.me) and external APIs, Docker environments, code quality with PHPStan, PHP-CS-Fixer and Pest, Linux/Debian servers and Scrum.",
+        "pt": "Construí sozinho o Keeptask, plataforma B2B de gestão de tarefas, projetos e fluxos de trabalho, com um fluxo agêntico: web em Laravel e Livewire, API REST consumida pelo app nativo para iOS e Android e site público de documentação; o deploy ficou com o time. Filas com Redis e Horizon processam notificações, push, webhooks, automações e relatórios. Também desenvolvo aplicações web com PHP (Laravel), JavaScript e MySQL, integrações com gateways de pagamento (pacote Composer público para o Pagar.me) e APIs externas, ambientes Docker, qualidade de código com PHPStan, PHP-CS-Fixer e Pest, servidores Linux/Debian e Scrum."
       },
       "keys": [
         "Laravel",
@@ -2019,8 +2019,8 @@
     },
     {
       "period": {
-        "en": "2022 — 2025",
-        "pt": "2022 — 2025"
+        "en": "2022–2025",
+        "pt": "2022–2025"
       },
       "role": {
         "pt": "Full Stack & DevOps (freelance, projetos recorrentes)",
@@ -2189,7 +2189,7 @@
   ],
   "education": [
     {
-      "period": "2025 — 2026",
+      "period": "2025–2026",
       "title": {
         "en": "MBA in DevOps, Automation & Cloud Strategy · 364 hours",
         "pt": "MBA em DevOps, Automation & Cloud Strategy · 364 h"
@@ -2197,10 +2197,14 @@
       "school": {
         "pt": "FIAP",
         "en": "FIAP (Brazilian technology university)"
+      },
+      "status": {
+        "pt": "Concluído",
+        "en": "Completed"
       }
     },
     {
-      "period": "2012 — 2015",
+      "period": "2012–2015",
       "title": {
         "en": "Internet Systems Technology degree",
         "pt": "Tecnologia em Sistemas para Internet"

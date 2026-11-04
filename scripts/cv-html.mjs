@@ -44,7 +44,7 @@ export function build({ key, html }) {
   const education = site.education
     .map(
       (ed) => `<div class="item">
-    <h3>${esc(loc(ed.title, key))} · ${esc(loc(ed.school, key))} · <span class="meta">${esc(ed.period)}</span></h3>
+    <h3>${esc(loc(ed.title, key))} · ${esc(loc(ed.school, key))} · <span class="meta">${esc(ed.period)}${ed.status ? ` · ${esc(loc(ed.status, key))}` : ""}</span></h3>
   </div>`,
     )
     .join("");
