@@ -861,8 +861,8 @@
       ],
       "shot": "phporto-home.webp",
       "desc": {
-        "en": "A browser panel for Windows power users: run commands in WSL, run allowlisted Windows admin actions, manage Hyper-V VMs and a local LLM (Ollama), all bound to localhost and token-protected.",
-        "pt": "Um painel no navegador para quem usa o Windows a fundo: rode comandos no WSL, execute ações administrativas do Windows de uma allowlist, gerencie VMs Hyper-V e um LLM local (Ollama), tudo em localhost e protegido por token."
+        "en": "A browser panel to manage Windows in one place: WSL commands, Hyper-V VMs, app installs and a local LLM. It runs only on your machine, with token access.",
+        "pt": "Um painel no navegador para cuidar do Windows num lugar só: comandos no WSL, VMs do Hyper-V, instalação de aplicativos e um LLM local. Roda só na sua máquina, com acesso por token."
       },
       "problem": {
         "en": "WSL, Windows admin tasks, Hyper-V VMs and a local LLM are each managed from a different console.",
