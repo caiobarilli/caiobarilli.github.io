@@ -487,3 +487,17 @@ test.describe("experience, KeepCloud", () => {
     });
   }
 });
+
+test.describe("about", () => {
+  const cases: [string, string][] = [
+    ["/en/about/", "I started as an intern in 2013"],
+    ["/pt-br/about/", "Comecei como estagiário em 2013"],
+  ];
+  for (const [path, start] of cases) {
+    test(`${path} opens the story at 2013, not repeating the years in the intro`, async ({ page }) => {
+      await page.goto(path);
+      await expect(page.getByText(start, { exact: false })).toBeVisible();
+      await expect(page.getByText(/dez anos|ten years/)).toHaveCount(0);
+    });
+  }
+});
