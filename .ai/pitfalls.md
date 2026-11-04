@@ -37,3 +37,9 @@ Evidência: `02886b7`.
 ## Pasta `[locale]` no PowerShell
 
 Colchete é curinga no PowerShell. Usar `-LiteralPath` para ler ou mexer em `src/app/[locale]/...`.
+
+## CSS fora de `@layer` vence as utilities do Tailwind
+
+CSS sem camada vence todas as camadas, inclusive as utilities. O `:focus-visible` com `border-radius: 6px` fora de camada tirava o formato de pílula dos botões `rounded-full` quando recebiam foco por teclado (48px de altura, raio de 6px). Regras próprias ficam em `@layer base`, utilitários próprios em `@utility`. Só o bloco de `prefers-reduced-motion` fica fora de camada, de propósito. Efeito esperado: o `<main id="main">` (`outline-none`) não mostra mais anel ao receber o foco do link de pular.
+
+Evidência: `5b1c4cf`.
