@@ -134,12 +134,17 @@ test.describe("home", () => {
       if (isMobile) {
         const link = page.getByRole("link", { name: /caiobarilli@gmail.com/ });
         await expect(link).toBeVisible();
+        await expect(link).toContainText("↗");
+        await expect(link.locator("svg")).toHaveCount(0);
         await expect(link).toHaveAttribute("href", "mailto:caiobarilli@gmail.com");
         await expect(page.getByRole("button", { name: /caiobarilli@gmail.com/ })).toHaveCount(0);
         return;
       }
       await context.grantPermissions(["clipboard-read", "clipboard-write"]);
       const row = page.getByRole("button", { name: /caiobarilli@gmail.com/ });
+      // Desktop: a copy icon, not the "opens a link" arrow.
+      await expect(row).not.toContainText("↗");
+      await expect(row.locator('svg[data-icon="copy"]')).toBeVisible();
       const before = await address.boundingBox();
       // The page is static: retry the click until React has hydrated the handler.
       await expect(async () => {
@@ -147,6 +152,7 @@ test.describe("home", () => {
         await expect(page.locator("[aria-live=polite]").first()).toHaveText(copied, { timeout: 500 });
       }).toPass();
       await expect(row.getByText(copied, { exact: true })).toBeVisible();
+      await expect(row.locator('svg[data-icon="check"]')).toBeVisible();
       expect(await address.boundingBox()).toEqual(before);
       expect(await page.evaluate(() => navigator.clipboard.readText())).toBe("caiobarilli@gmail.com");
       await expect(row.getByText(copied, { exact: true })).toBeHidden({ timeout: 4000 });

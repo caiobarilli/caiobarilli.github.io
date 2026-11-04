@@ -72,7 +72,17 @@ export function EmailButton({ address, label, copiedLabel, className = "", varia
           <button type="button" onClick={copy} className={`w-full cursor-pointer text-left ${className}`}>
             {swap(labelClassName)}
             <span ref={manual} className={`${valueClassName} ${state === "failed" ? "select-all" : ""}`}><Breakable text={address} /></span>
-            <span aria-hidden className="text-2xl">↗</span>
+            {/* Same box as the arrow, so nothing moves. Two rectangles = copy; a check for the 2 s after copying. */}
+            <svg aria-hidden="true" data-icon={state === "copied" ? "check" : "copy"} viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-none">
+              {state === "copied" ? (
+                <path d="M5 13l4 4L19 7" />
+              ) : (
+                <>
+                  <rect x="9" y="9" width="12" height="12" rx="2" />
+                  <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                </>
+              )}
+            </svg>
           </button>
         </div>
         {live}
