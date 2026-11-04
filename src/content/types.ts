@@ -58,7 +58,16 @@ export type Experience = {
 
 export type Education = { period: string; title: Localized; school: string };
 
-export type Course = { name: string; url: string };
+export type Course = {
+  name: string;
+  url: string;
+  /** Platform or school that issued it. */
+  issuer?: string;
+  /** Completion date, already formatted per language. */
+  date?: Localized;
+  /** True when url points to a verifiable certificate, not just the course page. */
+  certificate?: boolean;
+};
 
 export type Contact = { label: string; handle: string; url: string; pending: boolean };
 

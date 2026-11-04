@@ -100,9 +100,10 @@
       "photo": "photo",
       "siteLink": "Product site ↗",
       "expand": "Expand image",
-      "coursesTitle": "Courses",
+      "coursesTitle": "Licenses, certificates and courses",
       "courseLink": "Course ↗",
-      "features": "Features"
+      "features": "Features",
+      "certificateLink": "Certificate ↗"
     },
     "pt": {
       "nav": {
@@ -204,9 +205,10 @@
       "photo": "foto",
       "siteLink": "Site do produto ↗",
       "expand": "Ampliar imagem",
-      "coursesTitle": "Cursos",
+      "coursesTitle": "Licenças, certificados e cursos",
       "courseLink": "Curso ↗",
-      "features": "Recursos"
+      "features": "Recursos",
+      "certificateLink": "Certificado ↗"
     }
   },
   "cats": [
@@ -1647,8 +1649,8 @@
     {
       "period": "2025 — 2026",
       "title": {
-        "en": "MBA, DevOps, Automation & Cloud Strategy",
-        "pt": "MBA em DevOps, Automation & Cloud Strategy"
+        "en": "MBA, DevOps, Automation & Cloud Strategy · 364 h, final project graded 10",
+        "pt": "MBA em DevOps, Automation & Cloud Strategy · 364 h, TCC com nota 10"
       },
       "school": "FIAP"
     },
@@ -1663,15 +1665,83 @@
   ],
   "courses": [
     {
-      "name": "React Avançado: Next.js, Strapi e GraphQL",
-      "url": "https://www.udemy.com/course/react-avancado/"
+      "name": "Computação em Nuvem — AWS Discovery Day",
+      "issuer": "Ka Solution",
+      "date": {
+        "en": "Sep 2025",
+        "pt": "set 2025"
+      },
+      "url": "https://www.kasolution.com.br/Certificado",
+      "certificate": true
+    },
+    {
+      "name": "React Native — The Practical Guide",
+      "issuer": "Udemy",
+      "date": {
+        "en": "Jul 2024",
+        "pt": "jul 2024"
+      },
+      "url": "https://www.udemy.com/certificate/UC-253c1464-0f8b-485c-8c52-a37dca4b8b46/",
+      "certificate": true
+    },
+    {
+      "name": "Como criar CRUDs com Qualidade",
+      "issuer": "Hotmart · DevSoutinho",
+      "date": {
+        "en": "Sep 2023",
+        "pt": "set 2023"
+      },
+      "url": "https://crudcomqualidade.club.hotmart.com/public/user-certificate/8da138cf-3a93-4e91-b4ed-86bf63efb5e2/_",
+      "certificate": true
+    },
+    {
+      "name": "React Avançado: NextJS, Strapi e GraphQL",
+      "issuer": "Udemy",
+      "date": {
+        "en": "Jun 2023",
+        "pt": "jun 2023"
+      },
+      "url": "https://www.udemy.com/certificate/UC-fb9d507f-8f88-41ae-a6d2-9e2270e46a5f/",
+      "certificate": true
+    },
+    {
+      "name": "React — The Complete Guide (incl. Next.js, Redux)",
+      "issuer": "Udemy",
+      "date": {
+        "en": "Aug 2022",
+        "pt": "ago 2022"
+      },
+      "url": "https://www.udemy.com/certificate/UC-302fecd7-ea13-4180-923c-4698f5880c47/",
+      "certificate": true
+    },
+    {
+      "name": "Desenvolvimento Web Avançado com PHP, Laravel e Vue.js",
+      "issuer": "Udemy",
+      "date": {
+        "en": "Jun 2022",
+        "pt": "jun 2022"
+      },
+      "url": "https://www.udemy.com/certificate/UC-3b7bc85c-0413-4d31-8b30-226802c06c60/",
+      "certificate": true
+    },
+    {
+      "name": "Criação de Temas WordPress com WooCommerce",
+      "issuer": "Udemy",
+      "date": {
+        "en": "Jun 2021",
+        "pt": "jun 2021"
+      },
+      "url": "https://www.udemy.com/certificate/UC-ef93d45e-8508-475b-9541-8a3dcfa0d231/",
+      "certificate": true
     },
     {
       "name": "Angular & NodeJS: The MEAN Stack Guide",
+      "issuer": "Udemy",
       "url": "https://www.udemy.com/course/angular-2-and-nodejs-the-practical-guide/"
     },
     {
       "name": "MERN Stack Front To Back",
+      "issuer": "Udemy",
       "url": "https://www.udemy.com/course/mern-stack-front-to-back/"
     }
   ]

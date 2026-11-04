@@ -64,11 +64,20 @@ export default async function ExperiencePage({ params }: { params: Promise<{ loc
         <h2 className="mb-5 text-[28px] font-semibold tracking-[-0.02em]">{s("coursesTitle")}</h2>
         <ul>
           {courses.map((c) => (
-            <li key={c.url} className="border-b border-line">
-              <a href={c.url} className="flex flex-wrap items-center justify-between gap-x-6 gap-y-1 py-[18px] hover:text-accent-text">
-                <span className="text-lg font-semibold">{c.name}</span>
-                <span className="font-mono text-sm text-muted">Udemy ↗</span>
-              </a>
+            <li
+              key={c.url}
+              className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,240px),1fr))] gap-x-10 gap-y-1.5 border-b border-line py-[18px]"
+            >
+              <span className="font-mono text-sm font-medium text-accent-text">{c.date ? localize(c.date, locale) : "—"}</span>
+              <div className="col-span-2 flex min-w-0 flex-wrap items-baseline justify-between gap-x-6 gap-y-1 max-[560px]:col-span-1">
+                <span className="flex flex-col gap-1">
+                  <span className="text-lg font-semibold">{c.name}</span>
+                  {c.issuer && <span className="font-mono text-sm text-muted">{c.issuer}</span>}
+                </span>
+                <a href={c.url} className="font-mono text-sm font-medium text-muted hover:text-accent-text">
+                  {s(c.certificate ? "certificateLink" : "courseLink")}
+                </a>
+              </div>
             </li>
           ))}
         </ul>
