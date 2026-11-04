@@ -518,18 +518,18 @@ test.describe("experience", () => {
 
 test.describe("experience, KeepCloud", () => {
   const cases: [string, string, string][] = [
-    ["/en/experience/", "Remote", "Web applications with PHP (Laravel), JavaScript and MySQL."],
-    ["/pt-br/experience/", "Remoto", "Aplicações web com PHP (Laravel), JavaScript e MySQL."],
+    ["/en/experience/", "Remote", "I develop web applications with PHP (Laravel)"],
+    ["/pt-br/experience/", "Remoto", "Desenvolvo aplicações web com PHP (Laravel)"],
   ];
   for (const [path, mode, lead] of cases) {
-    test(`${path} says remote and lists the whole job, Keeptask last`, async ({ page }) => {
+    test(`${path} says remote and describes the job in one paragraph`, async ({ page }) => {
       await page.goto(path);
       const job = page.locator("main ol > li").first();
       await expect(job).toContainText(`KeepCloud ↗ · ${mode}`);
-      const items = job.getByTestId("experience-highlights").locator("li");
-      await expect(items).toHaveCount(7);
-      await expect(items.first()).toHaveText(lead);
-      await expect(items.last()).toHaveText(/^Keeptask:/);
+      await expect(job.getByTestId("experience-highlights")).toHaveCount(0);
+      const text = job.locator("p").first();
+      await expect(text).toHaveText(new RegExp(`^${lead.replace(/[()]/g, "\\$&")}`));
+      await expect(text).toContainText("Keeptask");
     });
   }
 });

@@ -1996,36 +1996,10 @@
         "en": "Remote",
         "pt": "Remoto"
       },
-      "highlights": [
-        {
-          "pt": "Aplicações web com PHP (Laravel), JavaScript e MySQL.",
-          "en": "Web applications with PHP (Laravel), JavaScript and MySQL."
-        },
-        {
-          "pt": "Ambientes Docker para desenvolvimento e testes.",
-          "en": "Docker environments for development and testing."
-        },
-        {
-          "pt": "Integrações com gateways de pagamento e APIs externas.",
-          "en": "Integrations with payment gateways and external APIs."
-        },
-        {
-          "pt": "Interfaces com TailwindCSS, Livewire e Bootstrap.",
-          "en": "Interfaces with TailwindCSS, Livewire and Bootstrap."
-        },
-        {
-          "pt": "Qualidade de código com PHPStan, PHP-CS-Fixer e Pest; pacotes Composer reutilizáveis.",
-          "en": "Code quality with PHPStan, PHP-CS-Fixer and Pest; reusable Composer packages."
-        },
-        {
-          "pt": "Servidores Linux/Debian; Scrum.",
-          "en": "Linux/Debian servers; Scrum."
-        },
-        {
-          "pt": "Keeptask: plataforma B2B de gestão de tarefas, projetos e fluxos de trabalho, com web em Laravel, app nativo para iOS e Android e site público de documentação, construída de ponta a ponta com um fluxo agêntico.",
-          "en": "Keeptask: a B2B platform for task, project and workflow management, with a Laravel web app, a native iOS and Android app and a public documentation site, built end to end with an agentic workflow."
-        }
-      ],
+      "summary": {
+        "en": "I develop web applications with PHP (Laravel), JavaScript and MySQL, with Docker environments for development and testing; integrations with payment gateways and external APIs; interfaces with TailwindCSS, Livewire and Bootstrap; code quality with PHPStan, PHP-CS-Fixer and Pest and reusable Composer packages; Linux/Debian servers; Scrum. I built Keeptask, a B2B platform for task, project and workflow management, with a Laravel web app, a native iOS and Android app and a public documentation site, end to end with an agentic workflow.",
+        "pt": "Desenvolvo aplicações web com PHP (Laravel), JavaScript e MySQL, com ambientes Docker para desenvolvimento e testes; integrações com gateways de pagamento e APIs externas; interfaces com TailwindCSS, Livewire e Bootstrap; qualidade de código com PHPStan, PHP-CS-Fixer e Pest e pacotes Composer reutilizáveis; servidores Linux/Debian; Scrum. Construí o Keeptask, plataforma B2B de gestão de tarefas, projetos e fluxos de trabalho, com web em Laravel, app nativo para iOS e Android e site público de documentação, de ponta a ponta com um fluxo agêntico."
+      },
       "keys": [
         "Laravel",
         "PHP",
@@ -2055,8 +2029,8 @@
         "pt": "Remoto"
       },
       "summary": {
-        "en": "Institutional site and news portal on WordPress (child theme over a community theme, plus custom plugins); AWS environments with Terraform (production and staging); DNS and SSL via Cloudflare; WordOps provisioning; Docker; technical SEO and performance; worked directly with the client and coordinated the design team.",
-        "pt": "Site institucional e portal de notícias em WordPress (child theme sobre um tema de comunidade e plugins próprios); ambientes AWS com Terraform (produção e staging); DNS e SSL via Cloudflare; provisionamento com WordOps; Docker; SEO técnico e performance; contato direto com o cliente e coordenação do time de design."
+        "en": "I developed the institutional site and the news portal on WordPress (child theme over a community theme, plus custom plugins); AWS environments with Terraform (production and staging); DNS and SSL via Cloudflare; WordOps provisioning; Docker; technical SEO and performance; worked directly with the client and coordinated the design team.",
+        "pt": "Realizei o desenvolvimento do site institucional e do portal de notícias em WordPress (child theme sobre um tema de comunidade e plugins próprios); ambientes AWS com Terraform (produção e staging); DNS e SSL via Cloudflare; provisionamento com WordOps; Docker; SEO técnico e performance; contato direto com o cliente e coordenação do time de design."
       },
       "keys": [
         "WordPress",

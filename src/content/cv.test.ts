@@ -121,11 +121,12 @@ describe.each(LANGS.map((l) => [l.locale, l] as const))("CV page in %s", (_local
     for (const t of ["Computação", "Criação de Temas", "Como criar", "antiga", "364 h<"]) expect(html).not.toContain(t);
   });
 
-  it("lists the whole KeepCloud job, with Keeptask as one of the items", () => {
-    const kc = site.experience[0]!;
-    expect(kc.highlights).toHaveLength(7);
-    for (const h of kc.highlights!) expect(html).toContain(h[lang.key as "en" | "pt"]);
-    expect(kc.highlights!.at(-1)![lang.key as "en" | "pt"]).toMatch(/^Keeptask:/);
+  it("writes every main job as one paragraph of prose, no bullets", () => {
+    for (const e of site.experience) {
+      expect(e.highlights).toBeUndefined();
+      expect(html).toContain(e.summary![lang.key as "en" | "pt"]);
+    }
+    expect(html).not.toContain('class="points"');
   });
 
   it("shows the location line only when the language has one", () => {
