@@ -1,6 +1,6 @@
-import { CopyEmail } from "@/components/CopyEmail";
 import Image from "next/image";
 import Link from "next/link";
+import { CopyEmail } from "@/components/CopyEmail";
 import { Shot } from "@/components/Shot";
 import { shotSrc } from "@/content/images";
 import { getContent, isLocale, localize, mainProjects, otherProjects, str } from "@/content";

@@ -76,16 +76,17 @@ test.describe("home", () => {
     test(`the copy e-mail button on ${path} copies the address and says so`, async ({ page, context }) => {
       await context.grantPermissions(["clipboard-read", "clipboard-write"]);
       await page.goto(path);
-      await expect(page.getByRole("button", { name: copy })).toBeVisible();
-      const button = page.locator("main button");
+      const button = page.getByRole("button", { name: copy });
+      const done = page.getByRole("button", { name: copied });
+      await expect(button).toBeVisible();
       // The page is static: retry the click until React has hydrated the handler.
       await expect(async () => {
         await button.click();
-        await expect(button).toHaveAccessibleName(copied, { timeout: 500 });
+        await expect(done).toBeVisible({ timeout: 500 });
       }).toPass();
       await expect(page.locator("[aria-live=polite]").first()).toHaveText(copied);
       expect(await page.evaluate(() => navigator.clipboard.readText())).toBe("caiobarilli@gmail.com");
-      await expect(button).toHaveAccessibleName(copy, { timeout: 4000 });
+      await expect(button).toBeVisible({ timeout: 4000 });
     });
   }
 
@@ -95,12 +96,12 @@ test.describe("home", () => {
     });
     await page.goto("/en/");
     await expect(async () => {
-      await page.locator("main button").click();
+      await page.getByRole("button", { name: "Copy e-mail" }).click();
       await expect(page.locator("main section").first().getByText("caiobarilli@gmail.com", { exact: true })).toBeVisible({ timeout: 500 });
     }).toPass();
   });
 
-  test("pages carry a link preview, and the sitemap and robots exist",async ({ page, request }) => {
+  test("pages carry a link preview, and the sitemap and robots exist", async ({ page, request }) => {
     const pages: [string, string][] = [["/pt-br/projects/keeptask/", "og-pt-br.png"], ["/en/", "og-en.png"]];
     for (const [path, image] of pages) {
       await page.goto(path);
