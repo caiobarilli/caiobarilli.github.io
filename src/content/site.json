@@ -698,12 +698,23 @@
         {
           "file": "keeptask-mobile.webp",
           "caption": {
-            "en": "Native mobile app",
-            "pt": "App móvel nativo"
+            "en": "Native app: team tasks by urgency, timer and offline mode with a send queue",
+            "pt": "App nativo: tarefas da equipe por urgência, cronômetro e modo offline com fila de envio"
           },
           "alt": {
-            "en": "Task list in the Keeptask mobile app",
-            "pt": "Lista de tarefas no app móvel do Keeptask"
+            "en": "Three phone screens: task list grouped by SLA, a running timer and the offline banner with queued actions",
+            "pt": "Três telas de celular: lista de tarefas por SLA, cronômetro rodando e a faixa offline com ações na fila"
+          }
+        },
+        {
+          "file": "keeptask-mobile-2.webp",
+          "caption": {
+            "en": "Native app: fingerprint lock and push notifications",
+            "pt": "App nativo: tranca por digital e notificações push"
+          },
+          "alt": {
+            "en": "Two phone screens: the fingerprint prompt and a new task push notification",
+            "pt": "Duas telas de celular: o pedido de digital e uma notificação push de nova tarefa"
           }
         }
       ],
