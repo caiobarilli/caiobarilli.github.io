@@ -79,6 +79,9 @@ function build({ key, html }) {
   .meta { flex: none; font-size: 8.4pt; color: #555; text-align: right; }
   .item { margin-top: 6px; break-inside: avoid; }
   .item .item { margin-top: 3px; padding-left: 10px; border-left: 2px solid #ccc; }
+  /* Education stays whole on one page, title included. */
+  .edu { break-inside: avoid; }
+  h2 { break-after: avoid; }
   .stack { font-size: 8.4pt; color: #555; }
   .role { font-style: italic; }
   ul { margin: 0; padding: 0; list-style: none; }
@@ -91,7 +94,7 @@ function build({ key, html }) {
 <p>${esc(ui.cvSummary)}</p>
 <h2>${esc(ui.expTitle)}</h2>${experience}
 <h2>${esc(ui.projectsTitle)}</h2>${PROJECTS.map((slug) => project(slug, key, ui)).join("")}
-<h2>${esc(ui.eduTitle)}</h2>${education}
+<section class="edu"><h2>${esc(ui.eduTitle)}</h2>${education}</section>
 <h2>${esc(ui.coursesTitle)}</h2><ul>${certificates}</ul>
 </body></html>`;
 }
