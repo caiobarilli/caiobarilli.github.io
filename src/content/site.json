@@ -555,7 +555,7 @@
         "Ollama",
         "Pest / Pester"
       ],
-      "shot": "phporto-dashboard.webp",
+      "shot": "phporto-home.webp",
       "desc": {
         "en": "A browser panel for Windows power users: run commands in WSL, run allowlisted Windows admin actions, manage Hyper-V VMs and a local LLM (Ollama), all bound to localhost and token-protected.",
         "pt": "Um painel no navegador para quem usa o Windows a fundo: rode comandos no WSL, execute ações administrativas do Windows de uma allowlist, gerencie VMs Hyper-V e um LLM local (Ollama), tudo em localhost e protegido por token."
@@ -605,14 +605,36 @@
       ],
       "shots": [
         {
-          "file": "phporto-dashboard.webp",
+          "file": "phporto-home.webp",
           "caption": {
-            "en": "Windows actions: a PowerShell terminal without elevation, audit, memory and processes",
-            "pt": "Ações do Windows: terminal PowerShell sem elevação, auditoria, memória e processos"
+            "en": "Home: WSL, Windows, Hyper-V and Ollama one click away",
+            "pt": "Início: WSL, Windows, Hyper-V e Ollama a um clique"
           },
           "alt": {
-            "en": "PHPorto Windows page with the PowerShell terminal and action cards",
-            "pt": "Página Windows do PHPorto com o terminal PowerShell e os cartões de ações"
+            "en": "PHPorto home with the WSL, WIN, Hyper-V, Ollama and settings buttons",
+            "pt": "Início do PHPorto com os botões WSL, WIN, Hyper-V, Ollama e configuração"
+          }
+        },
+        {
+          "file": "phporto-config.webp",
+          "caption": {
+            "en": "Settings: active database, HTTP API switch, elevated PowerShell and Hyper-V panel",
+            "pt": "Configuração: banco ativo, chave da API HTTP, PowerShell elevado e painel do Hyper-V"
+          },
+          "alt": {
+            "en": "PHPorto settings page in light mode with toggles for the API, elevated PowerShell and Hyper-V",
+            "pt": "Página de configuração do PHPorto no tema claro, com chaves para a API, o PowerShell elevado e o Hyper-V"
+          }
+        },
+        {
+          "file": "phporto-wsl.webp",
+          "caption": {
+            "en": "WSL in dark mode: shell commands in the distro, file upload and run history",
+            "pt": "WSL no tema escuro: comandos na distro, envio de arquivos e histórico de execuções"
+          },
+          "alt": {
+            "en": "PHPorto WSL page in dark mode with the terminal, the attachments area and the run log",
+            "pt": "Página WSL do PHPorto no tema escuro com o terminal, a área de anexos e os registros"
           }
         }
       ]
