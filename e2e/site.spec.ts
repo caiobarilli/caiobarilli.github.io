@@ -198,6 +198,19 @@ test.describe("home", () => {
 });
 
 test.describe("header", () => {
+  test("keyboard focus keeps a pill button round", async ({ page, isMobile }) => {
+    test.skip(isMobile, "needs a keyboard");
+    await page.goto("/pt-br/");
+    const target = page.getByRole("link", { name: "Ver os projetos" });
+    for (let i = 0; i < 20 && !(await target.evaluate((el) => el === document.activeElement)); i++) await page.keyboard.press("Tab");
+    await expect(target).toBeFocused();
+    const { radius, height } = await target.evaluate((el) => ({
+      radius: parseFloat(getComputedStyle(el).borderTopLeftRadius),
+      height: el.getBoundingClientRect().height,
+    }));
+    expect(radius).toBeGreaterThanOrEqual(height / 2);
+  });
+
   test("the language switch keeps the current page", async ({ page }) => {
     await page.goto("/en/about/");
     await page.getByRole("link", { name: "PT", exact: true }).click();
