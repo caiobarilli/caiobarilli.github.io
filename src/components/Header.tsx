@@ -27,6 +27,21 @@ function toggleTheme() {
   }
 }
 
+/** The one theme control. Rendered twice (header, and inside the mobile menu under 360px); CSS shows one. */
+function ThemeButton({ label, className = "" }: { label: string; className?: string }) {
+  return (
+    <button
+      type="button"
+      aria-label={label}
+      title={label}
+      onClick={toggleTheme}
+      className={`flex size-11 items-center justify-center rounded-full border border-line-strong ${className}`}
+    >
+      <span className="size-3.5 rounded-full border-[1.5px] border-ink bg-[linear-gradient(90deg,var(--ink)_50%,transparent_50%)]" />
+    </button>
+  );
+}
+
 export function Header({ locale, nav, labels }: Props) {
   const pathname = usePathname() ?? `/${locale}/`;
   const [menuOpen, setMenuOpen] = useState(false);
@@ -84,15 +99,8 @@ export function Header({ locale, nav, labels }: Props) {
             )}
           </div>
 
-          <button
-            type="button"
-            aria-label={labels.theme}
-            title={labels.theme}
-            onClick={toggleTheme}
-            className="flex size-11 items-center justify-center rounded-full border border-line-strong"
-          >
-            <span className="size-3.5 rounded-full border-[1.5px] border-ink bg-[linear-gradient(90deg,var(--ink)_50%,transparent_50%)]" />
-          </button>
+          {/* Under 360px there is no room for it here: it moves into the mobile menu. */}
+          <ThemeButton label={labels.theme} className="max-[359px]:hidden" />
 
           <button
             type="button"
@@ -125,6 +133,9 @@ export function Header({ locale, nav, labels }: Props) {
               </Link>
             );
           })}
+          <div className="pt-4 min-[360px]:hidden">
+            <ThemeButton label={labels.theme} />
+          </div>
         </nav>
       )}
     </header>

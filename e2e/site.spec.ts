@@ -322,6 +322,52 @@ test.describe("header", () => {
   });
 });
 
+test.describe("narrow header", () => {
+  test("at 320px nothing in the header passes the window and the page does not scroll sideways", async ({ page, isMobile }) => {
+    test.skip(!isMobile, "phone layout");
+    await page.setViewportSize({ width: 320, height: 700 });
+    await page.goto("/pt-br/");
+    const { rights, width, scroll } = await page.evaluate(() => ({
+      rights: [...document.querySelectorAll("header a, header button")].filter((e) => (e as HTMLElement).offsetParent).map((e) => e.getBoundingClientRect().right),
+      width: window.innerWidth,
+      scroll: document.documentElement.scrollWidth,
+    }));
+    expect(rights.length).toBeGreaterThan(0);
+    for (const right of rights) expect(right).toBeLessThanOrEqual(width);
+    expect(scroll).toBeLessThanOrEqual(width);
+  });
+
+  test("at 320px the theme button lives in the open menu and switches the theme", async ({ page, isMobile }) => {
+    test.skip(!isMobile, "phone layout");
+    await page.setViewportSize({ width: 320, height: 700 });
+    await page.goto("/en/");
+    await expect(page.locator("header > div").getByRole("button", { name: "Switch theme" })).toHaveCount(0);
+    await page.getByRole("button", { name: "Menu" }).click();
+    const button = page.locator("#mobile-nav").getByRole("button", { name: "Switch theme" });
+    await expect(button).toBeVisible();
+    expect((await button.boundingBox())!.height).toBeGreaterThanOrEqual(44);
+    const html = page.locator("html");
+    const before = await html.getAttribute("data-theme");
+    const after = before === "light" ? "dark" : "light";
+    await expect(async () => {
+      await button.click();
+      await expect(html).toHaveAttribute("data-theme", after, { timeout: 500 });
+    }).toPass();
+    expect(await page.evaluate(() => localStorage.getItem("cb-theme"))).toBe(after);
+  });
+
+  for (const width of [360, 375]) {
+    test(`at ${width}px the theme button stays in the header`, async ({ page, isMobile }) => {
+      test.skip(!isMobile, "phone layout");
+      await page.setViewportSize({ width, height: 700 });
+      await page.goto("/en/");
+      await expect(page.locator("header > div").getByRole("button", { name: "Switch theme" })).toBeVisible();
+      await page.getByRole("button", { name: "Menu" }).click();
+      await expect(page.locator("#mobile-nav").getByRole("button", { name: "Switch theme" })).toHaveCount(0);
+    });
+  }
+});
+
 test.describe("projects", () => {
   test("the TypeScript filter shows only TypeScript projects", async ({ page }) => {
     await page.goto("/en/projects/");
