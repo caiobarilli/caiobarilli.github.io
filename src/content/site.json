@@ -626,12 +626,12 @@
         {
           "id": "—",
           "title": {
-            "en": "Planning Poker inside the web app",
-            "pt": "Planning Poker dentro da web"
+            "en": "Planning Poker on any phone",
+            "pt": "Planning Poker em qualquer celular"
           },
           "body": {
-            "en": "A separate mobile app was dropped: the responsive web already covers phones.",
-            "pt": "O app separado foi descartado: a web responsiva já atende o celular."
+            "en": "Players join the room by scanning a QR code and vote right in the phone's browser, with nothing to install.",
+            "pt": "Os participantes entram na sala lendo um QR code e votam direto no navegador do celular, sem instalar nada."
           }
         },
         {
