@@ -33,7 +33,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               alt={s("photoAlt")}
               width={44}
               height={44}
-              priority
+              loading="eager"
               className="size-11 flex-none rounded-full border border-line-strong object-cover"
             />
             <span>

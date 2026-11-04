@@ -7,6 +7,7 @@ type Props = {
   label: string;
   file: string;
   className?: string;
+  /** The page's LCP image: load it eagerly with high fetch priority (Next 16 deprecated next/image's own `priority`). */
   priority?: boolean;
 };
 
@@ -19,7 +20,8 @@ export function Shot({ src, alt, label, file, className = "", priority = false }
       alt={alt}
       width={1600}
       height={1000}
-      priority={priority}
+      loading={priority ? "eager" : undefined}
+      fetchPriority={priority ? "high" : undefined}
       className={`h-auto w-full object-cover object-top ${className} !p-0`}
     />
   );

@@ -17,7 +17,8 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           alt={s("photoAlt")}
           width={240}
           height={240}
-          priority
+          loading="eager"
+          fetchPriority="high"
           className="aspect-square w-[clamp(160px,22vw,240px)] flex-none rounded-full border border-line-strong object-cover"
         />
         <div className="min-w-[min(100%,360px)] flex-1">
