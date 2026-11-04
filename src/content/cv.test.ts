@@ -110,6 +110,13 @@ describe.each(LANGS.map((l) => [l.locale, l] as const))("CV page in %s", (_local
     for (const t of ["Computação", "Criação de Temas", "Como criar", "antiga", "364 h<"]) expect(html).not.toContain(t);
   });
 
+  it("leaves out the KeepCloud details text, which repeats the highlights", () => {
+    const kc = site.experience[0];
+    expect(kc?.details).toBeTruthy();
+    expect(html).not.toContain(kc!.details![lang.key as "en" | "pt"]);
+    for (const h of kc!.highlights!) expect(html).toContain(h[lang.key as "en" | "pt"]);
+  });
+
   it("shows the location line only when the language has one", () => {
     expect(html.includes("Based in São Paulo")).toBe(lang.key === "en");
   });

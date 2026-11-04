@@ -14,7 +14,7 @@
       "lang": "Language",
       "role": "Full Stack Engineer · DevOps · Agentic workflows",
       "heroLine": "I've been building for the web for over 10 years. Today I build with PHP and Laravel, ship with infrastructure as code, and develop with AI agents. Every project here is real, documented and tested.",
-      "cvSummary": "Full stack developer focused on PHP and Laravel. I work from product to infrastructure: interfaces with Livewire and Tailwind, APIs, testing with Pest, and environments with Docker and Terraform on AWS. Day to day, I develop with AI agents in planned rounds, with tests and documented decisions.",
+      "cvSummary": "Full stack developer focused on PHP and Laravel. I work from product to infrastructure: UIs with Livewire and Tailwind, APIs, testing with Pest, and environments with Docker and Terraform on AWS. Day to day, I work with AI agents in planned iterations, with tests and documented decisions.",
       "seeWork": "See the work",
       "featured": "Featured work",
       "allProjects": "All projects →",
@@ -2121,7 +2121,7 @@
       "period": "2018",
       "note": {
         "pt": "Front-end do marketplace.",
-        "en": "Marketplace front end."
+        "en": "Front end for the marketplace."
       }
     },
     {
