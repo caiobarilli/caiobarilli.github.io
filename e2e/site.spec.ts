@@ -64,40 +64,55 @@ test.describe("home", () => {
     await expect(page).toHaveURL(/\/en\/projects\/$/);
   });
 
-  test("the hero has an e-mail and a LinkedIn link", async ({ page }) => {
+  test("the hero has an e-mail button and a LinkedIn link", async ({ page }) => {
     await page.goto("/en/");
     const hero = page.locator("main section").first();
-    await expect(hero.getByRole("link", { name: "E-mail" })).toHaveAttribute("href", /^mailto:/);
+    await expect(hero.getByRole("button", { name: "E-mail" }).or(hero.getByRole("link", { name: "E-mail" }))).toHaveCount(1);
     await expect(hero.getByRole("link", { name: "LinkedIn ↗" })).toHaveAttribute("href", "https://www.linkedin.com/in/caio-barilli");
   });
 
-  const cases: [string, string, string][] = [["/en/", "Copy e-mail", "Copied!"], ["/pt-br/contact/", "Copiar e-mail", "Copiado!"]];
-  for (const [path, copy, copied] of cases) {
-    test(`the copy e-mail button on ${path} copies the address and says so`, async ({ page, context }) => {
-      await context.grantPermissions(["clipboard-read", "clipboard-write"]);
+  const emailPages: [string, string][] = [["/en/", "Copied!"], ["/pt-br/contact/", "Copiado!"]];
+  for (const [path, copied] of emailPages) {
+    test(`the e-mail button on ${path} copies the address on desktop and is a mailto: link on a phone`, async ({ page, context, isMobile }) => {
       await page.goto(path);
-      const button = page.getByRole("button", { name: copy });
+      if (isMobile) {
+        const link = page.getByRole("link", { name: "E-mail", exact: true });
+        await expect(link).toBeVisible();
+        await expect(link).toHaveAttribute("href", "mailto:caiobarilli@gmail.com");
+        await expect(page.getByRole("button", { name: "E-mail", exact: true })).toHaveCount(0);
+        return;
+      }
+      await context.grantPermissions(["clipboard-read", "clipboard-write"]);
+      const button = page.getByRole("button", { name: "E-mail", exact: true });
       const done = page.getByRole("button", { name: copied });
       await expect(button).toBeVisible();
+      await expect(page.getByRole("link", { name: "E-mail", exact: true })).toHaveCount(0);
       // The page is static: retry the click until React has hydrated the handler.
       await expect(async () => {
         await button.click();
-        await expect(done).toBeVisible({ timeout: 500 });
+        await expect(page.locator("[aria-live=polite]").first()).toHaveText(copied, { timeout: 500 });
       }).toPass();
-      await expect(page.locator("[aria-live=polite]").first()).toHaveText(copied);
+      await expect(done).toBeVisible();
       expect(await page.evaluate(() => navigator.clipboard.readText())).toBe("caiobarilli@gmail.com");
       await expect(button).toBeVisible({ timeout: 4000 });
+      await expect(page.locator("[aria-live=polite]").first()).toHaveText("");
     });
   }
 
-  test("when the clipboard is blocked the address shows as selectable text", async ({ page }) => {
+  test("the contact page writes the address out, visible without clicking", async ({ page }) => {
+    await page.goto("/pt-br/contact/");
+    await expect(page.getByText("caiobarilli@gmail.com", { exact: true })).toBeVisible();
+  });
+
+  test("when the clipboard is blocked the button shows the address", async ({ page, isMobile }) => {
+    test.skip(isMobile, "phones use the mailto: link");
     await page.addInitScript(() => {
       Object.defineProperty(navigator, "clipboard", { value: { writeText: () => Promise.reject(new Error("blocked")) } });
     });
     await page.goto("/en/");
     await expect(async () => {
-      await page.getByRole("button", { name: "Copy e-mail" }).click();
-      await expect(page.locator("main section").first().getByText("caiobarilli@gmail.com", { exact: true })).toBeVisible({ timeout: 500 });
+      await page.getByRole("button", { name: "E-mail", exact: true }).click();
+      await expect(page.locator("main section").first().getByRole("button", { name: "caiobarilli@gmail.com" })).toBeVisible({ timeout: 500 });
     }).toPass();
   });
 

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CopyEmail } from "@/components/CopyEmail";
+import { EmailButton } from "@/components/EmailButton";
 import { Shot } from "@/components/Shot";
 import { shotSrc } from "@/content/images";
 import { caseStudyLabel, getContent, isLocale, localize, mainProjects, otherProjects, str } from "@/content";
@@ -52,12 +52,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                 {s("seeWork")}
               </Link>
               {email && !email.pending && (
-                <a href={email.url} className="flex min-h-12 items-center rounded-full border border-line-strong px-[22px] text-[15px] font-medium hover:border-ink">
-                  {email.label}
-                </a>
-              )}
-              {email && !email.pending && (
-                <CopyEmail address={email.handle} label={s("copyEmail")} copiedLabel={s("emailCopied")} className="flex min-h-12 items-center rounded-full border border-line-strong px-[22px] text-[15px] font-medium hover:border-ink" />
+                <EmailButton address={email.handle} label={email.label} copiedLabel={s("emailCopied")} className="min-h-12 items-center rounded-full border border-line-strong px-[22px] text-[15px] font-medium hover:border-ink" />
               )}
               <a href={LINKEDIN} className="flex min-h-12 items-center rounded-full border border-line-strong px-[22px] text-[15px] font-medium hover:border-ink">
                 LinkedIn ↗

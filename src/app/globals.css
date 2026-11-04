@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Touch screens (phones, tablets): there the e-mail button is a mailto: link; elsewhere it copies the address. */
+@custom-variant touch (@media (hover: none) and (pointer: coarse));
+
 /* Design tokens from design/tokens.json (direction 1b "Console"). Dark is the default. */
 :root,
 [data-theme="dark"] {
