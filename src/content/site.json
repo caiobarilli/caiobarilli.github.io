@@ -101,7 +101,8 @@
       "siteLink": "Product site ↗",
       "expand": "Expand image",
       "coursesTitle": "Courses",
-      "courseLink": "Course ↗"
+      "courseLink": "Course ↗",
+      "features": "Features"
     },
     "pt": {
       "nav": {
@@ -204,7 +205,8 @@
       "siteLink": "Site do produto ↗",
       "expand": "Ampliar imagem",
       "coursesTitle": "Cursos",
-      "courseLink": "Curso ↗"
+      "courseLink": "Curso ↗",
+      "features": "Recursos"
     }
   },
   "cats": [
@@ -604,16 +606,16 @@
       ],
       "shot": "keeptask-kanban.webp",
       "desc": {
-        "en": "B2B task and project management platform by KeepCloud: a Laravel web app, a native iOS and Android app, and a public site with documentation.",
-        "pt": "Plataforma B2B de gestão de tarefas e projetos da KeepCloud: web em Laravel, app nativo para iOS e Android, e site com documentação."
+        "en": "B2B task, project and workflow platform by KeepCloud: a Laravel web app, a native iOS and Android app and a public documentation site, built end to end with an agentic workflow.",
+        "pt": "Plataforma B2B de gestão de tarefas, projetos e fluxos de trabalho da KeepCloud: web em Laravel, app nativo para iOS e Android e site público de documentação, construída de ponta a ponta com um fluxo agêntico."
       },
       "problem": {
-        "en": "Teams track work in spreadsheets and closed tools, with no single place for deadlines, time spent and cost.",
-        "pt": "Equipes controlam demandas em planilhas e ferramentas fechadas, sem prazo, tempo e custo no mesmo lugar."
+        "en": "Teams receive work from everywhere (chat, e-mail, spreadsheets, forms) and track it in tools that do not talk to each other. Deadlines, time spent, cost and the rules of each step of the process end up in people's heads, managers lack real numbers, and whoever works away from the desk has no good way to follow and update tasks.",
+        "pt": "Equipes recebem demandas de todo lado (chat, e-mail, planilha, formulário) e acompanham o trabalho em ferramentas que não conversam. Prazo, tempo gasto, custo e as regras de cada etapa do processo ficam na cabeça das pessoas, a gestão não tem números de verdade, e quem trabalha fora do escritório não tem um bom jeito de acompanhar e atualizar as tarefas."
       },
       "solution": {
-        "en": "Kanban, list and timeline views; SLA and a timer per stage; no-code automations; forms and public portals; dashboards and a budget vs. actual cost report; a REST API, signed webhooks and Google Calendar. The mobile app is built with NativePHP and renders truly native screens (SwiftUI and Jetpack Compose) on top of the same API.",
-        "pt": "Kanban, lista e linha do tempo; SLA e cronômetro por etapa; automações sem código; formulários e portais públicos; dashboards e relatório de custo orçado × realizado; API REST, webhooks assinados e Google Calendar. O app móvel é feito em NativePHP e tem telas nativas de verdade (SwiftUI e Jetpack Compose) em cima da mesma API."
+        "en": "Keeptask brings intake, execution, time tracking and metrics into one place. Requests arrive through public forms and portals and become tasks on the right board. Each stage of a board declares what it requires and how long a task may stay there, so the process is enforced by the tool instead of by memory. Time is tracked per task and rolls up into dashboards and budget vs. actual cost reports. The team estimates together in a built-in Planning Poker, everything updates live without a refresh, and the native app takes the day's work to the field, even offline. The web app runs on Laravel 13 with Livewire, Reverb, Horizon and Meilisearch; the mobile app is a thin NativePHP client over the same versioned API.",
+        "pt": "O Keeptask junta entrada de demandas, execução, controle de tempo e métricas num lugar só. As demandas chegam por formulários e portais públicos e viram tarefas no quadro certo. Cada etapa do quadro declara o que exige e quanto tempo a tarefa pode ficar ali, então o processo é cobrado pela ferramenta, e não pela memória. O tempo é apontado por tarefa e alimenta dashboards e relatórios de custo orçado × realizado. O time estima junto num Planning Poker embutido, tudo atualiza ao vivo sem recarregar, e o app nativo leva o trabalho do dia para o campo, até sem internet. A web roda em Laravel 13 com Livewire, Reverb, Horizon e Meilisearch; o app móvel é um cliente fino em NativePHP sobre a mesma API versionada."
       },
       "adrs": [
         {
@@ -718,7 +720,278 @@
           }
         }
       ],
-      "site": "https://keeptask.io"
+      "site": "https://keeptask.io",
+      "highlights": [
+        {
+          "value": "~2,000",
+          "label": {
+            "en": "automated Pest tests",
+            "pt": "testes automatizados em Pest"
+          }
+        },
+        {
+          "value": "3",
+          "label": {
+            "en": "platforms: web, iOS and Android",
+            "pt": "plataformas: web, iOS e Android"
+          }
+        },
+        {
+          "value": "6",
+          "label": {
+            "en": "roles with per-team permissions",
+            "pt": "papéis com permissão por equipe"
+          }
+        },
+        {
+          "value": "10",
+          "label": {
+            "en": "ready-made board templates",
+            "pt": "modelos de quadro prontos"
+          }
+        },
+        {
+          "value": "27",
+          "label": {
+            "en": "pages of public documentation",
+            "pt": "páginas de documentação pública"
+          }
+        }
+      ],
+      "features": [
+        {
+          "title": {
+            "en": "Boards and views",
+            "pt": "Quadros e visões"
+          },
+          "items": [
+            {
+              "en": "Kanban, List and Timeline (Gantt) with drag-to-edit dates and task dependencies",
+              "pt": "Kanban, Lista e Linha do tempo (Gantt) com datas editáveis por arraste e dependências entre tarefas"
+            },
+            {
+              "en": "10 board templates (Scrum, simple Kanban and more) or custom stages from a catalogue",
+              "pt": "10 modelos de quadro (Scrum, Kanban simples e outros) ou etapas customizadas a partir de um catálogo"
+            },
+            {
+              "en": "16 sidebar filters with removable chips, bulk selection and archiving",
+              "pt": "16 filtros na lateral com chips removíveis, seleção em massa e arquivamento"
+            },
+            {
+              "en": "Optimistic drag and drop: cards move instantly and reconcile with the server",
+              "pt": "Arrastar e soltar otimista: o card move na hora e o servidor confirma depois"
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Tasks",
+            "pt": "Tarefas"
+          },
+          "items": [
+            {
+              "en": "Task modal with its own URL and tabs: description, stage requirements, comments, attachments, subtasks and rules",
+              "pt": "Modal da tarefa com URL própria e abas: descrição, requisitos da etapa, comentários, anexos, subtarefas e regras"
+            },
+            {
+              "en": "Custom fields per board in six types: text, number, date, rating, single and multiple choice",
+              "pt": "Campos customizados por quadro em seis tipos: texto, número, data, avaliação, seleção única e múltipla"
+            },
+            {
+              "en": "Per-person delivery: each assignee delivers their part, and the last one closes the task",
+              "pt": "Entrega por pessoa: cada responsável entrega a sua parte, e o último fecha a tarefa"
+            },
+            {
+              "en": "Mentions, checklists, tags and the history of each task",
+              "pt": "Menções, checklists, tags e o histórico de cada tarefa"
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Workflow rules, time and SLA",
+            "pt": "Regras de fluxo, tempo e SLA"
+          },
+          "items": [
+            {
+              "en": "Stage requirements lock: a task cannot leave a stage until the required fields are filled",
+              "pt": "Trava de requisitos: a tarefa não sai da etapa enquanto os campos exigidos não forem preenchidos"
+            },
+            {
+              "en": "Story points on the Fibonacci scale as a required field where the team wants it",
+              "pt": "Pontos na escala Fibonacci como campo obrigatório onde o time quiser"
+            },
+            {
+              "en": "SLA per stage: the card lights up when a task stays too long, and an alert goes out",
+              "pt": "SLA por etapa: o card acende quando a tarefa passa do tempo, e um alerta é enviado"
+            },
+            {
+              "en": "Play/pause timer on the card and in the task, with tracked vs. estimated time for task and subtasks",
+              "pt": "Cronômetro play/pause no card e na tarefa, com tempo realizado × estimado da tarefa e das subtarefas"
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "No-code automations",
+            "pt": "Automações sem código"
+          },
+          "items": [
+            {
+              "en": "Rules in the form When → And if → Then: a trigger, AND/OR condition groups and ordered actions",
+              "pt": "Regras no formato Quando → E se → Então: gatilho, grupos de condições E/OU e ações em ordem"
+            },
+            {
+              "en": "Dry-run simulation before turning a rule on",
+              "pt": "Simulação (dry-run) antes de ligar a regra"
+            },
+            {
+              "en": "Notifications when an automation fails, so nothing breaks silently",
+              "pt": "Aviso quando uma automação falha, para nada quebrar em silêncio"
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Planning Poker",
+            "pt": "Planning Poker"
+          },
+          "items": [
+            {
+              "en": "Rooms built from a board's tasks, joined by code, link or QR code on any phone",
+              "pt": "Salas montadas com as tarefas de um quadro, com entrada por código, link ou QR code em qualquer celular"
+            },
+            {
+              "en": "Guests without an account, team-only rooms and access requests approved by the host",
+              "pt": "Convidados sem conta, salas restritas ao time e pedidos de acesso aprovados por quem conduz"
+            },
+            {
+              "en": "Cards reveal automatically; consensus is saved straight into the task's points",
+              "pt": "As cartas viram sozinhas; o consenso é gravado direto nos pontos da tarefa"
+            },
+            {
+              "en": "Re-vote or set the value, hand over hosting when the host goes offline, final summary of the session",
+              "pt": "Nova votação ou cravar o valor, troca de condução quando quem conduz cai, e resumo final da sessão"
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Intake: forms and portals",
+            "pt": "Captação: formulários e portais"
+          },
+          "items": [
+            {
+              "en": "Form builder with draggable fields and branching",
+              "pt": "Construtor de formulários com campos arrastáveis e ramificação"
+            },
+            {
+              "en": "Mapping of answers to board, stage, project, title, due date, priority and assignees",
+              "pt": "Mapeamento das respostas para quadro, etapa, projeto, título, prazo, prioridade e responsáveis"
+            },
+            {
+              "en": "Public forms and portals behind a shareable link; every submission becomes a task",
+              "pt": "Formulários e portais públicos num link compartilhável; cada resposta vira uma tarefa"
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Management: dashboards and reports",
+            "pt": "Gestão: dashboards e relatórios"
+          },
+          "items": [
+            {
+              "en": "Drag-and-drop dashboards with KPIs, charts, activity feed and team sharing",
+              "pt": "Dashboards montáveis por arrastar e soltar, com KPIs, gráficos, feed de atividade e compartilhamento com o time"
+            },
+            {
+              "en": "Reports: hours per project, hours per person and budget vs. actual cost",
+              "pt": "Relatórios: horas por projeto, horas por colaborador e custo orçado × realizado"
+            },
+            {
+              "en": "Filters by period, board, project and assignee, with PDF and CSV export",
+              "pt": "Filtros por período, quadro, projeto e responsável, com exportação em PDF e CSV"
+            },
+            {
+              "en": "Client and project portfolio with per-team access",
+              "pt": "Carteira de clientes e projetos com acesso por equipe"
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Teams, permissions and security",
+            "pt": "Equipes, permissões e segurança"
+          },
+          "items": [
+            {
+              "en": "Six roles with per-team RBAC (spatie/laravel-permission), including a restricted member who only sees their own tasks",
+              "pt": "Seis papéis com RBAC por equipe (spatie/laravel-permission), incluindo o membro restrito que só vê as próprias tarefas"
+            },
+            {
+              "en": "Invitations by link that expire in 7 days and team hierarchy",
+              "pt": "Convites por link que expiram em 7 dias e hierarquia de equipes"
+            },
+            {
+              "en": "Two-factor authentication (TOTP), session list per device and Google sign-in",
+              "pt": "Verificação em duas etapas (TOTP), lista de sessões por dispositivo e login com Google"
+            },
+            {
+              "en": "Attachments on the server or on the team's own S3, enabled only after a live write-and-delete test; the secret never returns to the screen",
+              "pt": "Anexos no servidor ou no S3 da própria equipe, ativado só depois de um teste real de gravar e apagar; a credencial nunca volta para a tela"
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Integrations and real time",
+            "pt": "Integrações e tempo real"
+          },
+          "items": [
+            {
+              "en": "Versioned REST API (v1) with scoped tokens (Sanctum)",
+              "pt": "API REST versionada (v1) com tokens por escopo (Sanctum)"
+            },
+            {
+              "en": "Outgoing webhooks signed with HMAC, Zapier and one-way Google Calendar sync",
+              "pt": "Webhooks de saída assinados com HMAC, Zapier e sincronização one-way com o Google Calendar"
+            },
+            {
+              "en": "Live updates over Reverb: cards created, moved and finished by others appear without a refresh",
+              "pt": "Atualização ao vivo via Reverb: cards criados, movidos e concluídos pelos colegas aparecem sem recarregar"
+            },
+            {
+              "en": "Global search with Ctrl+K (Scout + Meilisearch), light and dark themes and a translatable interface",
+              "pt": "Busca global com Ctrl+K (Scout + Meilisearch), temas claro e escuro e interface traduzível"
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Native mobile app",
+            "pt": "App móvel nativo"
+          },
+          "items": [
+            {
+              "en": "NativePHP with truly native screens: SwiftUI on iOS and Jetpack Compose on Android, not a webview",
+              "pt": "NativePHP com telas nativas de verdade: SwiftUI no iOS e Jetpack Compose no Android, sem webview"
+            },
+            {
+              "en": "Offline mode: changes made without signal wait in a queue and are sent when the connection returns",
+              "pt": "Modo offline: o que é feito sem sinal espera numa fila e é enviado quando a conexão volta"
+            },
+            {
+              "en": "Fingerprint lock, token in the device's secure storage and push notifications for mentions, assignments and SLA",
+              "pt": "Tranca por digital, token no armazenamento seguro do aparelho e push para menções, atribuições e SLA"
+            },
+            {
+              "en": "Camera attachments, timer, stage moves that respect the requirements lock, and quick notes",
+              "pt": "Anexo pela câmera, cronômetro, mover etapa respeitando a trava de requisitos e anotação rápida"
+            }
+          ]
+        }
+      ]
     },
     {
       "slug": "nextjs-tailwind-store",

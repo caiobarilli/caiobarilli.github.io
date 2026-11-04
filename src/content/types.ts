@@ -24,6 +24,10 @@ export type Project = {
   site?: string;
   /** Course the project was built in. */
   course?: Course;
+  /** Big numbers shown under the header. */
+  highlights?: Highlight[];
+  /** Feature groups for the larger case studies. */
+  features?: FeatureGroup[];
   tag: Localized;
   year: string;
   type: Localized;
@@ -37,7 +41,11 @@ export type Project = {
   shots: Shot[];
 };
 
-export type Article = { date: Localized; title: Localized; summary: Localized };
+export type Highlight = { value: string; label: Localized };
+
+export type FeatureGroup = { title: Localized; items: Localized[] };
+
+export type Article ={ date: Localized; title: Localized; summary: Localized };
 
 export type Experience = {
   period: Localized;

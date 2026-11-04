@@ -86,6 +86,17 @@ export default async function ProjectPage({ params }: { params: Params }) {
           </dl>
         </header>
 
+        {p.highlights && (
+          <dl className="mb-12 grid grid-cols-[repeat(auto-fit,minmax(min(100%,160px),1fr))] gap-px overflow-hidden rounded-2xl border border-line bg-line">
+            {p.highlights.map((h) => (
+              <div key={h.value + h.label.en} className="flex flex-col gap-1 bg-surface p-5">
+                <dt className="order-2 text-sm leading-snug text-muted">{localize(h.label, locale)}</dt>
+                <dd className="order-1 text-[clamp(28px,3.4vw,40px)] leading-none font-bold tracking-[-0.03em] text-accent-text">{h.value}</dd>
+              </div>
+            ))}
+          </dl>
+        )}
+
         {hasShots && (
           <div className="mb-[clamp(48px,7vw,80px)]">
             <LightboxButton index={boxIndex(p.shot)} label={`${s("expand")}: ${heroAlt}`}>
@@ -111,6 +122,26 @@ export default async function ProjectPage({ params }: { params: Params }) {
             <p className="text-[19px] leading-[1.6] text-pretty text-ink-2">{localize(p.solution, locale)}</p>
           </section>
         </div>
+
+        {p.features && (
+          <Block title={`${num()} · ${s("features")}`}>
+            <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,340px),1fr))] gap-4">
+              {p.features.map((group) => (
+                <section key={group.title.en} className="rounded-2xl border border-line bg-surface p-6">
+                  <h3 className="mb-3 text-[19px] leading-[1.3] font-semibold tracking-[-0.01em]">{localize(group.title, locale)}</h3>
+                  <ul className="flex flex-col gap-2 text-[15px] leading-[1.55] text-ink-2">
+                    {group.items.map((item) => (
+                      <li key={item.en} className="flex gap-2.5">
+                        <span aria-hidden className="mt-[9px] size-1.5 flex-none rounded-full bg-accent-text" />
+                        <span>{localize(item, locale)}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              ))}
+            </div>
+          </Block>
+        )}
 
         <Block title={`${num()} · ${s("stack")}`}>
           <ul className="flex flex-wrap gap-2">
