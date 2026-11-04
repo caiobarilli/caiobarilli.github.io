@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PageShell } from "@/components/PageIntro";
-import { isLocale, steps, str } from "@/content";
+import { isLocale, str } from "@/content";
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -26,25 +26,16 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         </div>
       </div>
 
-      <section className="mt-[clamp(64px,9vw,104px)]">
-        <h2 className="mb-2.5 text-[28px] font-semibold tracking-[-0.02em]">{s("howTitle")}</h2>
-        <p className="mb-8 max-w-[560px] text-base leading-[1.55] text-muted">{s("howSub")}</p>
-        <ol className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,240px),1fr))] gap-4">
-          {steps(locale).map((step) => (
-            <li key={step.n} className="flex flex-col gap-3 rounded-2xl border border-line bg-surface p-6">
-              <span className="font-mono text-[13px] font-medium text-accent-text">{step.n}</span>
-              <h3 className="text-[22px] font-semibold tracking-[-0.02em]">{step.title}</h3>
-              <p className="text-[15px] leading-[1.55] text-ink-2">{step.body}</p>
-            </li>
-          ))}
-        </ol>
-      </section>
-
-      <section className="mt-[clamp(48px,7vw,80px)] grid grid-cols-[repeat(auto-fit,minmax(min(100%,300px),1fr))] gap-x-16 gap-y-4 border-t border-line pt-8">
-        <h2 className="text-[28px] font-semibold tracking-[-0.02em]">{s("wsTitle")}</h2>
-        <div>
-          <p className="mb-4 max-w-[620px] text-[17px] leading-[1.6] text-pretty text-ink-2">{s("wsBody")}</p>
-          <p className="font-mono text-[13px] text-muted">Windows 11 · WSL2 · Hyper-V · PowerShell · Docker</p>
+      <section className="mt-[clamp(64px,9vw,104px)] grid grid-cols-[repeat(auto-fit,minmax(min(100%,300px),1fr))] gap-x-16 gap-y-6 border-t border-line pt-8">
+        <h2 className="text-[28px] font-semibold tracking-[-0.02em]">{s("storyTitle")}</h2>
+        <div className="col-span-2 flex max-w-[720px] flex-col gap-5 max-[700px]:col-span-1">
+          {s("story")
+            .split("\n\n")
+            .map((paragraph) => (
+              <p key={paragraph.slice(0, 40)} className="text-[17px] leading-[1.7] text-pretty text-ink-2">
+                {paragraph}
+              </p>
+            ))}
         </div>
       </section>
 

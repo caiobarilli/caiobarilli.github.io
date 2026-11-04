@@ -60,32 +60,6 @@
       "expSub": "Where I have worked and what I built there.",
       "aboutTitle": "About",
       "aboutP1": "Fullstack developer with 10+ years in web, focused today on PHP and Laravel, plus the infrastructure underneath (Docker, Terraform, AWS). Currently doing an MBA in DevOps, Automation & Cloud Strategy.",
-      "howTitle": "How I work",
-      "howSub": "A multi-agent workflow with clear roles. Every change is reviewed before it ships.",
-      "steps": [
-        {
-          "n": "01",
-          "title": "Orchestrator",
-          "body": "Plans the work in rounds and reviews every report."
-        },
-        {
-          "n": "02",
-          "title": "Executor",
-          "body": "Implements one round at a time, with tests, and commits locally."
-        },
-        {
-          "n": "03",
-          "title": "Grilling",
-          "body": "Dedicated sessions that settle critical decisions one question at a time and write them as ADRs."
-        },
-        {
-          "n": "04",
-          "title": "Maintainer (me)",
-          "body": "I decide, review and merge with fast-forward only. Nothing ships without passing the quality gate."
-        }
-      ],
-      "wsTitle": "Workstation",
-      "wsBody": "Windows 11 with WSL2 and Hyper-V. Linux tooling where it belongs, PowerShell for the host, and one machine for PHP, Docker and Terraform work. It is a deliberate choice and it works well.",
       "aboutCta": "Get in touch →",
       "contactTitle": "Contact",
       "contactSub": "Email or LinkedIn is the fastest way to reach me. There is no form because this site is fully static.",
@@ -103,7 +77,9 @@
       "coursesTitle": "Licenses, certificates and courses",
       "courseLink": "Course ↗",
       "features": "Features",
-      "certificateLink": "Certificate ↗"
+      "certificateLink": "Certificate ↗",
+      "storyTitle": "My story",
+      "story": "I started on the web in 2012, studying Internet Systems at Senac, and never left. My first years were websites and stores for agency clients, mostly in PHP and WordPress. That is where I learned what no course teaches: talk to the client, understand the problem before opening the editor, and deliver on time.\n\nAt some point I asked the question every PHP developer asks: do I need to switch languages? I went deep into JavaScript and TypeScript, with React, Next.js, Angular, NestJS and React Native. I finished the courses, and the projects are on my GitHub. I learned a lot, but I came back sure of one thing: modern PHP with Laravel is where I deliver the most. Today I use TypeScript when it is the right tool, not to prove a point.\n\nAlong the way, infrastructure stopped being someone else's job. On a client project I provisioned the whole AWS setup with Terraform. At home I turned an ordinary desktop into a homelab: virtual machines on Hyper-V, a Debian box just for development, local AI running on the GPU, all reached over SSH and published through Cloudflare Tunnel without opening a single port on the router. That curiosity took me to an MBA in DevOps, Automation & Cloud Strategy at FIAP, which I finished with a final project graded 10.\n\nToday I am a fullstack developer at KeepCloud, where I work on Keeptask, a B2B platform with a Laravel web app and a native iOS and Android app. I also changed the way I build software: I work with AI agents as a team, each one in its role. One plans the rounds, another implements them with tests, another reviews anything that drifts from the plan, and every important decision is written down as an ADR. AI speeds things up, but I am the one who decides, reviews and answers for the result.\n\nAnd yes, I do all of this on Windows: Windows 11 with WSL2 and Hyper-V, PowerShell for the host and Linux where it makes sense. It is a deliberate choice, and my projects, PHPorto above all, show that it works very well."
     },
     "pt": {
       "nav": {
@@ -165,32 +141,6 @@
       "expSub": "Onde trabalhei e o que construí em cada lugar.",
       "aboutTitle": "Sobre",
       "aboutP1": "Desenvolvedor fullstack com mais de 10 anos em web, hoje focado em PHP e Laravel e na infraestrutura por baixo (Docker, Terraform, AWS). Atualmente cursando um MBA em DevOps, Automation & Cloud Strategy.",
-      "howTitle": "Como eu trabalho",
-      "howSub": "Um fluxo multiagente com papéis claros. Toda mudança é revisada antes de ser publicada.",
-      "steps": [
-        {
-          "n": "01",
-          "title": "Orquestrador",
-          "body": "Planeja o trabalho em rodadas e revisa cada relatório."
-        },
-        {
-          "n": "02",
-          "title": "Executor",
-          "body": "Implementa uma rodada por vez, com testes, e faz commit local."
-        },
-        {
-          "n": "03",
-          "title": "Grilling",
-          "body": "Sessões dedicadas que resolvem decisões críticas uma pergunta por vez e as registram como ADRs."
-        },
-        {
-          "n": "04",
-          "title": "Mantenedor (eu)",
-          "body": "Eu decido, reviso e faço merge apenas com fast-forward. Nada é publicado sem passar pelo quality gate."
-        }
-      ],
-      "wsTitle": "Estação de trabalho",
-      "wsBody": "Windows 11 com WSL2 e Hyper-V. Ferramentas Linux onde fazem sentido, PowerShell para o host e uma única máquina para PHP, Docker e Terraform. É uma escolha deliberada e funciona bem.",
       "aboutCta": "Entrar em contato →",
       "contactTitle": "Contato",
       "contactSub": "E-mail ou LinkedIn são os jeitos mais rápidos de falar comigo. Não há formulário porque o site é totalmente estático.",
@@ -208,7 +158,9 @@
       "coursesTitle": "Licenças, certificados e cursos",
       "courseLink": "Curso ↗",
       "features": "Recursos",
-      "certificateLink": "Certificado ↗"
+      "certificateLink": "Certificado ↗",
+      "storyTitle": "Minha história",
+      "story": "Comecei na web em 2012, na faculdade de Sistemas para Internet do Senac, e nunca mais saí dela. Os primeiros anos foram de sites e lojas para clientes de agência, quase sempre em PHP e WordPress. Foi ali que aprendi o que nenhum curso ensina: conversar com o cliente, entender o problema antes de abrir o editor e entregar no prazo.\n\nEm algum momento fiz a pergunta que todo dev PHP faz: será que preciso trocar de linguagem? Fui a fundo em JavaScript e TypeScript, com React, Next.js, Angular, NestJS e React Native. Terminei os cursos, e os projetos estão no meu GitHub. Aprendi muito, mas voltei com uma certeza: é no PHP moderno, com Laravel, que eu entrego mais. Hoje uso TypeScript quando ele é a ferramenta certa, e não para provar nada.\n\nNo caminho, a infraestrutura deixou de ser coisa de outra pessoa. Num projeto de cliente, provisionei a AWS inteira com Terraform. Em casa, transformei um desktop comum num homelab: máquinas virtuais no Hyper-V, uma Debian só para desenvolvimento, IA local rodando na GPU e tudo acessado por SSH e publicado pelo Cloudflare Tunnel, sem abrir uma porta no roteador. Essa curiosidade me levou ao MBA em DevOps, Automation & Cloud Strategy da FIAP, que fechei com o TCC nota 10.\n\nHoje sou desenvolvedor fullstack na KeepCloud, onde trabalho no Keeptask, uma plataforma B2B com web em Laravel e app nativo para iOS e Android. E mudei a forma de desenvolver: trabalho com agentes de IA como um time, cada um no seu papel. Um planeja as rodadas, outro implementa com testes, outro revisa o que saiu do combinado, e toda decisão importante vira um ADR escrito. A IA acelera, mas quem decide, revisa e responde pelo resultado sou eu.\n\nE sim, faço tudo isso no Windows: Windows 11 com WSL2 e Hyper-V, PowerShell para o host e Linux onde ele faz sentido. É uma escolha consciente, e os meus projetos, o PHPorto principalmente, mostram que dá muito certo."
     }
   },
   "cats": [

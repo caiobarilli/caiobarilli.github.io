@@ -1,5 +1,5 @@
 import data from "./site.json";
-import { locales, type Locale, type Localized, type Project, type SiteContent, type Step } from "./types";
+import { locales, type Locale, type Localized, type Project, type SiteContent } from "./types";
 
 const site = data as SiteContent;
 
@@ -57,11 +57,6 @@ const REPOS: Record<string, string> = {
 export function repoUrl(project: Project): string | null {
   const name = REPOS[project.slug];
   return project.repo && name ? `https://github.com/caiobarilli/${name}` : null;
-}
-
-export function steps(locale: Locale): Step[] {
-  const value = ui(locale).steps;
-  return Array.isArray(value) ? value : [];
 }
 
 export function mainProjects(): Project[] {
