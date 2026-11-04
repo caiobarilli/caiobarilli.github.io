@@ -25,11 +25,10 @@ describe.each(["pt-br", "en"])("CV in %s", (locale) => {
     expect(pdf).toMatch(/\/S\s*\/H1\b/);
   });
 
-  it("has at most 2 pages and carries no local path", () => {
+  it("fits on 1 page and carries no local path", () => {
     const pdf = readFileSync(file).toString("latin1");
     const pages = pdf.match(/\/Type\s*\/Page[^s]/g) ?? [];
-    expect(pages.length).toBeGreaterThanOrEqual(1);
-    expect(pages.length).toBeLessThanOrEqual(2);
+    expect(pages.length).toBe(1);
     expect(pdf).not.toMatch(/[A-Za-z]:\|\/Users\/|\/home\//);
   });
 });
@@ -47,7 +46,6 @@ describe.each(LANGS.map((l) => [l.locale, l] as const))("CV reading order in %s"
     role: e.role[lang.key as "en" | "pt"],
     company: e.company ? localizeCompany(e.company, lang.key) : undefined,
     period: e.period,
-    note: e.note?.[lang.key as "en" | "pt"],
   }));
 
   it.skipIf(!hasPdftotext)("puts each education period right after the course and school", () => {
@@ -63,7 +61,7 @@ describe.each(LANGS.map((l) => [l.locale, l] as const))("CV reading order in %s"
     }
   });
 
-  it.skipIf(!hasPdftotext)("keeps role, company, period and note together, in that order, in each earlier job", () => {
+  it.skipIf(!hasPdftotext)("keeps role, company and period together, in that order, in each earlier job", () => {
     const text = pdfText(lang.file);
     let from = text.indexOf((site.ui[lang.key as "en" | "pt"] as Record<string, string>).earlierTitle ?? "");
     expect(from).toBeGreaterThanOrEqual(0);
@@ -71,9 +69,7 @@ describe.each(LANGS.map((l) => [l.locale, l] as const))("CV reading order in %s"
       const head = [e.role, e.company, e.period].filter(Boolean).join(" · ");
       const at = text.indexOf(head, from);
       expect(at, `"${head}" in order`).toBeGreaterThanOrEqual(from);
-      const end = at + head.length;
-      if (e.note) expect(text.slice(end, end + e.note.length + 3)).toContain(e.note);
-      from = end;
+      from = at + head.length;
     }
   });
 });
@@ -90,35 +86,36 @@ describe.each(LANGS.map((l) => [l.locale, l] as const))("CV page in %s", (_local
     expect(html).toMatch(/<h1>Caio Barilli<\/h1>/);
   });
 
-  it("gives every earlier job a one-line note", () => {
-    for (const e of site.earlierExperience) {
-      expect(e.note).toBeTruthy();
-      expect(html).toContain(e.note![lang.key as "en" | "pt"]);
-    }
+  // Text ceiling: the résumé fits on 1 page. Over this, cut text instead of squeezing the layout.
+  it("stays under the text ceiling of 550 words", () => {
+    const words = html.replace(/<style[\s\S]*?<\/style>/, "").replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean);
+    expect(words.length).toBeLessThanOrEqual(550);
   });
 
-  it("orders the sections: summary, skills, experience, earlier, projects, education, courses", () => {
-    expect(h2).toEqual([ui.cvSummaryTitle, ui.cvSkillsTitle, ui.expTitle, ui.earlierTitle, ui.projectsTitle, ui.eduTitle, ui.coursesTitle]);
+  it("keeps each earlier job to one discreet line, with no note", () => {
+    const section = html.split(`<h2>${ui.earlierTitle}</h2>`)[1]?.split("</ul>")[0] ?? "";
+    expect(section.match(/<li>/g)).toHaveLength(site.earlierExperience.length);
+    expect(section).not.toContain("<p");
+  });
+
+  it("orders the sections: summary, skills, experience, earlier, projects, education", () => {
+    expect(h2).toEqual([ui.cvSummaryTitle, ui.cvSkillsTitle, ui.expTitle, ui.earlierTitle, ui.projectsTitle, ui.eduTitle]);
     expect(html).toContain(ui.cvSkills);
   });
 
-  it("lists only the 4 résumé courses", () => {
-    const names = site.courses.filter((c) => c.cv).map((c) => (typeof c.name === "string" ? c.name : c.name[lang.key as "en" | "pt"]));
-    expect(names).toHaveLength(4);
-    const items = (html.split(`<h2>${ui.coursesTitle}</h2>`)[1] ?? "").match(/<li>/g) ?? [];
-    expect(items).toHaveLength(4);
-    for (const n of names) expect(html).toContain(n);
+  it("leaves the courses out (the site lists them)", () => {
+    expect(html).not.toContain(`<h2>${ui.coursesTitle}</h2>`);
   });
 
   it("lists AWS, PHParrot, PHPorto and Uvalab as projects, without Keeptask (it is under Experience)", () => {
     const section = (html.split(`<h2>${ui.projectsTitle}</h2>`)[1] ?? "").split("<section")[0] ?? "";
-    const names = [...section.matchAll(/<h3>(.*?)<\/h3>/g)].map((m) => m[1]);
+    const names = [...section.matchAll(/<h3>(.*?) · /g)].map((m) => m[1]);
     expect(names).toEqual([lang.key === "en" ? "AWS platform with Terraform" : "Plataforma AWS com Terraform", "PHParrot", "PHPorto", "Uvalab"]);
     expect(section).not.toContain("Keeptask");
   });
 
   it.runIf(lang.key === "en")("has no loose Portuguese in the English résumé", () => {
-    for (const t of ["Cloud Computing — AWS Discovery Day", "Advanced Web Development with PHP, Laravel and Vue.js", "WordPress Theme Development with WooCommerce", "Building Quality CRUDs", "FIAP (Brazilian technology university)", "Senac (Brazilian technical college)", "364 hours", "CTC (formerly Interaktiv)", "a Brazilian accounting startup"]) {
+    for (const t of ["FIAP (Brazilian technology university)", "Senac (Brazilian technical college)", "364 hours", "CTC (formerly Interaktiv)"]) {
       expect(html).toContain(t);
     }
     for (const t of ["Computação", "Criação de Temas", "Como criar", "antiga", "364 h<"]) expect(html).not.toContain(t);

@@ -53,18 +53,17 @@ export default async function ExperiencePage({ params }: { params: Promise<{ loc
       </ol>
 
       <section className="mt-[clamp(24px,4vw,40px)] border-t border-line pt-8">
-        <h2 className="mb-5 text-[28px] font-semibold tracking-[-0.02em]">{s("earlierTitle")}</h2>
+        <h2 className="mb-3 text-xl font-semibold tracking-[-0.01em] text-ink-2">{s("earlierTitle")}</h2>
         <ul data-testid="earlier-experience">
           {earlierExperience.map((e) => (
-            <li key={`${e.company ? localize(e.company, locale) : ""}${e.period}${localize(e.role, locale)}`} className="border-b border-line py-3.5">
+            <li key={`${e.company ? localize(e.company, locale) : ""}${e.period}${localize(e.role, locale)}`} className="border-b border-line py-2">
               <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
-                <span className="min-w-0 text-base font-semibold">
+                <span data-testid="earlier-role" className="min-w-0 text-sm text-ink-2">
                   {localize(e.role, locale)}
-                  {e.company && <span className="font-normal text-ink-2"> · {localize(e.company, locale)}</span>}
+                  {e.company && <span className="text-muted"> · {localize(e.company, locale)}</span>}
                 </span>
-                <span className="font-mono text-sm font-medium text-accent-text">{e.period}</span>
+                <span className="font-mono text-xs text-muted">{e.period}</span>
               </div>
-              {e.note && <p className="mt-1 max-w-[640px] text-sm leading-[1.5] text-muted">{localize(e.note, locale)}</p>}
             </li>
           ))}
         </ul>

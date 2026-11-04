@@ -490,7 +490,7 @@ test.describe("experience", () => {
       const items = page.getByTestId("earlier-experience").locator("> li");
       await expect(items).toHaveCount(9);
       await expect(items.last()).toContainText(last);
-      expect(await items.locator("span.font-semibold").allTextContents()).toEqual(titles);
+      expect(await items.getByTestId("earlier-role").allTextContents()).toEqual(titles);
       await expect(page.getByRole("heading", { name: title })).toBeVisible();
       // The main timeline is the <ol>: only KeepCloud and AgroNegociar.
       const main = page.locator("main ol > li");
@@ -502,14 +502,15 @@ test.describe("experience", () => {
       expect(order.indexOf(title)).toBeGreaterThan(0);
     });
 
-    test(`${path} keeps each earlier job in one block: title, then period, then note`, async ({ page }) => {
+    test(`${path} keeps each earlier job to one discreet line: title, then period, no note`, async ({ page }) => {
       await page.goto(path);
       const items = page.getByTestId("earlier-experience").locator("> li");
+      await expect(items.locator("p")).toHaveCount(0);
       for (const li of await items.all()) {
-        const text = ((await li.textContent()) ?? "").replace(/s+/g, " ");
+        const text = ((await li.textContent()) ?? "").replace(/\s+/g, " ");
         const period = (await li.locator("span.font-mono").textContent()) ?? "";
-        const title = ((await li.locator("span.font-semibold").textContent()) ?? "").replace(/s+/g, " ");
-        expect(text.startsWith(title + period)).toBe(true);
+        const title = ((await li.getByTestId("earlier-role").textContent()) ?? "").replace(/\s+/g, " ");
+        expect(text).toBe(title + period);
       }
     });
   }

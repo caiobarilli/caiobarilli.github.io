@@ -19,14 +19,13 @@ function contact(label) {
   return c;
 }
 
-function project(slug, key, ui, { stack = true } = {}) {
+// One compact block per project: name, type and status in the title line, then the description. No stack (the skills line covers it).
+function project(slug, key, { desc = true } = {}) {
   const p = site.projects.find((x) => x.slug === slug);
   if (!p) throw new Error(`Project "${slug}" is missing in site.json`);
   return `<div class="item">
-    <div class="row"><h3>${esc(loc(p.name, key))}</h3><span class="meta">${esc(loc(p.type, key))} · ${esc(loc(p.status, key))}</span></div>
-    <p>${esc(loc(p.desc, key))}</p>
-    ${p.role ? `<p class="role">${esc(loc(p.role, key))}</p>` : ""}
-    ${stack ? `<p class="stack">${esc(p.stack.join(" · "))}</p>` : ""}
+    <h3>${esc(loc(p.name, key))} · <span class="meta">${esc(loc(p.type, key))} · ${esc(loc(p.status, key))}</span></h3>
+    ${desc ? `<p>${esc(loc(p.desc, key))}</p>` : ""}
   </div>`;
 }
 
@@ -43,14 +42,13 @@ export function build({ key, html }) {
     <div class="row"><h3>${esc(loc(e.role, key))} · ${esc(e.company.name)}</h3><span class="meta">${esc(loc(e.period, key))} · ${esc(loc(e.kind, key))}</span></div>
     ${e.summary ? `<p>${esc(loc(e.summary, key))}</p>` : ""}
     ${e.highlights ? `<ul class="points">${e.highlights.map((h) => `<li>${esc(loc(h, key))}</li>`).join("")}</ul>` : ""}
-    <p class="stack">${esc(e.keys.join(" · "))}</p>
   </div>`,
     )
     .join("");
 
   const earlier = site.earlierExperience
     .map(
-      (e) => `<li><div class="line">${esc(loc(e.role, key))}${e.company ? ` · ${esc(loc(e.company, key))}` : ""} · <span class="meta">${esc(e.period)}</span></div>${e.note ? `<p class="stack">${esc(loc(e.note, key))}</p>` : ""}</li>`,
+      (e) => `<li><div class="line">${esc(loc(e.role, key))}${e.company ? ` · ${esc(loc(e.company, key))}` : ""} · <span class="meta">${esc(e.period)}</span></div></li>`,
     )
     .join("");
 
@@ -58,32 +56,28 @@ export function build({ key, html }) {
     .map(
       (ed) => `<div class="item">
     <h3>${esc(loc(ed.title, key))} · ${esc(loc(ed.school, key))} · <span class="meta">${esc(ed.period)}</span></h3>
-    ${loc(ed.school, "pt") === "FIAP" ? project("info4all", key, ui, { stack: false }) : ""}
+    ${loc(ed.school, "pt") === "FIAP" ? project("info4all", key, { desc: false }) : ""}
   </div>`,
     )
     .join("");
 
-  const certificates = site.courses
-    .filter((c) => c.cv)
-    .map((c) => `<li>${esc(loc(c.name, key))} · ${esc(c.issuer)} · <span class="meta">${esc(loc(c.date, key))}</span></li>`)
-    .join("");
 
   return `<!doctype html>
 <html lang="${html}"><head><meta charset="utf-8"><title>${esc(name)} · ${esc(ui.cvTitle)}</title>
 <style>
-  @page { size: A4; margin: 13mm 15mm; }
+  @page { size: A4; margin: 11mm 14mm; }
   * { box-sizing: border-box; }
-  body { margin: 0; font: 9.2pt/1.38 "Segoe UI", Arial, Helvetica, sans-serif; color: #1a1d1a; }
+  body { margin: 0; font: 9.2pt/1.32 "Segoe UI", Arial, Helvetica, sans-serif; color: #1a1d1a; }
   h1 { margin: 0; font-size: 22pt; letter-spacing: -0.02em; }
-  h2 { margin: 11px 0 5px; padding-bottom: 2px; border-bottom: 1px solid #bbb; font-size: 10.5pt; letter-spacing: 0.01em; }
+  h2 { margin: 9px 0 4px; padding-bottom: 2px; border-bottom: 1px solid #bbb; font-size: 10.5pt; letter-spacing: 0.01em; }
   h3 { margin: 0; font-size: 9.6pt; }
   p { margin: 2px 0 0; }
   a { color: inherit; text-decoration: none; }
   .role-line { margin-top: 2px; font-size: 11pt; color: #444; }
   .links { margin-top: 4px; color: #333; }
   .row { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
-  .meta { flex: none; font-size: 8.4pt; color: #555; text-align: right; }
-  .item { margin-top: 6px; break-inside: avoid; }
+  .meta { flex: none; font-size: 8.4pt; font-weight: 400; color: #555; text-align: right; }
+  .item { margin-top: 5px; break-inside: avoid; }
   .item .item { margin-top: 3px; padding-left: 10px; border-left: 2px solid #ccc; }
   /* Education stays whole on one page, title included. */
   .edu { break-inside: avoid; }
@@ -92,7 +86,7 @@ export function build({ key, html }) {
   .role { font-style: italic; }
   ul { margin: 0; padding: 0; list-style: none; }
   /* Dates sit right after the title in the same line: a right-aligned date is read as a separate column by text extractors (ATS). */
-  li { margin-top: 2px; }
+  li { margin-top: 1px; }
   .points { margin-top: 2px; padding-left: 14px; }
   .points li { list-style: disc; }
 </style></head><body>
@@ -106,8 +100,7 @@ ${ui.cvLocation ? `<div class="links">${esc(ui.cvLocation)}</div>` : ""}
 <p>${esc(ui.cvSkills)}</p>
 <h2>${esc(ui.expTitle)}</h2>${experience}
 <h2>${esc(ui.earlierTitle)}</h2><ul class="earlier">${earlier}</ul>
-<h2>${esc(ui.projectsTitle)}</h2>${PROJECTS.map((slug) => project(slug, key, ui)).join("")}
+<h2>${esc(ui.projectsTitle)}</h2>${PROJECTS.map((slug) => project(slug, key)).join("")}
 <section class="edu"><h2>${esc(ui.eduTitle)}</h2>${education}</section>
-<h2>${esc(ui.coursesTitle)}</h2><ul>${certificates}</ul>
 </body></html>`;
 }
