@@ -90,7 +90,8 @@
       "cvSummaryTitle": "Summary",
       "cvSkillsTitle": "Skills",
       "cvSkills": "PHP · Laravel · Livewire · MySQL · Redis/Horizon (queues) · REST APIs · Pest · PHPStan · Git · Docker · Terraform · AWS · CI/CD with GitHub Actions · Linux · WordPress",
-      "cvLocation": "Based in São Paulo, Brazil (UTC−3) · Remote · English: intermediate · Open to full-time or contractor roles"
+      "cvLocation": "Based in São Paulo, Brazil (UTC−3) · Remote · English: intermediate · Full-time or contractor · Available immediately",
+      "cvPhone": "+55 11 93759-9166"
     },
     "pt": {
       "nav": {
@@ -182,7 +183,8 @@
       "cvSummaryTitle": "Resumo",
       "cvSkillsTitle": "Competências",
       "cvSkills": "PHP · Laravel · Livewire · MySQL · Redis/Horizon (filas) · APIs REST · Pest · PHPStan · Git · Docker · Terraform · AWS · CI/CD com GitHub Actions · Linux · WordPress",
-      "cvLocation": ""
+      "cvLocation": "São Paulo, Brasil (UTC−3) · Remoto · CLT ou PJ · Inglês intermediário · Disponibilidade imediata",
+      "cvPhone": "+55 11 93759-9166"
     }
   },
   "cats": [

@@ -80,7 +80,7 @@ export function build({ key, html }) {
 </style></head><body>
 <h1>${esc(name)}</h1>
 <div class="role-line">${esc(ui.cvTitle)}</div>
-<div class="links"><a href="${esc(email.url)}">${esc(email.handle)}</a> · <a href="${esc(linkedin.url)}">${esc(linkedin.handle)}</a> · <a href="${esc(github.url)}">${esc(github.handle)}</a> · <a href="https://${SITE}">${SITE}</a></div>
+<div class="links"><a href="tel:${esc(ui.cvPhone.replace(/[^+0-9]/g, ""))}">${esc(ui.cvPhone)}</a> · <a href="${esc(email.url)}">${esc(email.handle)}</a> · <a href="${esc(linkedin.url)}">${esc(linkedin.handle)}</a> · <a href="${esc(github.url)}">${esc(github.handle)}</a> · <a href="https://${SITE}">${SITE}</a></div>
 ${ui.cvLocation ? `<div class="links">${esc(ui.cvLocation)}</div>` : ""}
 <h2>${esc(ui.cvSummaryTitle)}</h2>
 <p>${esc(ui.cvSummary)}</p>

@@ -124,7 +124,10 @@ describe.each(LANGS.map((l) => [l.locale, l] as const))("CV page in %s", (_local
     expect(html).not.toContain('class="points"');
   });
 
-  it("shows the location line only when the language has one", () => {
-    expect(html.includes("Based in São Paulo")).toBe(lang.key === "en");
+  it("shows the phone and the location line in the header", () => {
+    expect(ui.cvPhone).toBeTruthy();
+    expect(html).toContain(ui.cvPhone);
+    expect(ui.cvLocation).toContain("São Paulo");
+    expect(html).toContain(ui.cvLocation);
   });
 });
