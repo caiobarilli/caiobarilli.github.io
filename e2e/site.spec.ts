@@ -56,6 +56,13 @@ test.describe("home", () => {
     await page.getByRole("link", { name: "See the work" }).click();
     await expect(page).toHaveURL(/\/en\/projects\/$/);
   });
+
+  test("the hero has an e-mail and a LinkedIn link", async ({ page }) => {
+    await page.goto("/en/");
+    const hero = page.locator("main section").first();
+    await expect(hero.getByRole("link", { name: "E-mail" })).toHaveAttribute("href", /^mailto:/);
+    await expect(hero.getByRole("link", { name: "LinkedIn ↗" })).toHaveAttribute("href", "https://www.linkedin.com/in/caio-barilli");
+  });
 });
 
 test.describe("header", () => {

@@ -50,6 +50,14 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               <Link href={`/${locale}/projects/`} className="flex min-h-12 items-center rounded-full bg-btn px-[22px] text-[15px] font-semibold text-btn-ink">
                 {s("seeWork")}
               </Link>
+              {email && !email.pending && (
+                <a href={email.url} className="flex min-h-12 items-center rounded-full border border-line-strong px-[22px] text-[15px] font-medium hover:border-ink">
+                  {email.label}
+                </a>
+              )}
+              <a href={LINKEDIN} className="flex min-h-12 items-center rounded-full border border-line-strong px-[22px] text-[15px] font-medium hover:border-ink">
+                LinkedIn ↗
+              </a>
               <a href={GITHUB} className="flex min-h-12 items-center rounded-full border border-line-strong px-[22px] text-[15px] font-medium hover:border-ink">
                 GitHub ↗
               </a>
