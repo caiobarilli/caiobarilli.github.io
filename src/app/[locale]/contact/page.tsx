@@ -30,9 +30,24 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
     </span>
   );
 
+  const cv = (
+    <a
+      href={`/cv/caio-barilli-cv-${locale}.pdf`}
+      target="_blank"
+      rel="noopener"
+      className="flex min-h-14 w-full items-center justify-center gap-3 rounded-xl bg-btn px-7 py-3 text-[17px] font-semibold text-btn-ink md:w-auto"
+    >
+      <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-none">
+        <path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 17v3h16v-3" />
+      </svg>
+      <span>{s("cvLink")}</span>
+      <span className="rounded-md border border-btn-ink/50 px-1.5 py-0.5 font-mono text-xs leading-none font-medium">{s("cvLinkTag")}</span>
+    </a>
+  );
+
   return (
     <PageShell>
-      <PageIntro title={s("contactTitle")} lead={s("contactSub")} />
+      <PageIntro title={s("contactTitle")} lead={s("contactSub")} aside={cv} />
       <ul className="mt-12 border-t border-line-strong">
         {getContent().contacts.map((c) => (
           <li key={c.label} className="border-b border-line">
@@ -64,12 +79,6 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
           </li>
         ))}
       </ul>
-      <a
-        href={`/cv/caio-barilli-cv-${locale}.pdf`}
-        className="mt-8 flex min-h-11 items-center self-start rounded-full border border-line-strong px-[18px] text-sm font-medium hover:border-ink w-fit"
-      >
-        {s("cvLink")}
-      </a>
     </PageShell>
   );
 }

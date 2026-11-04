@@ -99,16 +99,24 @@ test.describe("home", () => {
     });
   }
 
-  test("the contact page links each language to its own résumé PDF", async ({ page, request }) => {
+  test("the contact page links each language to its own résumé PDF, above the e-mail row and only once", async ({ page, request }) => {
     const links: [string, string, string][] = [
-      ["/en/contact/", "Download résumé (PDF)", "/cv/caio-barilli-cv-en.pdf"],
-      ["/pt-br/contact/", "Baixar currículo (PDF)", "/cv/caio-barilli-cv-pt-br.pdf"],
+      ["/en/contact/", "Download résumé", "/cv/caio-barilli-cv-en.pdf"],
+      ["/pt-br/contact/", "Baixar currículo", "/cv/caio-barilli-cv-pt-br.pdf"],
     ];
     for (const [path, name, file] of links) {
       await page.goto(path);
-      await expect(page.getByRole("link", { name })).toHaveAttribute("href", file);
-      const response = await request.get(file);
-      expect(response.status()).toBe(200);
+      const link = page.getByRole("link", { name: `${name} PDF`, exact: true });
+      await expect(link).toHaveAttribute("href", file);
+      await expect(link).toHaveAttribute("target", "_blank");
+      await expect(link).toHaveAttribute("rel", /noopener/);
+      await expect(link).not.toHaveAttribute("download");
+      await expect(page.locator('a[href^="/cv/"]')).toHaveCount(1);
+      expect((await request.get(file)).status()).toBe(200);
+      const cv = await link.boundingBox();
+      const mail = await page.getByText("caiobarilli@gmail.com", { exact: true }).locator("visible=true").boundingBox();
+      expect(cv!.y + cv!.height).toBeLessThanOrEqual(mail!.y);
+      expect(cv!.height).toBeGreaterThanOrEqual(44);
     }
     await page.goto("/en/");
     await expect(page.locator('a[href^="/cv/"]')).toHaveCount(0);
