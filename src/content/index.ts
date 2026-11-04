@@ -50,7 +50,6 @@ const REPOS: Record<string, string> = {
   mern: "MERN",
   mean: "MEAN",
   nestauth: "NestAuth",
-  "crud-ts": "crud-ts",
   "nextjs-tailwind-store": "nextjs-tailwind-store",
 };
 
