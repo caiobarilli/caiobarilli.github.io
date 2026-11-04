@@ -4,7 +4,7 @@ import { readFileSync } from "node:fs";
 
 const site = JSON.parse(readFileSync("src/content/site.json", "utf8"));
 const SITE = "caiobarilli.github.io"; // same host as SITE_URL in src/app/page-meta.ts
-const PROJECTS = ["keeptask", "aws-terraform", "phparrot", "phporto", "uvalab"];
+const PROJECTS = ["aws-terraform", "phparrot", "phporto", "uvalab"];
 export const LANGS = [
   { locale: "pt-br", key: "pt", file: "public/cv/caio-barilli-cv-pt-br.pdf", html: "pt-BR" },
   { locale: "en", key: "en", file: "public/cv/caio-barilli-cv-en.pdf", html: "en" },

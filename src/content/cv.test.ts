@@ -83,6 +83,13 @@ describe.each(LANGS.map((l) => [l.locale, l] as const))("CV page in %s", (_local
     for (const n of names) expect(html).toContain(n);
   });
 
+  it("lists AWS, PHParrot, PHPorto and Uvalab as projects, without Keeptask (it is under Experience)", () => {
+    const section = (html.split(`<h2>${ui.projectsTitle}</h2>`)[1] ?? "").split("<section")[0] ?? "";
+    const names = [...section.matchAll(/<h3>(.*?)<\/h3>/g)].map((m) => m[1]);
+    expect(names).toEqual([lang.key === "en" ? "AWS platform with Terraform" : "Plataforma AWS com Terraform", "PHParrot", "PHPorto", "Uvalab"]);
+    expect(section).not.toContain("Keeptask");
+  });
+
   it("shows the location line only when the language has one", () => {
     expect(html.includes("Based in São Paulo")).toBe(lang.key === "en");
   });
