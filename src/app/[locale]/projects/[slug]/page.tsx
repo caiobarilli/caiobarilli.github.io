@@ -220,7 +220,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
               </a>
             ))}
             {p.course && (
-              <a href={p.course.url} title={p.course.name} className="flex min-h-12 items-center rounded-full border border-line-strong px-[22px] text-[15px] font-medium hover:border-ink">
+              <a href={p.course.url} title={localize(p.course.name, locale)} className="flex min-h-12 items-center rounded-full border border-line-strong px-[22px] text-[15px] font-medium hover:border-ink">
                 {s("courseLink")}
               </a>
             )}

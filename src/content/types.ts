@@ -68,10 +68,10 @@ export type Experience = {
 /** Older job, shown as one compact line. The company is empty for a group of short contracts. */
 export type EarlierExperience = { role: Localized; company?: string | Localized; period: string; note?: Localized };
 
-export type Education = { period: string; title: Localized; school: string };
+export type Education = { period: string; title: Localized; school: string | Localized };
 
 export type Course = {
-  name: string;
+  name: string | Localized;
   url: string;
   /** Platform or school that issued it. */
   issuer?: string;

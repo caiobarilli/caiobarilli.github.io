@@ -76,7 +76,7 @@ describe.each(LANGS.map((l) => [l.locale, l] as const))("CV page in %s", (_local
   });
 
   it("lists only the 4 résumé courses", () => {
-    const names = site.courses.filter((c) => c.cv).map((c) => c.name);
+    const names = site.courses.filter((c) => c.cv).map((c) => (typeof c.name === "string" ? c.name : c.name[lang.key as "en" | "pt"]));
     expect(names).toHaveLength(4);
     const items = (html.split(`<h2>${ui.coursesTitle}</h2>`)[1] ?? "").match(/<li>/g) ?? [];
     expect(items).toHaveLength(4);
@@ -88,6 +88,13 @@ describe.each(LANGS.map((l) => [l.locale, l] as const))("CV page in %s", (_local
     const names = [...section.matchAll(/<h3>(.*?)<\/h3>/g)].map((m) => m[1]);
     expect(names).toEqual([lang.key === "en" ? "AWS platform with Terraform" : "Plataforma AWS com Terraform", "PHParrot", "PHPorto", "Uvalab"]);
     expect(section).not.toContain("Keeptask");
+  });
+
+  it.runIf(lang.key === "en")("has no loose Portuguese in the English résumé", () => {
+    for (const t of ["Cloud Computing — AWS Discovery Day", "Advanced Web Development with PHP, Laravel and Vue.js", "WordPress Theme Development with WooCommerce", "Building Quality CRUDs", "FIAP (Brazilian technology university)", "Senac (Brazilian technical college)", "364 hours", "CTC (formerly Interaktiv)", "a Brazilian accounting startup"]) {
+      expect(html).toContain(t);
+    }
+    for (const t of ["Computação", "Criação de Temas", "Como criar", "antiga", "364 h<"]) expect(html).not.toContain(t);
   });
 
   it("shows the location line only when the language has one", () => {

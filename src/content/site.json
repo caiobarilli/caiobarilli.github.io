@@ -704,7 +704,7 @@
       "shot": "tcc-cover.webp",
       "links": [],
       "desc": {
-        "en": "Prototype AI agent platform for a challenge set by Contabilizei: ask in Portuguese, get a table, a chart and an explanation, straight from an open-source data lakehouse.",
+        "en": "Prototype AI agent platform for a challenge set by Contabilizei, a Brazilian accounting startup: ask in Portuguese, get a table, a chart and an explanation, straight from an open-source data lakehouse.",
         "pt": "Protótipo de uma plataforma de agentes de IA para um desafio proposto pela Contabilizei: pergunte em português e receba tabela, gráfico e explicação, direto de um data lakehouse open source."
       },
       "highlights": [
@@ -2179,10 +2179,13 @@
     {
       "period": "2025 — 2026",
       "title": {
-        "en": "MBA, DevOps, Automation & Cloud Strategy · 364 h",
+        "en": "MBA, DevOps, Automation & Cloud Strategy · 364 hours",
         "pt": "MBA em DevOps, Automation & Cloud Strategy · 364 h"
       },
-      "school": "FIAP"
+      "school": {
+        "pt": "FIAP",
+        "en": "FIAP (Brazilian technology university)"
+      }
     },
     {
       "period": "2012 — 2015",
@@ -2190,12 +2193,18 @@
         "en": "Internet Systems Technology degree",
         "pt": "Tecnologia em Sistemas para Internet"
       },
-      "school": "Senac"
+      "school": {
+        "pt": "Senac",
+        "en": "Senac (Brazilian technical college)"
+      }
     }
   ],
   "courses": [
     {
-      "name": "Computação em Nuvem — AWS Discovery Day",
+      "name": {
+        "pt": "Computação em Nuvem — AWS Discovery Day",
+        "en": "Cloud Computing — AWS Discovery Day"
+      },
       "issuer": "Ka Solution",
       "date": {
         "en": "Sep 2025",
@@ -2216,7 +2225,10 @@
       "certificate": true
     },
     {
-      "name": "Como criar CRUDs com Qualidade",
+      "name": {
+        "pt": "Como criar CRUDs com Qualidade",
+        "en": "Building Quality CRUDs"
+      },
       "issuer": "Hotmart · DevSoutinho",
       "date": {
         "en": "Sep 2023",
@@ -2227,7 +2239,10 @@
       "cv": true
     },
     {
-      "name": "React Avançado: NextJS, Strapi e GraphQL",
+      "name": {
+        "pt": "React Avançado: NextJS, Strapi e GraphQL",
+        "en": "Advanced React: NextJS, Strapi and GraphQL"
+      },
       "issuer": "Udemy",
       "date": {
         "en": "Jun 2023",
@@ -2247,7 +2262,10 @@
       "certificate": true
     },
     {
-      "name": "Desenvolvimento Web Avançado com PHP, Laravel e Vue.js",
+      "name": {
+        "pt": "Desenvolvimento Web Avançado com PHP, Laravel e Vue.js",
+        "en": "Advanced Web Development with PHP, Laravel and Vue.js"
+      },
       "issuer": "Udemy",
       "date": {
         "en": "Jun 2022",
@@ -2258,7 +2276,10 @@
       "cv": true
     },
     {
-      "name": "Criação de Temas WordPress com WooCommerce",
+      "name": {
+        "pt": "Criação de Temas WordPress com WooCommerce",
+        "en": "WordPress Theme Development with WooCommerce"
+      },
       "issuer": "Udemy",
       "date": {
         "en": "Jun 2021",

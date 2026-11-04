@@ -58,15 +58,15 @@ export function build({ key, html }) {
   const education = site.education
     .map(
       (ed) => `<div class="item">
-    <div class="row"><h3>${esc(loc(ed.title, key))} · ${esc(ed.school)}</h3><span class="meta">${esc(ed.period)}</span></div>
-    ${ed.school === "FIAP" ? project("info4all", key, ui, { stack: false }) : ""}
+    <div class="row"><h3>${esc(loc(ed.title, key))} · ${esc(loc(ed.school, key))}</h3><span class="meta">${esc(ed.period)}</span></div>
+    ${loc(ed.school, "pt") === "FIAP" ? project("info4all", key, ui, { stack: false }) : ""}
   </div>`,
     )
     .join("");
 
   const certificates = site.courses
     .filter((c) => c.cv)
-    .map((c) => `<li>${esc(c.name)} · ${esc(c.issuer)} · <span class="meta">${esc(loc(c.date, key))}</span></li>`)
+    .map((c) => `<li>${esc(loc(c.name, key))} · ${esc(c.issuer)} · <span class="meta">${esc(loc(c.date, key))}</span></li>`)
     .join("");
 
   return `<!doctype html>

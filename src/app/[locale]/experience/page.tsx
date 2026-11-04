@@ -76,13 +76,13 @@ export default async function ExperiencePage({ params }: { params: Promise<{ loc
         <ul>
           {education.map((ed) => (
             <li
-              key={ed.school}
+              key={localize(ed.school, "en")}
               className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,240px),1fr))] gap-x-10 gap-y-1.5 border-b border-line py-[18px]"
             >
               <span className="font-mono text-sm font-medium text-accent-text">{ed.period}</span>
               <div className="col-span-2 flex min-w-0 flex-wrap justify-between gap-x-6 gap-y-1 max-[560px]:col-span-1">
                 <span className="text-lg font-semibold">{localize(ed.title, locale)}</span>
-                <span className="font-mono text-sm text-muted">{ed.school}</span>
+                <span className="font-mono text-sm text-muted">{localize(ed.school, locale)}</span>
               </div>
             </li>
           ))}
@@ -100,7 +100,7 @@ export default async function ExperiencePage({ params }: { params: Promise<{ loc
               <span className="font-mono text-sm font-medium text-accent-text">{c.date ? localize(c.date, locale) : "—"}</span>
               <div className="col-span-2 flex min-w-0 flex-wrap items-baseline justify-between gap-x-6 gap-y-1 max-[560px]:col-span-1">
                 <span className="flex flex-col gap-1">
-                  <span className="text-lg font-semibold">{c.name}</span>
+                  <span className="text-lg font-semibold">{localize(c.name, locale)}</span>
                   {c.issuer && <span className="font-mono text-sm text-muted">{c.issuer}</span>}
                 </span>
                 <a href={c.url} className="flex min-h-11 items-center font-mono text-sm font-medium text-muted hover:text-accent-text">
