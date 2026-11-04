@@ -402,17 +402,6 @@
             "en": "PHPorto Windows page with the PowerShell terminal and action cards",
             "pt": "Página Windows do PHPorto com o terminal PowerShell e os cartões de ações"
           }
-        },
-        {
-          "file": "phporto-ollama.webp",
-          "caption": {
-            "en": "Ollama: pinned version with SHA-256, model allowlist and VRAM check",
-            "pt": "Ollama: versão fixada com SHA-256, lista de modelos permitidos e checagem de VRAM"
-          },
-          "alt": {
-            "en": "PHPorto Ollama page with status, install buttons and the model table",
-            "pt": "Página Ollama do PHPorto com o estado, os botões de instalação e a tabela de modelos"
-          }
         }
       ]
     },
