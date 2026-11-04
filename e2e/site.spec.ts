@@ -71,7 +71,36 @@ test.describe("home", () => {
     await expect(hero.getByRole("link", { name: "LinkedIn ↗" })).toHaveAttribute("href", "https://www.linkedin.com/in/caio-barilli");
   });
 
-  test("pages carry a link preview, and the sitemap and robots exist", async ({ page, request }) => {
+  const cases: [string, string, string][] = [["/en/", "Copy e-mail", "Copied!"], ["/pt-br/contact/", "Copiar e-mail", "Copiado!"]];
+  for (const [path, copy, copied] of cases) {
+    test(`the copy e-mail button on ${path} copies the address and says so`, async ({ page, context }) => {
+      await context.grantPermissions(["clipboard-read", "clipboard-write"]);
+      await page.goto(path);
+      await expect(page.getByRole("button", { name: copy })).toBeVisible();
+      const button = page.locator("main button");
+      // The page is static: retry the click until React has hydrated the handler.
+      await expect(async () => {
+        await button.click();
+        await expect(button).toHaveAccessibleName(copied, { timeout: 500 });
+      }).toPass();
+      await expect(page.locator("[aria-live=polite]").first()).toHaveText(copied);
+      expect(await page.evaluate(() => navigator.clipboard.readText())).toBe("caiobarilli@gmail.com");
+      await expect(button).toHaveAccessibleName(copy, { timeout: 4000 });
+    });
+  }
+
+  test("when the clipboard is blocked the address shows as selectable text", async ({ page }) => {
+    await page.addInitScript(() => {
+      Object.defineProperty(navigator, "clipboard", { value: { writeText: () => Promise.reject(new Error("blocked")) } });
+    });
+    await page.goto("/en/");
+    await expect(async () => {
+      await page.locator("main button").click();
+      await expect(page.locator("main section").first().getByText("caiobarilli@gmail.com", { exact: true })).toBeVisible({ timeout: 500 });
+    }).toPass();
+  });
+
+  test("pages carry a link preview, and the sitemap and robots exist",async ({ page, request }) => {
     const pages: [string, string][] = [["/pt-br/projects/keeptask/", "og-pt-br.png"], ["/en/", "og-en.png"]];
     for (const [path, image] of pages) {
       await page.goto(path);

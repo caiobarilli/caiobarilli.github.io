@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
+import { CopyEmail } from "@/components/CopyEmail";
 import { PageIntro, PageShell } from "@/components/PageIntro";
 import { getContent, isLocale, str } from "@/content";
 import { sectionMetadata } from "../../page-meta";
@@ -48,6 +49,11 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
                   <span aria-hidden className="text-2xl">↗</span>
                 </Row>
               </a>
+            )}
+            {!c.pending && c.url.startsWith("mailto:") && (
+              <div className="flex flex-wrap items-center gap-3 pb-6">
+                <CopyEmail address={c.handle} label={s("copyEmail")} copiedLabel={s("emailCopied")} className="flex min-h-11 items-center rounded-full border border-line-strong px-[18px] text-sm font-medium hover:border-ink" />
+              </div>
             )}
           </li>
         ))}
