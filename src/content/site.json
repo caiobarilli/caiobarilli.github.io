@@ -854,7 +854,7 @@
         "PostgreSQL",
         "Docker"
       ],
-      "shot": null,
+      "shot": "nestauth-cover.webp",
       "desc": {
         "en": "Authentication API in NestJS with JWT, PostgreSQL through TypeORM and transactional e-mail, running in Docker.",
         "pt": "API de autenticação em NestJS com JWT, PostgreSQL via TypeORM e e-mail transacional, rodando em Docker."
@@ -880,7 +880,19 @@
           }
         }
       ],
-      "shots": []
+      "shots": [
+        {
+          "file": "nestauth-cover.webp",
+          "caption": {
+            "en": "Official NestJS site, the framework used in this project",
+            "pt": "Site oficial do NestJS, o framework usado neste projeto"
+          },
+          "alt": {
+            "en": "Home page of the NestJS framework",
+            "pt": "Página inicial do framework NestJS"
+          }
+        }
+      ]
     },
     {
       "slug": "crud-ts",
@@ -911,7 +923,7 @@
         "Zod",
         "ESLint / Prettier"
       ],
-      "shot": null,
+      "shot": "crud-ts-cover.webp",
       "desc": {
         "en": "CRUD in Next.js and TypeScript with schema validation in Zod. Built during the course \"CRUDs com Qualidade\".",
         "pt": "CRUD em Next.js e TypeScript com validação de schema no Zod. Feito durante o curso \"CRUDs com Qualidade\"."
@@ -937,7 +949,19 @@
           }
         }
       ],
-      "shots": []
+      "shots": [
+        {
+          "file": "crud-ts-cover.webp",
+          "caption": {
+            "en": "Official site of the course this project was built in",
+            "pt": "Site oficial do curso em que este projeto foi feito"
+          },
+          "alt": {
+            "en": "Home page of the CRUDs com Qualidade course",
+            "pt": "Página inicial do curso CRUDs com Qualidade"
+          }
+        }
+      ]
     }
   ],
   "articles": [
