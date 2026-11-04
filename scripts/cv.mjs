@@ -88,7 +88,7 @@ function build({ key, html }) {
 <div class="role-line">${esc(ui.role)}</div>
 <div class="links"><a href="${esc(email.url)}">${esc(email.handle)}</a> · <a href="${esc(linkedin.url)}">${esc(linkedin.handle)}</a> · <a href="${esc(github.url)}">${esc(github.handle)}</a> · <a href="https://${SITE}">${SITE}</a></div>
 <h2>${esc(ui.aboutTitle)}</h2>
-<p>${esc(ui.heroLine)}</p>
+<p>${esc(ui.cvSummary)}</p>
 <h2>${esc(ui.expTitle)}</h2>${experience}
 <h2>${esc(ui.projectsTitle)}</h2>${PROJECTS.map((slug) => project(slug, key, ui)).join("")}
 <h2>${esc(ui.eduTitle)}</h2>${education}
