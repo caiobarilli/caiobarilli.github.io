@@ -38,6 +38,8 @@ export type Project = {
   stack: string[];
   shot: string;
   desc: Localized;
+  /** First-person note on what the author did, shown under the description (optional). */
+  role?: Localized;
   problem: Localized;
   solution: Localized;
   adrs: Adr[];

@@ -226,6 +226,17 @@ test.describe("projects", () => {
     await expect(page.getByRole("link", { name: "Read the case study: Keeptask" })).toBeVisible();
   });
 
+  test("the Keeptask case states the author's role, between the description and the problem", async ({ page }) => {
+    await page.goto("/pt-br/projects/keeptask/");
+    const role = page.getByText(/^Meu papel: fiz o produto de ponta a ponta/);
+    await expect(role).toBeVisible();
+    await expect(role).toContainText("O deploy e a operação em produção ficaram com o time.");
+    await page.goto("/en/projects/keeptask/");
+    await expect(page.getByText(/^My role: I built the product end to end/)).toBeVisible();
+    await page.goto("/pt-br/projects/phporto/");
+    await expect(page.getByText(/^Meu papel:/)).toHaveCount(0);
+  });
+
   test("the product and source links sit in the page header, above the case study", async ({ page }) => {
     await page.goto("/en/projects/keeptask/");
     const header = page.locator("article > header");

@@ -73,6 +73,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
           </span>
           <h1 className="mt-5 text-[clamp(44px,8vw,104px)] leading-[0.95] font-bold tracking-[-0.045em] text-balance">{localize(p.name, locale)}</h1>
           <p className="mt-6 max-w-[760px] text-[clamp(18px,2vw,24px)] leading-[1.45] text-pretty text-ink-2">{localize(p.desc, locale)}</p>
+          {p.role && <p className="mt-4 max-w-[760px] text-[17px] leading-[1.55] text-pretty text-muted">{localize(p.role, locale)}</p>}
           {(repo || p.site) && (
             <div className="mt-8 flex flex-wrap gap-2.5">
               {repo && (

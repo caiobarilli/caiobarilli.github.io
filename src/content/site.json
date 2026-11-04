@@ -256,6 +256,10 @@
         "en": "B2B task, project and workflow platform by KeepCloud: a Laravel web app, a native iOS and Android app and a public documentation site, built end to end with an agentic workflow.",
         "pt": "Plataforma B2B de gestão de tarefas, projetos e fluxos de trabalho da KeepCloud: web em Laravel, app nativo para iOS e Android e site público de documentação, construída de ponta a ponta com um fluxo agêntico."
       },
+      "role": {
+        "en": "My role: I built the product end to end, from design and architecture to web and mobile development, the agentic workflow, security rounds and optimizations. Deployment and production operations were handled by the team.",
+        "pt": "Meu papel: fiz o produto de ponta a ponta, do design e da arquitetura ao desenvolvimento web e mobile, ao fluxo agêntico, às rodadas de segurança e às otimizações. O deploy e a operação em produção ficaram com o time."
+      },
       "problem": {
         "en": "Teams receive work from everywhere (chat, e-mail, spreadsheets, forms) and track it in tools that do not talk to each other. Deadlines, time spent, cost and the rules of each step of the process end up in people's heads, managers lack real numbers, and whoever works away from the desk has no good way to follow and update tasks.",
         "pt": "Equipes recebem demandas de todo lado (chat, e-mail, planilha, formulário) e acompanham o trabalho em ferramentas que não conversam. Prazo, tempo gasto, custo e as regras de cada etapa do processo ficam na cabeça das pessoas, a gestão não tem números de verdade, e quem trabalha fora do escritório não tem um bom jeito de acompanhar e atualizar as tarefas."
