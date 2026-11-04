@@ -24,6 +24,8 @@ export type Project = {
   site?: string;
   /** Course the project was built in. */
   course?: Course;
+  /** Extra links shown with the repository (related repos, design files). */
+  links?: { label: Localized; url: string }[];
   /** Big numbers shown under the header. */
   highlights?: Highlight[];
   /** Feature groups for the larger case studies. */

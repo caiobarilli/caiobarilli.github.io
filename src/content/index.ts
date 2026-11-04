@@ -47,6 +47,7 @@ export function navLabel(locale: Locale, key: string): string {
 const REPOS: Record<string, string> = {
   phparrot: "PHParrot",
   phporto: "PHPorto",
+  uvalab: "uvalab-sage-theme",
   mern: "MERN",
   mean: "MEAN",
   nestauth: "NestAuth",

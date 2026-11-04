@@ -314,6 +314,218 @@
       ]
     },
     {
+      "slug": "uvalab",
+      "name": "Uvalab",
+      "cats": [
+        "php",
+        "devops"
+      ],
+      "main": true,
+      "repo": true,
+      "demo": false,
+      "tag": {
+        "en": "PHP · Laravel · WooCommerce",
+        "pt": "PHP · Laravel · WooCommerce"
+      },
+      "year": "2026",
+      "type": {
+        "en": "WooCommerce theme",
+        "pt": "Tema WooCommerce"
+      },
+      "status": {
+        "en": "Completed",
+        "pt": "Concluído"
+      },
+      "stack": [
+        "PHP",
+        "WordPress / WooCommerce",
+        "Sage 11",
+        "Acorn 5 (Laravel)",
+        "Livewire 4",
+        "Flux UI",
+        "Tailwind CSS 4",
+        "Vite",
+        "Pest",
+        "PHPStan",
+        "Terraform",
+        "Docker"
+      ],
+      "shot": "uvalab-home.webp",
+      "links": [
+        {
+          "label": {
+            "en": "Dev environment (terraform-bedrock) ↗",
+            "pt": "Ambiente de desenvolvimento (terraform-bedrock) ↗"
+          },
+          "url": "https://github.com/caiobarilli/terraform-bedrock"
+        },
+        {
+          "label": {
+            "en": "Design on Figma ↗",
+            "pt": "Design no Figma ↗"
+          },
+          "url": "https://www.figma.com/design/dbXy3NH2VlwRvZaiewkWrF/Uvalab-V1?node-id=0-1"
+        }
+      ],
+      "desc": {
+        "en": "WooCommerce store built as a Laravel app inside WordPress: a Sage 11 and Acorn theme, screens in Livewire 4 and Flux UI, and a development environment provisioned with Terraform and Docker.",
+        "pt": "E-commerce WooCommerce construído como um app Laravel dentro do WordPress: tema em Sage 11 e Acorn, telas em Livewire 4 e Flux UI, e ambiente de desenvolvimento provisionado com Terraform e Docker."
+      },
+      "highlights": [
+        {
+          "value": "132",
+          "label": {
+            "en": "commits",
+            "pt": "commits"
+          }
+        },
+        {
+          "value": "17",
+          "label": {
+            "en": "Livewire components",
+            "pt": "componentes Livewire"
+          }
+        },
+        {
+          "value": "16",
+          "label": {
+            "en": "Pest test files",
+            "pt": "arquivos de teste em Pest"
+          }
+        }
+      ],
+      "problem": {
+        "en": "WooCommerce themes often mix logic, templates and loose hooks, which makes the store hard to test, evolve and maintain. The goal was to keep WordPress's freedom for content, with the structure and tooling of a Laravel application.",
+        "pt": "Temas WooCommerce costumam misturar lógica, templates e hooks soltos, o que dificulta testar, evoluir e manter a loja. A ideia era ter a liberdade do WordPress para o conteúdo, com a organização e as ferramentas de uma aplicação Laravel."
+      },
+      "solution": {
+        "en": "The theme runs on Acorn, which brings Laravel into WordPress: service providers, controllers, middleware, migrations and seeders. The store, sign-in and customer area screens are Livewire components with Flux UI, and the admin panel is custom too. The layout follows a design made in Figma, with Full Site Editing and Tailwind 4. For development, terraform-bedrock uses Terraform to bring up a Docker environment with Nginx, PHP-FPM, MySQL and Node for Bedrock.",
+        "pt": "O tema roda sobre o Acorn, que traz o Laravel para dentro do WordPress: service providers, controllers, middleware, migrations e seeders. As telas da loja, do login e da área do cliente são componentes Livewire com Flux UI, e o painel administrativo também é próprio. O layout segue um design feito no Figma, com Full Site Editing e Tailwind 4. Para desenvolver, o terraform-bedrock sobe com Terraform um ambiente Docker com Nginx, PHP-FPM, MySQL e Node para o Bedrock."
+      },
+      "features": [
+        {
+          "title": {
+            "en": "Store",
+            "pt": "Loja"
+          },
+          "items": [
+            {
+              "en": "Product filters, a Livewire product list, the shop menu, a slider and quote requests",
+              "pt": "Filtros de produtos, lista com Livewire, menu da loja, slider e pedido de orçamento"
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Customer account",
+            "pt": "Conta do cliente"
+          },
+          "items": [
+            {
+              "en": "Sign-in and sign-up, dashboard, orders, order details, downloads, address and account details, behind a customer middleware",
+              "pt": "Login e cadastro, painel, pedidos, detalhe do pedido, downloads, endereço e dados da conta, protegidos por um middleware de cliente"
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Admin panel",
+            "pt": "Painel administrativo"
+          },
+          "items": [
+            {
+              "en": "Theme options, home sliders, Acorn cache, seeder and system status",
+              "pt": "Opções do tema, sliders da home, cache do Acorn, seeder e status do sistema"
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "WordPress organised like Laravel",
+            "pt": "WordPress organizado como Laravel"
+          },
+          "items": [
+            {
+              "en": "Post types, shortcodes and admin cleanup in service providers, and Livewire components also available as shortcodes",
+              "pt": "Post types, shortcodes e limpeza do admin em service providers, e componentes Livewire também disponíveis como shortcode"
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Quality",
+            "pt": "Qualidade"
+          },
+          "items": [
+            {
+              "en": "PHPStan, Pest and Husky hooks with lint-staged on commit and tests on push",
+              "pt": "PHPStan, Pest e hooks do Husky com lint-staged no commit e testes no push"
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Environment and publishing",
+            "pt": "Ambiente e publicação"
+          },
+          "items": [
+            {
+              "en": "Bedrock in Docker through Terraform for development, and WordOps with Cloudflare Tunnel to publish",
+              "pt": "Bedrock em Docker via Terraform no desenvolvimento, e WordOps com Cloudflare Tunnel para publicar"
+            }
+          ]
+        }
+      ],
+      "adrs": [
+        {
+          "id": "—",
+          "title": {
+            "en": "Laravel inside WordPress",
+            "pt": "Laravel dentro do WordPress"
+          },
+          "body": {
+            "en": "Acorn makes providers, Eloquent, migrations and tests available without giving up the WooCommerce ecosystem.",
+            "pt": "O Acorn permite usar providers, Eloquent, migrations e testes sem abrir mão do ecossistema WooCommerce."
+          }
+        },
+        {
+          "id": "—",
+          "title": {
+            "en": "Livewire instead of scattered JavaScript",
+            "pt": "Livewire no lugar de JavaScript avulso"
+          },
+          "body": {
+            "en": "The store and customer area interactions live in PHP, as testable components.",
+            "pt": "A interação da loja e da área do cliente fica no PHP, com componentes testáveis."
+          }
+        },
+        {
+          "id": "—",
+          "title": {
+            "en": "Environment as code",
+            "pt": "Ambiente como código"
+          },
+          "body": {
+            "en": "terraform-bedrock rebuilds the whole environment from scratch, the same way on any machine.",
+            "pt": "O terraform-bedrock recria o ambiente inteiro do zero, do mesmo jeito em qualquer máquina."
+          }
+        }
+      ],
+      "shots": [
+        {
+          "file": "uvalab-home.webp",
+          "caption": {
+            "en": "Store home with the collection slider",
+            "pt": "Home da loja com o slider de coleção"
+          },
+          "alt": {
+            "en": "Uvalab store home page with a wine bottle and the collection headline",
+            "pt": "Home da loja Uvalab com uma garrafa de vinho e o título da coleção"
+          }
+        }
+      ]
+    },
+    {
       "slug": "phporto",
       "name": "PHPorto",
       "cats": [
