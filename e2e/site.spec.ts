@@ -271,11 +271,11 @@ test.describe("projects", () => {
 
   test("the Keeptask case states the author's role, between the description and the problem", async ({ page }) => {
     await page.goto("/pt-br/projects/keeptask/");
-    const role = page.getByText(/^Meu papel: fiz o produto de ponta a ponta/);
+    const role = page.getByText(/^Meu papel: do design e da arquitetura/);
     await expect(role).toBeVisible();
     await expect(role).toContainText("O deploy e a operação em produção ficaram com o time.");
     await page.goto("/en/projects/keeptask/");
-    await expect(page.getByText(/^My role: I built the product end to end/)).toBeVisible();
+    await expect(page.getByText(/^My role: from design and architecture/)).toBeVisible();
     await page.goto("/pt-br/projects/phporto/");
     await expect(page.getByText(/^Meu papel:/)).toHaveCount(0);
   });
