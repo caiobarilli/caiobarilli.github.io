@@ -58,7 +58,7 @@ export function build({ key, html }) {
   const education = site.education
     .map(
       (ed) => `<div class="item">
-    <div class="row"><h3>${esc(loc(ed.title, key))} · ${esc(loc(ed.school, key))}</h3><span class="meta">${esc(ed.period)}</span></div>
+    <h3>${esc(loc(ed.title, key))} · ${esc(loc(ed.school, key))} · <span class="meta">${esc(ed.period)}</span></h3>
     ${loc(ed.school, "pt") === "FIAP" ? project("info4all", key, ui, { stack: false }) : ""}
   </div>`,
     )

@@ -43,6 +43,19 @@ describe.each(LANGS.map((l) => [l.locale, l] as const))("CV reading order in %s"
     note: e.note?.[lang.key as "en" | "pt"],
   }));
 
+  it.skipIf(!hasPdftotext)("puts each education period right after the course and school", () => {
+    const text = pdfText(lang.file);
+    const ui = site.ui[lang.key as "en" | "pt"] as Record<string, string>;
+    let from = text.indexOf(ui.eduTitle ?? "");
+    expect(from).toBeGreaterThanOrEqual(0);
+    for (const ed of site.education) {
+      const head = `${localizeCompany(ed.title, lang.key)} · ${localizeCompany(ed.school, lang.key)} · ${ed.period}`;
+      const at = text.indexOf(head, from);
+      expect(at, `"${head}" in order`).toBeGreaterThanOrEqual(from);
+      from = at + head.length;
+    }
+  });
+
   it.skipIf(!hasPdftotext)("keeps role, company, period and note together, in that order, in each earlier job", () => {
     const text = pdfText(lang.file);
     let from = text.indexOf((site.ui[lang.key as "en" | "pt"] as Record<string, string>).earlierTitle ?? "");
