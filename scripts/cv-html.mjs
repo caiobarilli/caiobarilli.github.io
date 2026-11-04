@@ -49,7 +49,7 @@ export function build({ key, html }) {
 
   const earlier = site.earlierExperience
     .map(
-      (e) => `<li><div class="row"><span>${esc(loc(e.role, key))}${e.company ? ` · ${esc(e.company)}` : ""}</span><span class="meta">${esc(e.period)}</span></div>${e.note ? `<p class="stack">${esc(loc(e.note, key))}</p>` : ""}</li>`,
+      (e) => `<li><div class="line">${esc(loc(e.role, key))}${e.company ? ` · ${esc(e.company)}` : ""} · <span class="meta">${esc(e.period)}</span></div>${e.note ? `<p class="stack">${esc(loc(e.note, key))}</p>` : ""}</li>`,
     )
     .join("");
 
@@ -64,7 +64,7 @@ export function build({ key, html }) {
 
   const certificates = site.courses
     .filter((c) => c.cv)
-    .map((c) => `<li><span>${esc(c.name)} · ${esc(c.issuer)}</span><span class="meta">${esc(loc(c.date, key))}</span></li>`)
+    .map((c) => `<li>${esc(c.name)} · ${esc(c.issuer)} · <span class="meta">${esc(loc(c.date, key))}</span></li>`)
     .join("");
 
   return `<!doctype html>
@@ -90,8 +90,8 @@ export function build({ key, html }) {
   .stack { font-size: 8.4pt; color: #555; }
   .role { font-style: italic; }
   ul { margin: 0; padding: 0; list-style: none; }
-  .earlier li { display: block; }
-  li { display: flex; justify-content: space-between; gap: 12px; margin-top: 2px; }
+  /* Dates sit right after the title in the same line: a right-aligned date is read as a separate column by text extractors (ATS). */
+  li { margin-top: 2px; }
 </style></head><body>
 <h1>${esc(name)}</h1>
 <div class="role-line">${esc(ui.cvTitle)}</div>

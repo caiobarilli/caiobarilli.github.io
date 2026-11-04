@@ -470,6 +470,17 @@ test.describe("experience", () => {
       const order = await page.locator("main h2").allTextContents();
       expect(order.indexOf(title)).toBeGreaterThan(0);
     });
+
+    test(`${path} keeps each earlier job in one block: title, then period, then note`, async ({ page }) => {
+      await page.goto(path);
+      const items = page.getByTestId("earlier-experience").locator("> li");
+      for (const li of await items.all()) {
+        const text = ((await li.textContent()) ?? "").replace(/s+/g, " ");
+        const period = (await li.locator("span.font-mono").textContent()) ?? "";
+        const title = ((await li.locator("span.font-semibold").textContent()) ?? "").replace(/s+/g, " ");
+        expect(text.startsWith(title + period)).toBe(true);
+      }
+    });
   }
 });
 
