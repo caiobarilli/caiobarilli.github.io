@@ -72,6 +72,20 @@ export default async function ProjectPage({ params }: { params: Params }) {
           </span>
           <h1 className="mt-5 text-[clamp(44px,8vw,104px)] leading-[0.95] font-bold tracking-[-0.045em] text-balance">{p.name}</h1>
           <p className="mt-6 max-w-[760px] text-[clamp(18px,2vw,24px)] leading-[1.45] text-pretty text-ink-2">{localize(p.desc, locale)}</p>
+          {(repo || p.site) && (
+            <div className="mt-8 flex flex-wrap gap-2.5">
+              {repo && (
+                <a href={repo} className="flex min-h-12 items-center rounded-full bg-btn px-[22px] text-[15px] font-semibold text-btn-ink">
+                  {s("viewCode")}
+                </a>
+              )}
+              {p.site && (
+                <a href={p.site} className="flex min-h-12 items-center rounded-full border border-line-strong px-[22px] text-[15px] font-medium hover:border-ink">
+                  {s("siteLink")}
+                </a>
+              )}
+            </div>
+          )}
           <dl className="mt-8 flex flex-wrap gap-x-12 gap-y-4 text-[15px]">
             {[
               [s("year"), p.year],

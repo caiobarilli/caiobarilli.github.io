@@ -110,6 +110,14 @@ test.describe("projects", () => {
     await expect(page).toHaveURL(/\/en\/projects\/phporto\/$/);
   });
 
+  test("the product and source links sit in the page header, above the case study", async ({ page }) => {
+    await page.goto("/en/projects/keeptask/");
+    const header = page.locator("article > header");
+    await expect(header.getByRole("link", { name: "Product site ↗" })).toHaveAttribute("href", "https://keeptask.io");
+    await page.goto("/en/projects/phporto/");
+    await expect(header.getByRole("link", { name: "Source on GitHub ↗" })).toHaveAttribute("href", /^https:\/\/github\.com\/caiobarilli\//);
+  });
+
   test("the lightbox opens, moves with the arrows and closes with Esc", async ({ page }) => {
     await page.goto("/en/projects/keeptask/");
     const dialog = page.getByRole("dialog");
