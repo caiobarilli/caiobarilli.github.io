@@ -98,7 +98,8 @@
       "eduTitle": "Education",
       "photoAlt": "Photo of Caio Barilli",
       "photo": "photo",
-      "siteLink": "Product site ↗"
+      "siteLink": "Product site ↗",
+      "expand": "Expand image"
     },
     "pt": {
       "nav": {
@@ -198,7 +199,8 @@
       "eduTitle": "Formação",
       "photoAlt": "Foto do Caio Barilli",
       "photo": "foto",
-      "siteLink": "Site do produto ↗"
+      "siteLink": "Site do produto ↗",
+      "expand": "Ampliar imagem"
     }
   },
   "cats": [

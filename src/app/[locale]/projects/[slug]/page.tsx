@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
+import { LightboxButton, LightboxProvider, type LightboxItem } from "@/components/Lightbox";
 import { Shot } from "@/components/Shot";
 import { shotSrc } from "@/content/images";
 import { getContent, isLocale, localize, repoUrl, str } from "@/content";
@@ -49,8 +50,17 @@ export default async function ProjectPage({ params }: { params: Params }) {
   let n = 0;
   const num = () => String(++n).padStart(2, "0");
 
+  // Only screenshots that exist on disk go into the lightbox.
+  const boxItems: (LightboxItem & { file: string })[] = p.shots.flatMap((shot) => {
+    const src = shotSrc(shot.file);
+    return src ? [{ file: shot.file, src, alt: localize(shot.alt, locale), caption: localize(shot.caption, locale) }] : [];
+  });
+  const boxIndex = (file: string) => boxItems.findIndex((item) => item.file === file);
+  const heroAlt = p.shots[0] ? localize(p.shots[0].alt, locale) : p.name;
+
   return (
     <div className="mx-auto max-w-[1200px] px-[clamp(20px,4vw,48px)]">
+      <LightboxProvider items={boxItems} labels={{ close: s("close"), prev: s("prev"), next: s("next") }}>
       <article className="pt-[clamp(40px,6vw,64px)] pb-[clamp(64px,9vw,104px)]">
         <Link href={`/${locale}/projects/`} className="flex min-h-11 items-center font-mono text-sm font-medium text-muted hover:text-ink">
           {s("back")}
@@ -77,14 +87,18 @@ export default async function ProjectPage({ params }: { params: Params }) {
         </header>
 
         {hasShots && (
-          <Shot
-            src={shotSrc(p.shot)}
-            alt={p.shots[0] ? localize(p.shots[0].alt, locale) : p.name}
-            priority
-            label={s("placeholder")}
-            file={`${s("screenshot")} · ${p.shot}`}
-            className="mb-[clamp(48px,7vw,80px)] aspect-[16/8] rounded-2xl border border-line p-[18px] text-xs"
-          />
+          <div className="mb-[clamp(48px,7vw,80px)]">
+            <LightboxButton index={boxIndex(p.shot)} label={`${s("expand")}: ${heroAlt}`}>
+              <Shot
+                src={shotSrc(p.shot)}
+                alt={heroAlt}
+                priority
+                label={s("placeholder")}
+                file={`${s("screenshot")} · ${p.shot}`}
+                className="aspect-[16/8] rounded-2xl border border-line p-[18px] text-xs"
+              />
+            </LightboxButton>
+          </div>
         )}
 
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,420px),1fr))] gap-x-16 gap-y-10">
@@ -129,7 +143,9 @@ export default async function ProjectPage({ params }: { params: Params }) {
             <div className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,300px),1fr))] gap-5">
               {p.shots.map((shot) => (
                 <figure key={shot.file} className="flex flex-col gap-3">
-                  <Shot src={shotSrc(shot.file)} alt={localize(shot.alt, locale)} label={s("placeholder")} file={shot.file} className="aspect-[16/10] rounded-xl border border-line p-3" />
+                  <LightboxButton index={boxIndex(shot.file)} label={`${s("expand")}: ${localize(shot.alt, locale)}`}>
+                    <Shot src={shotSrc(shot.file)} alt={localize(shot.alt, locale)} label={s("placeholder")} file={shot.file} className="aspect-[16/10] rounded-xl border border-line p-3" />
+                  </LightboxButton>
                   <figcaption className="text-sm leading-normal text-ink-2">{localize(shot.caption, locale)}</figcaption>
                 </figure>
               ))}
@@ -168,6 +184,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
           <span className="text-[clamp(28px,4vw,44px)] font-bold tracking-[-0.03em]">{next.name} →</span>
         </Link>
       </article>
+      </LightboxProvider>
     </div>
   );
 }
