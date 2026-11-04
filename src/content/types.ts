@@ -62,6 +62,9 @@ export type Experience = {
   keys: string[];
 };
 
+/** Older job, shown as one compact line. The company is empty for a group of short contracts. */
+export type EarlierExperience = { role: Localized; company?: string; period: string; note?: Localized };
+
 export type Education = { period: string; title: Localized; school: string };
 
 export type Course = {
@@ -89,6 +92,7 @@ export type SiteContent = {
   projects: Project[];
   articles: Article[];
   experience: Experience[];
+  earlierExperience: EarlierExperience[];
   contacts: Contact[];
   education: Education[];
   courses: Course[];

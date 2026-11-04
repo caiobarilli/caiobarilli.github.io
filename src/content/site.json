@@ -84,7 +84,8 @@
       "features": "Features",
       "certificateLink": "Certificate ↗",
       "storyTitle": "My story",
-      "story": "I have been a developer for more than ten years, most of that time with PHP. I started building websites and online stores in WordPress for agencies, learning on the job the part nobody teaches: clients in a hurry, servers going down and production deploys on a Friday afternoon.\n\nI also went deep into the JavaScript ecosystem. I studied React, Next.js, Angular, NestJS and React Native, and shipped projects and an app with them. That background made me more well-rounded: today I move comfortably between back end and front end and pick the tool for the problem. My main focus is Laravel, which is where I build the most today.\n\nMy interest in DevOps came from day-to-day work. On freelance projects I was already looking after clients' servers and deploys, and I set up environments on AWS with Terraform. Over time I moved on to SaaS products in the cloud, and that context became part of the routine. It made sense to study it properly, so I took the MBA in DevOps, Automation & Cloud Strategy at FIAP, and graduated.\n\nOne of the products that sums up this journey is Keeptask, a B2B platform with a Laravel web app and a native iOS and Android app. It is where what excites me most shows up: building software with AI agents. Not as autocomplete, but as a team. I set the plan, the agents carry it out with tests, and I review and decide what goes to production. Everything documented, nothing left in anyone's memory.\n\nTo build and test as if it were production before spending real money on infrastructure, I use my own tools. PHPorto, which I built myself, turns my Windows machine into a solid workstation with a fleet of Linux VMs on Hyper-V, and that is where I validate everything before it ships."
+      "story": "I have been a developer for more than ten years, most of that time with PHP. I started building websites and online stores in WordPress for agencies, learning on the job the part nobody teaches: clients in a hurry, servers going down and production deploys on a Friday afternoon.\n\nI also went deep into the JavaScript ecosystem. I studied React, Next.js, Angular, NestJS and React Native, and shipped projects and an app with them. That background made me more well-rounded: today I move comfortably between back end and front end and pick the tool for the problem. My main focus is Laravel, which is where I build the most today.\n\nMy interest in DevOps came from day-to-day work. On freelance projects I was already looking after clients' servers and deploys, and I set up environments on AWS with Terraform. Over time I moved on to SaaS products in the cloud, and that context became part of the routine. It made sense to study it properly, so I took the MBA in DevOps, Automation & Cloud Strategy at FIAP, and graduated.\n\nOne of the products that sums up this journey is Keeptask, a B2B platform with a Laravel web app and a native iOS and Android app. It is where what excites me most shows up: building software with AI agents. Not as autocomplete, but as a team. I set the plan, the agents carry it out with tests, and I review and decide what goes to production. Everything documented, nothing left in anyone's memory.\n\nTo build and test as if it were production before spending real money on infrastructure, I use my own tools. PHPorto, which I built myself, turns my Windows machine into a solid workstation with a fleet of Linux VMs on Hyper-V, and that is where I validate everything before it ships.",
+      "earlierTitle": "Earlier experience"
     },
     "pt": {
       "nav": {
@@ -170,7 +171,8 @@
       "features": "Recursos",
       "certificateLink": "Certificado ↗",
       "storyTitle": "Minha história",
-      "story": "Sou desenvolvedor há mais de dez anos, e boa parte desse tempo foi com PHP. Comecei fazendo sites e e-commerces em WordPress para agências, aprendendo na prática a parte que ninguém ensina: cliente com pressa, servidor caindo e deploy em produção numa sexta à tarde.\n\nTambém fui a fundo no ecossistema JavaScript. Estudei React, Next.js, Angular, NestJS e React Native, e entreguei projetos e app com eles. Essa bagagem me deixou mais completo: hoje transito bem entre o back e o front e escolho a ferramenta pelo problema. O meu foco principal está no Laravel, que é onde eu mais construo hoje.\n\nO interesse por DevOps veio do dia a dia. Nos freelas eu já cuidava do servidor e do deploy dos clientes, e cheguei a montar ambientes na AWS com Terraform. Com o tempo, passei a trabalhar com produtos SaaS na nuvem, e esse contexto virou parte da rotina. Fazia sentido estudar a fundo, então fiz o MBA em DevOps, Automation & Cloud Strategy na FIAP, e me formei.\n\nUm dos produtos que resume bem essa jornada é o Keeptask, uma plataforma B2B com web em Laravel e app nativo para iOS e Android. É nele que aparece o que mais me empolga: desenvolver com agentes de IA. Não como autocomplete, mas como um time. Eu defino o plano, os agentes executam com testes, e eu reviso e decido o que vai para produção. Tudo documentado, nada na memória de ninguém.\n\nPara desenvolver e testar como se fosse produção antes de investir dinheiro de verdade em infraestrutura, uso as minhas próprias ferramentas. O PHPorto, que eu mesmo construí, deixa o meu Windows robusto como base de trabalho, com uma frota de VMs Linux no Hyper-V, e é nela que valido tudo antes de subir."
+      "story": "Sou desenvolvedor há mais de dez anos, e boa parte desse tempo foi com PHP. Comecei fazendo sites e e-commerces em WordPress para agências, aprendendo na prática a parte que ninguém ensina: cliente com pressa, servidor caindo e deploy em produção numa sexta à tarde.\n\nTambém fui a fundo no ecossistema JavaScript. Estudei React, Next.js, Angular, NestJS e React Native, e entreguei projetos e app com eles. Essa bagagem me deixou mais completo: hoje transito bem entre o back e o front e escolho a ferramenta pelo problema. O meu foco principal está no Laravel, que é onde eu mais construo hoje.\n\nO interesse por DevOps veio do dia a dia. Nos freelas eu já cuidava do servidor e do deploy dos clientes, e cheguei a montar ambientes na AWS com Terraform. Com o tempo, passei a trabalhar com produtos SaaS na nuvem, e esse contexto virou parte da rotina. Fazia sentido estudar a fundo, então fiz o MBA em DevOps, Automation & Cloud Strategy na FIAP, e me formei.\n\nUm dos produtos que resume bem essa jornada é o Keeptask, uma plataforma B2B com web em Laravel e app nativo para iOS e Android. É nele que aparece o que mais me empolga: desenvolver com agentes de IA. Não como autocomplete, mas como um time. Eu defino o plano, os agentes executam com testes, e eu reviso e decido o que vai para produção. Tudo documentado, nada na memória de ninguém.\n\nPara desenvolver e testar como se fosse produção antes de investir dinheiro de verdade em infraestrutura, uso as minhas próprias ferramentas. O PHPorto, que eu mesmo construí, deixa o meu Windows robusto como base de trabalho, com uma frota de VMs Linux no Hyper-V, e é nela que valido tudo antes de subir.",
+      "earlierTitle": "Experiência anterior"
     }
   },
   "cats": [
@@ -2033,36 +2035,71 @@
         "name": "AgroNegociar",
         "url": "https://www.linkedin.com/company/agronegociar/"
       }
+    }
+  ],
+  "earlierExperience": [
+    {
+      "role": {
+        "pt": "Desenvolvedor full stack",
+        "en": "Full stack developer"
+      },
+      "company": "CTC (antiga Interaktiv)",
+      "period": "2020",
+      "note": {
+        "pt": "Laravel, CakePHP, WordPress, Vue.js e Docker; conduzia a daily e a planning do Scrum.",
+        "en": "Laravel, CakePHP, WordPress, Vue.js and Docker; ran the Scrum daily and planning."
+      }
     },
     {
-      "period": {
-        "en": "2020 — 2022",
-        "pt": "2020 — 2022"
-      },
       "role": {
-        "en": "Fullstack Developer (freelance, recurring projects)",
-        "pt": "Desenvolvedor Fullstack (freelance, projetos recorrentes)"
+        "pt": "Desenvolvedor front-end e líder técnico do front",
+        "en": "Front-end developer and front-end tech lead"
       },
-      "kind": {
-        "en": "Remote",
-        "pt": "Remoto"
+      "company": "Zebra Deluxe Comunicação",
+      "period": "2019–2020"
+    },
+    {
+      "role": {
+        "pt": "Desenvolvedor full stack",
+        "en": "Full stack developer"
       },
-      "summary": {
-        "en": "Client sites in WordPress and PHP; theme refactoring for performance and SEO; SCSS and Webpack; jQuery; MySQL query optimization; requirements meetings with clients; Figma with designers.",
-        "pt": "Sites de clientes em WordPress e PHP; refatoração de temas para performance e SEO; SCSS e Webpack; jQuery; otimização de queries MySQL; reuniões de requisitos com clientes; Figma com designers."
+      "company": "Shape Web",
+      "period": "2018"
+    },
+    {
+      "role": {
+        "pt": "Desenvolvedor front-end e líder técnico do front",
+        "en": "Front-end developer and front-end tech lead"
       },
-      "keys": [
-        "PHP",
-        "WordPress",
-        "JavaScript",
-        "SCSS",
-        "Webpack",
-        "MySQL"
-      ],
-      "company": {
-        "name": "Layer Up",
-        "url": "https://www.linkedin.com/company/layer-up/"
+      "company": "123Carros",
+      "period": "2018",
+      "note": {
+        "pt": "front-end do marketplace.",
+        "en": "marketplace front end."
       }
+    },
+    {
+      "role": {
+        "pt": "Programador e líder técnico",
+        "en": "Developer and tech lead"
+      },
+      "company": "Capital Mídia",
+      "period": "2016–2017"
+    },
+    {
+      "role": {
+        "pt": "Projetos freelance e contratos curtos para agências e consultorias (WebSide, 3xceler, Layer Up, Zebra Deluxe, Meeta Solutions, QuikDev)",
+        "en": "Freelance projects and short contracts for agencies and consultancies (WebSide, 3xceler, Layer Up, Zebra Deluxe, Meeta Solutions, QuikDev)"
+      },
+      "period": "2017–2022"
+    },
+    {
+      "role": {
+        "pt": "Estágio",
+        "en": "Internship"
+      },
+      "company": "VAD Estúdio Multimídia",
+      "period": "2013"
     }
   ],
   "contacts": [

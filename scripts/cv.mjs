@@ -48,6 +48,12 @@ function build({ key, html }) {
     )
     .join("");
 
+  const earlier = site.earlierExperience
+    .map(
+      (e) => `<li><div class="row"><span>${esc(loc(e.role, key))}${e.company ? ` · ${esc(e.company)}` : ""}</span><span class="meta">${esc(e.period)}</span></div>${e.note ? `<p class="stack">${esc(loc(e.note, key))}</p>` : ""}</li>`,
+    )
+    .join("");
+
   const education = site.education
     .map(
       (ed) => `<div class="item">
@@ -85,6 +91,7 @@ function build({ key, html }) {
   .stack { font-size: 8.4pt; color: #555; }
   .role { font-style: italic; }
   ul { margin: 0; padding: 0; list-style: none; }
+  .earlier li { display: block; }
   li { display: flex; justify-content: space-between; gap: 12px; margin-top: 2px; }
 </style></head><body>
 <h1>${esc(name)}</h1>
@@ -93,6 +100,7 @@ function build({ key, html }) {
 <h2>${esc(ui.aboutTitle)}</h2>
 <p>${esc(ui.cvSummary)}</p>
 <h2>${esc(ui.expTitle)}</h2>${experience}
+<h2>${esc(ui.earlierTitle)}</h2><ul class="earlier">${earlier}</ul>
 <h2>${esc(ui.projectsTitle)}</h2>${PROJECTS.map((slug) => project(slug, key, ui)).join("")}
 <section class="edu"><h2>${esc(ui.eduTitle)}</h2>${education}</section>
 <h2>${esc(ui.coursesTitle)}</h2><ul>${certificates}</ul>

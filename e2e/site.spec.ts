@@ -448,3 +448,27 @@ test.describe("projects", () => {
     await expect(dialog).toBeHidden();
   });
 });
+
+test.describe("experience", () => {
+  const pages: [string, string, string][] = [
+    ["/en/experience/", "Earlier experience", "Internship · VAD Estúdio Multimídia"],
+    ["/pt-br/experience/", "Experiência anterior", "Estágio · VAD Estúdio Multimídia"],
+  ];
+  for (const [path, title, last] of pages) {
+    test(`${path} lists the 7 earlier jobs after the main ones, and Layer Up is not a main job`, async ({ page }) => {
+      await page.goto(path);
+      const items = page.getByTestId("earlier-experience").locator("> li");
+      await expect(items).toHaveCount(7);
+      await expect(items.last()).toContainText(last);
+      await expect(page.getByRole("heading", { name: title })).toBeVisible();
+      // The main timeline is the <ol>: only KeepCloud and AgroNegociar.
+      const main = page.locator("main ol > li");
+      await expect(main).toHaveCount(2);
+      await expect(main.filter({ hasText: "Layer Up" })).toHaveCount(0);
+      // Compact: no links inside the section.
+      await expect(page.getByTestId("earlier-experience").locator("a")).toHaveCount(0);
+      const order = await page.locator("main h2").allTextContents();
+      expect(order.indexOf(title)).toBeGreaterThan(0);
+    });
+  }
+});

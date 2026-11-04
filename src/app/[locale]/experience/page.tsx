@@ -9,7 +9,7 @@ export default async function ExperiencePage({ params }: { params: Promise<{ loc
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
   const s = (key: string) => str(locale, key);
-  const { experience, education, courses } = getContent();
+  const { experience, earlierExperience, education, courses } = getContent();
 
   return (
     <PageShell>
@@ -46,6 +46,24 @@ export default async function ExperiencePage({ params }: { params: Promise<{ loc
       </ol>
 
       <section className="mt-[clamp(24px,4vw,40px)] border-t border-line pt-8">
+        <h2 className="mb-5 text-[28px] font-semibold tracking-[-0.02em]">{s("earlierTitle")}</h2>
+        <ul data-testid="earlier-experience">
+          {earlierExperience.map((e) => (
+            <li key={`${e.company ?? ""}${e.period}${localize(e.role, locale)}`} className="border-b border-line py-3.5">
+              <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
+                <span className="min-w-0 text-base font-semibold">
+                  {localize(e.role, locale)}
+                  {e.company && <span className="font-normal text-ink-2"> · {e.company}</span>}
+                </span>
+                <span className="font-mono text-sm font-medium text-accent-text">{e.period}</span>
+              </div>
+              {e.note && <p className="mt-1 max-w-[640px] text-sm leading-[1.5] text-muted">{localize(e.note, locale)}</p>}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="mt-12 border-t border-line pt-8">
         <h2 className="mb-5 text-[28px] font-semibold tracking-[-0.02em]">{s("eduTitle")}</h2>
         <ul>
           {education.map((ed) => (
