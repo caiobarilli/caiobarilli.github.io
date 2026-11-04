@@ -10,12 +10,13 @@ export const generateMetadata = sectionMetadata("contactTitle", "contactSub", "c
 function Row({ label, children }: { label: string; children: ReactNode }) {
   return (
     <>
-      <span className="min-w-[120px] font-mono text-[13px] font-medium text-muted">{label}</span>
+      <span className={labelClass}>{label}</span>
       {children}
     </>
   );
 }
 
+const labelClass = "min-w-[120px] font-mono text-[13px] font-medium text-muted";
 const rowClass = "flex flex-wrap items-center justify-between gap-x-6 gap-y-3 py-6";
 const valueClass = "flex-1 text-[clamp(22px,3.2vw,36px)] font-semibold tracking-[-0.02em] [overflow-wrap:anywhere]";
 
@@ -42,6 +43,16 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
                   {pendingTag}
                 </Row>
               </div>
+            ) : c.url.startsWith("mailto:") ? (
+              <EmailButton
+                variant="row"
+                address={c.handle}
+                label={c.label}
+                copiedLabel={s("emailCopied")}
+                className={`${rowClass} hover:text-accent-text`}
+                labelClassName={labelClass}
+                valueClassName={valueClass}
+              />
             ) : (
               <a href={c.url} className={`${rowClass} hover:text-accent-text`}>
                 <Row label={c.label}>
@@ -49,11 +60,6 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
                   <span aria-hidden className="text-2xl">↗</span>
                 </Row>
               </a>
-            )}
-            {!c.pending && c.url.startsWith("mailto:") && (
-              <div className="flex flex-wrap items-center gap-3 pb-6">
-                <EmailButton address={c.handle} label={c.label} copiedLabel={s("emailCopied")} className="min-h-11 items-center rounded-full border border-line-strong px-[18px] text-sm font-medium hover:border-ink" />
-              </div>
             )}
           </li>
         ))}

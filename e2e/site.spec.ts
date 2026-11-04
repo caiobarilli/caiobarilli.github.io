@@ -71,7 +71,7 @@ test.describe("home", () => {
     await expect(hero.getByRole("link", { name: "LinkedIn ↗" })).toHaveAttribute("href", "https://www.linkedin.com/in/caio-barilli");
   });
 
-  const emailPages: [string, string][] = [["/en/", "Copied!"], ["/pt-br/contact/", "Copiado!"]];
+  const emailPages: [string, string][] = [["/en/", "Copied!"]];
   for (const [path, copied] of emailPages) {
     test(`the e-mail button on ${path} copies the address on desktop and is a mailto: link on a phone`, async ({ page, context, isMobile }) => {
       await page.goto(path);
@@ -114,9 +114,48 @@ test.describe("home", () => {
     await expect(page.locator('a[href^="/cv/"]')).toHaveCount(0);
   });
 
-  test("the contact page writes the address out, visible without clicking", async ({ page }) => {
-    await page.goto("/pt-br/contact/");
-    await expect(page.getByText("caiobarilli@gmail.com", { exact: true })).toBeVisible();
+  const contactCases: [string, string][] = [["/pt-br/contact/", "Copiado!"], ["/en/contact/", "Copied!"]];
+  for (const [path, copied] of contactCases) {
+    test(`on ${path} the address itself is the e-mail control, with no separate button`, async ({ page, context, isMobile }) => {
+      await page.goto(path);
+      const address = page.getByText("caiobarilli@gmail.com", { exact: true }).locator("visible=true");
+      await expect(address).toBeVisible();
+      // No standalone "E-mail" button or link: the row is the control.
+      await expect(page.getByRole("button", { name: "E-mail", exact: true })).toHaveCount(0);
+      await expect(page.getByRole("link", { name: "E-mail", exact: true })).toHaveCount(0);
+      if (isMobile) {
+        const link = page.getByRole("link", { name: /caiobarilli@gmail.com/ });
+        await expect(link).toBeVisible();
+        await expect(link).toHaveAttribute("href", "mailto:caiobarilli@gmail.com");
+        await expect(page.getByRole("button", { name: /caiobarilli@gmail.com/ })).toHaveCount(0);
+        return;
+      }
+      await context.grantPermissions(["clipboard-read", "clipboard-write"]);
+      const row = page.getByRole("button", { name: /caiobarilli@gmail.com/ });
+      const before = await address.boundingBox();
+      // The page is static: retry the click until React has hydrated the handler.
+      await expect(async () => {
+        await row.click();
+        await expect(page.locator("[aria-live=polite]").first()).toHaveText(copied, { timeout: 500 });
+      }).toPass();
+      await expect(row.getByText(copied, { exact: true })).toBeVisible();
+      expect(await address.boundingBox()).toEqual(before);
+      expect(await page.evaluate(() => navigator.clipboard.readText())).toBe("caiobarilli@gmail.com");
+      await expect(row.getByText(copied, { exact: true })).toBeHidden({ timeout: 4000 });
+      expect((await row.boundingBox())?.height).toBeGreaterThanOrEqual(44);
+    });
+  }
+
+  test("on the contact page a blocked clipboard leaves the address selected", async ({ page, isMobile }) => {
+    test.skip(isMobile, "phones use the mailto: link");
+    await page.addInitScript(() => {
+      Object.defineProperty(navigator, "clipboard", { value: { writeText: () => Promise.reject(new Error("blocked")) } });
+    });
+    await page.goto("/en/contact/");
+    await expect(async () => {
+      await page.getByRole("button", { name: /caiobarilli@gmail.com/ }).click();
+      expect(await page.evaluate(() => window.getSelection()?.toString())).toBe("caiobarilli@gmail.com");
+    }).toPass();
   });
 
   test("when the clipboard is blocked the button shows the address", async ({ page, isMobile }) => {
