@@ -659,14 +659,14 @@
           }
         },
         {
-          "file": "keeptask-dashboard.webp",
+          "file": "keeptask-settings.webp",
           "caption": {
-            "en": "Configurable dashboard",
-            "pt": "Dashboard configurável"
+            "en": "Settings: integrations, HMAC-signed webhooks and scoped API tokens",
+            "pt": "Configurações: integrações, webhooks assinados com HMAC e tokens de API com escopos"
           },
           "alt": {
-            "en": "Keeptask dashboard with charts",
-            "pt": "Dashboard do Keeptask com gráficos"
+            "en": "Keeptask integrations settings with Google Workspace, Zapier, webhooks and API tokens",
+            "pt": "Configurações de integrações do Keeptask com Google Workspace, Zapier, webhooks e tokens de API"
           }
         },
         {
