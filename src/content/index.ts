@@ -17,8 +17,9 @@ export function contentKey(locale: Locale): keyof Localized {
   return locale === "en" ? "en" : "pt";
 }
 
-export function localize(text: Localized, locale: Locale): string {
-  return text[contentKey(locale)];
+/** Text in the given language; a plain string is the same in both. */
+export function localize(text: Localized | string, locale: Locale): string {
+  return typeof text === "string" ? text : text[contentKey(locale)];
 }
 
 export function ui(locale: Locale) {

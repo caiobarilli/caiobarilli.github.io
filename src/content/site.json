@@ -973,8 +973,8 @@
         "pt": "Projeto pessoal"
       },
       "status": {
-        "en": "Active",
-        "pt": "Ativo"
+        "en": "In development",
+        "pt": "Em desenvolvimento"
       },
       "stack": [
         "Laravel 13",
@@ -1272,7 +1272,10 @@
     },
     {
       "slug": "aws-terraform",
-      "name": "AWS platform with Terraform",
+      "name": {
+        "en": "AWS platform with Terraform",
+        "pt": "Plataforma AWS com Terraform"
+      },
       "cats": [
         "devops"
       ],
@@ -1316,8 +1319,8 @@
         "pt": "A AgroNegociar tinha um app para o agronegócio e precisava de uma porta de entrada para novos clientes. A estratégia foi criar uma comunidade: um portal de notícias e uma rede social onde produtores, empresas e leitores do setor se encontram, consomem conteúdo e chegam até o app. Para isso funcionar, o site precisava ser completo, rápido em qualquer tela e fácil para a equipe do cliente administrar, e a infraestrutura precisava ser confiável, sem risco de perder conteúdo."
       },
       "solution": {
-        "en": "The portal and the social network were built on Network, a complete community WordPress theme, with a child theme carrying the project's identity and a fully responsive layout. Pages were built in Elementor. The social network runs on the big community plugins integrated with the theme, BuddyPress and bbPress, and on top of them we developed several custom plugins: tools for the administrators and layout components the theme did not offer. On the infrastructure side, everything is versioned as code with Terraform: an Ubuntu server on AWS with the site on a separate disk, remote, encrypted state in S3, and identical production and staging environments. Every week an automatic backup of the database and the theme goes to a bucket. Since everything else is rebuilt from code, the whole environment can be recreated without losses. DNS and SSL run on Cloudflare, and the server is managed with WordOps.",
-        "pt": "O portal e a rede social foram construídos sobre o Network, um tema WordPress completo de comunidade, com um child theme com a identidade do projeto e layout totalmente responsivo. As páginas foram montadas no Elementor. A rede social usa os grandes plugins de comunidade integrados ao tema, o BuddyPress e o bbPress, e por cima deles desenvolvemos vários plugins próprios: ferramentas para os administradores e componentes de layout que o tema não oferecia. Na infraestrutura, tudo é versionado como código com Terraform: servidor Ubuntu na AWS com o site num disco separado, estado remoto e criptografado no S3, e produção e homologação idênticas. Toda semana, um backup automático do banco de dados e do tema vai para um bucket. Como todo o resto é recriado a partir do código, o ambiente inteiro pode ser reconstruído sem perdas. O DNS e o SSL ficam no Cloudflare, e o servidor é gerenciado com WordOps."
+        "en": "The portal and the social network were built on a complete community WordPress theme, with a child theme carrying the project's identity and a fully responsive layout. Pages were built in Elementor. The social network runs on the big community plugins integrated with the theme, BuddyPress and bbPress, and on top of them we developed several custom plugins: tools for the administrators and layout components the theme did not offer. On the infrastructure side, everything is versioned as code with Terraform: an Ubuntu server on AWS with the site on a separate disk, remote, encrypted state in S3, and identical production and staging environments. Every week an automatic backup of the database and the theme goes to a bucket. Since everything else is rebuilt from code, the whole environment can be recreated without losses. DNS and SSL run on Cloudflare, and the server is managed with WordOps.",
+        "pt": "O portal e a rede social foram construídos sobre um tema WordPress completo de comunidade, com um child theme com a identidade do projeto e layout totalmente responsivo. As páginas foram montadas no Elementor. A rede social usa os grandes plugins de comunidade integrados ao tema, o BuddyPress e o bbPress, e por cima deles desenvolvemos vários plugins próprios: ferramentas para os administradores e componentes de layout que o tema não oferecia. Na infraestrutura, tudo é versionado como código com Terraform: servidor Ubuntu na AWS com o site num disco separado, estado remoto e criptografado no S3, e produção e homologação idênticas. Toda semana, um backup automático do banco de dados e do tema vai para um bucket. Como todo o resto é recriado a partir do código, o ambiente inteiro pode ser reconstruído sem perdas. O DNS e o SSL ficam no Cloudflare, e o servidor é gerenciado com WordOps."
       },
       "adrs": [
         {
@@ -1327,8 +1330,8 @@
             "pt": "Partir de um tema completo"
           },
           "body": {
-            "en": "Network already brought the community base, so the effort went into what was unique to the business.",
-            "pt": "O Network já trazia a base de comunidade, e o esforço foi para o que era único do negócio."
+            "en": "The theme already brought the community base, so the effort went into what was unique to the business.",
+            "pt": "O tema já trazia a base de comunidade, e o esforço foi para o que era único do negócio."
           }
         },
         {
@@ -1441,8 +1444,8 @@
           },
           "items": [
             {
-              "en": "Child theme over Network, pages in Elementor and a responsive layout on any screen",
-              "pt": "Child theme sobre o Network, páginas no Elementor e layout responsivo em qualquer tela"
+              "en": "Child theme over a community theme, pages in Elementor and a responsive layout on any screen",
+              "pt": "Child theme sobre um tema de comunidade, páginas no Elementor e layout responsivo em qualquer tela"
             }
           ]
         },
@@ -2002,8 +2005,8 @@
         "pt": "Remoto"
       },
       "summary": {
-        "en": "Institutional site and news portal on WordPress (child theme over GhostPool's Network theme, plus custom plugins); AWS environments with Terraform (production and staging); DNS and SSL via Cloudflare; WordOps provisioning; Docker; technical SEO and performance; worked directly with the client and coordinated the design team.",
-        "pt": "Site institucional e portal de notícias em WordPress (child theme sobre o tema Network, da GhostPool, e plugins próprios); ambientes AWS com Terraform (produção e staging); DNS e SSL via Cloudflare; provisionamento com WordOps; Docker; SEO técnico e performance; contato direto com o cliente e coordenação do time de design."
+        "en": "Institutional site and news portal on WordPress (child theme over a community theme, plus custom plugins); AWS environments with Terraform (production and staging); DNS and SSL via Cloudflare; WordOps provisioning; Docker; technical SEO and performance; worked directly with the client and coordinated the design team.",
+        "pt": "Site institucional e portal de notícias em WordPress (child theme sobre um tema de comunidade e plugins próprios); ambientes AWS com Terraform (produção e staging); DNS e SSL via Cloudflare; provisionamento com WordOps; Docker; SEO técnico e performance; contato direto com o cliente e coordenação do time de design."
       },
       "keys": [
         "WordPress",

@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   const { locale, slug } = await params;
   const found = findProject(slug);
   if (!isLocale(locale) || !found) return {};
-  return pageMetadata(locale, `${found.project.name} · Caio Barilli`, localize(found.project.desc, locale), `projects/${slug}/`);
+  return pageMetadata(locale, `${localize(found.project.name, locale)} · Caio Barilli`, localize(found.project.desc, locale), `projects/${slug}/`);
 }
 
 function Block({ title, children, className = "" }: { title: string; children: ReactNode; className?: string }) {
@@ -57,7 +57,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
     return src ? [{ file: shot.file, src, alt: localize(shot.alt, locale), caption: localize(shot.caption, locale) }] : [];
   });
   const boxIndex = (file: string) => boxItems.findIndex((item) => item.file === file);
-  const heroAlt = p.shots[0] ? localize(p.shots[0].alt, locale) : p.name;
+  const heroAlt = p.shots[0] ? localize(p.shots[0].alt, locale) : localize(p.name, locale);
 
   return (
     <div className="mx-auto max-w-[1200px] px-[clamp(20px,4vw,48px)]">
@@ -71,7 +71,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
           <span className="inline-flex rounded-full border border-accent-line px-2.5 py-1 font-mono text-xs font-medium text-accent-text">
             {localize(p.tag, locale)}
           </span>
-          <h1 className="mt-5 text-[clamp(44px,8vw,104px)] leading-[0.95] font-bold tracking-[-0.045em] text-balance">{p.name}</h1>
+          <h1 className="mt-5 text-[clamp(44px,8vw,104px)] leading-[0.95] font-bold tracking-[-0.045em] text-balance">{localize(p.name, locale)}</h1>
           <p className="mt-6 max-w-[760px] text-[clamp(18px,2vw,24px)] leading-[1.45] text-pretty text-ink-2">{localize(p.desc, locale)}</p>
           {(repo || p.site) && (
             <div className="mt-8 flex flex-wrap gap-2.5">
@@ -240,7 +240,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
           className="mt-[clamp(56px,8vw,96px)] flex w-full flex-wrap items-baseline justify-between gap-4 border-t border-line pt-6 hover:text-accent-text"
         >
           <span className="font-mono text-[13px] font-medium text-muted">{s("nextProject")}</span>
-          <span className="text-[clamp(28px,4vw,44px)] font-bold tracking-[-0.03em]">{next.name} →</span>
+          <span className="text-[clamp(28px,4vw,44px)] font-bold tracking-[-0.03em]">{localize(next.name, locale)} →</span>
         </Link>
       </article>
       </LightboxProvider>

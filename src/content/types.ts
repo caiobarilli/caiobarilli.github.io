@@ -15,7 +15,8 @@ export type Shot = { file: string; caption: Localized; alt: Localized };
 
 export type Project = {
   slug: string;
-  name: string;
+  /** Same in both languages, or per language when the name is a description. */
+  name: string | Localized;
   cats: Exclude<CategoryId, "all">[];
   main: boolean;
   repo: boolean;

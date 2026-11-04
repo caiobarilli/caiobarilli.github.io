@@ -111,6 +111,15 @@ test.describe("home", () => {
     await context.close();
   });
 
+  test("the AWS project title follows the language and PHParrot shows it is still in development", async ({ page }) => {
+    await page.goto("/pt-br/projects/aws-terraform/");
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText("Plataforma AWS com Terraform");
+    await page.goto("/en/projects/aws-terraform/");
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText("AWS platform with Terraform");
+    await page.goto("/pt-br/projects/phparrot/");
+    await expect(page.getByText("Em desenvolvimento", { exact: true })).toBeVisible();
+  });
+
   test("the static 404 never links to the internal _not-found route", async ({ request }) => {
     const html = await (await request.get("/404.html")).text();
     expect(html).not.toContain('href="/_not-found');

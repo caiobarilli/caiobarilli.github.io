@@ -12,4 +12,4 @@ export const routes = [
   ...content.projects.map((p) => `projects/${p.slug}/`),
 ];
 
-export const featured = content.projects.filter((p) => p.main).map((p) => p.name);
+export const featured = content.projects.filter((p) => p.main).map((p) => (typeof p.name === "string" ? p.name : p.name.en));

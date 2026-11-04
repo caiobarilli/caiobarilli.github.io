@@ -15,7 +15,7 @@ export default async function Projects({ params }: { params: Promise<{ locale: s
 
   const cards: ProjectCard[] = projects.map((p) => ({
     slug: p.slug,
-    name: p.name,
+    name: localize(p.name, locale),
     main: p.main,
     cats: p.cats,
     tag: localize(p.tag, locale),
@@ -24,7 +24,7 @@ export default async function Projects({ params }: { params: Promise<{ locale: s
     stackLine: p.stack.join(" · "),
     shot: p.shot,
     img: p.shot ? shotSrc(p.shot) : null,
-    alt: p.shots[0] ? localize(p.shots[0].alt, locale) : p.name,
+    alt: p.shots[0] ? localize(p.shots[0].alt, locale) : localize(p.name, locale),
     href: `/${locale}/projects/${p.slug}/`,
   }));
 
