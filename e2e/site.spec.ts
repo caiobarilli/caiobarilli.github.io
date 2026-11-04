@@ -367,12 +367,10 @@ test.describe("narrow header", () => {
     await expect(page.locator("#mobile-nav").getByRole("button", { name: "Switch theme" })).toHaveCount(0);
   });
 
-  // The right gap should equal the left padding. Measured today: 320px leaves 16px (needs 20) and 375px leaves 19px;
-  // those two are marked fixme until the header spacing is revisited (see the round report).
-  for (const width of [320, 360, 375, 414]) {
+  // The right gap should equal the left padding at every phone width.
+  for (const width of [320, 321, 323, 360, 374, 375, 414]) {
     test(`at ${width}px the header's right gap is at least its left padding`, async ({ page, isMobile }) => {
       test.skip(!isMobile, "phone layout");
-      test.fixme(width === 320 || width === 375, "header spacing short by 4px at 320px and 1px at 375px");
       await page.setViewportSize({ width, height: 700 });
       await page.goto("/pt-br/");
       const { pad, gap } = await page.evaluate(() => {
