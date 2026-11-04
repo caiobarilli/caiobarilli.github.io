@@ -79,8 +79,7 @@
       "features": "Features",
       "certificateLink": "Certificate ↗",
       "storyTitle": "My story",
-      "story": "I have been a developer for more than ten years, most of that time with PHP. I started building websites and online stores in WordPress for agencies, learning on the job the part nobody teaches: clients in a hurry, servers going down and production deploys on a Friday afternoon.\n\nI also went deep into the JavaScript ecosystem. I studied React, Next.js, Angular, NestJS and React Native, and shipped projects and an app with them. That background made me more well-rounded: today I move comfortably between back end and front end and pick the tool for the problem. My main focus is Laravel, which is where I build the most today.\n\nMy interest in DevOps came from day-to-day work. On freelance projects I was already looking after clients' servers and deploys, and I set up environments on AWS with Terraform. Over time I moved on to SaaS products in the cloud, and that context became part of the routine. It made sense to study it properly, so I took the MBA in DevOps, Automation & Cloud Strategy at FIAP, and graduated.\n\nOne of the products that sums up this journey is Keeptask, a B2B platform with a Laravel web app and a native iOS and Android app. It is where what excites me most shows up: building software with AI agents. Not as autocomplete, but as a team. I set the plan, the agents carry it out with tests, and I review and decide what goes to production. Everything documented, nothing left in anyone's memory.\n\nTo build and test as if it were production before spending real money on infrastructure, I use my own tools. PHPorto, which I built myself, turns my Windows machine into a solid workstation with a fleet of Linux VMs on Hyper-V, and that is where I validate everything before it ships.",
-      "repoLink": "Repository ↗"
+      "story": "I have been a developer for more than ten years, most of that time with PHP. I started building websites and online stores in WordPress for agencies, learning on the job the part nobody teaches: clients in a hurry, servers going down and production deploys on a Friday afternoon.\n\nI also went deep into the JavaScript ecosystem. I studied React, Next.js, Angular, NestJS and React Native, and shipped projects and an app with them. That background made me more well-rounded: today I move comfortably between back end and front end and pick the tool for the problem. My main focus is Laravel, which is where I build the most today.\n\nMy interest in DevOps came from day-to-day work. On freelance projects I was already looking after clients' servers and deploys, and I set up environments on AWS with Terraform. Over time I moved on to SaaS products in the cloud, and that context became part of the routine. It made sense to study it properly, so I took the MBA in DevOps, Automation & Cloud Strategy at FIAP, and graduated.\n\nOne of the products that sums up this journey is Keeptask, a B2B platform with a Laravel web app and a native iOS and Android app. It is where what excites me most shows up: building software with AI agents. Not as autocomplete, but as a team. I set the plan, the agents carry it out with tests, and I review and decide what goes to production. Everything documented, nothing left in anyone's memory.\n\nTo build and test as if it were production before spending real money on infrastructure, I use my own tools. PHPorto, which I built myself, turns my Windows machine into a solid workstation with a fleet of Linux VMs on Hyper-V, and that is where I validate everything before it ships."
     },
     "pt": {
       "nav": {
@@ -161,8 +160,7 @@
       "features": "Recursos",
       "certificateLink": "Certificado ↗",
       "storyTitle": "Minha história",
-      "story": "Sou desenvolvedor há mais de dez anos, e boa parte desse tempo foi com PHP. Comecei fazendo sites e e-commerces em WordPress para agências, aprendendo na prática a parte que ninguém ensina: cliente com pressa, servidor caindo e deploy em produção numa sexta à tarde.\n\nTambém fui a fundo no ecossistema JavaScript. Estudei React, Next.js, Angular, NestJS e React Native, e entreguei projetos e app com eles. Essa bagagem me deixou mais completo: hoje transito bem entre o back e o front e escolho a ferramenta pelo problema. O meu foco principal está no Laravel, que é onde eu mais construo hoje.\n\nO interesse por DevOps veio do dia a dia. Nos freelas eu já cuidava do servidor e do deploy dos clientes, e cheguei a montar ambientes na AWS com Terraform. Com o tempo, passei a trabalhar com produtos SaaS na nuvem, e esse contexto virou parte da rotina. Fazia sentido estudar a fundo, então fiz o MBA em DevOps, Automation & Cloud Strategy na FIAP, e me formei.\n\nUm dos produtos que resume bem essa jornada é o Keeptask, uma plataforma B2B com web em Laravel e app nativo para iOS e Android. É nele que aparece o que mais me empolga: desenvolver com agentes de IA. Não como autocomplete, mas como um time. Eu defino o plano, os agentes executam com testes, e eu reviso e decido o que vai para produção. Tudo documentado, nada na memória de ninguém.\n\nPara desenvolver e testar como se fosse produção antes de investir dinheiro de verdade em infraestrutura, uso as minhas próprias ferramentas. O PHPorto, que eu mesmo construí, deixa o meu Windows robusto como base de trabalho, com uma frota de VMs Linux no Hyper-V, e é nela que valido tudo antes de subir.",
-      "repoLink": "Repositório ↗"
+      "story": "Sou desenvolvedor há mais de dez anos, e boa parte desse tempo foi com PHP. Comecei fazendo sites e e-commerces em WordPress para agências, aprendendo na prática a parte que ninguém ensina: cliente com pressa, servidor caindo e deploy em produção numa sexta à tarde.\n\nTambém fui a fundo no ecossistema JavaScript. Estudei React, Next.js, Angular, NestJS e React Native, e entreguei projetos e app com eles. Essa bagagem me deixou mais completo: hoje transito bem entre o back e o front e escolho a ferramenta pelo problema. O meu foco principal está no Laravel, que é onde eu mais construo hoje.\n\nO interesse por DevOps veio do dia a dia. Nos freelas eu já cuidava do servidor e do deploy dos clientes, e cheguei a montar ambientes na AWS com Terraform. Com o tempo, passei a trabalhar com produtos SaaS na nuvem, e esse contexto virou parte da rotina. Fazia sentido estudar a fundo, então fiz o MBA em DevOps, Automation & Cloud Strategy na FIAP, e me formei.\n\nUm dos produtos que resume bem essa jornada é o Keeptask, uma plataforma B2B com web em Laravel e app nativo para iOS e Android. É nele que aparece o que mais me empolga: desenvolver com agentes de IA. Não como autocomplete, mas como um time. Eu defino o plano, os agentes executam com testes, e eu reviso e decido o que vai para produção. Tudo documentado, nada na memória de ninguém.\n\nPara desenvolver e testar como se fosse produção antes de investir dinheiro de verdade em infraestrutura, uso as minhas próprias ferramentas. O PHPorto, que eu mesmo construí, deixa o meu Windows robusto como base de trabalho, com uma frota de VMs Linux no Hyper-V, e é nela que valido tudo antes de subir."
     }
   },
   "cats": [
@@ -1337,6 +1335,184 @@
       ]
     },
     {
+      "slug": "info4all",
+      "name": "Info4All",
+      "cats": [
+        "ai",
+        "devops"
+      ],
+      "main": true,
+      "repo": true,
+      "demo": false,
+      "tag": {
+        "en": "AI · Data · Capstone",
+        "pt": "IA · Dados · TCC"
+      },
+      "year": "2026",
+      "type": {
+        "en": "Group capstone · FIAP MBA",
+        "pt": "TCC em grupo · MBA FIAP"
+      },
+      "status": {
+        "en": "Completed",
+        "pt": "Concluído"
+      },
+      "stack": [
+        "Python",
+        "Azure AI Foundry",
+        "GPT-4.1-mini",
+        "OpenAI SDK",
+        "Streamlit",
+        "Plotly",
+        "Pandas",
+        "Trino",
+        "Hive Metastore",
+        "MinIO",
+        "dbt",
+        "Prefect",
+        "Docker"
+      ],
+      "shot": "tcc-cover.webp",
+      "links": [],
+      "desc": {
+        "en": "Prototype AI agent platform for a challenge set by Contabilizei: ask in Portuguese, get a table, a chart and an explanation, straight from an open-source data lakehouse.",
+        "pt": "Protótipo de uma plataforma de agentes de IA para um desafio proposto pela Contabilizei: pergunte em português e receba tabela, gráfico e explicação, direto de um data lakehouse open source."
+      },
+      "highlights": [
+        {
+          "value": "3",
+          "label": {
+            "en": "agent tools",
+            "pt": "ferramentas do agente"
+          }
+        },
+        {
+          "value": "8",
+          "label": {
+            "en": "Gold tables",
+            "pt": "tabelas Gold"
+          }
+        },
+        {
+          "value": "4",
+          "label": {
+            "en": "people on the team",
+            "pt": "pessoas no time"
+          }
+        }
+      ],
+      "problem": {
+        "en": "In a data-driven company, business users depend on the data team for any query or report. The challenge was to let people with no technical background ask questions in plain Portuguese and get answers they can act on, without waiting for someone to write SQL.",
+        "pt": "Numa empresa orientada a dados, as áreas de negócio dependem do time de dados para qualquer consulta ou relatório. O desafio era deixar quem não é técnico perguntar em português e receber respostas acionáveis, sem esperar alguém escrever SQL."
+      },
+      "solution": {
+        "en": "Team Info4All built a prototype with mock data over real infrastructure. The agent runs GPT-4.1-mini on Azure AI Foundry with tool calling through the OpenAI SDK: it reads the question, writes the SQL, runs it on Trino against the Gold tables of an open-source data lakehouse (MinIO, Hive Metastore, dbt in a medallion architecture, built on public Brazilian company data) and answers with a table, a chart and an explanation. On the team I handled frontend and UX, and built the final presentation.",
+        "pt": "A equipe Info4All montou um protótipo com dados fictícios sobre uma infraestrutura real. O agente usa o GPT-4.1-mini no Azure AI Foundry, com tool calling pelo OpenAI SDK: interpreta a pergunta, gera o SQL, executa no Trino sobre as tabelas Gold de um data lakehouse open source (MinIO, Hive Metastore, dbt em arquitetura medallion, com dados públicos de CNPJ) e responde com tabela, gráfico e explicação. No time, fiquei com frontend e UX, e montei a apresentação final."
+      },
+      "features": [
+        {
+          "title": {
+            "en": "From question to answer",
+            "pt": "Da pergunta à resposta"
+          },
+          "items": [
+            {
+              "en": "Questions in Portuguese, with memory of the conversation",
+              "pt": "Perguntas em português, com memória da conversa"
+            },
+            {
+              "en": "Three tools: run SQL, read a table's schema and draw a chart",
+              "pt": "Três ferramentas: executar SQL, ler o schema de uma tabela e gerar gráfico"
+            },
+            {
+              "en": "Business terms translated into the right filters, such as \"active\" or \"micro company\"",
+              "pt": "Termos de negócio traduzidos para os filtros certos, como \"ativa\" ou \"microempresa\""
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Data",
+            "pt": "Dados"
+          },
+          "items": [
+            {
+              "en": "Bronze, silver and gold layers modelled with dbt, with dimension and fact tables in gold",
+              "pt": "Camadas bronze, silver e gold modeladas em dbt, com dimensões e fatos na gold"
+            },
+            {
+              "en": "MinIO as object storage, Hive Metastore as catalog, Trino as query engine and Prefect for orchestration, all in Docker",
+              "pt": "MinIO como armazenamento, Hive Metastore como catálogo, Trino para consultas e Prefect na orquestração, tudo em Docker"
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Safety",
+            "pt": "Segurança"
+          },
+          "items": [
+            {
+              "en": "Only SELECT queries reach Trino; write commands are blocked before that",
+              "pt": "Só consultas SELECT chegam ao Trino; comandos de escrita são bloqueados antes"
+            },
+            {
+              "en": "Results capped at 500 rows and a timeout for heavy queries",
+              "pt": "Resultado limitado a 500 linhas e timeout em consultas pesadas"
+            }
+          ]
+        }
+      ],
+      "adrs": [
+        {
+          "id": "—",
+          "title": {
+            "en": "PaaS over IaaS and SaaS",
+            "pt": "PaaS em vez de IaaS ou SaaS"
+          },
+          "body": {
+            "en": "Azure AI Foundry sits between running our own models and a ready-made agent: more control than Copilot Studio, with governance built in.",
+            "pt": "O Azure AI Foundry fica entre rodar modelos próprios e usar um agente pronto: mais controle que o Copilot Studio, com governança embutida."
+          }
+        },
+        {
+          "id": "—",
+          "title": {
+            "en": "Tool calling without a framework",
+            "pt": "Tool calling sem framework"
+          },
+          "body": {
+            "en": "The agent loop is plain OpenAI SDK function calling, so the model decides when to query, inspect a schema or draw a chart.",
+            "pt": "O loop do agente usa o function calling do próprio OpenAI SDK, e o modelo decide quando consultar, olhar o schema ou gerar um gráfico."
+          }
+        },
+        {
+          "id": "—",
+          "title": {
+            "en": "Read-only on the Gold layer",
+            "pt": "Somente leitura na camada Gold"
+          },
+          "body": {
+            "en": "The agent queries curated Gold tables and never writes, which keeps answers consistent and the data safe.",
+            "pt": "O agente consulta as tabelas Gold, já tratadas, e nunca escreve, o que mantém as respostas consistentes e os dados seguros."
+          }
+        }
+      ],
+      "shots": [
+        {
+          "file": "tcc-cover.webp",
+          "caption": {
+            "en": "Cover of the final presentation",
+            "pt": "Capa da apresentação final"
+          },
+          "alt": {
+            "en": "Capstone cover: AI agent platform, Contabilizei challenge",
+            "pt": "Capa do TCC: plataforma para agentes de IA, desafio Contabilizei"
+          }
+        }
+      ]
+    },
+    {
       "slug": "nextjs-tailwind-store",
       "name": "Next.js Tailwind Store",
       "cats": [
@@ -1902,12 +2078,7 @@
         "en": "MBA, DevOps, Automation & Cloud Strategy · 364 h",
         "pt": "MBA em DevOps, Automation & Cloud Strategy · 364 h"
       },
-      "school": "FIAP",
-      "note": {
-        "en": "Group capstone (team Info4All): a prototype AI agent platform for a challenge set by Contabilizei. Users ask in Portuguese, and the agent (GPT-4.1-mini on Azure AI Foundry, with tool calling through the OpenAI SDK) writes the SQL, queries the Gold tables of an open-source data lakehouse (MinIO, Hive Metastore, Trino, dbt medallion) built on public Brazilian company data, and answers with a table, a chart and an explanation, in read-only mode. On the team I handled frontend and UX, and built the final presentation.",
-        "pt": "TCC em grupo (equipe Info4All): protótipo de uma plataforma de agentes de IA para um desafio proposto pela Contabilizei. O usuário pergunta em português e o agente (GPT-4.1-mini no Azure AI Foundry, com tool calling pelo OpenAI SDK) gera o SQL, consulta as tabelas Gold de um data lakehouse open source (MinIO, Hive Metastore, Trino, dbt em arquitetura medallion) com dados públicos de CNPJ e responde com tabela, gráfico e explicação, só em modo leitura. No time, fiquei com frontend e UX, e montei a apresentação final."
-      },
-      "url": "https://github.com/Kahmaria/POC-Datalake-Open-Source/tree/feature/agente-especificacao"
+      "school": "FIAP"
     },
     {
       "period": "2012 — 2015",

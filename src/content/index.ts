@@ -49,11 +49,14 @@ const REPOS: Record<string, string> = {
   mean: "MEAN",
   nestauth: "NestAuth",
   "nextjs-tailwind-store": "nextjs-tailwind-store",
+  // Group capstone: the repository belongs to a teammate, so the full URL goes here.
+  info4all: "https://github.com/Kahmaria/POC-Datalake-Open-Source/tree/feature/agente-especificacao",
 };
 
 export function repoUrl(project: Project): string | null {
   const name = REPOS[project.slug];
-  return project.repo && name ? `https://github.com/caiobarilli/${name}` : null;
+  if (!project.repo || !name) return null;
+  return name.startsWith("https://") ? name : `https://github.com/caiobarilli/${name}`;
 }
 
 export function mainProjects(): Project[] {
