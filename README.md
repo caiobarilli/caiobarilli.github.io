@@ -46,6 +46,16 @@ Then open <http://localhost:3000/en/>.
 
 The repository ships an [`.mcp.json`](.mcp.json) with Vercel's [next-devtools-mcp](https://github.com/vercel/next-devtools-mcp), pinned to an exact version. With `npm run dev` running, an MCP-capable agent (such as Claude Code) can read the app's live errors, routes and logs through Next.js 16's `/_next/mcp` endpoint, and the documentation that matches the installed Next.js version.
 
+[`.claude/skills/`](.claude/skills/) holds five agent skills from [mattpocock/skills](https://github.com/mattpocock/skills) (MIT, copied at commit `4ae2317`), so any agent that opens the repo follows the same workflow:
+
+| Skill | Used for |
+| --- | --- |
+| `tdd` | Red → green loop with tests at agreed seams |
+| `diagnosing-bugs` | A tight feedback loop before any hypothesis |
+| `code-review` | Review against the repo's standards and against the spec, kept separate |
+| `grilling` | Settling decisions one round of questions at a time |
+| `handoff` | Passing the work to a fresh agent session |
+
 ## Scripts
 
 | Command | What it does |
