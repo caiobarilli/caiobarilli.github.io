@@ -76,6 +76,8 @@ export type Course = {
   date?: Localized;
   /** True when url points to a verifiable certificate, not just the course page. */
   certificate?: boolean;
+  /** True when the course goes in the résumé PDF (the site lists all of them). */
+  cv?: boolean;
 };
 
 export type Contact = { label: string; handle: string; url: string; pending: boolean };
