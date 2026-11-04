@@ -2053,7 +2053,11 @@
         "pt": "Contratos curtos e freelances (Layer Up, Zebra Deluxe, Meeta Solutions, QuikDev)",
         "en": "Short contracts and freelance work (Layer Up, Zebra Deluxe, Meeta Solutions, QuikDev)"
       },
-      "period": "2021–2022"
+      "period": "2021–2022",
+      "note": {
+        "pt": "Sites WordPress, Laravel e páginas em React/Next.js.",
+        "en": "WordPress sites, Laravel and React/Next.js pages."
+      }
     },
     {
       "role": {
@@ -2064,7 +2068,11 @@
         "pt": "CTC (antiga Interaktiv)",
         "en": "CTC (formerly Interaktiv)"
       },
-      "period": "2020"
+      "period": "2020",
+      "note": {
+        "pt": "Laravel, Vue.js e Docker; conduzia o Scrum.",
+        "en": "Laravel, Vue.js and Docker; ran the Scrum."
+      }
     },
     {
       "role": {
@@ -2072,7 +2080,11 @@
         "en": "Front-end developer and front-end tech lead"
       },
       "company": "Zebra Deluxe Comunicação",
-      "period": "2019–2020"
+      "period": "2019–2020",
+      "note": {
+        "pt": "Liderança do time de front-end; Laravel e WordPress.",
+        "en": "Led the front-end team; Laravel and WordPress."
+      }
     },
     {
       "role": {
@@ -2080,7 +2092,11 @@
         "en": "Full Stack WordPress Developer"
       },
       "company": "3xceler",
-      "period": "2019"
+      "period": "2019",
+      "note": {
+        "pt": "Dois sites completos em WordPress e PHP.",
+        "en": "Two complete WordPress and PHP sites."
+      }
     },
     {
       "role": {
@@ -2088,7 +2104,11 @@
         "en": "Full Stack Developer"
       },
       "company": "Shape Web",
-      "period": "2018"
+      "period": "2018",
+      "note": {
+        "pt": "Sites, landing pages e e-commerce em PHP.",
+        "en": "Sites, landing pages and e-commerce in PHP."
+      }
     },
     {
       "role": {
@@ -2096,7 +2116,11 @@
         "en": "Front-end developer and front-end tech lead"
       },
       "company": "123Carros",
-      "period": "2018"
+      "period": "2018",
+      "note": {
+        "pt": "Front-end do marketplace e liderança do time de front.",
+        "en": "Marketplace front end and front-end team lead."
+      }
     },
     {
       "role": {
@@ -2104,7 +2128,11 @@
         "en": "Front-end developer (freelance)"
       },
       "company": "WebSide",
-      "period": "2017–2018"
+      "period": "2017–2018",
+      "note": {
+        "pt": "Sites, landing pages e e-mail marketing.",
+        "en": "Sites, landing pages and email marketing."
+      }
     },
     {
       "role": {
@@ -2112,7 +2140,11 @@
         "en": "Developer and tech lead"
       },
       "company": "Capital Mídia",
-      "period": "2016–2017"
+      "period": "2016–2017",
+      "note": {
+        "pt": "Promovido; liderança do time de desenvolvimento.",
+        "en": "Promoted; led the development team."
+      }
     },
     {
       "role": {
@@ -2120,7 +2152,11 @@
         "en": "Internship"
       },
       "company": "VAD Estúdio Multimídia",
-      "period": "2013"
+      "period": "2013",
+      "note": {
+        "pt": "Sites e e-mail marketing com HTML, CSS e jQuery.",
+        "en": "Sites and email marketing with HTML, CSS and jQuery."
+      }
     }
   ],
   "contacts": [

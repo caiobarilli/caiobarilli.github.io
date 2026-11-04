@@ -502,15 +502,15 @@ test.describe("experience", () => {
       expect(order.indexOf(title)).toBeGreaterThan(0);
     });
 
-    test(`${path} keeps each earlier job to one discreet line: title, then period, no note`, async ({ page }) => {
+    test(`${path} keeps each earlier job in one block: title, then period, then a one-line note`, async ({ page }) => {
       await page.goto(path);
       const items = page.getByTestId("earlier-experience").locator("> li");
-      await expect(items.locator("p")).toHaveCount(0);
+      await expect(items.locator("p")).toHaveCount(9);
       for (const li of await items.all()) {
         const text = ((await li.textContent()) ?? "").replace(/\s+/g, " ");
         const period = (await li.locator("span.font-mono").textContent()) ?? "";
         const title = ((await li.getByTestId("earlier-role").textContent()) ?? "").replace(/\s+/g, " ");
-        expect(text).toBe(title + period);
+        expect(text.startsWith(title + period)).toBe(true);
       }
     });
   }

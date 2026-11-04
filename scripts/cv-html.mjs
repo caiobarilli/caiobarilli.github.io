@@ -4,7 +4,6 @@ import { readFileSync } from "node:fs";
 
 const site = JSON.parse(readFileSync("src/content/site.json", "utf8"));
 const SITE = "caiobarilli.github.io"; // same host as SITE_URL in src/app/page-meta.ts
-const PROJECTS = ["aws-terraform", "phparrot", "phporto", "uvalab"];
 export const LANGS = [
   { locale: "pt-br", key: "pt", file: "public/cv/caio-barilli-cv-pt-br.pdf", html: "pt-BR" },
   { locale: "en", key: "en", file: "public/cv/caio-barilli-cv-en.pdf", html: "en" },
@@ -17,16 +16,6 @@ function contact(label) {
   const c = site.contacts.find((x) => x.label === label && !x.pending);
   if (!c) throw new Error(`Contact "${label}" is missing in site.json`);
   return c;
-}
-
-// One compact block per project: name, type and status in the title line, then the description. No stack (the skills line covers it).
-function project(slug, key, { desc = true } = {}) {
-  const p = site.projects.find((x) => x.slug === slug);
-  if (!p) throw new Error(`Project "${slug}" is missing in site.json`);
-  return `<div class="item">
-    <h3>${esc(loc(p.name, key))} · <span class="meta">${esc(loc(p.type, key))} · ${esc(loc(p.status, key))}</span></h3>
-    ${desc ? `<p>${esc(loc(p.desc, key))}</p>` : ""}
-  </div>`;
 }
 
 export function build({ key, html }) {
@@ -48,7 +37,7 @@ export function build({ key, html }) {
 
   const earlier = site.earlierExperience
     .map(
-      (e) => `<li><div class="line">${esc(loc(e.role, key))}${e.company ? ` · ${esc(loc(e.company, key))}` : ""} · <span class="meta">${esc(e.period)}</span></div></li>`,
+      (e) => `<li><div class="line">${esc(loc(e.role, key))}${e.company ? ` · ${esc(loc(e.company, key))}` : ""} · <span class="meta">${esc(e.period)}</span></div>${e.note ? `<p class="stack">${esc(loc(e.note, key))}</p>` : ""}</li>`,
     )
     .join("");
 
@@ -56,7 +45,6 @@ export function build({ key, html }) {
     .map(
       (ed) => `<div class="item">
     <h3>${esc(loc(ed.title, key))} · ${esc(loc(ed.school, key))} · <span class="meta">${esc(ed.period)}</span></h3>
-    ${loc(ed.school, "pt") === "FIAP" ? project("info4all", key, { desc: false }) : ""}
   </div>`,
     )
     .join("");
@@ -100,7 +88,6 @@ ${ui.cvLocation ? `<div class="links">${esc(ui.cvLocation)}</div>` : ""}
 <p>${esc(ui.cvSkills)}</p>
 <h2>${esc(ui.expTitle)}</h2>${experience}
 <h2>${esc(ui.earlierTitle)}</h2><ul class="earlier">${earlier}</ul>
-<h2>${esc(ui.projectsTitle)}</h2>${PROJECTS.map((slug) => project(slug, key)).join("")}
 <section class="edu"><h2>${esc(ui.eduTitle)}</h2>${education}</section>
 </body></html>`;
 }

@@ -92,26 +92,21 @@ describe.each(LANGS.map((l) => [l.locale, l] as const))("CV page in %s", (_local
     expect(words.length).toBeLessThanOrEqual(550);
   });
 
-  it("keeps each earlier job to one discreet line, with no note", () => {
+  it("gives each earlier job its one-line note", () => {
     const section = html.split(`<h2>${ui.earlierTitle}</h2>`)[1]?.split("</ul>")[0] ?? "";
     expect(section.match(/<li>/g)).toHaveLength(site.earlierExperience.length);
-    expect(section).not.toContain("<p");
+    for (const e of site.earlierExperience) expect(section).toContain(e.note![lang.key as "en" | "pt"]);
   });
 
-  it("orders the sections: summary, skills, experience, earlier, projects, education", () => {
-    expect(h2).toEqual([ui.cvSummaryTitle, ui.cvSkillsTitle, ui.expTitle, ui.earlierTitle, ui.projectsTitle, ui.eduTitle]);
+  it("orders the sections: summary, skills, experience, earlier, education", () => {
+    expect(h2).toEqual([ui.cvSummaryTitle, ui.cvSkillsTitle, ui.expTitle, ui.earlierTitle, ui.eduTitle]);
     expect(html).toContain(ui.cvSkills);
   });
 
-  it("leaves the courses out (the site lists them)", () => {
+  it("leaves courses, projects and Info4All out (the site lists them)", () => {
     expect(html).not.toContain(`<h2>${ui.coursesTitle}</h2>`);
-  });
-
-  it("lists AWS, PHParrot, PHPorto and Uvalab as projects, without Keeptask (it is under Experience)", () => {
-    const section = (html.split(`<h2>${ui.projectsTitle}</h2>`)[1] ?? "").split("<section")[0] ?? "";
-    const names = [...section.matchAll(/<h3>(.*?) · /g)].map((m) => m[1]);
-    expect(names).toEqual([lang.key === "en" ? "AWS platform with Terraform" : "Plataforma AWS com Terraform", "PHParrot", "PHPorto", "Uvalab"]);
-    expect(section).not.toContain("Keeptask");
+    expect(html).not.toContain(`<h2>${ui.projectsTitle}</h2>`);
+    expect(html).not.toContain("Info4All");
   });
 
   it.runIf(lang.key === "en")("has no loose Portuguese in the English résumé", () => {
