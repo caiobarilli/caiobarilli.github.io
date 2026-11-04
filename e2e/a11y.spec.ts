@@ -11,6 +11,8 @@ for (const theme of ["dark", "light"] as const) {
 
     for (const locale of locales) {
       test(`every ${locale} page has no WCAG A/AA violations`, async ({ page }) => {
+        // One axe pass per page adds up past the default 30 s when the whole suite runs in parallel.
+        test.setTimeout(120_000);
         await page.addInitScript((value) => localStorage.setItem("cb-theme", value), theme);
         for (const route of routes) {
           await page.goto(`/${locale}/${route}`);
