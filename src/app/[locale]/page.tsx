@@ -16,7 +16,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
   const s = (key: string) => str(locale, key);
-  const { stack, articles } = getContent();
+  const { stack, articles, contacts } = getContent();
+  const email = contacts.find((c) => c.url.startsWith("mailto:"));
   const [hero, ...rest] = mainProjects();
   const others = otherProjects();
   if (!hero) notFound();
@@ -156,7 +157,11 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             <p className="max-w-[480px] text-[17px] leading-normal">{s("ctaSub")}</p>
           </div>
           <div className="flex flex-col items-start gap-3 font-mono text-[15px] font-medium">
-            <span className="rounded-full border-[1.5px] border-dashed border-on-accent px-3.5 py-2">{s("emailPending")}</span>
+            {email && (
+              <a href={email.url} className="rounded-full border-[1.5px] border-on-accent px-3.5 py-2 hover:bg-on-accent hover:text-accent">
+                {email.handle}
+              </a>
+            )}
             <div className="flex flex-wrap gap-x-[18px] gap-y-1">
               <a href={GITHUB} className="flex min-h-11 items-center underline underline-offset-4">GitHub ↗</a>
               <a href={LINKEDIN} className="flex min-h-11 items-center underline underline-offset-4">LinkedIn ↗</a>

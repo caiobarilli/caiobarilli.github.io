@@ -29,12 +29,6 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
     <PageShell>
       <PageIntro title={s("contactTitle")} lead={s("contactSub")} />
       <ul className="mt-12 border-t border-line-strong">
-        <li className={`border-b border-line ${rowClass}`}>
-          <Row label="E-mail">
-            <span className={`${valueClass} text-muted`}>{s("emailPending")}</span>
-            {pendingTag}
-          </Row>
-        </li>
         {getContent().contacts.map((c) => (
           <li key={c.label} className="border-b border-line">
             {c.pending ? (

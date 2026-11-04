@@ -1528,6 +1528,12 @@
   ],
   "contacts": [
     {
+      "label": "E-mail",
+      "handle": "caiobarilli@gmail.com",
+      "url": "mailto:caiobarilli@gmail.com",
+      "pending": false
+    },
+    {
       "label": "GitHub",
       "handle": "github.com/caiobarilli",
       "url": "https://github.com/caiobarilli",
