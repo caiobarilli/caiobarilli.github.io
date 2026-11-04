@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
 import { EmailButton } from "@/components/EmailButton";
+import { Breakable } from "@/components/Breakable";
 import { PageIntro, PageShell } from "@/components/PageIntro";
 import { getContent, isLocale, str } from "@/content";
 import { sectionMetadata } from "../../page-meta";
@@ -16,9 +17,10 @@ function Row({ label, children }: { label: string; children: ReactNode }) {
   );
 }
 
-const labelClass = "min-w-[120px] font-mono text-[13px] font-medium text-muted";
-const rowClass = "flex flex-wrap items-center justify-between gap-x-6 gap-y-3 py-6";
-const valueClass = "flex-1 text-[clamp(22px,3.2vw,36px)] font-semibold tracking-[-0.02em] [overflow-wrap:anywhere]";
+/* Under sm the label sits on top and the address gets the full width, with the arrow at its right. */
+const labelClass = "col-span-2 min-w-[120px] font-mono text-[13px] font-medium text-muted sm:col-auto";
+const rowClass = "grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-1 py-5 sm:flex sm:flex-wrap sm:justify-between sm:gap-x-6 sm:gap-y-3 sm:py-6";
+const valueClass = "min-w-0 text-[clamp(17px,5.1vw,22px)] font-semibold tracking-[-0.02em] sm:flex-1 sm:text-[clamp(22px,3.2vw,36px)]";
 
 export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -54,7 +56,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
             {c.pending ? (
               <div className={rowClass}>
                 <Row label={c.label}>
-                  <span className={`${valueClass} text-muted`}>{c.handle}</span>
+                  <span className={`${valueClass} text-muted`}><Breakable text={c.handle} /></span>
                   {pendingTag}
                 </Row>
               </div>
@@ -71,7 +73,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
             ) : (
               <a href={c.url} className={`${rowClass} hover:text-accent-text`}>
                 <Row label={c.label}>
-                  <span className={valueClass}>{c.handle}</span>
+                  <span className={valueClass}><Breakable text={c.handle} /></span>
                   <span aria-hidden className="text-2xl">↗</span>
                 </Row>
               </a>

@@ -154,6 +154,26 @@ test.describe("home", () => {
     });
   }
 
+  for (const width of [375, 320]) {
+    test(`on a ${width}px phone every contact address sits on one line`, async ({ page, isMobile }) => {
+      test.skip(!isMobile, "phone layout");
+      await page.setViewportSize({ width, height: 800 });
+      await page.goto("/pt-br/contact/");
+      for (const text of ["caiobarilli@gmail.com", "github.com/caiobarilli", "linkedin.com/in/caio-barilli", "medium.com/@caiobarilli"]) {
+        const address = page.getByText(text, { exact: true }).locator("visible=true");
+        await expect(address).toBeVisible();
+        const lines = await address.evaluate((el) => {
+          const range = document.createRange();
+          range.selectNodeContents(el);
+          return new Set([...range.getClientRects()].map((r) => Math.round(r.top))).size;
+        });
+        expect(lines, text).toBe(1);
+        const row = await address.locator("xpath=ancestor::*[self::a or self::button][1]").boundingBox();
+        expect(row!.height).toBeGreaterThanOrEqual(44);
+      }
+    });
+  }
+
   test("on the contact page a blocked clipboard leaves the address selected", async ({ page, isMobile }) => {
     test.skip(isMobile, "phones use the mailto: link");
     await page.addInitScript(() => {

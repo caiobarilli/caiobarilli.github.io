@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { Breakable } from "./Breakable";
 
 type Props = {
   address: string;
@@ -59,16 +60,21 @@ export function EmailButton({ address, label, copiedLabel, className = "", varia
   if (variant === "row") {
     return (
       <>
-        <a href={`mailto:${address}`} className={`hidden touch:flex ${className}`}>
-          <span className={labelClassName}>{label}</span>
-          <span className={valueClassName}>{address}</span>
-          <span aria-hidden className="text-2xl">↗</span>
-        </a>
-        <button type="button" onClick={copy} className={`flex w-full cursor-pointer touch:hidden text-left ${className}`}>
-          {swap(labelClassName)}
-          <span ref={manual} className={`${valueClassName} ${state === "failed" ? "select-all" : ""}`}>{address}</span>
-          <span aria-hidden className="text-2xl">↗</span>
-        </button>
+        {/* The wrappers pick the version by CSS; the row classes inside never fight over "display". */}
+        <div className="hidden touch:block">
+          <a href={`mailto:${address}`} className={className}>
+            <span className={labelClassName}>{label}</span>
+            <span className={valueClassName}><Breakable text={address} /></span>
+            <span aria-hidden className="text-2xl">↗</span>
+          </a>
+        </div>
+        <div className="touch:hidden">
+          <button type="button" onClick={copy} className={`w-full cursor-pointer text-left ${className}`}>
+            {swap(labelClassName)}
+            <span ref={manual} className={`${valueClassName} ${state === "failed" ? "select-all" : ""}`}><Breakable text={address} /></span>
+            <span aria-hidden className="text-2xl">↗</span>
+          </button>
+        </div>
         {live}
       </>
     );
