@@ -16,14 +16,20 @@ export function LightboxProvider({ items, labels, children }: { items: LightboxI
   const dialog = useRef<HTMLDialogElement>(null);
   const trigger = useRef<HTMLElement | null>(null);
   const [index, setIndex] = useState(0);
+  // Tap to zoom: on a phone the full image is too small to read, so it doubles and scrolls.
+  const [zoomed, setZoomed] = useState(false);
 
   const open = useCallback((i: number) => {
     trigger.current = document.activeElement as HTMLElement | null;
     setIndex(i);
+    setZoomed(false);
     dialog.current?.showModal();
   }, []);
 
-  const step = useCallback((delta: number) => setIndex((i) => (i + delta + items.length) % items.length), [items.length]);
+  const step = useCallback((delta: number) => {
+    setZoomed(false);
+    setIndex((i) => (i + delta + items.length) % items.length);
+  }, [items.length]);
 
   useEffect(() => {
     const el = dialog.current;
@@ -55,8 +61,19 @@ export function LightboxProvider({ items, labels, children }: { items: LightboxI
       >
         {item && (
           <figure className="flex w-[min(1100px,92vw)] flex-col gap-4">
-            {/* eslint-disable-next-line @next/next/no-img-element -- full-size static asset, already optimized */}
-            <img src={item.src} alt={item.alt} className="max-h-[78vh] w-full rounded-xl border border-[#2c312d] object-contain" />
+            <div data-zoomed={zoomed} className="max-h-[78vh] overflow-auto rounded-xl border border-[#2c312d]">
+              {/* eslint-disable-next-line @next/next/no-img-element -- full-size static asset, already optimized; tap-to-zoom is a touch enhancement */}
+              <img
+                src={item.src}
+                alt={item.alt}
+                onClick={() => setZoomed((z) => !z)}
+                className={
+                  zoomed
+                    ? "w-[200%] max-w-none cursor-zoom-out"
+                    : "max-h-[78vh] w-full cursor-zoom-in object-contain"
+                }
+              />
+            </div>
             <figcaption className="flex flex-wrap items-center justify-between gap-4">
               <span className="text-[17px] font-medium">{item.caption}</span>
               <div className="flex items-center gap-2 font-mono text-[13px] font-medium">

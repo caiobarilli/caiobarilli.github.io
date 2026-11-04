@@ -143,6 +143,20 @@ test.describe("projects", () => {
     await expect(header.getByRole("link", { name: "Source on GitHub ↗" })).toHaveAttribute("href", /^https:\/\/github\.com\/caiobarilli\//);
   });
 
+  test("a tap on the lightbox image zooms it in and out", async ({ page }) => {
+    await page.goto("/en/projects/keeptask/");
+    await page.getByRole("button", { name: /^Expand/ }).first().click();
+    const dialog = page.getByRole("dialog");
+    const box = dialog.locator("[data-zoomed]");
+    const img = box.locator("img");
+    const before = (await img.boundingBox())?.width ?? 0;
+    await img.click();
+    await expect(box).toHaveAttribute("data-zoomed", "true");
+    expect((await img.boundingBox())?.width ?? 0).toBeGreaterThan(before * 1.5);
+    await img.click();
+    await expect(box).toHaveAttribute("data-zoomed", "false");
+  });
+
   test("the lightbox opens, moves with the arrows and closes with Esc", async ({ page }) => {
     await page.goto("/en/projects/keeptask/");
     const dialog = page.getByRole("dialog");
