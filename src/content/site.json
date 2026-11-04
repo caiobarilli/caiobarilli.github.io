@@ -881,8 +881,8 @@
         "pt": "WSL, tarefas administrativas do Windows, VMs Hyper-V e um LLM local são gerenciados cada um em um console diferente."
       },
       "solution": {
-        "en": "One PHP panel in the browser, bound to localhost and protected by a token. It runs commands in WSL, runs Windows admin actions from an allowlist, manages Hyper-V VMs and controls a local Ollama instance.",
-        "pt": "Um painel PHP no navegador, em localhost e protegido por token. Ele roda comandos no WSL, executa ações administrativas do Windows a partir de uma allowlist, gerencia VMs Hyper-V e controla uma instância local do Ollama."
+        "en": "One PHP panel in the browser, bound to localhost and protected by a token. It runs commands in WSL, runs Windows admin actions from an allowlist, manages Hyper-V VMs and controls a local Ollama instance. It also handles remote access to the machine: it installs and configures Sunshine so the PC can be reached through Moonlight, turns Remote Desktop with H.264 video on and off, and frees memory with WinMemoryCleaner, showing free RAM before and after.",
+        "pt": "Um painel PHP no navegador, em localhost e protegido por token. Ele roda comandos no WSL, executa ações administrativas do Windows a partir de uma allowlist, gerencia VMs Hyper-V e controla uma instância local do Ollama. Também cuida do acesso remoto à máquina: instala e configura o Sunshine para acessar o PC pelo Moonlight, liga e desliga a Área de Trabalho Remota com vídeo H.264 e libera memória com o WinMemoryCleaner, mostrando a RAM livre antes e depois."
       },
       "adrs": [
         {
