@@ -713,7 +713,7 @@
         "Docker",
         "ESLint / Prettier"
       ],
-      "shot": null,
+      "shot": "mern-cover.webp",
       "desc": {
         "en": "REST API in Express and MongoDB with JWT authentication and request validation, running in Docker. Built during a MERN course.",
         "pt": "API REST em Express e MongoDB com autenticação JWT e validação de requisições, rodando em Docker. Feita durante um curso de MERN."
@@ -739,7 +739,19 @@
           }
         }
       ],
-      "shots": []
+      "shots": [
+        {
+          "file": "mern-cover.webp",
+          "caption": {
+            "en": "Repository cover from the MERN course",
+            "pt": "Capa do repositório, do curso de MERN"
+          },
+          "alt": {
+            "en": "React, Node.js, Express and MongoDB logos over Express code",
+            "pt": "Logos de React, Node.js, Express e MongoDB sobre código Express"
+          }
+        }
+      ]
     },
     {
       "slug": "mean",
@@ -772,7 +784,7 @@
         "Passport JWT",
         "Docker"
       ],
-      "shot": null,
+      "shot": "mean-cover.webp",
       "desc": {
         "en": "Full-stack app with an Express API in TypeScript and an Angular Material front end, with MongoDB and Docker Compose.",
         "pt": "Aplicação full-stack com API em Express e TypeScript e front em Angular Material, com MongoDB e Docker Compose."
@@ -798,7 +810,19 @@
           }
         }
       ],
-      "shots": []
+      "shots": [
+        {
+          "file": "mean-cover.webp",
+          "caption": {
+            "en": "Architecture overview from the repository: Angular client, Node/Express API and MongoDB",
+            "pt": "Visão geral da arquitetura no repositório: cliente Angular, API Node/Express e MongoDB"
+          },
+          "alt": {
+            "en": "Diagram of the MEAN stack: browser client, JSON requests and the Node, Express and MongoDB server",
+            "pt": "Diagrama da stack MEAN: cliente no navegador, requisições JSON e o servidor Node, Express e MongoDB"
+          }
+        }
+      ]
     },
     {
       "slug": "nestauth",
