@@ -1007,22 +1007,24 @@
         "PHP 8.5",
         "Livewire",
         "Whisper (local)",
+        "FastAPI",
+        "Ollama (local)",
         "Docker",
         "Terraform",
         "Pest"
       ],
       "shot": "phparrot-session.webp",
       "desc": {
-        "en": "Language practice by speaking. Speech is transcribed locally with Whisper, so audio never leaves the machine.",
-        "pt": "Treino de idiomas pela fala. A voz é transcrita localmente com Whisper, e o áudio nunca sai da máquina."
+        "en": "Language practice by speaking. Speech is transcribed locally with Whisper, so audio never leaves the machine. A local model also drafts practice texts, which go live only after review.",
+        "pt": "Treino de idiomas pela fala. A voz é transcrita localmente com Whisper, e o áudio nunca sai da máquina. Um modelo local também gera textos de treino, que só entram depois de revisados."
       },
       "problem": {
         "en": "Language apps train reading and tapping, not speaking. Cloud speech APIs solve that, but they send every recording to a third party and bill per minute.",
         "pt": "Apps de idiomas treinam leitura e toque, não fala. APIs de voz na nuvem resolvem isso, mas enviam cada gravação a terceiros e cobram por minuto."
       },
       "solution": {
-        "en": "A Laravel and Livewire app for speaking practice. Whisper runs locally in Docker to transcribe what you say, and the infrastructure is provisioned with Terraform.",
-        "pt": "Um app em Laravel e Livewire para treinar a fala. O Whisper roda localmente em Docker para transcrever o que você diz, e a infraestrutura é provisionada com Terraform."
+        "en": "A Laravel and Livewire app for speaking practice. Whisper runs locally in Docker to transcribe what you say, and the infrastructure is provisioned with Terraform. A custom FastAPI gateway connects the app to a local model on Ollama. It requires a token, accepts only allowed models, validates the output against a JSON Schema and logs metrics without storing any text. Each generated text goes through the app's validation and reaches practice only after it is approved.",
+        "pt": "Um app em Laravel e Livewire para treinar a fala. O Whisper roda localmente em Docker para transcrever o que você diz, e a infraestrutura é provisionada com Terraform. Um gateway próprio em FastAPI liga o app a um modelo local no Ollama. Ele exige token, aceita só os modelos permitidos, valida a resposta por JSON Schema e registra métricas sem guardar texto. Cada texto gerado passa pela validação do app e só entra no treino depois de aprovado na gestão."
       },
       "adrs": [
         {
@@ -1056,6 +1058,17 @@
           "body": {
             "en": "Hadolint, Trivy, SARIF and SBOM.",
             "pt": "Hadolint, Trivy, SARIF e SBOM."
+          }
+        },
+        {
+          "id": "ADR 0013",
+          "title": {
+            "en": "AI gateway",
+            "pt": "Gateway de IA"
+          },
+          "body": {
+            "en": "OpenAI-compatible API: swapping Ollama for another engine doesn't change the app.",
+            "pt": "API no formato da OpenAI: trocar o Ollama por outro motor não muda o app."
           }
         }
       ],
