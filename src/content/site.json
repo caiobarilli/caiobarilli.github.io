@@ -1007,7 +1007,7 @@
         "PHP 8.5",
         "Livewire",
         "Whisper (local)",
-        "FastAPI",
+        "llm-gateway (FastAPI)",
         "Ollama (local)",
         "Docker",
         "Terraform",
@@ -1023,8 +1023,8 @@
         "pt": "Apps de idiomas treinam leitura e toque, não fala. APIs de voz na nuvem resolvem isso, mas enviam cada gravação a terceiros e cobram por minuto."
       },
       "solution": {
-        "en": "A Laravel and Livewire app for speaking practice. Whisper runs locally in Docker to transcribe what you say, and the infrastructure is provisioned with Terraform. A custom FastAPI gateway connects the app to a local model on Ollama. It requires a token, accepts only allowed models, validates the output against a JSON Schema and logs metrics without storing any text. Each generated text goes through the app's validation and reaches practice only after it is approved.",
-        "pt": "Um app em Laravel e Livewire para treinar a fala. O Whisper roda localmente em Docker para transcrever o que você diz, e a infraestrutura é provisionada com Terraform. Um gateway próprio em FastAPI liga o app a um modelo local no Ollama. Ele exige token, aceita só os modelos permitidos, valida a resposta por JSON Schema e registra métricas sem guardar texto. Cada texto gerado passa pela validação do app e só entra no treino depois de aprovado na gestão."
+        "en": "A Laravel and Livewire app for speaking practice. Whisper runs locally in Docker to transcribe what you say, and the infrastructure is provisioned with Terraform. Practice texts come from a local model on Ollama through llm-gateway, a FastAPI gateway maintained as a separate project. It requires a token, accepts only allowed models, validates the output against a JSON Schema and logs metrics without storing any text. The app runs the gateway's published image, pinned by digest, and a contract test checks every new version before it goes in. Each generated text goes through the app's validation and reaches practice only after it is approved.",
+        "pt": "Um app em Laravel e Livewire para treinar a fala. O Whisper roda localmente em Docker para transcrever o que você diz, e a infraestrutura é provisionada com Terraform. Os textos de treino vêm de um modelo local no Ollama, por meio do llm-gateway, um gateway em FastAPI mantido como projeto separado. Ele exige token, aceita só os modelos permitidos, valida a resposta por JSON Schema e registra métricas sem guardar texto. O app usa a imagem publicada do gateway, fixada por digest, e um teste de contrato confere cada versão nova antes de ela entrar. Cada texto gerado passa pela validação do app e só entra no treino depois de aprovado na gestão."
       },
       "adrs": [
         {
@@ -1070,6 +1070,17 @@
             "en": "OpenAI-compatible API: swapping Ollama for another engine doesn't change the app.",
             "pt": "API no formato da OpenAI: trocar o Ollama por outro motor não muda o app."
           }
+        },
+        {
+          "id": "ADR 0014",
+          "title": {
+            "en": "Gateway as an image",
+            "pt": "Gateway por imagem"
+          },
+          "body": {
+            "en": "The gateway comes from a published image pinned by digest; the app has no Python code.",
+            "pt": "O gateway vem de uma imagem publicada e fixada por digest; o app não tem código Python."
+          }
         }
       ],
       "shots": [
@@ -1094,6 +1105,15 @@
             "en": "PHParrot reading screen with an English text at level 1",
             "pt": "Tela de leitura do PHParrot com um texto em inglês no nível 1"
           }
+        }
+      ],
+      "links": [
+        {
+          "label": {
+            "en": "AI gateway (llm-gateway) ↗",
+            "pt": "Gateway de IA (llm-gateway) ↗"
+          },
+          "url": "https://github.com/caiobarilli/llm-gateway"
         }
       ]
     },
