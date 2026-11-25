@@ -86,6 +86,8 @@ export type Contact = { label: string; handle: string; url: string; pending: boo
 
 export type Step = { n: string; title: string; body: string };
 
+export type AskQuestion = { id: string; text: Localized };
+
 /** UI strings; every locale must have the same keys (checked in tests). */
 export type UiStrings = Record<string, string | Record<string, string> | Step[]>;
 
@@ -100,4 +102,5 @@ export type SiteContent = {
   contacts: Contact[];
   education: Education[];
   courses: Course[];
+  askQuestions: AskQuestion[];
 };

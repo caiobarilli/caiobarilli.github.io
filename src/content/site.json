@@ -91,7 +91,45 @@
       "cvSkillsTitle": "Skills",
       "cvSkills": "PHP · Laravel · Livewire · Inertia · MySQL · Redis/Horizon (queues) · REST APIs · Pest · PHPUnit · PHPStan · Git · Docker · Terraform · AWS · CI/CD with GitHub Actions · Linux · WordPress · Next.js · TypeScript",
       "cvLocation": "Based in São Paulo, Brazil (UTC−3) · Remote · Full-time or contractor (own Brazilian company) · English: intermediate, used daily in docs, commits and PRs",
-      "cvPhone": "+55 11 93759-9166"
+      "cvPhone": "+55 11 93759-9166",
+      "askEyebrowCmd": "ask --about=caio",
+      "askTitle": "Ask about Caio",
+      "askSub": "Answers come only from this site's content, via Caio's public MCP — structured data on profile, experience, projects, stack and articles. Questions are routed in your browser; neither this site nor the MCP server stores your question text.",
+      "askPlaceholder": "type your question…",
+      "askButton": "Ask",
+      "askSrHint": "Deterministic routing queries Caio's public MCP and formats structured portfolio data with verifiable sources.",
+      "askSuggestionsLabel": "Or ask right away:",
+      "askSuggestionsGroup": "Suggested questions",
+      "askShuffle": "Shuffle suggestions",
+      "askSessionLabel": "caio@mcp — ask session",
+      "askLoading": "querying mcp…",
+      "askSourcePrefix": "// source:",
+      "askUnsupportedTitle": "Question outside the supported portfolio topics.",
+      "askUnsupportedBody": "This V1 uses deterministic routing (not a generative AI chatbot) over Caio's structured public MCP: profile, experience, projects, stack and articles. Try one of the suggested questions above or ask about a specific project, technology or career topic.",
+      "askErrorTitle": "mcp: endpoint unavailable right now.",
+      "askErrorBody": "Could not fetch a response from the public MCP right now. Try again in a moment.",
+      "askRetry": "Try again",
+      "askNowTitle": "Today — the MCP already serves",
+      "askNowTag": "structured data",
+      "askNowBody": "Deterministic routing maps supported questions to the right MCP tool and formats real data with its source:",
+      "askLaterTitle": "Later — to be built",
+      "askLaterTag": "free-form interpretation",
+      "askLaterBody": "Synthesizing arbitrary natural-language questions requires an AI layer on top of the MCP. This V1 stays honest and deterministic without inventing answers.",
+      "mcpFabLabel": "Connect MCP",
+      "mcpPanelTitle": "connect this mcp",
+      "mcpPanelAria": "Connect the MCP to AI agents",
+      "mcpClose": "Close panel",
+      "mcpDesc": "Use Caio's public MCP in your AI agent. Pick a provider for the setup steps:",
+      "mcpBack": "Back",
+      "mcpCopy": "copy",
+      "mcpCopied": "copied ✓",
+      "mcpDocs": "Official docs",
+      "mcpToConfirm": "TO CONFIRM",
+      "mcpFoot": "This menu does not connect anything automatically — it only teaches. Requirements vary by plan, region and account type: confirm in the official docs.",
+      "mcpFootDetail": "Connection over public HTTPS (Streamable HTTP). Confirm plan, region and account requirements in the official docs — subject to change.",
+      "mcpGptSub": "Plus · Pro · Business/Enterprise + Developer Mode",
+      "mcpClaudeSub": "Free (1 connector) · Pro · Max · Ultra · Team · Enterprise",
+      "mcpGeminiSubPrefix": "via Gemini CLI · web app:"
     },
     "pt": {
       "nav": {
@@ -184,7 +222,45 @@
       "cvSkillsTitle": "Competências",
       "cvSkills": "PHP · Laravel · Livewire · Inertia · MySQL · Redis/Horizon (filas) · APIs REST · Pest · PHPUnit · PHPStan · Git · Docker · Terraform · AWS · CI/CD com GitHub Actions · Linux · WordPress · Next.js · TypeScript",
       "cvLocation": "São Paulo, Brasil (UTC−3) · Remoto · CLT ou PJ · Inglês intermediário",
-      "cvPhone": "+55 11 93759-9166"
+      "cvPhone": "+55 11 93759-9166",
+      "askEyebrowCmd": "pergunte --sobre=caio",
+      "askTitle": "Pergunte sobre o Caio",
+      "askSub": "As respostas vêm só do conteúdo deste site, consultando o MCP público do Caio — dados estruturados sobre perfil, experiência, projetos, stack e artigos. A pergunta é interpretada no navegador; nem este site nem o servidor MCP armazenam o texto enviado.",
+      "askPlaceholder": "digite sua pergunta…",
+      "askButton": "Perguntar",
+      "askSrHint": "O roteamento determinístico consulta o MCP público do Caio e formata dados estruturados do portfólio com fontes verificáveis.",
+      "askSuggestionsLabel": "Ou pergunte direto:",
+      "askSuggestionsGroup": "Perguntas sugeridas",
+      "askShuffle": "Trocar sugestões",
+      "askSessionLabel": "caio@mcp — sessão de perguntas",
+      "askLoading": "consultando mcp…",
+      "askSourcePrefix": "// fonte:",
+      "askUnsupportedTitle": "Pergunta fora dos temas suportados do portfólio.",
+      "askUnsupportedBody": "Esta V1 usa roteamento determinístico (não é um chatbot generativo) sobre o MCP público estruturado do Caio: perfil, experiência, projetos, stack e artigos. Experimente uma das sugestões acima ou pergunte sobre um projeto, tecnologia ou experiência específica.",
+      "askErrorTitle": "mcp: endpoint indisponível agora.",
+      "askErrorBody": "Não foi possível obter resposta do MCP público neste momento. Tente novamente em instantes.",
+      "askRetry": "Tentar de novo",
+      "askNowTitle": "Hoje — o MCP já entrega",
+      "askNowTag": "dados estruturados",
+      "askNowBody": "O roteamento determinístico direciona perguntas suportadas para a ferramenta certa e exibe dados reais com a fonte:",
+      "askLaterTitle": "Futuro — a construir",
+      "askLaterTag": "interpretação livre",
+      "askLaterBody": "Sintetizar perguntas abertas em linguagem natural exige uma camada de IA acoplada ao MCP. Esta V1 permanece transparente e determinística, sem inventar respostas.",
+      "mcpFabLabel": "Conectar MCP",
+      "mcpPanelTitle": "conectar este mcp",
+      "mcpPanelAria": "Conectar o MCP a agentes de IA",
+      "mcpClose": "Fechar painel",
+      "mcpDesc": "Use o MCP público do Caio no seu agente de IA. Escolha um provedor para ver o passo a passo:",
+      "mcpBack": "Voltar",
+      "mcpCopy": "copiar",
+      "mcpCopied": "copiado ✓",
+      "mcpDocs": "Documentação oficial",
+      "mcpToConfirm": "A CONFIRMAR",
+      "mcpFoot": "Este menu não conecta nada automaticamente — só ensina. Requisitos variam por plano, região e tipo de conta: confirme na documentação oficial.",
+      "mcpFootDetail": "Conexão via HTTPS público (Streamable HTTP). Confirme plano, região e tipo de conta na documentação oficial — sujeito a mudanças.",
+      "mcpGptSub": "Plus · Pro · Business/Enterprise + Developer Mode",
+      "mcpClaudeSub": "Free (1 conector) · Pro · Max · Ultra · Team · Enterprise",
+      "mcpGeminiSubPrefix": "via Gemini CLI · app web:"
     }
   },
   "cats": [
@@ -2347,6 +2423,148 @@
       "name": "MERN Stack Front To Back",
       "issuer": "Udemy",
       "url": "https://www.udemy.com/course/mern-stack-front-to-back/"
+    }
+  ],
+  "askQuestions": [
+    {
+      "id": "featured-projects",
+      "text": {
+        "pt": "Quais são os projetos em destaque do Caio?",
+        "en": "What are Caio's featured projects?"
+      }
+    },
+    {
+      "id": "php-laravel-exp",
+      "text": {
+        "pt": "Quanto tempo de experiência ele tem com PHP e Laravel?",
+        "en": "How much PHP & Laravel experience does he have?"
+      }
+    },
+    {
+      "id": "keeptask",
+      "text": {
+        "pt": "O que é o Keeptask?",
+        "en": "What is Keeptask?"
+      }
+    },
+    {
+      "id": "ai-agents",
+      "text": {
+        "pt": "Como ele usa agentes de IA no dia a dia?",
+        "en": "How does he use AI agents day to day?"
+      }
+    },
+    {
+      "id": "devops-tools",
+      "text": {
+        "pt": "Quais ferramentas de DevOps ele domina?",
+        "en": "Which DevOps tools does he master?"
+      }
+    },
+    {
+      "id": "terraform-aws",
+      "text": {
+        "pt": "Ele tem experiência com Terraform e AWS?",
+        "en": "Does he have Terraform & AWS experience?"
+      }
+    },
+    {
+      "id": "medium-articles",
+      "text": {
+        "pt": "Quais artigos ele publicou no Medium?",
+        "en": "Which articles has he published on Medium?"
+      }
+    },
+    {
+      "id": "testing",
+      "text": {
+        "pt": "Como ele testa os projetos dele?",
+        "en": "How does he test his projects?"
+      }
+    },
+    {
+      "id": "phparrot",
+      "text": {
+        "pt": "O que é o PHParrot?",
+        "en": "What is PHParrot?"
+      }
+    },
+    {
+      "id": "phporto",
+      "text": {
+        "pt": "O que é o PHPorto?",
+        "en": "What is PHPorto?"
+      }
+    },
+    {
+      "id": "main-stack",
+      "text": {
+        "pt": "Qual a stack principal dele?",
+        "en": "What is his main stack?"
+      }
+    },
+    {
+      "id": "ecommerce",
+      "text": {
+        "pt": "Ele já construiu e-commerce?",
+        "en": "Has he built e-commerce?"
+      }
+    },
+    {
+      "id": "education",
+      "text": {
+        "pt": "Qual a formação acadêmica e MBA dele?",
+        "en": "What is his education and MBA background?"
+      }
+    },
+    {
+      "id": "availability",
+      "text": {
+        "pt": "Ele está aberto a vagas? Quais?",
+        "en": "Is he open to roles? Which ones?"
+      }
+    },
+    {
+      "id": "other-languages",
+      "text": {
+        "pt": "Quais linguagens ele usa além de PHP?",
+        "en": "Which languages does he use beyond PHP?"
+      }
+    },
+    {
+      "id": "info4all",
+      "text": {
+        "pt": "O que é o Info4All?",
+        "en": "What is Info4All?"
+      }
+    },
+    {
+      "id": "local-ai",
+      "text": {
+        "pt": "Ele usa IA local com Ollama?",
+        "en": "Does he use local AI with Ollama?"
+      }
+    },
+    {
+      "id": "tech-lead",
+      "text": {
+        "pt": "Onde ele atuou como Tech Lead?",
+        "en": "Where has he worked as a Tech Lead?"
+      }
+    },
+    {
+      "id": "keepcloud",
+      "text": {
+        "pt": "O que ele construiu na KeepCloud?",
+        "en": "What did he build at KeepCloud?"
+      }
+    },
+    {
+      "id": "contact",
+      "text": {
+        "pt": "Qual a melhor forma de contato com ele?",
+        "en": "What's the best way to reach him?"
+      }
     }
   ]
 }

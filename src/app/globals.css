@@ -29,6 +29,8 @@
   --btn-bg: var(--lime);
   --btn-ink: #0d0f0e;
   --focus: var(--lime);
+  --error: #ff8a6b;
+  --demo: #e0a11c;
   --bg-blur: rgba(13, 15, 14, 0.85);
   --scrim: rgba(5, 6, 6, 0.92);
   /* The lightbox is dark in both themes, so these four are the same in [data-theme="light"]. */
@@ -57,6 +59,8 @@
   --btn-bg: #121412;
   --btn-ink: #f3f4f0;
   --focus: var(--lime-deep);
+  --error: #b3400f;
+  --demo: #8a5a00;
   --bg-blur: rgba(243, 244, 240, 0.85);
   --scrim: rgba(5, 6, 6, 0.92);
   --lightbox-ink: #e8ebe6;
@@ -83,6 +87,8 @@
   --color-on-accent: var(--on-accent);
   --color-btn: var(--btn-bg);
   --color-btn-ink: var(--btn-ink);
+  --color-error: var(--error);
+  --color-demo: var(--demo);
   --color-bg-blur: var(--bg-blur);
   --color-scrim: var(--scrim);
   --color-lightbox-ink: var(--lightbox-ink);
@@ -116,6 +122,16 @@
 
 @utility placeholder-stripes {
   background: repeating-linear-gradient(135deg, var(--stripe) 0 1px, transparent 1px 10px);
+}
+
+@keyframes mcp-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@utility animate-mcp-blink {
+  animation: mcp-blink 1.05s steps(2) infinite;
 }
 
 /* Deliberately outside any layer: it has to win over everything. */
