@@ -68,3 +68,14 @@ describe("root redirect page", () => {
     expect(content.ui.en.heroLine).toContain("ship with infrastructure as code, and develop with AI agents");
   });
 });
+
+describe("Connect MCP ChatGPT subtitle", () => {
+  it("reflects Plugins and Business/Enterprise/Edu without Developer Mode in PT and EN", () => {
+    for (const locale of ["pt", "en"] as const) {
+      expect(content.ui[locale].mcpGptSub).toContain("Plugins");
+      expect(content.ui[locale].mcpGptSub).toContain("Business");
+      expect(content.ui[locale].mcpGptSub).toContain("Enterprise/Edu");
+      expect(content.ui[locale].mcpGptSub).not.toMatch(/Developer Mode/i);
+    }
+  });
+});
