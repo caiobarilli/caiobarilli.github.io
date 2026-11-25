@@ -28,7 +28,7 @@ type ProviderConfig = {
   id: ProviderId;
   name: string;
   vendor: string;
-  docsUrl: string;
+  docsUrl: string | { pt: string; en: string };
   steps: { pt: string[]; en: string[] };
   reqsLead: { pt: string; en: string };
   reqsBody: { pt: string; en: string };
@@ -41,27 +41,40 @@ const PROVIDERS: ProviderConfig[] = [
     id: "chatgpt",
     name: "ChatGPT",
     vendor: "OpenAI",
-    docsUrl: "https://help.openai.com/en/articles/12584461-developer-mode-and-custom-mcp-connectors-for-chatgpt",
+    docsUrl: {
+      pt: "https://help.openai.com/pt-br/articles/12584461-connecting-custom-mcp-servers-in-chatgpt",
+      en: "https://help.openai.com/en/articles/12584461-connecting-custom-mcp-servers-in-chatgpt",
+    },
     steps: {
       pt: [
-        "Abra o ChatGPT e vá em Configurações → Conectores (Apps & Connectors) → Configurações avançadas → ative o Developer Mode.",
-        "Em Conectores, escolha Adicionar / Criar conector personalizado.",
-        "Cole a URL do endpoint MCP abaixo (HTTPS público).",
-        "Crie, revise as ferramentas descobertas e ative no chat.",
+        "No ChatGPT Web, acesse Plugins.",
+        "Selecione + e escolha Adicionar servidor MCP personalizado.",
+        "Informe um nome e uma descrição opcional.",
+        "Insira o endpoint HTTPS público abaixo.",
+        "Configure a autenticação conforme o servidor.",
+        "Leia e aceite o aviso de risco.",
+        "Crie como plugin e revise as ferramentas detectadas.",
       ],
       en: [
-        "Open ChatGPT → Settings → Connectors (Apps & Connectors) → Advanced settings → turn on Developer Mode.",
-        "Under Connectors, choose Add / Create custom connector.",
-        "Paste the MCP endpoint URL below (public HTTPS).",
-        "Create, review the discovered tools and enable it in chat.",
+        "In ChatGPT on the web, open Plugins.",
+        "Select + and choose Add custom MCP server.",
+        "Enter a name and an optional description.",
+        "Enter the public HTTPS endpoint below.",
+        "Configure authentication as required by the server.",
+        "Read and accept the risk warning.",
+        "Create it as a plugin and review the detected tools.",
       ],
     },
-    reqsLead: { pt: "Planos:", en: "Plans:" },
+    reqsLead: { pt: "Planos e permissões:", en: "Plans & permissions:" },
     reqsBody: {
-      pt: "Plus, Pro, Business, Enterprise ou Edu — não disponível no Free. Business/Enterprise: um admin precisa habilitar o Developer Mode.",
-      en: "Plus, Pro, Business, Enterprise or Edu — not available on Free. Business/Enterprise: an admin must enable Developer Mode.",
+      pt: "A documentação atual confirma permissões específicas no ChatGPT Web para Business (admins/owners do workspace) e Enterprise/Edu (via permissões/RBAC do workspace).",
+      en: "Current docs confirm specific permissions on ChatGPT web for Business (workspace admins/owners) and Enterprise/Edu (via workspace permissions/RBAC).",
     },
-    unconfirmedLabel: { pt: "Região/tipo de conta:", en: "Region/account type:" },
+    unconfirmedLabel: { pt: "Outros planos / região:", en: "Other plans / region:" },
+    unconfirmedNote: {
+      pt: "suporte para Plus, Pro ou contas individuais não confirmado nesta documentação.",
+      en: "support for Plus, Pro or individual accounts is not confirmed in this documentation.",
+    },
   },
   {
     id: "claude",
@@ -424,7 +437,7 @@ export function ConnectMcpFab({ locale, labels }: Props) {
               </p>
 
               <a
-                href={selected.docsUrl}
+                href={typeof selected.docsUrl === "string" ? selected.docsUrl : selected.docsUrl[lang]}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mx-4.5 mb-3 flex items-center justify-between border-t border-line pt-3 text-[13px] text-ink-2 hover:text-accent-text"

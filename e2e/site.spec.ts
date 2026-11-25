@@ -700,4 +700,60 @@ test.describe("Ask about Caio & Connect MCP (home-only)", () => {
     await expect(fab).toHaveAttribute("aria-expanded", "false");
     await expect(fab).toBeFocused();
   });
+
+  test("Connect MCP ChatGPT panel shows the current Plugins flow without Developer Mode in PT-BR and EN", async ({ page }) => {
+    const cases = [
+      {
+        path: "/pt-br/",
+        fabName: "Conectar MCP",
+        dialogName: "Conectar o MCP a agentes de IA",
+        docsName: "Documentação oficial",
+        docsUrl: "https://help.openai.com/pt-br/articles/12584461-connecting-custom-mcp-servers-in-chatgpt",
+        expectedSnippets: [
+          "No ChatGPT Web, acesse Plugins.",
+          "Adicionar servidor MCP personalizado",
+          "aviso de risco",
+          "Crie como plugin e revise as ferramentas detectadas.",
+          "Business",
+          "Enterprise/Edu",
+          "A CONFIRMAR",
+        ],
+      },
+      {
+        path: "/en/",
+        fabName: "Connect MCP",
+        dialogName: "Connect the MCP to AI agents",
+        docsName: "Official docs",
+        docsUrl: "https://help.openai.com/en/articles/12584461-connecting-custom-mcp-servers-in-chatgpt",
+        expectedSnippets: [
+          "In ChatGPT on the web, open Plugins.",
+          "Add custom MCP server",
+          "risk warning",
+          "Create it as a plugin and review the detected tools.",
+          "Business",
+          "Enterprise/Edu",
+          "TO CONFIRM",
+        ],
+      },
+    ];
+
+    for (const c of cases) {
+      await page.goto(c.path);
+      await page.getByRole("button", { name: c.fabName }).click();
+      const dialog = page.getByRole("dialog", { name: c.dialogName });
+      await expect(dialog).toBeVisible();
+
+      const gptBtn = dialog.getByRole("button", { name: /ChatGPT/ });
+      await expect(gptBtn).not.toContainText(/Developer Mode/i);
+      await gptBtn.click();
+
+      await expect(dialog.locator("ol > li")).toHaveCount(7);
+      await expect(dialog).not.toContainText(/Developer Mode/i);
+      for (const snippet of c.expectedSnippets) {
+        await expect(dialog).toContainText(snippet);
+      }
+      await expect(dialog.getByText("https://mcp.caiobarilli.workers.dev/mcp")).toBeVisible();
+      await expect(dialog.getByRole("link", { name: c.docsName })).toHaveAttribute("href", c.docsUrl);
+    }
+  });
 });

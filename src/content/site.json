@@ -127,7 +127,7 @@
       "mcpToConfirm": "TO CONFIRM",
       "mcpFoot": "This menu does not connect anything automatically — it only teaches. Requirements vary by plan, region and account type: confirm in the official docs.",
       "mcpFootDetail": "Connection over public HTTPS (Streamable HTTP). Confirm plan, region and account requirements in the official docs — subject to change.",
-      "mcpGptSub": "Plus · Pro · Business/Enterprise + Developer Mode",
+      "mcpGptSub": "ChatGPT Web (Plugins) · Business · Enterprise/Edu",
       "mcpClaudeSub": "Free (1 connector) · Pro · Max · Ultra · Team · Enterprise",
       "mcpGeminiSubPrefix": "via Gemini CLI · web app:"
     },
@@ -258,7 +258,7 @@
       "mcpToConfirm": "A CONFIRMAR",
       "mcpFoot": "Este menu não conecta nada automaticamente — só ensina. Requisitos variam por plano, região e tipo de conta: confirme na documentação oficial.",
       "mcpFootDetail": "Conexão via HTTPS público (Streamable HTTP). Confirme plano, região e tipo de conta na documentação oficial — sujeito a mudanças.",
-      "mcpGptSub": "Plus · Pro · Business/Enterprise + Developer Mode",
+      "mcpGptSub": "ChatGPT Web (Plugins) · Business · Enterprise/Edu",
       "mcpClaudeSub": "Free (1 conector) · Pro · Max · Ultra · Team · Enterprise",
       "mcpGeminiSubPrefix": "via Gemini CLI · app web:"
     }
