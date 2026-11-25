@@ -577,20 +577,24 @@ test.describe("short résumé address", () => {
 });
 
 test.describe("Ask about Caio & Connect MCP (home-only)", () => {
-  test("renders the Ask section between Selected articles and the final CTA in PT-BR and EN", async ({ page }) => {
+  test("renders the Ask section between the Hero and Featured work in PT-BR and EN", async ({ page }) => {
     for (const [path, heading, shuffleLabel] of [
       ["/pt-br/", "Pergunte sobre o Caio", "Trocar sugestões"],
       ["/en/", "Ask about Caio", "Shuffle suggestions"],
     ] as const) {
       await page.goto(path);
-      const articles = page.locator("section[aria-labelledby=h-medium]");
+      const hero = page.locator("main section").first();
       const ask = page.locator("section#ask");
-      const cta = page.locator("section.bg-accent");
+      const featured = page.locator("section[aria-labelledby=h-featured]");
 
       await expect(ask.getByRole("heading", { name: heading })).toBeVisible();
-      const [artBox, askBox, ctaBox] = await Promise.all([articles.boundingBox(), ask.boundingBox(), cta.boundingBox()]);
-      expect(artBox!.y + artBox!.height).toBeLessThanOrEqual(askBox!.y + 2);
-      expect(askBox!.y + askBox!.height).toBeLessThanOrEqual(ctaBox!.y + 2);
+      const [heroBox, askBox, featuredBox] = await Promise.all([
+        hero.boundingBox(),
+        ask.boundingBox(),
+        featured.boundingBox(),
+      ]);
+      expect(heroBox!.y + heroBox!.height).toBeLessThanOrEqual(askBox!.y + 2);
+      expect(askBox!.y + askBox!.height).toBeLessThanOrEqual(featuredBox!.y + 2);
 
       const group = ask.getByRole("group");
       const buttons = group.getByRole("button");

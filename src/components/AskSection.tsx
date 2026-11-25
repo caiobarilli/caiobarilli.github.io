@@ -143,7 +143,7 @@ export function AskSection({ locale, questions, labels }: Props) {
     <section
       id="ask"
       aria-labelledby="h-ask"
-      className="border-t border-line py-[clamp(56px,9vw,104px)]"
+      className="border-y border-line py-[clamp(52px,7.5vw,88px)]"
     >
       <p className="font-mono text-sm text-accent-text" aria-hidden="true">
         caio@mcp:~$ <span className="text-ink-2">{labels.eyebrowCmd}</span>
