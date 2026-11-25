@@ -67,7 +67,37 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           </div>
         </section>
 
-        <section aria-labelledby="h-featured" className="pb-[clamp(64px,9vw,104px)]">
+        <AskSection
+          locale={locale}
+          questions={localizedQuestions}
+          labels={{
+            eyebrowCmd: s("askEyebrowCmd"),
+            title: s("askTitle"),
+            sub: s("askSub"),
+            placeholder: s("askPlaceholder"),
+            button: s("askButton"),
+            srHint: s("askSrHint"),
+            suggestionsLabel: s("askSuggestionsLabel"),
+            suggestionsGroup: s("askSuggestionsGroup"),
+            shuffle: s("askShuffle"),
+            sessionLabel: s("askSessionLabel"),
+            loading: s("askLoading"),
+            sourcePrefix: s("askSourcePrefix"),
+            unsupportedTitle: s("askUnsupportedTitle"),
+            unsupportedBody: s("askUnsupportedBody"),
+            errorTitle: s("askErrorTitle"),
+            errorBody: s("askErrorBody"),
+            retry: s("askRetry"),
+            nowTitle: s("askNowTitle"),
+            nowTag: s("askNowTag"),
+            nowBody: s("askNowBody"),
+            laterTitle: s("askLaterTitle"),
+            laterTag: s("askLaterTag"),
+            laterBody: s("askLaterBody"),
+          }}
+        />
+
+        <section aria-labelledby="h-featured" className="pt-[clamp(56px,8vw,96px)] pb-[clamp(64px,9vw,104px)]">
           <div className="mb-6 flex flex-wrap items-baseline justify-between gap-3">
             <h2 id="h-featured" className="text-[28px] font-semibold tracking-[-0.02em]">{s("featured")}</h2>
             <Link href={`/${locale}/projects/`} className="flex min-h-11 items-center font-mono text-sm font-medium text-muted hover:text-ink">
@@ -171,36 +201,6 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             ))}
           </div>
         </section>
-
-        <AskSection
-          locale={locale}
-          questions={localizedQuestions}
-          labels={{
-            eyebrowCmd: s("askEyebrowCmd"),
-            title: s("askTitle"),
-            sub: s("askSub"),
-            placeholder: s("askPlaceholder"),
-            button: s("askButton"),
-            srHint: s("askSrHint"),
-            suggestionsLabel: s("askSuggestionsLabel"),
-            suggestionsGroup: s("askSuggestionsGroup"),
-            shuffle: s("askShuffle"),
-            sessionLabel: s("askSessionLabel"),
-            loading: s("askLoading"),
-            sourcePrefix: s("askSourcePrefix"),
-            unsupportedTitle: s("askUnsupportedTitle"),
-            unsupportedBody: s("askUnsupportedBody"),
-            errorTitle: s("askErrorTitle"),
-            errorBody: s("askErrorBody"),
-            retry: s("askRetry"),
-            nowTitle: s("askNowTitle"),
-            nowTag: s("askNowTag"),
-            nowBody: s("askNowBody"),
-            laterTitle: s("askLaterTitle"),
-            laterTag: s("askLaterTag"),
-            laterBody: s("askLaterBody"),
-          }}
-        />
 
         <section className="mb-14 flex flex-wrap items-end justify-between gap-8 rounded-3xl bg-accent p-[clamp(32px,6vw,64px)] text-on-accent">
           <div>
