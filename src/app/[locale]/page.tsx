@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import { AskSection } from "@/components/AskSection";
+import { ConnectMcpFab } from "@/components/ConnectMcpFab";
 import { EmailButton } from "@/components/EmailButton";
 import { Shot } from "@/components/Shot";
 import { shotSrc } from "@/content/images";
@@ -17,7 +19,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
   const s = (key: string) => str(locale, key);
-  const { stack, articles, contacts } = getContent();
+  const { stack, articles, contacts, askQuestions } = getContent();
+  const localizedQuestions = askQuestions.map((q) => localize(q.text, locale));
   const email = contacts.find((c) => c.url.startsWith("mailto:"));
   const medium = contacts.find((c) => c.label === "Medium" && !c.pending);
   const [hero, ...rest] = mainProjects();
@@ -169,6 +172,36 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           </div>
         </section>
 
+        <AskSection
+          locale={locale}
+          questions={localizedQuestions}
+          labels={{
+            eyebrowCmd: s("askEyebrowCmd"),
+            title: s("askTitle"),
+            sub: s("askSub"),
+            placeholder: s("askPlaceholder"),
+            button: s("askButton"),
+            srHint: s("askSrHint"),
+            suggestionsLabel: s("askSuggestionsLabel"),
+            suggestionsGroup: s("askSuggestionsGroup"),
+            shuffle: s("askShuffle"),
+            sessionLabel: s("askSessionLabel"),
+            loading: s("askLoading"),
+            sourcePrefix: s("askSourcePrefix"),
+            unsupportedTitle: s("askUnsupportedTitle"),
+            unsupportedBody: s("askUnsupportedBody"),
+            errorTitle: s("askErrorTitle"),
+            errorBody: s("askErrorBody"),
+            retry: s("askRetry"),
+            nowTitle: s("askNowTitle"),
+            nowTag: s("askNowTag"),
+            nowBody: s("askNowBody"),
+            laterTitle: s("askLaterTitle"),
+            laterTag: s("askLaterTag"),
+            laterBody: s("askLaterBody"),
+          }}
+        />
+
         <section className="mb-14 flex flex-wrap items-end justify-between gap-8 rounded-3xl bg-accent p-[clamp(32px,6vw,64px)] text-on-accent">
           <div>
             <h2 className="mb-3.5 max-w-[640px] text-[clamp(36px,5.5vw,64px)] leading-none font-bold tracking-[-0.04em]">{s("ctaTitle")}</h2>
@@ -187,6 +220,27 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           </div>
         </section>
       </div>
+
+      <ConnectMcpFab
+        locale={locale}
+        labels={{
+          fabLabel: s("mcpFabLabel"),
+          panelTitle: s("mcpPanelTitle"),
+          panelAria: s("mcpPanelAria"),
+          close: s("mcpClose"),
+          desc: s("mcpDesc"),
+          back: s("mcpBack"),
+          copy: s("mcpCopy"),
+          copied: s("mcpCopied"),
+          docs: s("mcpDocs"),
+          toConfirm: s("mcpToConfirm"),
+          foot: s("mcpFoot"),
+          footDetail: s("mcpFootDetail"),
+          gptSub: s("mcpGptSub"),
+          claudeSub: s("mcpClaudeSub"),
+          geminiSubPrefix: s("mcpGeminiSubPrefix"),
+        }}
+      />
     </>
   );
 }
