@@ -576,11 +576,11 @@ test.describe("short résumé address", () => {
   });
 });
 
-test.describe("Ask about Caio & Connect MCP (home-only)", () => {
+test.describe("Ask about me & Connect MCP (home-only)", () => {
   test("renders the Ask section between the Hero and Featured work in PT-BR and EN", async ({ page }) => {
     for (const [path, heading, shuffleLabel] of [
-      ["/pt-br/", "Pergunte sobre o Caio", "Trocar sugestões"],
-      ["/en/", "Ask about Caio", "Shuffle suggestions"],
+      ["/pt-br/", "Pergunte sobre mim", "Trocar sugestões"],
+      ["/en/", "Ask about me", "Shuffle suggestions"],
     ] as const) {
       await page.goto(path);
       const hero = page.locator("main section").first();

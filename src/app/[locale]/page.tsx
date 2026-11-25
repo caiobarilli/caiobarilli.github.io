@@ -88,12 +88,10 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             errorTitle: s("askErrorTitle"),
             errorBody: s("askErrorBody"),
             retry: s("askRetry"),
-            nowTitle: s("askNowTitle"),
-            nowTag: s("askNowTag"),
-            nowBody: s("askNowBody"),
-            laterTitle: s("askLaterTitle"),
-            laterTag: s("askLaterTag"),
-            laterBody: s("askLaterBody"),
+            card1Question: s("askCard1Question"),
+            card1Answer: s("askCard1Answer"),
+            card2Question: s("askCard2Question"),
+            card2Answer: s("askCard2Answer"),
           }}
         />
 

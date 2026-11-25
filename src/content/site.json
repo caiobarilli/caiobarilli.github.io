@@ -92,12 +92,12 @@
       "cvSkills": "PHP · Laravel · Livewire · Inertia · MySQL · Redis/Horizon (queues) · REST APIs · Pest · PHPUnit · PHPStan · Git · Docker · Terraform · AWS · CI/CD with GitHub Actions · Linux · WordPress · Next.js · TypeScript",
       "cvLocation": "Based in São Paulo, Brazil (UTC−3) · Remote · Full-time or contractor (own Brazilian company) · English: intermediate, used daily in docs, commits and PRs",
       "cvPhone": "+55 11 93759-9166",
-      "askEyebrowCmd": "ask --about=caio",
-      "askTitle": "Ask about Caio",
-      "askSub": "Answers come only from this site's content, via Caio's public MCP — structured data on profile, experience, projects, stack and articles. Questions are routed in your browser; neither this site nor the MCP server stores your question text.",
+      "askEyebrowCmd": "ask --about=me",
+      "askTitle": "Ask about me",
+      "askSub": "Answers come only from this site's content, via my public MCP — structured data on profile, experience, projects, stack and articles. Questions are routed in your browser; neither this site nor the MCP server stores your question text.",
       "askPlaceholder": "type your question…",
       "askButton": "Ask",
-      "askSrHint": "Deterministic routing queries Caio's public MCP and formats structured portfolio data with verifiable sources.",
+      "askSrHint": "Deterministic routing queries my public MCP and formats structured portfolio data with verifiable sources.",
       "askSuggestionsLabel": "Or ask right away:",
       "askSuggestionsGroup": "Suggested questions",
       "askShuffle": "Shuffle suggestions",
@@ -105,21 +105,19 @@
       "askLoading": "querying mcp…",
       "askSourcePrefix": "// source:",
       "askUnsupportedTitle": "Question outside the supported portfolio topics.",
-      "askUnsupportedBody": "This V1 uses deterministic routing (not a generative AI chatbot) over Caio's structured public MCP: profile, experience, projects, stack and articles. Try one of the suggested questions above or ask about a specific project, technology or career topic.",
+      "askUnsupportedBody": "This V1 uses deterministic routing (not a generative AI chatbot) over my structured public MCP: profile, experience, projects, stack and articles. Try one of the suggested questions above or ask about a specific project, technology or career topic.",
       "askErrorTitle": "mcp: endpoint unavailable right now.",
       "askErrorBody": "Could not fetch a response from the public MCP right now. Try again in a moment.",
       "askRetry": "Try again",
-      "askNowTitle": "Today — the MCP already serves",
-      "askNowTag": "structured data",
-      "askNowBody": "Deterministic routing maps supported questions to the right MCP tool and formats real data with its source:",
-      "askLaterTitle": "Later — to be built",
-      "askLaterTag": "free-form interpretation",
-      "askLaterBody": "Synthesizing arbitrary natural-language questions requires an AI layer on top of the MCP. This V1 stays honest and deterministic without inventing answers.",
+      "askCard1Question": "What kind of question can I ask?",
+      "askCard1Answer": "You can ask about my projects, experience, education, technologies, articles and professional availability. The answers use public data from my portfolio, with the source shown.",
+      "askCard2Question": "How do I connect my MCP to an AI agent?",
+      "askCard2Answer": "Use the Connect MCP button to check the setup steps for each platform and copy my public server address.",
       "mcpFabLabel": "Connect MCP",
       "mcpPanelTitle": "connect this mcp",
       "mcpPanelAria": "Connect the MCP to AI agents",
       "mcpClose": "Close panel",
-      "mcpDesc": "Use Caio's public MCP in your AI agent. Pick a provider for the setup steps:",
+      "mcpDesc": "Connect my MCP to your AI agent. Pick a provider for the setup steps:",
       "mcpBack": "Back",
       "mcpCopy": "copy",
       "mcpCopied": "copied ✓",
@@ -155,7 +153,7 @@
       "stack": "Stack",
       "latest": "Artigos selecionados",
       "allArticles": "Todos os artigos no Medium ↗",
-      "rssNote": "Placeholder · os títulos vêm do RSS do Medium no build",
+      "rssNote": "Placeholder · os títulos vêm do RSS do Medium durante o build",
       "readMedium": "Ler no Medium ↗",
       "articleLang": "",
       "ctaTitle": "Vamos construir algo sólido.",
@@ -223,12 +221,12 @@
       "cvSkills": "PHP · Laravel · Livewire · Inertia · MySQL · Redis/Horizon (filas) · APIs REST · Pest · PHPUnit · PHPStan · Git · Docker · Terraform · AWS · CI/CD com GitHub Actions · Linux · WordPress · Next.js · TypeScript",
       "cvLocation": "São Paulo, Brasil (UTC−3) · Remoto · CLT ou PJ · Inglês intermediário",
       "cvPhone": "+55 11 93759-9166",
-      "askEyebrowCmd": "pergunte --sobre=caio",
-      "askTitle": "Pergunte sobre o Caio",
-      "askSub": "As respostas vêm só do conteúdo deste site, consultando o MCP público do Caio — dados estruturados sobre perfil, experiência, projetos, stack e artigos. A pergunta é interpretada no navegador; nem este site nem o servidor MCP armazenam o texto enviado.",
+      "askEyebrowCmd": "pergunte --sobre=mim",
+      "askTitle": "Pergunte sobre mim",
+      "askSub": "As respostas vêm só do conteúdo deste site, consultando o meu MCP público — dados estruturados sobre perfil, experiência, projetos, stack e artigos. A pergunta é roteada no navegador; nem este site nem o servidor MCP armazenam o texto enviado.",
       "askPlaceholder": "digite sua pergunta…",
       "askButton": "Perguntar",
-      "askSrHint": "O roteamento determinístico consulta o MCP público do Caio e formata dados estruturados do portfólio com fontes verificáveis.",
+      "askSrHint": "O roteamento determinístico consulta o meu MCP público e formata dados estruturados do portfólio com fontes verificáveis.",
       "askSuggestionsLabel": "Ou pergunte direto:",
       "askSuggestionsGroup": "Perguntas sugeridas",
       "askShuffle": "Trocar sugestões",
@@ -236,21 +234,19 @@
       "askLoading": "consultando mcp…",
       "askSourcePrefix": "// fonte:",
       "askUnsupportedTitle": "Pergunta fora dos temas suportados do portfólio.",
-      "askUnsupportedBody": "Esta V1 usa roteamento determinístico (não é um chatbot generativo) sobre o MCP público estruturado do Caio: perfil, experiência, projetos, stack e artigos. Experimente uma das sugestões acima ou pergunte sobre um projeto, tecnologia ou experiência específica.",
+      "askUnsupportedBody": "Esta V1 usa roteamento determinístico (não é um chatbot generativo) sobre o meu MCP público estruturado: perfil, experiência, projetos, stack e artigos. Experimente uma das sugestões acima ou pergunte sobre um projeto, tecnologia ou experiência específica.",
       "askErrorTitle": "mcp: endpoint indisponível agora.",
       "askErrorBody": "Não foi possível obter resposta do MCP público neste momento. Tente novamente em instantes.",
       "askRetry": "Tentar de novo",
-      "askNowTitle": "Hoje — o MCP já entrega",
-      "askNowTag": "dados estruturados",
-      "askNowBody": "O roteamento determinístico direciona perguntas suportadas para a ferramenta certa e exibe dados reais com a fonte:",
-      "askLaterTitle": "Futuro — a construir",
-      "askLaterTag": "interpretação livre",
-      "askLaterBody": "Sintetizar perguntas abertas em linguagem natural exige uma camada de IA acoplada ao MCP. Esta V1 permanece transparente e determinística, sem inventar respostas.",
+      "askCard1Question": "Que tipo de pergunta posso fazer?",
+      "askCard1Answer": "Você pode perguntar sobre meus projetos, experiência, formação, tecnologias, artigos e disponibilidade profissional. As respostas utilizam dados públicos do meu portfólio, com indicação da fonte.",
+      "askCard2Question": "Como conecto meu MCP a um agente de IA?",
+      "askCard2Answer": "Use o botão Conectar MCP para consultar as instruções de cada plataforma e copiar o endereço do meu servidor público.",
       "mcpFabLabel": "Conectar MCP",
       "mcpPanelTitle": "conectar este mcp",
       "mcpPanelAria": "Conectar o MCP a agentes de IA",
       "mcpClose": "Fechar painel",
-      "mcpDesc": "Use o MCP público do Caio no seu agente de IA. Escolha um provedor para ver o passo a passo:",
+      "mcpDesc": "Conecte meu MCP ao seu agente de IA. Escolha um provedor para ver o passo a passo:",
       "mcpBack": "Voltar",
       "mcpCopy": "copiar",
       "mcpCopied": "copiado ✓",
@@ -360,7 +356,7 @@
       },
       "solution": {
         "en": "Keeptask brings intake, execution, time tracking and metrics into one place. Requests arrive through public forms and portals and become tasks on the right board. Each stage of a board declares what it requires and how long a task may stay there, so the process is enforced by the tool instead of by memory. Time is tracked per task and rolls up into dashboards and budget vs. actual cost reports. The team estimates together in a built-in Planning Poker, everything updates live without a refresh, and the native app takes the day's work to the field, even offline. The web app runs on Laravel 13 with Livewire, Reverb, Horizon and Meilisearch; the mobile app, built with NativePHP, uses the same versioned API.",
-        "pt": "O Keeptask junta entrada de demandas, execução, controle de tempo e métricas num lugar só. As demandas chegam por formulários e portais públicos e viram tarefas no quadro certo. Cada etapa do quadro declara o que exige e quanto tempo a tarefa pode ficar ali, então o processo é cobrado pela ferramenta, e não pela memória. O tempo é apontado por tarefa e alimenta dashboards e relatórios de custo orçado × realizado. O time estima junto num Planning Poker embutido, tudo atualiza ao vivo sem recarregar, e o app nativo leva o trabalho do dia para o campo, até sem internet. A web roda em Laravel 13 com Livewire, Reverb, Horizon e Meilisearch; o app móvel, em NativePHP, consome a mesma API versionada."
+        "pt": "O Keeptask junta entrada de demandas, execução, controle de tempo e métricas num lugar só. As demandas chegam por formulários e portais públicos e viram tarefas no quadro certo. Cada etapa do quadro declara o que exige e quanto tempo a tarefa pode ficar ali, então o processo é cobrado pela ferramenta, e não pela memória. O tempo é apontado por tarefa e alimenta dashboards e relatórios de custo orçado × realizado. O time estima junto num Planning Poker embutido, tudo atualiza ao vivo sem recarregar, e o app nativo leva o trabalho do dia para o campo, até sem internet. A versão web roda em Laravel 13 com Livewire, Reverb, Horizon e Meilisearch; o app móvel, em NativePHP, consome a mesma API versionada."
       },
       "adrs": [
         {
@@ -461,7 +457,7 @@
           },
           "alt": {
             "en": "Two phone screens: the fingerprint prompt and a new task push notification",
-            "pt": "Duas telas de celular: o pedido de digital e uma notificação push de nova tarefa"
+            "pt": "Duas telas de celular: a solicitação de digital e uma notificação push de nova tarefa"
           }
         }
       ],
@@ -488,7 +484,7 @@
           "value": "6",
           "label": {
             "en": "roles with per-team permissions",
-            "pt": "papéis com permissão por equipe"
+            "pt": "papéis com permissões por equipe"
           }
         },
         {
@@ -571,7 +567,7 @@
             },
             {
               "en": "SLA per stage: the card lights up when a task stays too long, and an alert goes out",
-              "pt": "SLA por etapa: o card acende quando a tarefa passa do tempo, e um alerta é enviado"
+              "pt": "SLA por etapa: o card acende quando a tarefa passa do limite de tempo, e um alerta é enviado"
             },
             {
               "en": "Play/pause timer on the card and in the task, with tracked vs. estimated time for task and subtasks",
@@ -687,7 +683,7 @@
             },
             {
               "en": "Attachments on the server or on the team's own S3, enabled only after a live write-and-delete test; the secret never returns to the screen",
-              "pt": "Anexos no servidor ou no S3 da própria equipe, ativado só depois de um teste real de gravar e apagar; a credencial nunca volta para a tela"
+              "pt": "Anexos no servidor ou no S3 da própria equipe, recurso ativado só depois de um teste real de gravar e apagar; a credencial nunca volta para a tela"
             }
           ]
         },
@@ -711,7 +707,7 @@
             },
             {
               "en": "Global search with Ctrl+K (Scout + Meilisearch), light and dark themes and a translatable interface",
-              "pt": "Busca global com Ctrl+K (Scout + Meilisearch), temas claro e escuro e interface traduzível"
+              "pt": "Busca global com Ctrl+K (Scout + Meilisearch), temas claro e escuro e interface em vários idiomas"
             }
           ]
         },
@@ -814,7 +810,7 @@
       },
       "solution": {
         "en": "Team Info4All built a prototype with mock data over real infrastructure. The agent runs GPT-4.1-mini on Azure AI Foundry with tool calling through the OpenAI SDK: it reads the question, writes the SQL, runs it on Trino against the Gold tables of an open-source data lakehouse (MinIO, Hive Metastore, dbt in a medallion architecture, built on public Brazilian company data) and answers with a table, a chart and an explanation.",
-        "pt": "A equipe Info4All montou um protótipo com dados fictícios sobre uma infraestrutura real. O agente usa o GPT-4.1-mini no Azure AI Foundry, com tool calling pelo OpenAI SDK: interpreta a pergunta, gera o SQL, executa no Trino sobre as tabelas Gold de um data lakehouse open source (MinIO, Hive Metastore, dbt em arquitetura medallion, com dados públicos de CNPJ) e responde com tabela, gráfico e explicação."
+        "pt": "A equipe Info4All montou um protótipo com dados fictícios em uma infraestrutura real. O agente usa o GPT-4.1-mini no Azure AI Foundry, com tool calling pelo OpenAI SDK: interpreta a pergunta, gera o SQL, executa no Trino sobre as tabelas Gold de um data lakehouse open source (MinIO, Hive Metastore, dbt em arquitetura medallion, com dados públicos de CNPJ) e responde com tabela, gráfico e explicação."
       },
       "features": [
         {
@@ -844,7 +840,7 @@
           },
           "items": [
             {
-              "en": "Bronze, silver and gold layers modelled with dbt, with dimension and fact tables in gold",
+              "en": "Bronze, silver and gold layers modeled with dbt, with dimension and fact tables in gold",
               "pt": "Camadas bronze, silver e gold modeladas em dbt, com dimensões e fatos na gold"
             },
             {
@@ -914,7 +910,7 @@
           },
           "alt": {
             "en": "Capstone cover: AI agent platform, Contabilizei challenge",
-            "pt": "Capa do TCC: plataforma para agentes de IA, desafio Contabilizei"
+            "pt": "Capa do TCC: plataforma para agentes de IA, desafio da Contabilizei"
           }
         }
       ]
@@ -971,7 +967,7 @@
           },
           "body": {
             "en": "Only actions listed in a manifest, from a protected folder, can run elevated on the host.",
-            "pt": "Só ações listadas num manifesto, de uma pasta protegida, rodam elevadas no host."
+            "pt": "Só ações de uma pasta protegida, listadas num manifesto, rodam elevadas no host."
           }
         },
         {
@@ -1100,7 +1096,7 @@
       },
       "solution": {
         "en": "A Laravel and Livewire app for speaking practice. Whisper runs locally in Docker to transcribe what you say, and the infrastructure is provisioned with Terraform. Practice texts come from a local model on Ollama through llm-gateway, a FastAPI gateway maintained as a separate project. It requires a token, accepts only allowed models, validates the output against a JSON Schema and logs metrics without storing any text. The app runs the gateway's published image, pinned by digest, and a contract test checks every new version before it goes in. Each generated text goes through the app's validation and reaches practice only after it is approved.",
-        "pt": "Um app em Laravel e Livewire para treinar a fala. O Whisper roda localmente em Docker para transcrever o que você diz, e a infraestrutura é provisionada com Terraform. Os textos de treino vêm de um modelo local no Ollama, por meio do llm-gateway, um gateway em FastAPI mantido como projeto separado. Ele exige token, aceita só os modelos permitidos, valida a resposta por JSON Schema e registra métricas sem guardar texto. O app usa a imagem publicada do gateway, fixada por digest, e um teste de contrato confere cada versão nova antes de ela entrar. Cada texto gerado passa pela validação do app e só entra no treino depois de aprovado na gestão."
+        "pt": "Um app em Laravel e Livewire para treinar a fala. O Whisper roda localmente em Docker para transcrever o que você diz, e a infraestrutura é provisionada com Terraform. Os textos de treino vêm de um modelo local no Ollama, por meio do llm-gateway, um gateway em FastAPI mantido como projeto separado. Ele exige token, aceita só os modelos permitidos, valida a resposta contra um JSON Schema e registra métricas sem guardar texto. O app usa a imagem publicada do gateway, fixada por digest, e um teste de contrato confere cada versão nova antes de ela entrar. Cada texto gerado passa pela validação do app e só entra no treino depois de aprovado na gestão."
       },
       "adrs": [
         {
@@ -1151,7 +1147,7 @@
           "id": "ADR 0014",
           "title": {
             "en": "Gateway as an image",
-            "pt": "Gateway por imagem"
+            "pt": "Gateway como imagem"
           },
           "body": {
             "en": "The gateway comes from a published image pinned by digest; the app has no Python code.",
@@ -1280,7 +1276,7 @@
       },
       "solution": {
         "en": "The theme runs on Acorn, which brings Laravel into WordPress: service providers, controllers, middleware, migrations and seeders. The store, sign-in and customer area screens are Livewire components with Flux UI, and the admin panel is custom too. The layout follows a design made in Figma, with Full Site Editing and Tailwind 4. For development, terraform-bedrock uses Terraform to bring up a Docker environment with Nginx, PHP-FPM, MySQL and Node for Bedrock.",
-        "pt": "O tema roda sobre o Acorn, que traz o Laravel para dentro do WordPress: service providers, controllers, middleware, migrations e seeders. As telas da loja, do login e da área do cliente são componentes Livewire com Flux UI, e o painel administrativo também é próprio. O layout segue um design feito no Figma, com Full Site Editing e Tailwind 4. Para desenvolver, o terraform-bedrock sobe com Terraform um ambiente Docker com Nginx, PHP-FPM, MySQL e Node para o Bedrock."
+        "pt": "O tema roda sobre o Acorn, que traz o Laravel para dentro do WordPress: service providers, controllers, middleware, migrations e seeders. As telas da loja, do login e da área do cliente são componentes Livewire com Flux UI, e o painel administrativo também é feito do zero. O layout segue um design feito no Figma, com Full Site Editing e Tailwind 4. Para desenvolver, o terraform-bedrock sobe com Terraform um ambiente Docker com Nginx, PHP-FPM, MySQL e Node para o Bedrock."
       },
       "features": [
         {
@@ -1321,7 +1317,7 @@
         },
         {
           "title": {
-            "en": "WordPress organised like Laravel",
+            "en": "WordPress organized like Laravel",
             "pt": "WordPress organizado como Laravel"
           },
           "items": [
@@ -1455,7 +1451,7 @@
       },
       "solution": {
         "en": "The portal and the social network were built on a complete community WordPress theme, with a child theme carrying the project's identity and a fully responsive layout. Pages were built in Elementor. The social network runs on the big community plugins integrated with the theme, BuddyPress and bbPress, and on top of them we developed several custom plugins: tools for the administrators and layout components the theme did not offer. On the infrastructure side, everything is versioned as code with Terraform: an Ubuntu server on AWS with the site on a separate disk, remote, encrypted state in S3, and identical production and staging environments. Every week an automatic backup of the database and the theme goes to a bucket. Since everything else is rebuilt from code, the whole environment can be recreated without losses. DNS and SSL run on Cloudflare, and the server is managed with WordOps.",
-        "pt": "O portal e a rede social foram construídos sobre um tema WordPress completo de comunidade, com um child theme com a identidade do projeto e layout totalmente responsivo. As páginas foram montadas no Elementor. A rede social usa os grandes plugins de comunidade integrados ao tema, o BuddyPress e o bbPress, e por cima deles desenvolvemos vários plugins próprios: ferramentas para os administradores e componentes de layout que o tema não oferecia. Na infraestrutura, tudo é versionado como código com Terraform: servidor Ubuntu na AWS com o site num disco separado, estado remoto e criptografado no S3, e produção e homologação idênticas. Toda semana, um backup automático do banco de dados e do tema vai para um bucket. Como todo o resto é recriado a partir do código, o ambiente inteiro pode ser reconstruído sem perdas. O DNS e o SSL ficam no Cloudflare, e o servidor é gerenciado com WordOps."
+        "pt": "O portal e a rede social foram construídos sobre um tema completo de comunidade para WordPress, com um child theme com a identidade do projeto e layout totalmente responsivo. As páginas foram montadas no Elementor. A rede social usa os principais plugins de comunidade integrados ao tema, o BuddyPress e o bbPress, e por cima deles desenvolvemos vários plugins próprios: ferramentas para os administradores e componentes de layout que o tema não oferecia. Na infraestrutura, tudo é versionado como código com Terraform: servidor Ubuntu na AWS com o site num disco separado, estado remoto e criptografado no S3, e produção e homologação idênticas. Toda semana, um backup automático do banco de dados e do tema vai para um bucket. Como todo o resto é recriado a partir do código, o ambiente inteiro pode ser reconstruído sem perdas. O DNS e o SSL ficam no Cloudflare, e o servidor é gerenciado com WordOps."
       },
       "adrs": [
         {
@@ -1507,7 +1503,7 @@
         {
           "file": "aws-architecture.webp",
           "caption": {
-            "en": "Sanitised architecture diagram",
+            "en": "Sanitized architecture diagram",
             "pt": "Diagrama de arquitetura sem dados sensíveis"
           },
           "alt": {
@@ -1693,12 +1689,12 @@
         "pt": "E-commerce em Next.js 14 com rotas avançadas do App Router, API própria sobre SQLite, carrinho em Redux e teste em cada componente."
       },
       "problem": {
-        "en": "Practise the App Router's advanced routing on a real store, starting from my own Next.js boilerplate.",
+        "en": "Practice the App Router's advanced routing on a real store, starting from my own Next.js boilerplate.",
         "pt": "Praticar as rotas avançadas do App Router numa loja de verdade, a partir do meu próprio boilerplate de Next.js."
       },
       "solution": {
         "en": "Parallel routes compose the home page, an intercepted route opens product images in a modal that still has its own URL, and a catch-all route handles the shop filters. Route Handlers serve products, categories, search, related items and reviews from SQLite. The cart uses Redux Toolkit with redux-persist, the forms use Formik and Yup, and the layout comes from the free Nordic Store template.",
-        "pt": "Rotas paralelas montam a home, uma rota interceptada abre a imagem do produto num modal que continua com URL própria, e uma rota catch-all cuida dos filtros da loja. Route Handlers servem produtos, categorias, busca, relacionados e avaliações a partir do SQLite. O carrinho usa Redux Toolkit com redux-persist, os formulários usam Formik e Yup, e o layout vem do template gratuito Nordic Store."
+        "pt": "Rotas paralelas montam a home, uma rota interceptada abre a imagem do produto num modal que mantém a URL própria, e uma rota catch-all cuida dos filtros da loja. Route Handlers servem produtos, categorias, busca, relacionados e avaliações a partir do SQLite. O carrinho usa Redux Toolkit com redux-persist, os formulários usam Formik e Yup, e o layout vem do template gratuito Nordic Store."
       },
       "adrs": [
         {
@@ -1720,7 +1716,7 @@
           },
           "body": {
             "en": "Intercepting routes open the product image over the page, and a refresh lands on the full image page.",
-            "pt": "Rotas interceptadas abrem a imagem por cima da página, e um refresh cai na página da imagem."
+            "pt": "Rotas interceptadas abrem a imagem por cima da página, e ao recarregar você cai na página da imagem."
           }
         },
         {
@@ -1750,7 +1746,7 @@
         {
           "file": "store-product.webp",
           "caption": {
-            "en": "Product page: gallery, colours, quantity and reviews",
+            "en": "Product page: gallery, colors, quantity and reviews",
             "pt": "Página de produto: galeria, cores, quantidade e avaliações"
           },
           "alt": {
@@ -1796,7 +1792,7 @@
         "pt": "API REST em Express e MongoDB com autenticação JWT e validação de requisições, rodando em Docker. Feita no curso MERN Stack Front To Back."
       },
       "problem": {
-        "en": "Course project to practise a Node.js back end with authentication.",
+        "en": "Course project to practice a Node.js back end with authentication.",
         "pt": "Projeto de curso para praticar um back end em Node.js com autenticação."
       },
       "solution": {
@@ -1834,7 +1830,7 @@
           },
           "body": {
             "en": "A small shell script wraps Docker Compose to bring the API up and open a shell in the container.",
-            "pt": "Um script em shell embrulha o Docker Compose para subir a API e abrir um terminal no container."
+            "pt": "Um script em shell encapsula o Docker Compose para subir a API e abrir um terminal no container."
           }
         }
       ],
@@ -1893,7 +1889,7 @@
         "pt": "Aplicação full-stack com API em Express e TypeScript e front em Angular Material, com MongoDB e Docker Compose. Feita no curso MEAN Stack Guide."
       },
       "problem": {
-        "en": "Practise a typed full-stack app end to end, from authentication to e-mail.",
+        "en": "Practice a typed full-stack app end to end, from authentication to e-mail.",
         "pt": "Praticar uma aplicação full-stack tipada de ponta a ponta, da autenticação ao e-mail."
       },
       "solution": {
@@ -2073,7 +2069,7 @@
       },
       "summary": {
         "en": "How I orchestrated a whole Laravel project with WSL2, Terraform, Docker and two AI agents in separate roles, with the rules written down in files instead of kept in my head.",
-        "pt": "Como orquestrei um projeto Laravel inteiro com WSL2, Terraform, Docker e dois agentes de IA em papéis separados, com as regras escritas em arquivo, e não na minha cabeça."
+        "pt": "Como orquestrei um projeto Laravel inteiro com WSL2, Terraform, Docker e dois agentes de IA em papéis separados, com as regras escritas em arquivos, e não na minha cabeça."
       },
       "url": "https://medium.com/@caiobarilli/duas-m%C3%A1quinas-um-fluxo-e458c136b44c"
     },
@@ -2141,7 +2137,7 @@
       },
       "summary": {
         "en": "I developed the institutional site and the news portal on WordPress (child theme over a community theme, plus custom plugins); AWS environments with Terraform (production and staging); DNS and SSL via Cloudflare; WordOps provisioning; Docker; technical SEO and performance; worked directly with the client and coordinated the design team.",
-        "pt": "Realizei o desenvolvimento do site institucional e do portal de notícias em WordPress (child theme sobre um tema de comunidade e plugins próprios); ambientes AWS com Terraform (produção e staging); DNS e SSL via Cloudflare; provisionamento com WordOps; Docker; SEO técnico e performance; contato direto com o cliente e coordenação do time de design."
+        "pt": "Desenvolvi o site institucional e o portal de notícias em WordPress (child theme sobre um tema de comunidade e plugins próprios); ambientes AWS com Terraform (produção e staging); DNS e SSL via Cloudflare; provisionamento com WordOps; Docker; SEO técnico e performance; contato direto com o cliente e coordenação do time de design."
       },
       "keys": [
         "WordPress",
@@ -2429,15 +2425,15 @@
     {
       "id": "featured-projects",
       "text": {
-        "pt": "Quais são os projetos em destaque do Caio?",
-        "en": "What are Caio's featured projects?"
+        "pt": "Quais projetos estão em destaque?",
+        "en": "Which projects are featured?"
       }
     },
     {
       "id": "php-laravel-exp",
       "text": {
-        "pt": "Quanto tempo de experiência ele tem com PHP e Laravel?",
-        "en": "How much PHP & Laravel experience does he have?"
+        "pt": "Há quantos anos trabalho com PHP e Laravel?",
+        "en": "How many years have I been working with PHP & Laravel?"
       }
     },
     {
@@ -2450,36 +2446,36 @@
     {
       "id": "ai-agents",
       "text": {
-        "pt": "Como ele usa agentes de IA no dia a dia?",
-        "en": "How does he use AI agents day to day?"
+        "pt": "Como uso agentes de IA no dia a dia?",
+        "en": "How do I use AI agents day to day?"
       }
     },
     {
       "id": "devops-tools",
       "text": {
-        "pt": "Quais ferramentas de DevOps ele domina?",
-        "en": "Which DevOps tools does he master?"
+        "pt": "Quais ferramentas de DevOps uso?",
+        "en": "Which DevOps tools do I use?"
       }
     },
     {
       "id": "terraform-aws",
       "text": {
-        "pt": "Ele tem experiência com Terraform e AWS?",
-        "en": "Does he have Terraform & AWS experience?"
+        "pt": "Trabalho com Terraform e AWS?",
+        "en": "Do I work with Terraform & AWS?"
       }
     },
     {
       "id": "medium-articles",
       "text": {
-        "pt": "Quais artigos ele publicou no Medium?",
-        "en": "Which articles has he published on Medium?"
+        "pt": "Quais artigos publiquei no Medium?",
+        "en": "Which articles have I published on Medium?"
       }
     },
     {
       "id": "testing",
       "text": {
-        "pt": "Como ele testa os projetos dele?",
-        "en": "How does he test his projects?"
+        "pt": "Como os projetos são testados?",
+        "en": "How do I test my projects?"
       }
     },
     {
@@ -2499,36 +2495,36 @@
     {
       "id": "main-stack",
       "text": {
-        "pt": "Qual a stack principal dele?",
-        "en": "What is his main stack?"
+        "pt": "Qual a minha stack principal?",
+        "en": "What is my main stack?"
       }
     },
     {
       "id": "ecommerce",
       "text": {
-        "pt": "Ele já construiu e-commerce?",
-        "en": "Has he built e-commerce?"
+        "pt": "Já construí e-commerce?",
+        "en": "Have I built e-commerce?"
       }
     },
     {
       "id": "education",
       "text": {
-        "pt": "Qual a formação acadêmica e MBA dele?",
-        "en": "What is his education and MBA background?"
+        "pt": "Qual a minha formação acadêmica e o MBA?",
+        "en": "What is my education and MBA background?"
       }
     },
     {
       "id": "availability",
       "text": {
-        "pt": "Ele está aberto a vagas? Quais?",
-        "en": "Is he open to roles? Which ones?"
+        "pt": "Estou aberto a vagas? Quais?",
+        "en": "Am I open to roles? Which ones?"
       }
     },
     {
       "id": "other-languages",
       "text": {
-        "pt": "Quais linguagens ele usa além de PHP?",
-        "en": "Which languages does he use beyond PHP?"
+        "pt": "Quais linguagens uso além de PHP?",
+        "en": "Which languages do I use beyond PHP?"
       }
     },
     {
@@ -2541,29 +2537,29 @@
     {
       "id": "local-ai",
       "text": {
-        "pt": "Ele usa IA local com Ollama?",
-        "en": "Does he use local AI with Ollama?"
+        "pt": "Uso IA local com Ollama?",
+        "en": "Do I use local AI with Ollama?"
       }
     },
     {
       "id": "tech-lead",
       "text": {
-        "pt": "Onde ele atuou como Tech Lead?",
-        "en": "Where has he worked as a Tech Lead?"
+        "pt": "Onde atuei como Tech Lead?",
+        "en": "Where have I worked as a Tech Lead?"
       }
     },
     {
       "id": "keepcloud",
       "text": {
-        "pt": "O que ele construiu na KeepCloud?",
-        "en": "What did he build at KeepCloud?"
+        "pt": "O que construí na KeepCloud?",
+        "en": "What did I build at KeepCloud?"
       }
     },
     {
       "id": "contact",
       "text": {
-        "pt": "Qual a melhor forma de contato com ele?",
-        "en": "What's the best way to reach him?"
+        "pt": "Qual a melhor forma de contato?",
+        "en": "What's the best way to reach me?"
       }
     }
   ]
