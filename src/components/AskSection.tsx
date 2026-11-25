@@ -5,7 +5,7 @@ import type { Locale } from "@/content/types";
 import { callMcpTool } from "@/lib/mcp/client";
 import { formatMcpResponse } from "@/lib/mcp/formatters";
 import { routeQuestion } from "@/lib/mcp/router";
-import { MCP_TOOL_NAMES, McpClientError, type FormattedAnswer } from "@/lib/mcp/types";
+import { McpClientError, type FormattedAnswer } from "@/lib/mcp/types";
 
 export type AskLabels = {
   eyebrowCmd: string;
@@ -25,12 +25,10 @@ export type AskLabels = {
   errorTitle: string;
   errorBody: string;
   retry: string;
-  nowTitle: string;
-  nowTag: string;
-  nowBody: string;
-  laterTitle: string;
-  laterTag: string;
-  laterBody: string;
+  card1Question: string;
+  card1Answer: string;
+  card2Question: string;
+  card2Answer: string;
 };
 
 type Props = {
@@ -318,19 +316,12 @@ export function AskSection({ locale, questions, labels }: Props) {
 
       <div className="mt-7 grid max-w-[52rem] grid-cols-1 gap-px overflow-hidden rounded-[14px] border border-line bg-line sm:grid-cols-2">
         <div className="bg-surface px-4.5 py-4">
-          <h3 className="mb-2 font-mono text-[13px] font-semibold text-ink">
-            {labels.nowTitle} <span className="text-xs font-normal text-faint">· {labels.nowTag}</span>
-          </h3>
-          <p className="text-[13.5px] leading-[1.55] text-muted">
-            {labels.nowBody}{" "}
-            <span className="font-mono text-xs text-ink-2">{MCP_TOOL_NAMES.join(", ")}</span>.
-          </p>
+          <h3 className="mb-2 font-mono text-[13px] font-semibold text-ink">{labels.card1Question}</h3>
+          <p className="text-[13.5px] leading-[1.55] text-muted">{labels.card1Answer}</p>
         </div>
         <div className="bg-surface px-4.5 py-4">
-          <h3 className="mb-2 font-mono text-[13px] font-semibold text-ink">
-            {labels.laterTitle} <span className="text-xs font-normal text-faint">· {labels.laterTag}</span>
-          </h3>
-          <p className="text-[13.5px] leading-[1.55] text-muted">{labels.laterBody}</p>
+          <h3 className="mb-2 font-mono text-[13px] font-semibold text-ink">{labels.card2Question}</h3>
+          <p className="text-[13.5px] leading-[1.55] text-muted">{labels.card2Answer}</p>
         </div>
       </div>
     </section>
