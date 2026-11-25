@@ -575,3 +575,125 @@ test.describe("short résumé address", () => {
     expect(await (await request.get("/sitemap.xml")).text()).not.toContain("/cv/");
   });
 });
+
+test.describe("Ask about Caio & Connect MCP (home-only)", () => {
+  test("renders the Ask section between Selected articles and the final CTA in PT-BR and EN", async ({ page }) => {
+    for (const [path, heading, shuffleLabel] of [
+      ["/pt-br/", "Pergunte sobre o Caio", "Trocar sugestões"],
+      ["/en/", "Ask about Caio", "Shuffle suggestions"],
+    ] as const) {
+      await page.goto(path);
+      const articles = page.locator("section[aria-labelledby=h-medium]");
+      const ask = page.locator("section#ask");
+      const cta = page.locator("section.bg-accent");
+
+      await expect(ask.getByRole("heading", { name: heading })).toBeVisible();
+      const [artBox, askBox, ctaBox] = await Promise.all([articles.boundingBox(), ask.boundingBox(), cta.boundingBox()]);
+      expect(artBox!.y + artBox!.height).toBeLessThanOrEqual(askBox!.y + 2);
+      expect(askBox!.y + askBox!.height).toBeLessThanOrEqual(ctaBox!.y + 2);
+
+      const group = ask.getByRole("group");
+      const buttons = group.getByRole("button");
+      // 6 suggestion chips + 1 shuffle button = 7 buttons
+      await expect(buttons).toHaveCount(7);
+      await expect(group.getByRole("button", { name: shuffleLabel })).toBeVisible();
+    }
+  });
+
+  test("handles supported MCP answer, unsupported question, and error with retry", async ({ page }) => {
+    await page.goto("/pt-br/");
+
+    // 1. Unsupported question does not hit the MCP and explains the deterministic scope
+    const input = page.locator("#ask-input");
+    const submit = page.locator("section#ask button[type=submit]");
+    await input.fill("Qual a receita de bolo de cenoura?");
+    await submit.click();
+    await expect(page.getByTestId("ask-output-unsupported")).toBeVisible();
+
+    // 2. Network error shows error panel and retry recovers
+    let calls = 0;
+    await page.route("https://mcp.caiobarilli.workers.dev/mcp", async (route) => {
+      calls += 1;
+      if (calls === 1) {
+        await route.fulfill({ status: 503, contentType: "application/json", body: JSON.stringify({ error: { message: "Unavailable" } }) });
+        return;
+      }
+      const payload = {
+        jsonrpc: "2.0",
+        id: 2,
+        result: {
+          structuredContent: {
+            meta: { lang: "pt-br", source_url: "https://caiobarilli.github.io/pt-br/projects/keeptask/" },
+            data: {
+              title: "Keeptask",
+              year: "2024–2026",
+              summary: "Plataforma B2B em Laravel com app nativo.",
+              stack: ["PHP", "Laravel", "Livewire"],
+              links: { case_study: "https://caiobarilli.github.io/pt-br/projects/keeptask/" },
+            },
+          },
+        },
+      };
+      await route.fulfill({
+        status: 200,
+        contentType: "text/event-stream",
+        body: `event: message\ndata: ${JSON.stringify(payload)}\n\n`,
+      });
+    });
+
+    await input.fill("O que é o Keeptask?");
+    await submit.click();
+    const errorPanel = page.getByTestId("ask-output-error");
+    await expect(errorPanel).toBeVisible();
+
+    await errorPanel.getByRole("button", { name: "Tentar de novo" }).click();
+    const answerPanel = page.getByTestId("ask-output-answer");
+    await expect(answerPanel).toBeVisible();
+    await expect(answerPanel).toContainText("mcp · get_project");
+    await expect(answerPanel).toContainText("Keeptask");
+    await expect(answerPanel.getByRole("link", { name: /Estudo de caso/ })).toHaveAttribute(
+      "href",
+      "https://caiobarilli.github.io/pt-br/projects/keeptask/",
+    );
+  });
+
+  test("Connect MCP floating menu is home-only, supports keyboard Escape, and copies endpoint", async ({ page, context, isMobile }) => {
+    // Absent on non-home pages
+    await page.goto("/pt-br/projects/");
+    await expect(page.getByRole("button", { name: "Conectar MCP" })).toHaveCount(0);
+
+    await page.goto("/en/about/");
+    await expect(page.getByRole("button", { name: "Connect MCP" })).toHaveCount(0);
+
+    // Present on home
+    await page.goto("/pt-br/");
+    const fab = page.getByRole("button", { name: "Conectar MCP" });
+    await expect(fab).toBeVisible();
+    await expect(fab).toHaveAttribute("aria-expanded", "false");
+
+    await fab.click();
+    await expect(fab).toHaveAttribute("aria-expanded", "true");
+    const dialog = page.getByRole("dialog", { name: "Conectar o MCP a agentes de IA" });
+    await expect(dialog).toBeVisible();
+    await expect(dialog.getByRole("button", { name: /ChatGPT/ })).toBeVisible();
+    await expect(dialog.getByRole("button", { name: /Claude/ })).toBeVisible();
+    await expect(dialog.getByRole("button", { name: /Gemini/ })).toBeVisible();
+
+    // Open Claude detail and copy endpoint
+    await dialog.getByRole("button", { name: /Claude/ }).click();
+    await expect(dialog.getByText("https://mcp.caiobarilli.workers.dev/mcp")).toBeVisible();
+    await expect(dialog.getByRole("link", { name: "Documentação oficial" })).toHaveAttribute("target", "_blank");
+
+    if (!isMobile) {
+      await context.grantPermissions(["clipboard-read", "clipboard-write"]);
+    }
+    await dialog.getByRole("button", { name: "copiar" }).click();
+    await expect(dialog.getByRole("button", { name: /copiado/ })).toBeVisible();
+
+    // Escape closes panel and restores focus to FAB
+    await page.keyboard.press("Escape");
+    await expect(dialog).toHaveCount(0);
+    await expect(fab).toHaveAttribute("aria-expanded", "false");
+    await expect(fab).toBeFocused();
+  });
+});
