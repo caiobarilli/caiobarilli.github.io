@@ -84,7 +84,7 @@ const PROVIDERS: ProviderConfig[] = [
     steps: {
       pt: [
         "Na claude.ai, abra Configurações → Plugins → Conectores.",
-        "Abra o diálogo Adicionar conector personalizado.",
+        "No canto superior direito, clique em Adicionar e selecione Adicionar conector personalizado.",
         "Dê um nome e cole a URL do endpoint MCP abaixo; confirme em Continuar.",
         "Na autenticação, escolha Sem login (No sign-in) quando essa opção aparecer — o servidor é público e não exige login. Mantenha as opções marcadas como Detectadas, salvo indicação da documentação oficial.",
         "Clique em Adicionar e habilite o conector pelo botão + nos chats → Conectores.",
@@ -92,7 +92,7 @@ const PROVIDERS: ProviderConfig[] = [
       ],
       en: [
         "On claude.ai, open Settings → Plugins → Connectors.",
-        "Open the Add custom connector dialog.",
+        "In the top right, click Add and select Add custom connector.",
         "Enter a name and paste the MCP endpoint URL below, then Continue.",
         "Under Authentication, choose No sign-in when that option appears — the server is public and requires no login. Keep options marked as Detected unless the official docs say otherwise.",
         "Click Add, then enable the connector from the + button in chats → Connectors.",
@@ -112,27 +112,29 @@ const PROVIDERS: ProviderConfig[] = [
     docsUrl: "https://google-gemini.github.io/gemini-cli/docs/tools/mcp-server.html",
     steps: {
       pt: [
-        "Instale o Gemini CLI (terminal) — é nele que o MCP remoto se conecta hoje.",
-        "Edite ~/.gemini/settings.json e adicione o bloco mcpServers apontando para o endpoint HTTP.",
-        "Confira a sintaxe de servidor remoto na documentação oficial (varia por versão).",
-        "No CLI, rode /mcp para conferir se as ferramentas aparecem.",
+        "No Gemini Web, abra Mais → Personalizar → Conectores.",
+        "Clique em + Personalizado.",
+        "No diálogo “Conectar-se a um servidor MCP”, cole a URL do endpoint MCP abaixo.",
+        "Clique em Avançar e siga as instruções do próprio diálogo.",
+        "Os nomes de menus podem variar por interface, plano e idioma.",
       ],
       en: [
-        "Install the Gemini CLI (terminal) — that's where remote MCP connects today.",
-        "Edit ~/.gemini/settings.json and add an mcpServers block pointing to the HTTP endpoint.",
-        "Check the remote-server syntax in the official docs (it varies by version).",
-        "In the CLI, run /mcp to verify the tools show up.",
+        "In Gemini Web, open More → Personalize → Connectors.",
+        "Click + Custom.",
+        "In the “Connect to an MCP server” dialog, paste the MCP endpoint URL below.",
+        "Click Next and follow the dialog instructions.",
+        "Menu names can vary by interface, plan, and language.",
       ],
     },
     reqsLead: { pt: "Onde:", en: "Where:" },
     reqsBody: {
-      pt: "Gemini CLI (gratuito).",
-      en: "Gemini CLI (free).",
+      pt: "Gemini Web (app web) e Gemini CLI (gratuito).",
+      en: "Gemini Web (web app) and Gemini CLI (free).",
     },
-    unconfirmedLabel: { pt: "App web / região:", en: "Web app / region:" },
+    unconfirmedLabel: { pt: "Telas seguintes / região:", en: "Next screens / region:" },
     unconfirmedNote: {
-      pt: "suporte a MCP remoto personalizado no app web não confirmado.",
-      en: "custom remote MCP support in the web app is not confirmed.",
+      pt: "as telas após “Avançar”, a conclusão da conexão e a disponibilidade por região ou plano não foram verificadas.",
+      en: "the screens after “Next”, the final connection, and region/plan availability were not verified.",
     },
   },
 ];
