@@ -32,7 +32,7 @@ type ProviderConfig = {
   steps: { pt: string[]; en: string[] };
   reqsLead: { pt: string; en: string };
   reqsBody: { pt: string; en: string };
-  unconfirmedLabel: { pt: string; en: string };
+  unconfirmedLabel?: { pt: string; en: string };
   unconfirmedNote?: { pt: string; en: string };
 };
 
@@ -83,16 +83,16 @@ const PROVIDERS: ProviderConfig[] = [
     docsUrl: "https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp",
     steps: {
       pt: [
-        "Na claude.ai, abra Personalizar → Conectores (claude.ai/customize/connectors).",
-        "Clique em Adicionar → Adicionar conector personalizado.",
+        "Na claude.ai, abra Configurações → Plugins → Conectores.",
+        "Abra o diálogo Adicionar conector personalizado.",
         "Dê um nome e cole a URL do endpoint MCP abaixo; confirme em Continuar.",
         "Na autenticação, escolha Sem login (No sign-in) quando essa opção aparecer — o servidor é público e não exige login. Mantenha as opções marcadas como Detectadas, salvo indicação da documentação oficial.",
         "Clique em Adicionar e habilite o conector pelo botão + nos chats → Conectores.",
         "Os nomes de menus podem variar por plano e idioma; no plano Free, o limite é 1 conector personalizado e não é necessário Team.",
       ],
       en: [
-        "On claude.ai, open Customize → Connectors (claude.ai/customize/connectors).",
-        "Select Add, then Add custom connector.",
+        "On claude.ai, open Settings → Plugins → Connectors.",
+        "Open the Add custom connector dialog.",
         "Enter a name and paste the MCP endpoint URL below, then Continue.",
         "Under Authentication, choose No sign-in when that option appears — the server is public and requires no login. Keep options marked as Detected unless the official docs say otherwise.",
         "Click Add, then enable the connector from the + button in chats → Connectors.",
@@ -104,7 +104,6 @@ const PROVIDERS: ProviderConfig[] = [
       pt: "Free (limite de 1 conector personalizado), Pro, Max, Ultra, Team e Enterprise. Team/Enterprise: um Owner adiciona para a organização.",
       en: "Free (1 custom connector limit), Pro, Max, Ultra, Team and Enterprise. Team/Enterprise: an Owner adds it for the org.",
     },
-    unconfirmedLabel: { pt: "Região/tipo de conta:", en: "Region/account type:" },
   },
   {
     id: "gemini",
@@ -432,12 +431,17 @@ export function ConnectMcpFab({ locale, labels }: Props) {
               </span>
 
               <p className="px-4.5 pb-3 text-[12.5px] leading-[1.6] text-muted">
-                <b className="font-semibold text-ink-2">{selected.reqsLead[lang]}</b> {selected.reqsBody[lang]}{" "}
-                <b className="font-semibold text-ink-2">{selected.unconfirmedLabel[lang]}</b>{" "}
-                <span className="inline-block rounded-md border border-dashed border-demo px-1.5 py-px text-[10.5px] font-semibold tracking-wider whitespace-nowrap text-demo">
-                  {labels.toConfirm}
-                </span>
-                {selected.unconfirmedNote ? ` — ${selected.unconfirmedNote[lang]}` : "."}
+                <b className="font-semibold text-ink-2">{selected.reqsLead[lang]}</b> {selected.reqsBody[lang]}
+                {selected.unconfirmedLabel && (
+                  <>
+                    {" "}
+                    <b className="font-semibold text-ink-2">{selected.unconfirmedLabel[lang]}</b>{" "}
+                    <span className="inline-block rounded-md border border-dashed border-demo px-1.5 py-px text-[10.5px] font-semibold tracking-wider whitespace-nowrap text-demo">
+                      {labels.toConfirm}
+                    </span>
+                    {selected.unconfirmedNote ? ` — ${selected.unconfirmedNote[lang]}` : "."}
+                  </>
+                )}
               </p>
 
               <a
